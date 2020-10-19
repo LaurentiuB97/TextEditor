@@ -8,7 +8,6 @@ enum dateFormat {big_endian, middle_endian, little_endian};
 
 class StringManipulator {
  public:
-    static StringManipulator getInstance();
     static TextHighLight* find(const std::string &pattern, const std::string &text, const bool isRegex);
     static TextHighLight replace(const std::string &replacement, const TextHighLight &foundText, std::string &text);
     static int trim(std::string &text);

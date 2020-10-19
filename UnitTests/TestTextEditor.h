@@ -11,71 +11,70 @@ class TestTextEditor : public Cppunit::TextFixture {
     CPPUNIT_TEST();
     CPPUNIT_TEST_SUITE_END();
  public:
-    void setUp();
-    void tearDown();
-    void find_NullPattern();
-    void find_NullText();
+    void find_simplePattern();
+    void find_Regex();
+    void find_EmptyPattern();
+    void find_EmptyText();
     void find_PatternWithUnexpectedCharacters();
     void find_TextWithUnexpectedCharacters();
     void find_TextOutOfBound();
-    void find_PatternLargerThenText();
+    void find_PatternLargerThanText();
     //===========================================================================================================
     void replace_ReplacementWithUnexpectedCharacter();
     void replace_TextWithUnexpectedCharacter();
-    void replace_NullText();
-    void replace__TextOutOfBound();
+    void replace_EmptyText();
+    void replace_TextOutOfBound();
     void replace_NegativeHighLightPosition();
     void replace_NegativeHighLightLength();
-    void replace_PositionLargerThenMax();
-    void replace_LengthLargerThenMax();
+    void replace_PositionLargerThanMax();
+    void replace_LengthLargerThanMax();
     //===========================================================================================================
     void trim_UnexpectedCharacter();
-    void trim_NullText();
+    void trim_EmptyText();
     void trim_TextOutOfBound();
     //===========================================================================================================
     void padding_UnexpectedCharacter();
-    void padding_NullText();
+    void padding_EmptyText();
     void padding_TextOutOfBound();
     //===========================================================================================================
     void capitalizeAll_UnexpectedCharacter();
-    void capitalizeAll_NullText();
+    void capitalizeAll_EmptyText();
     void capitalizeAll_TextOutOfBound();
     //===========================================================================================================
     void capitalizeFirst_UnexpectedCharacter();
-    void capitalizeFirst_NullText();
+    void capitalizeFirst_EmptyText();
     void capitalizeFirst_TextOutOfBound();
     //===========================================================================================================
     void capitalizeOffset_UnexpectedCharacter();
-    void capitalizeOffset_NullText();
+    void capitalizeOffset_EmptyText();
     void capitalizeOffset_TextOutOfBound();
     void capitalizeOffset_NegativeHighLightPosition();
     void capitalizeOffset_NegativeHighLightLength();
-    void capitalizeOffset_PositionLargerThenMax();
-    void capitalizeOffset_LengthLargerThenMax();
+    void capitalizeOffset_PositionLargerThanMax();
+    void capitalizeOffset_LengthLargerThanMax();
     //===========================================================================================================
     void lowercaseAll_UnexpectedCharacter();
-    void lowercaseAll_NullText();
+    void lowercaseAll_EmptyText();
     void lowercaseAll_TextOutOfBound();
     //===========================================================================================================
     void lowercaseFirst_UnexpectedCharacter();
-    void lowercaseFirst_NullText();
+    void lowercaseFirst_EmptyText();
     void lowercaseFirst_TextOutOfBound();
     //===========================================================================================================
     void lowercaseOffset_UnexpectedCharacter();
-    void lowercaseOffset_NullText();
+    void lowercaseOffset_EmptyText();
     void lowercaseOffset_TextOutOfBound();
     void lowercaseOffset_NegativeHighLightPosition();
     void lowercaseOffset_NegativeHighLightLength();
-    void lowercaseOffset_PositionLargerThenMax();
-    void lowercaseOffset_LengthLargerThenMax();
+    void lowercaseOffset_PositionLargerThanMax();
+    void lowercaseOffset_LengthLargerThanMax();
     //===========================================================================================================
-    void transformToASCII_NullText();
+    void transformToASCII_EmptyText();
     void transformToASCII_TextOutOfBound();
     //===========================================================================================================
-    void changeDateFormat_NullText();
+    void changeDateFormat_EmptyText();
     void changeDateFormat_TextOutOfBound();
     void changeDateFormat_UnexpectedCharacter();
-    void changeDateFormat_UnepectedDateFormat();
     //===========================================================================================================
 }
 #endif  // TESTTEXTEDITOR_H

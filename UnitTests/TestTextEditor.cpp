@@ -5,15 +5,30 @@
 
 void TestTextEditor::setUp(){}
 void TestTextEditor::tearDown(){}
-void TestTextEditor::find_NullPattern() {
-    std::string pattern = "";  // making the pattern null
+void TestTextEditor::find_simplePattern() {
+    std::string pattern = "ra";
+    std::string text = "ad astra per aspera";
+    TextHighLight* highlights = find(pattern, text, false);
+    CPPUNIT_ASSERT(highlights[0] == TextHighLight(7,2));
+    CPPUNIT_ASSERT(highlights[1] == TextHighLight(17,2));
+}
+void TestTextEditor::find_Regex() {
+    std::string pattern = "/e+/g";
+    std::string text = "meet, street, sleep";
+    TextHighLight* highlights = find(pattern, text, true);
+    CPPUNIT_ASSERT(highlights[0] == TextHighLight(1,2));
+    CPPUNIT_ASSERT(highlights[1] == TextHighLight(9,2));
+    CPPUNIT_ASSERT(highlights[2] == TextHighLight(16,2));
+}
+void TestTextEditor::find_EmptyPattern() {
+    std::string pattern = "";  // making the pattern empty
     std::string text = "text";
     CPPUNIT_ASSERT_THROW(StringManipulator::find(pattern, text, false), std::invalid_argument);
 
 }
-void TestTextEditor::find_NullText() {
+void TestTextEditor::find_EmptyText() {
     std::string pattern = "pattern";
-    std::string text = "";  //making the text null
+    std::string text = "";  //making the text empty
     CPPUNIT_ASSERT_THROW(StringManipulator::find(pattern, text, false), std::invalid_argument);
 }
 void TestTextEditor::find_PatternWithUnexpectedCharacters() {
@@ -28,8 +43,8 @@ void TestTextEditor::find_TextWithUnexpectedCharacters() {
 }
 void TestTextEditor::find_TextOutOfBound() {  // (homework)
 }
-void TestTextEditor::find_PatternLargerThenText() {
-    std::string pattern = "pattern larger then text";
+void TestTextEditor::find_PatternLargerThanText() {
+    std::string pattern = "pattern larger than text";
     std::string text = "text";
     CPPUNIT_ASSERT_THROW(StringManipulator::find(pattern, text, false), std::invalid_argument);
 }
@@ -46,13 +61,13 @@ void TestTextEditor::replace_TextWithUnexpectedCharacter() {
     TextHighLight highlight(0,1);
     CPPUNIT_ASSERT_THROW(StringManipulator::replace(replacement, highlight, text), std::invalid_argument);
 }
-void TestTextEditor::replace_NullText() {
+void TestTextEditor::replace_EmptyText() {
     std::string replacement = "replacement";
-    std::string replacement = "";
+    std::string text = "";
     TextHighLight highlight(0,1);
     CPPUNIT_ASSERT_THROW(StringManipulator::replace(replacement, highlight, text), std::invalid_argument);
 }
-void TestTextEditor::replace__TextOutOfBound() {} // (homework)
+void TestTextEditor::replace_TextOutOfBound() {} // (homework)
 void TestTextEditor::replace_NegativeHighLightPosition() {
     std::string replacement = "repl";
     std::string text = "sentence";
@@ -65,13 +80,13 @@ void TestTextEditor::replace_NegativeHighLightLength() {
     TextHighLight highlight(2,-1);
     CPPUNIT_ASSERT_THROW(StringManipulator::replace(replacement, highlight, text), std::invalid_argument);
 }
-void TestTextEditor::replace_PositionLargerThenMax() {
+void TestTextEditor::replace_PositionLargerThanMax() {
     std::string replacement = "repl";
     std::string text = "sentence";
     TextHighLight highlight(50,3);
     CPPUNIT_ASSERT_THROW(StringManipulator::replace(replacement, highlight, text), std::invalid_argument);
 }
-void TestTextEditor::replace_LengthLargerThenMax() {
+void TestTextEditor::replace_LengthLargerThanMax() {
     std::string replacement = "repl";
     std::string text = "sentence";
     TextHighLight highlight(3,50);
@@ -82,7 +97,7 @@ void TestTextEditor::trim_UnexpectedCharacter() {
     std::string text = "œžŸ¢¥  ";
     CPPUNIT_ASSERT_THROW(StringManipulator::trim(text), std::invalid_argument);
 }
-void TestTextEditor::trim_NullText() {
+void TestTextEditor::trim_EmptyText() {
     std::string text = "";
     CPPUNIT_ASSERT_THROW(StringManipulator::trim(text), std::invalid_argument);
 }
@@ -92,7 +107,7 @@ void TestTextEditor::padding_UnexpectedCharacter() {
     std::string text = "œžŸ¢¥  ";
     CPPUNIT_ASSERT_THROW(StringManipulator::padding(text), std::invalid_argument);
 }
-void TestTextEditor::padding_NullText() {
+void TestTextEditor::padding_EmptyText() {
     std::string text = "";
     CPPUNIT_ASSERT_THROW(StringManipulator::padding(text), std::invalid_argument);
 }
@@ -102,7 +117,7 @@ void TestTextEditor::capitalizeAll_UnexpectedCharacter() {
     std::string text = "œžŸ¢¥  ";
     CPPUNIT_ASSERT_THROW(StringManipulator::capitalizeAll(text), std::invalid_argument);
 }
-void TestTextEditor::capitalizeAll_NullText() {
+void TestTextEditor::capitalizeAll_EmptyText() {
     std::string text = "";
     CPPUNIT_ASSERT_THROW(StringManipulator::capitalizeAll(text), std::invalid_argument);
 }
@@ -112,7 +127,7 @@ void TestTextEditor::capitalizeFirst_UnexpectedCharacter() {
     std::string text = "œžŸ¢¥  ";
     CPPUNIT_ASSERT_THROW(StringManipulator::capitalizeFirst(text), std::invalid_argument);
 }
-void TestTextEditor::capitalizeFirst_NullText() {
+void TestTextEditor::capitalizeFirst_EmptyText() {
     std::string text = "";
     CPPUNIT_ASSERT_THROW(StringManipulator::capitalizeFirst(text), std::invalid_argument);
 }
@@ -123,7 +138,7 @@ void TestTextEditor::capitalizeOffset_UnexpectedCharacter() {
     TextHighLight highlight(1,1);
     CPPUNIT_ASSERT_THROW(StringManipulator::capitalizeOffset(text, highlight), std::invalid_argument);
 }
-void TestTextEditor::capitalizeOffset_NullText() {
+void TestTextEditor::capitalizeOffset_EmptyText() {
     std::string text = "";
     TextHighLight highlight(1,1);
     CPPUNIT_ASSERT_THROW(StringManipulator::capitalizeOffset(text, highlight), std::invalid_argument);
@@ -139,12 +154,12 @@ void TestTextEditor::capitalizeOffset_NegativeHighLightLength() {
     TextHighLight highlight(0, -1);
     CPPUNIT_ASSERT_THROW(StringManipulator::capitalizeOffset(text, highlight), std::invalid_argument);
 }
-void TestTextEditor::capitalizeOffset_PositionLargerThenMax() {
+void TestTextEditor::capitalizeOffset_PositionLargerThanMax() {
     std::string text = "sentence";
     TextHighLight highlight(32, 2);
     CPPUNIT_ASSERT_THROW(StringManipulator::capitalizeOffset(text, highlight), std::invalid_argument);
 }
-void TestTextEditor::capitalizeOffset_LengthLargerThenMax() {
+void TestTextEditor::capitalizeOffset_LengthLargerThanMax() {
     std::string text = "sentence";
     TextHighLight highlight(7, 5);
     CPPUNIT_ASSERT_THROW(StringManipulator::capitalizeOffset(text, highlight), std::invalid_argument);
@@ -154,7 +169,7 @@ void TestTextEditor::lowercaseAll_UnexpectedCharacter() {
     std::string text = "œžŸ¢¥  ";
     CPPUNIT_ASSERT_THROW(StringManipulator::lowercaseAll(text), std::invalid_argument);
 }
-void TestTextEditor::lowercaseAll_NullText() {
+void TestTextEditor::lowercaseAll_EmptyText() {
     std::string text = "";
     CPPUNIT_ASSERT_THROW(StringManipulator::lowercaseAll(text), std::invalid_argument);
 }
@@ -164,13 +179,13 @@ void TestTextEditor::lowercaseFirst_UnexpectedCharacter() {
     std::string text = "œžŸ¢¥";
     CPPUNIT_ASSERT_THROW(StringManipulator::lowercaseFirst(text), std::invalid_argument);
 }
-void TestTextEditor::lowercaseFirst_NullText() {
+void TestTextEditor::lowercaseFirst_EmptyText() {
     std::string text;
     CPPUNIT_ASSERT_THROW(StringManipulator::lowercaseFirst(text), std::invalid_argument);
 }
 void TestTextEditor::lowercaseFirst_TextOutOfBound() {} // (homework)
 //===========================================================================================================
-void TestTextEditor::lowercaseOffset_NullText() {
+void TestTextEditor::lowercaseOffset_EmptyText() {
     std::string text = "";
     TextHighLight highlight(1,1);
     CPPUNIT_ASSERT_THROW(StringManipulator::lowercaseOffset(text), std::invalid_argument);
@@ -186,24 +201,24 @@ void TestTextEditor::lowercaseOffset_NegativeHighLightLength() {
     TextHighLight highlight(0, -1);
     CPPUNIT_ASSERT_THROW(StringManipulator::lowercaseOffset(text), std::invalid_argument);
 }
-void TestTextEditor::lowercaseOffset_PositionLargerThenMax() {
+void TestTextEditor::lowercaseOffset_PositionLargerThanMax() {
     std::string text = "sentence";
     TextHighLight highlight(32, 2);
     CPPUNIT_ASSERT_THROW(StringManipulator::lowercaseOffset(text, highlight), std::invalid_argument);
 }
-void TestTextEditor::lowercaseOffset_LengthLargerThenMax() {
+void TestTextEditor::lowercaseOffset_LengthLargerThanMax() {
     std::string text = "sentence";
     TextHighLight highlight(7, 5);
     CPPUNIT_ASSERT_THROW(StringManipulator::lowercaseOffset(text, highlight), std::invalid_argument);
 }
 //===========================================================================================================
-void TestTextEditor::transformToASCII_NullText() {
+void TestTextEditor::transformToASCII_EmptyText() {
     std::string text = "";
     CPPUNIT_ASSERT_THROW(StringManipulator::transformToASCII(text), std::invalid_argument);
 }
 void TestTextEditor::transformToASCII_TextOutOfBound() {} // (homework)
 //===========================================================================================================
-void TestTextEditor::changeDateFormat_NullText() {
+void TestTextEditor::changeDateFormat_EmptyText() {
     std::string text = "";
     dateFormat format = big_endian;
     CPPUNIT_ASSERT_THROW(StringManipulator::changeDateFormat(text, format), std::invalid_argument);
@@ -214,9 +229,6 @@ void TestTextEditor::changeDateFormat_UnexpectedCharacter() {
     dateFormat format = big_endian;
     CPPUNIT_ASSERT_THROW(StringManipulator::changeDateFormat(text, format), std::invalid_argument);
 }
-void TestTextEditor::changeDateFormat_UnepectedDateFormat() {
-    std::string text = "12/03/2020";
-    CPPUNIT_ASSERT_THROW(StringManipulator::changeDateFormat(text, anything_but_not_date_format), std::invalid_argument);
-}
+
 
 

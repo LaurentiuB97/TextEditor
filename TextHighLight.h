@@ -3,6 +3,7 @@
 
 class TextHighLight {
  public:
+    TextHighLight();
     TextHighLight(const int start, const int length);
     int getPosition() const;
     int getLength() const;
