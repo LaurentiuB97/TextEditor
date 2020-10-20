@@ -5,12 +5,18 @@
 
 void TestTextEditor::setUp(){}
 void TestTextEditor::tearDown(){}
-void TestTextEditor::find_simplePattern() {
+void TestTextEditor::find_simpleCase() {
     std::string pattern = "ra";
     std::string text = "ad astra per aspera";
     TextHighLight* highlights = find(pattern, text, false);
     CPPUNIT_ASSERT(highlights[0] == TextHighLight(7,2));
     CPPUNIT_ASSERT(highlights[1] == TextHighLight(17,2));
+}
+void find_textTextNotFound() {
+    std::string pattern = "temp";
+    std::string text = "sentence";
+    TextHighLight* highlights = find(pattern, text, false);
+    CPPUNIT_ASSERT(highlights = nullptr);
 }
 void TestTextEditor::find_Regex() {
     std::string pattern = "/e+/g";
@@ -49,6 +55,13 @@ void TestTextEditor::find_PatternLargerThanText() {
     CPPUNIT_ASSERT_THROW(StringManipulator::find(pattern, text, false), std::invalid_argument);
 }
 //===========================================================================================================
+void TestTextEditor::replace_simpleCase() {
+    std::string text = "Good morning!";
+    std::string replacement = "afternoon";
+    TextHighLight highlight(5, 7);
+    CPPUNIT_ASSERT(StringManipulator::replace(replacement, highlight, text) == 7);
+    CPPUNIT_ASSERT(text == "Good afternoon!");
+}
 void TestTextEditor::replace_ReplacementWithUnexpectedCharacter() {
     std::string replacement = "œžŸ¢¥";
     std::string text = "sentence";
@@ -93,6 +106,11 @@ void TestTextEditor::replace_LengthLargerThanMax() {
     CPPUNIT_ASSERT_THROW(StringManipulator::replace(replacement, highlight, text), std::invalid_argument);
 }
 //===========================================================================================================
+void TestTextEditor::trim_simpleCase() {
+    std::string text = "Hello    world!";
+    CPPUNIT_ASSERT(StringManipulator::trim(text) == 3);
+    CPPUNIT_ASSERT(text == "Hello world!"); 
+}
 void TestTextEditor::trim_UnexpectedCharacter() {
     std::string text = "œžŸ¢¥  ";
     CPPUNIT_ASSERT_THROW(StringManipulator::trim(text), std::invalid_argument);
@@ -103,6 +121,11 @@ void TestTextEditor::trim_EmptyText() {
 }
 void TestTextEditor::trim_TextOutOfBound() {} // (homework)
 //===========================================================================================================
+void TestTextEditor::padding_simpeCase() {
+    text = "Hi there!How are you?"
+    CPPUNIT_ASSERT(padding(text) == 1);
+    CPPUNIT_ASSERT(text  == "Hi there! How are you?");
+}
 void TestTextEditor::padding_UnexpectedCharacter() {
     std::string text = "œžŸ¢¥  ";
     CPPUNIT_ASSERT_THROW(StringManipulator::padding(text), std::invalid_argument);
@@ -113,6 +136,11 @@ void TestTextEditor::padding_EmptyText() {
 }
 void TestTextEditor::padding_TextOutOfBound() {}
 //===========================================================================================================
+void TestTextEditor::capitalizeAll_simpleCase() {
+    std::string text = "Hello World!";
+    CPPUNIT_ASSERT(StringManipulator::capitalizeAll(text) == 8);
+    CPPUNIT_ASSERT(text == "HELLO WORLD!");
+}
 void TestTextEditor::capitalizeAll_UnexpectedCharacter() {
     std::string text = "œžŸ¢¥  ";
     CPPUNIT_ASSERT_THROW(StringManipulator::capitalizeAll(text), std::invalid_argument);
@@ -123,6 +151,11 @@ void TestTextEditor::capitalizeAll_EmptyText() {
 }
 void TestTextEditor::capitalizeAll_TextOutOfBound() {}// (homework)
 //===========================================================================================================
+void TestTextEditor::capitalizeFirst_simpleCase() {
+    std::string text = "hi there! how are you?";
+    CPPUNIT_ASSERT(capitalizeFirst(text) == 2);
+    CPPUNIT_ASSERT(text = "Hi there! How are you?");
+}
 void TestTextEditor::capitalizeFirst_UnexpectedCharacter() {
     std::string text = "œžŸ¢¥  ";
     CPPUNIT_ASSERT_THROW(StringManipulator::capitalizeFirst(text), std::invalid_argument);
@@ -133,6 +166,12 @@ void TestTextEditor::capitalizeFirst_EmptyText() {
 }
 void TestTextEditor::capitalizeFirst_TextOutOfBound() {}// (homework)
 //===========================================================================================================
+void TestTextEditor::capitalizeOffset_simpleCase() {
+    std::string text = "Hello world";
+    TextHighLight highlight(0,7);
+    CPPUNIT_ASSERT(StringManipulator::capitalizeOffset(text, highlight) == 5);
+    CPPUNIT_ASSERT(text = "HELLO World");
+}
 void TestTextEditor::capitalizeOffset_UnexpectedCharacter() {
     std::string text = "œžŸ¢¥";
     TextHighLight highlight(1,1);
@@ -165,6 +204,11 @@ void TestTextEditor::capitalizeOffset_LengthLargerThanMax() {
     CPPUNIT_ASSERT_THROW(StringManipulator::capitalizeOffset(text, highlight), std::invalid_argument);
 }
 //===========================================================================================================
+void TestTextEditor::lowercaseAll_simpleCase() {
+    std::string text = "Hello World!";
+    CPPUNIT_ASSERT(StringManipulator::lowercaseAl(text) == 2);
+    CPPUNIT_ASSERT(text = "hello world!");
+}
 void TestTextEditor::lowercaseAll_UnexpectedCharacter() {
     std::string text = "œžŸ¢¥  ";
     CPPUNIT_ASSERT_THROW(StringManipulator::lowercaseAll(text), std::invalid_argument);
