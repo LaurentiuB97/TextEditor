@@ -219,6 +219,11 @@ void TestTextEditor::lowercaseAll_EmptyText() {
 }
 void TestTextEditor::lowercaseAll_TextOutOfBound() {} // (homework)
 //===========================================================================================================
+void TestTextEditor::lowercaseFirst_simpleCase() {
+    text = "Hello world!";
+    CPPUNIT_ASSERT(StringManipulator::lowercaseFirst(text) == 1);
+    CPPUNIT_ASSERT(text == "hello world!");
+} 
 void TestTextEditor::lowercaseFirst_UnexpectedCharacter() {
     std::string text = "œžŸ¢¥";
     CPPUNIT_ASSERT_THROW(StringManipulator::lowercaseFirst(text), std::invalid_argument);
@@ -229,6 +234,12 @@ void TestTextEditor::lowercaseFirst_EmptyText() {
 }
 void TestTextEditor::lowercaseFirst_TextOutOfBound() {} // (homework)
 //===========================================================================================================
+void TestTextEditor::lowercaseOffset_simpleCase() {
+    std::string text = "HELlo World!";
+    TextHighLight highlight(1,3);
+    CPPUNIT_ASSERT(StringManipulator::lowercaseOffset(text, highlight) == 2);
+    CPPUNIT_ASSERT(text == "Hello world!");
+}
 void TestTextEditor::lowercaseOffset_EmptyText() {
     std::string text = "";
     TextHighLight highlight(1,1);
@@ -256,12 +267,23 @@ void TestTextEditor::lowercaseOffset_LengthLargerThanMax() {
     CPPUNIT_ASSERT_THROW(StringManipulator::lowercaseOffset(text, highlight), std::invalid_argument);
 }
 //===========================================================================================================
+void TestTextEditor::transformToASCII_simpleCase() {
+    std::string text = "Hiœžthere!";
+    CPPUNIT_ASSERT(StringManipulator::transformToASCII(text) == 2);
+    CPPUNIT_ASSERT( text == "Hi  there!");
+}
 void TestTextEditor::transformToASCII_EmptyText() {
     std::string text = "";
     CPPUNIT_ASSERT_THROW(StringManipulator::transformToASCII(text), std::invalid_argument);
 }
 void TestTextEditor::transformToASCII_TextOutOfBound() {} // (homework)
 //===========================================================================================================
+void TestTextEditor::changeDateFormat_simpleCase() {
+    std::string text = "2020/10/22";
+    dateFormat format = little_endian;
+    CPPUNIT_ASSERT(StringManipulator::changeDateFormat(text, format) == 1);
+    CPPUNIT_ASSERT(text = 22/10/2020);
+}
 void TestTextEditor::changeDateFormat_EmptyText() {
     std::string text = "";
     dateFormat format = big_endian;

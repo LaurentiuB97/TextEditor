@@ -59,15 +59,18 @@ class TestTextEditor : public Cppunit::TextFixture {
     void capitalizeOffset_PositionLargerThanMax();
     void capitalizeOffset_LengthLargerThanMax();
     //===========================================================================================================
+    
     void lowercaseAll_simpleCase();
     void lowercaseAll_UnexpectedCharacter();
     void lowercaseAll_EmptyText();
     void lowercaseAll_TextOutOfBound();
     //===========================================================================================================
+    void lowercaseFirst_simpleCase();
     void lowercaseFirst_UnexpectedCharacter();
     void lowercaseFirst_EmptyText();
     void lowercaseFirst_TextOutOfBound();
     //===========================================================================================================
+    void lowercaseOffset_simpleCase();
     void lowercaseOffset_UnexpectedCharacter();
     void lowercaseOffset_EmptyText();
     void lowercaseOffset_TextOutOfBound();
@@ -76,6 +79,7 @@ class TestTextEditor : public Cppunit::TextFixture {
     void lowercaseOffset_PositionLargerThanMax();
     void lowercaseOffset_LengthLargerThanMax();
     //===========================================================================================================
+    void transformToASCII_simpleCase();
     void transformToASCII_EmptyText();
     void transformToASCII_TextOutOfBound();
     //===========================================================================================================
