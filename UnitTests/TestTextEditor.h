@@ -1,14 +1,15 @@
 #ifndef TESTTEXTEDITOR_H
 #define TESTTEXTEDITOR_H
 #include "StringManipulator.h"
-#include "textHighLight.h"
+#include "TextHighLight.h"
 #include <cppunit/TestFixture.h>
 #include <cppunit/TestCase.h>
 #include <cppunit/extensions/HelperMacros.h>
 
-class TestTextEditor : public Cppunit::TextFixture {
+class TestTextEditor : public Cppunit::TestFixture {
     CPPUNIT_TEST_SUITE(TestTextEditor);
-    CPPUNIT_TEST();
+    CPPUNIT_TEST(find_simpleCase);
+    CPPUNIT_TEST(find_textTextNotFound);
     CPPUNIT_TEST_SUITE_END();
  public:
     void find_simpleCase();
@@ -87,5 +88,7 @@ class TestTextEditor : public Cppunit::TextFixture {
     void changeDateFormat_TextOutOfBound();
     void changeDateFormat_UnexpectedCharacter();
     //===========================================================================================================
-}
+};
+
+CPPUNIT_TEST_SUITE_REGISTRATION( TestTextEditor );
 #endif  // TESTTEXTEDITOR_H

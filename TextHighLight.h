@@ -12,6 +12,6 @@ class TextHighLight {
  private:
     int position;
     int length;
-}
+};
 
 #endif // TEXTHIGHLIGHT_H

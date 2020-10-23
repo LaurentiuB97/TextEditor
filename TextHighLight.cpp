@@ -1,4 +1,4 @@
-#include <TextHighLight.h>
+#include "TextHighLight.h"
 
 TextHighLight::TextHighLight() {}
 TextHighLight::TextHighLight(const int start, const int length) {
@@ -6,18 +6,19 @@ TextHighLight::TextHighLight(const int start, const int length) {
     this->length = length;
 }
 
-bool operator== (TextHighLight highlight) {
-    return (position == highlight.getPosition() && (length == highlight.getLength()));
+bool operator== (TextHighLight highlight1, TextHighLight highlight2) {
+    return (highlight1.getPosition() == highlight2.getPosition() &&
+            (highlight1.getLength() == highlight2.getLength()));
 }
-TextHighLight::int getPosition() const {
+int TextHighLight::getPosition() const {
     return position;
 }
-TextHighLight::int getLength() const {
+int TextHighLight::getLength() const {
     return length;
 }
-TextHighLight::void setPosition(const int position) {
+void TextHighLight::setPosition(const int position) {
     this->position = position;
 }
-TextHighLight::void setLength(const int length) {
+void TextHighLight::setLength(const int length) {
     this->length = length;
 }

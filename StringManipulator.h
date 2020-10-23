@@ -18,11 +18,12 @@ class StringManipulator {
     static int lowercaseAll(std::string &text);//incomplete
     static int lowercaseFirst(std::string &text);//incomplete
     static int lowercaseOffset(std::string &text, const TextHighLight highlight);//incomplete
-    static int transformToASCII(string &text);//incomplete
-    static int changeDateFormat(string &text, dateFormat format);//incomplete
+    static int transformToASCII(std::string &text);//incomplete
+    static int changeDateFormat(std::string &text, dateFormat format);//incomplete
+    static int findNonASCII(const std::string &text);
  private:
     StringManipulator();//incomplete
-}
+};
 
 
 #endif // STRINGMANIPULATOR_H
