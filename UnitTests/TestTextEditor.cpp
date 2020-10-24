@@ -22,7 +22,7 @@ void TestTextEditor::find_simpleCase() {
 }
 
 /// it verifies the find function when the pattern is not found in the main text
-void find_textTextNotFound() {
+void TestTextEditor::find_TextNotFound() {
     std::string pattern = "temp";
     TextHighLight* highlights = find(pattern, standard_example, false);
     CPPUNIT_ASSERT(highlights = nullptr);

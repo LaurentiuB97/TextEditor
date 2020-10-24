@@ -6,14 +6,15 @@
 #include <cppunit/TestCase.h>
 #include <cppunit/extensions/HelperMacros.h>
 
-class TestTextEditor : public Cppunit::TestFixture {
+class TestTextEditor : public CppUnit::TestFixture {
     CPPUNIT_TEST_SUITE(TestTextEditor);
     CPPUNIT_TEST(find_simpleCase);
-    CPPUNIT_TEST(find_textTextNotFound);
+    CPPUNIT_TEST(find_TextNotFound);
     CPPUNIT_TEST_SUITE_END();
  public:
     void find_simpleCase();
     void find_Regex();
+    void find_TextNotFound();
     void find_EmptyPattern();
     void find_EmptyText();
     void find_PatternWithUnexpectedCharacters();
@@ -46,7 +47,7 @@ class TestTextEditor : public Cppunit::TestFixture {
     void capitalizeAll_EmptyText();
     void capitalizeAll_TextOutOfBound();
     //===========================================================================================================
-    void capitalizeFirst_simpleCase()
+    void capitalizeFirst_simpleCase();
     void capitalizeFirst_UnexpectedCharacter();
     void capitalizeFirst_EmptyText();
     void capitalizeFirst_TextOutOfBound();

@@ -9,7 +9,7 @@ enum dateFormat {big_endian, middle_endian, little_endian};
 class StringManipulator {
  public:
     static TextHighLight* find(const std::string &pattern, const std::string &text, const bool isRegex); //still incomplete
-    static TextHighLight replace(const std::string &replacement, const TextHighLight &foundText, std::string &text);//incomplete
+    static TextHighLight replace(const std::string &replacement, const TextHighLight &highlight, std::string &text);//incomplete
     static int trim(std::string &text);//incomplete
     static int padding(std::string &text);//incomplete
     static int capitalizeAll(std::string &text);//incomplete
@@ -21,6 +21,8 @@ class StringManipulator {
     static int transformToASCII(std::string &text);//incomplete
     static int changeDateFormat(std::string &text, dateFormat format);//incomplete
     static int findNonASCII(const std::string &text);
+    static void treatingExceptionsForText(const std::string &text);
+    static void treatingExceptionsForHighlight(const std::string &text, const TextHighLight &highlight);
  private:
     StringManipulator();//incomplete
 };
