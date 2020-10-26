@@ -16,7 +16,7 @@ TextHighLight* StringManipulator::find(const std::string &pattern, const std::st
     if(pattern.length() > text.length()) {
         throw std::invalid_argument("Pattern larger than text");
     }
-    TextHighLight* highlight_list;
+    static TextHighLight highlight_list[100];
     if(isRegex) {
         // (homework)
     } else {
@@ -30,7 +30,7 @@ TextHighLight* StringManipulator::find(const std::string &pattern, const std::st
             temp.erase(0, pos + pattern.length()); // erase the previous occurance to find another one
         }
         if(i == 0) {  // if the pattern was not found
-            highlight_list = nullptr;
+            return nullptr;
         }
     }
     return highlight_list;
@@ -51,13 +51,14 @@ TextHighLight StringManipulator::replace(const std::string &replacement, const T
 }
 int StringManipulator::trim(std::string &text) {
     treatingExceptionsForText(text);
-    char space = ' ';
     int changes = 0;
-    for(int position = 0; position < text.length(); position++){
-        if(text[position] == space) {
-            if(text[position + 1] == space) {
-                changes++;
-                text.erase(position + 1, 1);
+    while(text.find("  ") != std::string::npos){ // while there are two consecutive spaces in the text
+        for(int position = 0; position < text.length(); position++) {
+            if(text[position] == ' ') {
+                if(text[position + 1] == ' ') {
+                    changes++;
+                    text.erase(position + 1, 1);
+                }
             }
         }
     }
@@ -67,7 +68,6 @@ int StringManipulator::trim(std::string &text) {
 int StringManipulator::capitalizeAll(std::string &text) {
     // treating exceptions
     treatingExceptionsForText(text);
-
     int changes = 0;
     for(int position = 0; position < text.length(); position++) {
         if(text[position] >= 97 && text[position] <= 122) { // if letter is in a-z
@@ -93,7 +93,7 @@ int StringManipulator::capitalizeOffset(std::string &text, const TextHighLight h
     treatingExceptionsForText(text);
     treatingExceptionsForHighlight(text, highlight);
     int changes = 0;
-    for(int position = highlight.getPosition(); position < highlight.getLength(); position++) {
+    for(int position = highlight.getPosition(); position < highlight.getPosition() + highlight.getLength(); position++) {
         if(text[position] >= 97 && text[position] <= 122) { // if letter is in a-z
             text[position] -= 32; // Uppercase = lowercase -32
             changes++;
@@ -128,7 +128,7 @@ int StringManipulator::lowercaseOffset(std::string &text, const TextHighLight hi
     treatingExceptionsForText(text);
     treatingExceptionsForHighlight(text, highlight);
     int changes = 0;
-    for(int position = highlight.getPosition(); position < highlight.getLength(); position++) {
+    for(int position = highlight.getPosition(); position < highlight.getPosition() + highlight.getLength(); position++) {
         if(text[position] >= 65 && text[position] <= 90) { // if letter is in A-Z
             text[position] += 32; // lowercase = Uppercase + 32
             changes++;
@@ -148,6 +148,7 @@ int StringManipulator::transformToASCII(std::string &text) {
             text[poz] = ' ';
             changes++;
         }
+        std::cout << text << std::endl;
     } while(poz != -1);
     return changes;
 }
@@ -160,7 +161,7 @@ int StringManipulator::findNonASCII(const std::string &text) {
     }
     const char *buf = text.c_str();
     for(int i = 0; i < text.length(); ++i) {
-        if((buf[i] < 32) || (buf[i] > 126)) {
+        if((buf[i] < 2) || (buf[i] > 126)) {
             return i;
         }
     }
