@@ -24,8 +24,8 @@ void TestTextEditor::find_simpleCase() {
 /// it verifies the find function when the pattern is not found in the main text
 void TestTextEditor::find_TextNotFound() {
     std::string pattern = "temp";
-    TextHighLight* highlights = find(pattern, standard_example, false);
-    CPPUNIT_ASSERT(highlights = nullptr);
+    std::vector<TextHighLight> highlights = find(pattern, standard_example, false);
+    CPPUNIT_ASSERT(highlights.size() = 0);
 }
 
 // /// it verifies the find function giving a simple regex for searching
@@ -59,7 +59,6 @@ void TestTextEditor::find_TextNotFound() {
 //     CPPUNIT_ASSERT_THROW(StringManipulator::find(standard_token, forbidden_text, false), std::invalid_argument);
 // }
 
-// void TestTextEditor::find_TextOutOfBound() {  // (homework)
 // }
 
 // /// it verifies if the find function throws an exception message when the pattern to find is larger than the main text (logic error)
@@ -95,7 +94,6 @@ void TestTextEditor::find_TextNotFound() {
 //     TextHighLight highlight(0,1);
 //     CPPUNIT_ASSERT_THROW(StringManipulator::replace(standard_token, highlight, text), std::invalid_argument);
 // }
-// void TestTextEditor::replace_TextOutOfBound() {} // (homework)
 
 // /// it verifies if the replace function throws an exception message when the highlight position is negative (the position of a string is always positive)
 // void TestTextEditor::replace_NegativeHighLightPosition() {
@@ -139,7 +137,6 @@ void TestTextEditor::find_TextNotFound() {
 //     std::string text = "";
 //     CPPUNIT_ASSERT_THROW(StringManipulator::trim(text), std::invalid_argument);
 // }
-// void TestTextEditor::trim_TextOutOfBound() {} // (homework)
 // //===========================================================================================================
 
 // /// it verifies the padding function to give the right results. It must put a space after the first sentance and return the number of changes (one change)
@@ -158,7 +155,6 @@ void TestTextEditor::find_TextNotFound() {
 //     std::string text = "";
 //     CPPUNIT_ASSERT_THROW(StringManipulator::padding(text), std::invalid_argument);
 // }
-// void TestTextEditor::padding_TextOutOfBound() {}
 // //===========================================================================================================
 
 // /// it verifies the capitalizeAll function to set uppercase for all characters from the given text and also return the number of changes
@@ -177,7 +173,6 @@ void TestTextEditor::find_TextNotFound() {
 //     std::string text = "";
 //     CPPUNIT_ASSERT_THROW(StringManipulator::capitalizeAll(text), std::invalid_argument);
 // }
-// void TestTextEditor::capitalizeAll_TextOutOfBound() {}// (homework)
 // //===========================================================================================================
 
 // /// it verifies the capitalizeFirst function to set lowercase for all characters from the given text and also to return the number of changes
@@ -197,7 +192,6 @@ void TestTextEditor::find_TextNotFound() {
 //     std::string text = "";
 //     CPPUNIT_ASSERT_THROW(StringManipulator::capitalizeFirst(text), std::invalid_argument);
 // }
-// void TestTextEditor::capitalizeFirst_TextOutOfBound() {}// (homework)
 // //===========================================================================================================
 // /// it verifies the capitalizeOffset function to capitalize the demanded characters and to return the number of changes
 // void TestTextEditor::capitalizeOffset_simpleCase() {
@@ -218,7 +212,6 @@ void TestTextEditor::find_TextNotFound() {
 //     TextHighLight highlight(1,1);
 //     CPPUNIT_ASSERT_THROW(StringManipulator::capitalizeOffset(text, highlight), std::invalid_argument);
 // }
-// void TestTextEditor::capitalizeOffset_TextOutOfBound() {} //(homework)
 
 // /// it verifies if the capitalizeOffset function throws an exception message when the highlight position is negative (a string position must always be positive or zero)
 // void TestTextEditor::capitalizeOffset_NegativeHighPosition() {
