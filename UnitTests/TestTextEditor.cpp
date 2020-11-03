@@ -1,11 +1,15 @@
 #include "TestTextEditor.h"
-#include <TextHighLight.h>
+#include "TextHighLight.h"
+#include "StringManipulator.h"
 #include <iostream>
 #include <string>
 
+const std::string forbidden_text = "œžŸ¢¥";
+const std::string standard_example = "Hello world!";
+const std::string standard_token = "world";
 
 /// setUp the repetitive values
-void TestTextEditor::setUp(){
+void TestTextEditor::setUp() {
     std::string forbidden_text = "œžŸ¢¥";
     std::string standard_example = "Hello world!";
     std::string standard_token = "world";
@@ -16,16 +20,16 @@ void TestTextEditor::setUp(){
 void TestTextEditor::find_simpleCase() {
     std::string pattern = "ra";
     std::string text = "ad astra per aspera";
-    TextHighLight* highlights = find(pattern, text, false);
-    CPPUNIT_ASSERT(highlights[0] == TextHighLight(7,2));
-    CPPUNIT_ASSERT(highlights[1] == TextHighLight(17,2));
+    std::vector<TextHighLight> highlights = StringManipulator::find(pattern, text, false);
+    CPPUNIT_ASSERT(highlights[0].equals(TextHighLight(7,2)));
+    CPPUNIT_ASSERT(highlights[1].equals(TextHighLight(17,2)));
 }
 
 /// it verifies the find function when the pattern is not found in the main text
 void TestTextEditor::find_TextNotFound() {
     std::string pattern = "temp";
-    std::vector<TextHighLight> highlights = find(pattern, standard_example, false);
-    CPPUNIT_ASSERT(highlights.size() = 0);
+    std::vector<TextHighLight> highlights = StringManipulator::find(pattern, standard_example, false);
+    CPPUNIT_ASSERT(highlights.size() == 0);
 }
 
 // /// it verifies the find function giving a simple regex for searching

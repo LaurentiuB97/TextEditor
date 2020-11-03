@@ -6,9 +6,9 @@ TextHighLight::TextHighLight(const int start, const int length) {
     this->length = length;
 }
 
-bool operator== (TextHighLight highlight1, TextHighLight highlight2) {
-    return (highlight1.getPosition() == highlight2.getPosition() &&
-            (highlight1.getLength() == highlight2.getLength()));
+bool TextHighLight::equals( const TextHighLight &highlight) const {
+    return (this->position == highlight.getPosition() &&
+            (this->length == highlight.getLength()));
 }
 int TextHighLight::getPosition() const {
     return position;

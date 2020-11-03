@@ -16,9 +16,16 @@
 /// @param delimiter - it helps the functions to "know" where to make the separation
 ///
 /// @return a vector with all splitted tokens
-std::vector<std::string> Utils::split(const std::string &s,
+std::vector<std::string> Utils::split(const std::string &text,
                                       const std::string &delimiter) {
     std::vector<std::string> result;
+    std::string s = std::string(text);
+    if(s.substr(0,1) == delimiter) {
+        s.erase(0,1);
+    }
+    if(s.substr(s.length()-1, 1) == delimiter) {
+        s.erase(s.length()-1,1);
+    }
     int poz = 0;  // start position for each word
     for (int i = 0; i < s.length(); i++) {
         if ((delimiter == s.substr(i, 1)) || (i == s.length()-1)) {

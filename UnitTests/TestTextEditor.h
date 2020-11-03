@@ -12,6 +12,8 @@ class TestTextEditor : public CppUnit::TestFixture {
     CPPUNIT_TEST(find_TextNotFound);
     CPPUNIT_TEST_SUITE_END();
  public:
+    void setUp() override;
+    void tearDown();
     void find_simpleCase();
     void find_Regex();
     void find_TextNotFound();

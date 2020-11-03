@@ -9,18 +9,15 @@
 
 std::vector<TextHighLight> StringManipulator::find(const std::string &pattern, const std::string &text, const bool isRegex) {
     // treating special cases
-    if(pattern.empty()) {
-        throw std::invalid_argument("Empty pattern!");
-    }
-    if(int i = findNonASCII(pattern) != -1) {
-        throw std::invalid_argument("Pattern contains forbidden character - position: " +  std::to_string(i));
-    }
+    treatingExceptionsForText(text);
+    treatingExceptionsForText(pattern)
     if(pattern.length() > text.length()) {
         throw std::invalid_argument("Pattern larger than text");
     }
     std::vector<TextHighLight> highlight_list;
     if(isRegex) {
-        // (homework)
+        std::string temp = std::string(pattern);
+        std::vector<std::string> expresions = Utils::split(temp, "/");
     } else {
         std::string temp = text;
         while(temp.find(pattern) != std::string::npos) { // find the first occurance of the pattern in text (if it exists)
@@ -210,12 +207,12 @@ int StringManipulator::transformToASCII(std::string &text) {
     do {
         poz = findNonASCII(text);
         if(poz != -1) {
-            text.replace(poz, 1, " ");
+            text.replace(poz, 2, " ");
             changes++;
         }
     } while(poz != -1);
-    trim(text);
-    return changes/2;
+    //trim(text);
+    return changes;
 }
 int StringManipulator::changeDateFormat(std::string &text, dateFormat format) {
     treatingExceptionsForText(text);
@@ -227,7 +224,6 @@ int StringManipulator::changeDateFormat(std::string &text, dateFormat format) {
             break;
         }
     }
-    
     std::vector<std::string> tokens = Utils::split(text, delimiter);
     if(tokens[0].size() != 4) { // the year is not first
         if(tokens[2].size() == 4) { // the year is the last
