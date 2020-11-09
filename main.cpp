@@ -1,16 +1,18 @@
-#include "StringManipulator.h"
-#include "TextHighLight.h"
-#include "PunctuationMark.h"
-#include "Utils.h"
-#include "Regex.h"
-#include <iostream>
-#include <string>
+#include "WindowForm.h"
+// #include "StringManipulator.h"
+// #include "TextHighLight.h"
+// #include "PunctuationMark.h"
+// #include "Utils.h"
+#include <QApplication>
+// #include <iostream>
+// #include <string>
 
-int main(){
-    if(Regex::verify_character('z', "[a-f]", SUCCESS_AND_CAN_BE_FINISHED)) {
-        std::cout << "apartine" << std::endl;
-    } else {
-        std::cout << "nu apartine" << std::endl;
-    }
-    return 0;
+
+int main(int argc, char *argv[]){
+    QApplication app(argc, argv);  
+    WindowForm window;
+    window.setFixedSize(1900,980);
+    window.setWindowTitle("TextEditor");
+    window.show();
+  return app.exec();
 }

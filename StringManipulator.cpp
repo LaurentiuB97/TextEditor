@@ -1,33 +1,71 @@
 #include "StringManipulator.h"
 #include "PunctuationMark.h"
+#include "TextHighLight.h"
 #include "Utils.h"
 #include <string>
 #include <iostream>
 #include <vector>
+#include <regex>
 
 //StringManipulator::StringManiputator() {}
 
 std::vector<TextHighLight> StringManipulator::find(const std::string &pattern, const std::string &text, const bool isRegex) {
     // treating special cases
     treatingExceptionsForText(text);
-    treatingExceptionsForText(pattern)
+    treatingExceptionsForText(pattern);
     if(pattern.length() > text.length()) {
         throw std::invalid_argument("Pattern larger than text");
     }
-    std::vector<TextHighLight> highlight_list;
+    std::vector<TextHighLight> highlights;
     if(isRegex) {
-        std::string temp = std::string(pattern);
-        std::vector<std::string> expresions = Utils::split(temp, "/");
+        std::vector<std::string> tokens = Utils::split(pattern, "/");
+        bool global_active = false;
+        //bool icase_active = false;
+        std::regex expression(tokens[0]); // expression with default flags
+        // see if we have some flags
+        if(tokens.size() == 2){
+            if(tokens[1].find("i") != std::string::npos) {
+            std::regex temp(tokens[0], std::regex_constants::icase);
+            expression  = temp; // modify the expression's flags
+            //icase_active = true;
+            }
+            if(tokens[1].find("g") != std::string::npos) {
+                global_active = true;
+            }
+        }
+        // aply searching algorithm
+        std::string::const_iterator start, end;
+        start = text.begin();
+        end = text.end();
+        std::match_results<std::string::const_iterator> what;
+        int absolute_position = 0;
+        int length = 0;
+        while(regex_search(start, end, what, expression)) {
+            if(highlights.size() > 0) {
+                highlights.push_back(TextHighLight(what.position() +
+                                                highlights.back().getPosition() +
+                                                highlights.back().getLength(),
+                                                std::string(what[0]).length()));
+            } else {
+                highlights.push_back(TextHighLight(what.position(), std::string(what[0]).length()));
+            }
+            if(global_active) {
+                start = what[0].second;  // we have the global flag, so we search all results
+            } else {
+                break; // we don't have global flag, so we search just for the first
+            }
+        }
+
     } else {
         std::string temp = text;
         while(temp.find(pattern) != std::string::npos) { // find the first occurance of the pattern in text (if it exists)
             int pos = temp.find(pattern);
             TextHighLight highlight(pos, pattern.length());  // set the highlight
-            highlight_list.push_back(highlight); // add highlight to the list
+            highlights.push_back(highlight); // add highlight to the list
             temp.erase(0, pos + pattern.length()); // erase the previous occurance to find another one
         }
     }
-    return highlight_list;
+    return highlights;
 }
 
 
