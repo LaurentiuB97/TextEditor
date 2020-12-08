@@ -74,7 +74,7 @@ CMAKE_BINARY_DIR = /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor
 include CMakeFiles/TextEditor_autogen.dir/progress.make
 
 CMakeFiles/TextEditor_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target TextEditor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target TextEditor"
 	/usr/bin/cmake.exe -E cmake_autogen /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles/TextEditor_autogen.dir/AutogenInfo.json ""
 
 TextEditor_autogen: CMakeFiles/TextEditor_autogen

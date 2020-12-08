@@ -10,29 +10,39 @@
 	"HEADERS" : 
 	[
 		[
+			"/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/InsertText.h",
+			"MU",
+			"EWIEGA46WW/moc_InsertText.cpp"
+		],
+		[
+			"/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/ModifyText.h",
+			"MU",
+			"EWIEGA46WW/moc_ModifyText.cpp"
+		],
+		[
 			"/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/PunctuationMark.h",
-			"Mu",
+			"MU",
 			"EWIEGA46WW/moc_PunctuationMark.cpp"
 		],
 		[
 			"/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/StringManipulator.h",
-			"Mu",
+			"MU",
 			"EWIEGA46WW/moc_StringManipulator.cpp"
 		],
 		[
 			"/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/TextHighLight.h",
-			"Mu",
+			"MU",
 			"EWIEGA46WW/moc_TextHighLight.cpp"
 		],
 		[
 			"/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/Utils.h",
-			"Mu",
+			"MU",
 			"EWIEGA46WW/moc_Utils.cpp"
 		],
 		[
-			"/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/WindowForm.h",
-			"Mu",
-			"EWIEGA46WW/moc_WindowForm.cpp"
+			"/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/mainwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_mainwindow.cpp"
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -48,7 +58,6 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor",
 		"/usr/include/qt5",
 		"/usr/include/qt5/QtWidgets",
 		"/usr/include/qt5/QtGui",
@@ -79,36 +88,48 @@
 	"PARALLEL" : 4,
 	"PARSE_CACHE_FILE" : "/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles/TextEditor_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
-	"QT_UIC_EXECUTABLE" : "",
+	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
 	"QT_VERSION_MAJOR" : 5,
 	"QT_VERSION_MINOR" : 9,
 	"SETTINGS_FILE" : "/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles/TextEditor_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
 		[
+			"/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/InsertText.cpp",
+			"MU"
+		],
+		[
+			"/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/ModifyText.cpp",
+			"MU"
+		],
+		[
 			"/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/PunctuationMark.cpp",
-			"Mu"
+			"MU"
 		],
 		[
 			"/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/StringManipulator.cpp",
-			"Mu"
+			"MU"
 		],
 		[
 			"/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/TextHighLight.cpp",
-			"Mu"
+			"MU"
 		],
 		[
 			"/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/Utils.cpp",
-			"Mu"
-		],
-		[
-			"/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/WindowForm.cpp",
-			"Mu"
+			"MU"
 		],
 		[
 			"/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/main.cpp",
-			"Mu"
+			"MU"
+		],
+		[
+			"/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/mainwindow.cpp",
+			"MU"
 		]
 	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
 	"VERBOSITY" : 0
 }

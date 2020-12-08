@@ -39,10 +39,21 @@ WindowForm::WindowForm(QWidget *parent) : QWidget(parent) {
     underline = new QPushButton("U");
     underline->setFixedSize(20,20);
     underline->setContentsMargins(5,5,5,5);
+    // create and edit undo button
+    undo = new QPushButton("Undo");
+    undo->setFixedSize(50,20);
+    undo->setContentsMargins(5,5,5,5);
+    // create and edit redo button
+    redo = new QPushButton("Redo");
+    redo->setFixedSize(50,20);
+    redo->setContentsMargins(5,5,5,5);
     //adding the buttons to font layout
     toolLayout->addWidget(bold);
     toolLayout->addWidget(italic);
-    toolLayout->addWidget(underline, 0, Qt::AlignLeft);
+    toolLayout->addWidget(underline);
+    toolLayout->addWidget(undo);
+    toolLayout->addWidget(redo, 10, Qt::AlignLeft);
+    
     
     //toolLayout->addLayout(fontLayout);
     // include the tool layout to the parent layout
@@ -61,4 +72,6 @@ WindowForm::~WindowForm() {
     delete bold;
     delete italic;
     delete underline;
+    delete undo;
+    delete redo;
 }

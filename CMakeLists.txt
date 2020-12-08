@@ -1,25 +1,24 @@
-cmake_minimum_required(VERSION 3.12)
-
-set(CMAKE_CXX_STANDARD 14)
-
-project (TextEditor)
-
-# Instruct CMake to run moc automatically when needed.
+cmake_minimum_required(VERSION 3.1.0)
+project(TextEditor)
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
 
-# Find the QtWidgets library
-find_package(Qt5Widgets)
+if(CMAKE_VERSION VERSION_LESS "3.7.0")
+	set(CMAKE_INCLUDE_CURRENT_DIR ON)
+endif()
 
-# Find includes in corresponding build directories
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
-# Tell CMake to create the TextEditor executable
-add_executable(TextEditor
-                main.cpp
-                WindowForm.cpp
-                Utils.cpp
-                PunctuationMark.cpp
+find_package(Qt5 COMPONENTS Widgets REQUIRED)
+qt5_add_resources(RESOURCE_FILES ./resources.qrc)
+set(SOURCE_FILES mainwindow.ui
+		mainwindow.cpp
+		main.cpp
                 StringManipulator.cpp
-                TextHighLight.cpp)
-# Use the Widgets module from Qt 5.
-target_link_libraries(TextEditor Qt5::Widgets Qt5::Core Qt5::Gui)
+                TextHighLight.cpp
+                PunctuationMark.cpp
+                Utils.cpp
+                InsertText.cpp
+                ModifyText.cpp
+)
+add_executable(TextEditor ${SOURCE_FILES})
+target_link_libraries(TextEditor Qt5::Widgets)

@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/test.dir/main_test.cpp.o CMakeFiles/test.dir/TestTextEditor.cpp.o CMakeFiles/test.dir/StringManipulator.cpp.o CMakeFiles/test.dir/PunctuationMark.cpp.o CMakeFiles/test.dir/TextHighLight.cpp.o CMakeFiles/test.dir/Utils.cpp.o -o test  -lcppunit 

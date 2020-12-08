@@ -156,6 +156,60 @@ TextEditor_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor_autogen.dir/build.make CMakeFiles/TextEditor_autogen.dir/build
 .PHONY : TextEditor_autogen/fast
 
+InsertText.o: InsertText.cpp.o
+
+.PHONY : InsertText.o
+
+# target to build an object file
+InsertText.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/InsertText.cpp.o
+.PHONY : InsertText.cpp.o
+
+InsertText.i: InsertText.cpp.i
+
+.PHONY : InsertText.i
+
+# target to preprocess a source file
+InsertText.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/InsertText.cpp.i
+.PHONY : InsertText.cpp.i
+
+InsertText.s: InsertText.cpp.s
+
+.PHONY : InsertText.s
+
+# target to generate assembly for a file
+InsertText.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/InsertText.cpp.s
+.PHONY : InsertText.cpp.s
+
+ModifyText.o: ModifyText.cpp.o
+
+.PHONY : ModifyText.o
+
+# target to build an object file
+ModifyText.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/ModifyText.cpp.o
+.PHONY : ModifyText.cpp.o
+
+ModifyText.i: ModifyText.cpp.i
+
+.PHONY : ModifyText.i
+
+# target to preprocess a source file
+ModifyText.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/ModifyText.cpp.i
+.PHONY : ModifyText.cpp.i
+
+ModifyText.s: ModifyText.cpp.s
+
+.PHONY : ModifyText.s
+
+# target to generate assembly for a file
+ModifyText.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/ModifyText.cpp.s
+.PHONY : ModifyText.cpp.s
+
 PunctuationMark.o: PunctuationMark.cpp.o
 
 .PHONY : PunctuationMark.o
@@ -291,33 +345,6 @@ Utils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/Utils.cpp.s
 .PHONY : Utils.cpp.s
 
-WindowForm.o: WindowForm.cpp.o
-
-.PHONY : WindowForm.o
-
-# target to build an object file
-WindowForm.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/WindowForm.cpp.o
-.PHONY : WindowForm.cpp.o
-
-WindowForm.i: WindowForm.cpp.i
-
-.PHONY : WindowForm.i
-
-# target to preprocess a source file
-WindowForm.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/WindowForm.cpp.i
-.PHONY : WindowForm.cpp.i
-
-WindowForm.s: WindowForm.cpp.s
-
-.PHONY : WindowForm.s
-
-# target to generate assembly for a file
-WindowForm.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/WindowForm.cpp.s
-.PHONY : WindowForm.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -345,6 +372,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+mainwindow.o: mainwindow.cpp.o
+
+.PHONY : mainwindow.o
+
+# target to build an object file
+mainwindow.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/mainwindow.cpp.o
+.PHONY : mainwindow.cpp.o
+
+mainwindow.i: mainwindow.cpp.i
+
+.PHONY : mainwindow.i
+
+# target to preprocess a source file
+mainwindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/mainwindow.cpp.i
+.PHONY : mainwindow.cpp.i
+
+mainwindow.s: mainwindow.cpp.s
+
+.PHONY : mainwindow.s
+
+# target to generate assembly for a file
+mainwindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/mainwindow.cpp.s
+.PHONY : mainwindow.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -355,6 +409,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... TextEditor_autogen"
 	@echo "... TextEditor"
+	@echo "... InsertText.o"
+	@echo "... InsertText.i"
+	@echo "... InsertText.s"
+	@echo "... ModifyText.o"
+	@echo "... ModifyText.i"
+	@echo "... ModifyText.s"
 	@echo "... PunctuationMark.o"
 	@echo "... PunctuationMark.i"
 	@echo "... PunctuationMark.s"
@@ -370,12 +430,12 @@ help:
 	@echo "... Utils.o"
 	@echo "... Utils.i"
 	@echo "... Utils.s"
-	@echo "... WindowForm.o"
-	@echo "... WindowForm.i"
-	@echo "... WindowForm.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... mainwindow.o"
+	@echo "... mainwindow.i"
+	@echo "... mainwindow.s"
 .PHONY : help
 
 

@@ -21,7 +21,7 @@ class WindowForm : public QWidget {
    QHBoxLayout *fontLayout;
    QPlainTextEdit *textEdit;
    QToolBar *toolBar;
-   QPushButton *bold, *italic, *underline; 
+   QPushButton *bold, *italic, *underline, *undo, *redo; 
  
 };
 

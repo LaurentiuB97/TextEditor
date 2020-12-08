@@ -90,9 +90,22 @@ CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.s"
 	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/TextEditor_autogen/mocs_compilation.cpp -o CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.s
 
+CMakeFiles/TextEditor.dir/mainwindow.cpp.o: CMakeFiles/TextEditor.dir/flags.make
+CMakeFiles/TextEditor.dir/mainwindow.cpp.o: mainwindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TextEditor.dir/mainwindow.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/mainwindow.cpp.o -c /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/mainwindow.cpp
+
+CMakeFiles/TextEditor.dir/mainwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/mainwindow.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/mainwindow.cpp > CMakeFiles/TextEditor.dir/mainwindow.cpp.i
+
+CMakeFiles/TextEditor.dir/mainwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/mainwindow.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/mainwindow.cpp -o CMakeFiles/TextEditor.dir/mainwindow.cpp.s
+
 CMakeFiles/TextEditor.dir/main.cpp.o: CMakeFiles/TextEditor.dir/flags.make
 CMakeFiles/TextEditor.dir/main.cpp.o: main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TextEditor.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TextEditor.dir/main.cpp.o"
 	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/main.cpp.o -c /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/main.cpp
 
 CMakeFiles/TextEditor.dir/main.cpp.i: cmake_force
@@ -103,48 +116,9 @@ CMakeFiles/TextEditor.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/main.cpp.s"
 	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/main.cpp -o CMakeFiles/TextEditor.dir/main.cpp.s
 
-CMakeFiles/TextEditor.dir/WindowForm.cpp.o: CMakeFiles/TextEditor.dir/flags.make
-CMakeFiles/TextEditor.dir/WindowForm.cpp.o: WindowForm.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TextEditor.dir/WindowForm.cpp.o"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/WindowForm.cpp.o -c /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/WindowForm.cpp
-
-CMakeFiles/TextEditor.dir/WindowForm.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/WindowForm.cpp.i"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/WindowForm.cpp > CMakeFiles/TextEditor.dir/WindowForm.cpp.i
-
-CMakeFiles/TextEditor.dir/WindowForm.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/WindowForm.cpp.s"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/WindowForm.cpp -o CMakeFiles/TextEditor.dir/WindowForm.cpp.s
-
-CMakeFiles/TextEditor.dir/Utils.cpp.o: CMakeFiles/TextEditor.dir/flags.make
-CMakeFiles/TextEditor.dir/Utils.cpp.o: Utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TextEditor.dir/Utils.cpp.o"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/Utils.cpp.o -c /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/Utils.cpp
-
-CMakeFiles/TextEditor.dir/Utils.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/Utils.cpp.i"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/Utils.cpp > CMakeFiles/TextEditor.dir/Utils.cpp.i
-
-CMakeFiles/TextEditor.dir/Utils.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/Utils.cpp.s"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/Utils.cpp -o CMakeFiles/TextEditor.dir/Utils.cpp.s
-
-CMakeFiles/TextEditor.dir/PunctuationMark.cpp.o: CMakeFiles/TextEditor.dir/flags.make
-CMakeFiles/TextEditor.dir/PunctuationMark.cpp.o: PunctuationMark.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TextEditor.dir/PunctuationMark.cpp.o"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/PunctuationMark.cpp.o -c /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/PunctuationMark.cpp
-
-CMakeFiles/TextEditor.dir/PunctuationMark.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/PunctuationMark.cpp.i"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/PunctuationMark.cpp > CMakeFiles/TextEditor.dir/PunctuationMark.cpp.i
-
-CMakeFiles/TextEditor.dir/PunctuationMark.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/PunctuationMark.cpp.s"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/PunctuationMark.cpp -o CMakeFiles/TextEditor.dir/PunctuationMark.cpp.s
-
 CMakeFiles/TextEditor.dir/StringManipulator.cpp.o: CMakeFiles/TextEditor.dir/flags.make
 CMakeFiles/TextEditor.dir/StringManipulator.cpp.o: StringManipulator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TextEditor.dir/StringManipulator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TextEditor.dir/StringManipulator.cpp.o"
 	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/StringManipulator.cpp.o -c /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/StringManipulator.cpp
 
 CMakeFiles/TextEditor.dir/StringManipulator.cpp.i: cmake_force
@@ -157,7 +131,7 @@ CMakeFiles/TextEditor.dir/StringManipulator.cpp.s: cmake_force
 
 CMakeFiles/TextEditor.dir/TextHighLight.cpp.o: CMakeFiles/TextEditor.dir/flags.make
 CMakeFiles/TextEditor.dir/TextHighLight.cpp.o: TextHighLight.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TextEditor.dir/TextHighLight.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TextEditor.dir/TextHighLight.cpp.o"
 	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/TextHighLight.cpp.o -c /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/TextHighLight.cpp
 
 CMakeFiles/TextEditor.dir/TextHighLight.cpp.i: cmake_force
@@ -168,32 +142,88 @@ CMakeFiles/TextEditor.dir/TextHighLight.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/TextHighLight.cpp.s"
 	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/TextHighLight.cpp -o CMakeFiles/TextEditor.dir/TextHighLight.cpp.s
 
+CMakeFiles/TextEditor.dir/PunctuationMark.cpp.o: CMakeFiles/TextEditor.dir/flags.make
+CMakeFiles/TextEditor.dir/PunctuationMark.cpp.o: PunctuationMark.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TextEditor.dir/PunctuationMark.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/PunctuationMark.cpp.o -c /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/PunctuationMark.cpp
+
+CMakeFiles/TextEditor.dir/PunctuationMark.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/PunctuationMark.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/PunctuationMark.cpp > CMakeFiles/TextEditor.dir/PunctuationMark.cpp.i
+
+CMakeFiles/TextEditor.dir/PunctuationMark.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/PunctuationMark.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/PunctuationMark.cpp -o CMakeFiles/TextEditor.dir/PunctuationMark.cpp.s
+
+CMakeFiles/TextEditor.dir/Utils.cpp.o: CMakeFiles/TextEditor.dir/flags.make
+CMakeFiles/TextEditor.dir/Utils.cpp.o: Utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TextEditor.dir/Utils.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/Utils.cpp.o -c /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/Utils.cpp
+
+CMakeFiles/TextEditor.dir/Utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/Utils.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/Utils.cpp > CMakeFiles/TextEditor.dir/Utils.cpp.i
+
+CMakeFiles/TextEditor.dir/Utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/Utils.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/Utils.cpp -o CMakeFiles/TextEditor.dir/Utils.cpp.s
+
+CMakeFiles/TextEditor.dir/InsertText.cpp.o: CMakeFiles/TextEditor.dir/flags.make
+CMakeFiles/TextEditor.dir/InsertText.cpp.o: InsertText.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TextEditor.dir/InsertText.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/InsertText.cpp.o -c /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/InsertText.cpp
+
+CMakeFiles/TextEditor.dir/InsertText.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/InsertText.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/InsertText.cpp > CMakeFiles/TextEditor.dir/InsertText.cpp.i
+
+CMakeFiles/TextEditor.dir/InsertText.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/InsertText.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/InsertText.cpp -o CMakeFiles/TextEditor.dir/InsertText.cpp.s
+
+CMakeFiles/TextEditor.dir/ModifyText.cpp.o: CMakeFiles/TextEditor.dir/flags.make
+CMakeFiles/TextEditor.dir/ModifyText.cpp.o: ModifyText.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/TextEditor.dir/ModifyText.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/ModifyText.cpp.o -c /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/ModifyText.cpp
+
+CMakeFiles/TextEditor.dir/ModifyText.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/ModifyText.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/ModifyText.cpp > CMakeFiles/TextEditor.dir/ModifyText.cpp.i
+
+CMakeFiles/TextEditor.dir/ModifyText.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/ModifyText.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/ModifyText.cpp -o CMakeFiles/TextEditor.dir/ModifyText.cpp.s
+
 # Object files for target TextEditor
 TextEditor_OBJECTS = \
 "CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o" \
+"CMakeFiles/TextEditor.dir/mainwindow.cpp.o" \
 "CMakeFiles/TextEditor.dir/main.cpp.o" \
-"CMakeFiles/TextEditor.dir/WindowForm.cpp.o" \
-"CMakeFiles/TextEditor.dir/Utils.cpp.o" \
-"CMakeFiles/TextEditor.dir/PunctuationMark.cpp.o" \
 "CMakeFiles/TextEditor.dir/StringManipulator.cpp.o" \
-"CMakeFiles/TextEditor.dir/TextHighLight.cpp.o"
+"CMakeFiles/TextEditor.dir/TextHighLight.cpp.o" \
+"CMakeFiles/TextEditor.dir/PunctuationMark.cpp.o" \
+"CMakeFiles/TextEditor.dir/Utils.cpp.o" \
+"CMakeFiles/TextEditor.dir/InsertText.cpp.o" \
+"CMakeFiles/TextEditor.dir/ModifyText.cpp.o"
 
 # External object files for target TextEditor
 TextEditor_EXTERNAL_OBJECTS =
 
 TextEditor.exe: CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o
+TextEditor.exe: CMakeFiles/TextEditor.dir/mainwindow.cpp.o
 TextEditor.exe: CMakeFiles/TextEditor.dir/main.cpp.o
-TextEditor.exe: CMakeFiles/TextEditor.dir/WindowForm.cpp.o
-TextEditor.exe: CMakeFiles/TextEditor.dir/Utils.cpp.o
-TextEditor.exe: CMakeFiles/TextEditor.dir/PunctuationMark.cpp.o
 TextEditor.exe: CMakeFiles/TextEditor.dir/StringManipulator.cpp.o
 TextEditor.exe: CMakeFiles/TextEditor.dir/TextHighLight.cpp.o
+TextEditor.exe: CMakeFiles/TextEditor.dir/PunctuationMark.cpp.o
+TextEditor.exe: CMakeFiles/TextEditor.dir/Utils.cpp.o
+TextEditor.exe: CMakeFiles/TextEditor.dir/InsertText.cpp.o
+TextEditor.exe: CMakeFiles/TextEditor.dir/ModifyText.cpp.o
 TextEditor.exe: CMakeFiles/TextEditor.dir/build.make
 TextEditor.exe: /usr/lib/libQt5Widgets.dll.a
 TextEditor.exe: /usr/lib/libQt5Gui.dll.a
 TextEditor.exe: /usr/lib/libQt5Core.dll.a
 TextEditor.exe: CMakeFiles/TextEditor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable TextEditor.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable TextEditor.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TextEditor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/DefaultMode/bold.png</file>
+        <file>icons/DefaultMode/capitalize.jpeg</file>
+        <file>icons/DefaultMode/capitalizeAll.png</file>
+        <file>icons/DefaultMode/copy.png</file>
+        <file>icons/DefaultMode/cut.png</file>
+        <file>icons/DefaultMode/exit.jpg</file>
+        <file>icons/DefaultMode/find.png</file>
+        <file>icons/DefaultMode/find_regex.png</file>
+        <file>icons/DefaultMode/italic.png</file>
+        <file>icons/DefaultMode/new.png</file>
+        <file>icons/DefaultMode/open.png</file>
+        <file>icons/DefaultMode/padding.png</file>
+        <file>icons/DefaultMode/paste.png</file>
+        <file>icons/DefaultMode/print.jpg</file>
+        <file>icons/DefaultMode/redo.png</file>
+        <file>icons/DefaultMode/save.png</file>
+        <file>icons/DefaultMode/trim.png</file>
+        <file>icons/DefaultMode/underline.png</file>
+        <file>icons/DefaultMode/undo.png</file>
+    </qresource>
+</RCC>
