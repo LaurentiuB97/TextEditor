@@ -1,4 +1,0 @@
-/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles/rebuild_cache.dir
-/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles/edit_cache.dir
-/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles/TextEditor.dir
-/cygdrive/c/Users/Laur/AppData/Roaming/SPB_Data/texteditor/CMakeFiles/TextEditor_autogen.dir

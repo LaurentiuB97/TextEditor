@@ -41,6 +41,8 @@ public:
 
     void setAppearance(mode selected_mode);
 
+    void addToUndoStack();
+
     QPlainTextEdit* getCurrentTextEdit();
 
     QPlainTextEdit* getTextEditByName(const QString &name);
@@ -142,7 +144,7 @@ private:
     QString currentFile = "";
     std::vector<TextHighLight> findResults;
     int indexFindResults;
-    bool eventFilter(QObject *watched, QEvent *event);
+    //bool eventFilter(QObject *watched, QEvent *event);
 };
 
 #endif // MAINWINDOW_H

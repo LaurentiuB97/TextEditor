@@ -42,11 +42,3 @@ cppunit/extensions/HelperMacros.h
 
 /home/laur/Desktop/TextEditor/UnitTests/TextHighLight.h
 
-/home/laur/Desktop/TextEditor/UnitTests/main_test.cpp
-cppunit/extensions/TestFactoryRegistry.h
--
-cppunit/ui/text/TestRunner.h
--
-TestTextEditor.h
-/home/laur/Desktop/TextEditor/UnitTests/TestTextEditor.h
-

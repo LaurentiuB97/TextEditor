@@ -43,7 +43,7 @@ void TestTextEditor::find_Regex() {
 
 /// it verifies if the find functions throws an exception message when the pattern is empty
 void TestTextEditor::find_EmptyPattern() {
-    std::string pattern = "";  // making the pattern empty
+    std::string pattern = "cidbscksj";  // making the pattern empty
     CPPUNIT_ASSERT_THROW(StringManipulator::find(pattern, standard_example, false), std::invalid_argument);
 }
 

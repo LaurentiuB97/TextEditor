@@ -12,6 +12,8 @@
 #include <QUndoStack>
 #include <QMenu>
 #include <QUndoView>
+
+bool canInsertToStack = true;
 // command for find function
 static int delete_text_command = 1;
 // iterator for the "New" action
@@ -23,13 +25,14 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    this->setWindowTitle("TextEditor");
     //set the stacks group
     undoGroup = new QUndoGroup(this);
     ui->setupUi(this);
     ui->actionDefault->setChecked(true);
     ui->tabWidget->removeTab(0); // we have a default garbage tab, so it must be removed
     on_actionNew_triggered(); // add a fresh new tab
-    undoGroup->setActiveStack(undoGroup->stacks()[0]);
+    undoGroup->setActiveStack(undoGroup->stacks()[0]); // set active the first stack in the group
     // set icons for all the actions
 
     //ui->tabWidget->installEventFilter(this);
@@ -166,9 +169,8 @@ void MainWindow::setAppearance(mode selected_mode)
 
     if(selected_mode == default_mode)
     {
-        std::cout << "default mode reached" << std::endl;
          // Define colors
-        color = QColor(Qt::white);
+        color = QColor(248,248,248);
         textColor = QColor(Qt::black);
         buttonColor = QColor(Qt::white);
         editorColor = Qt::white;
@@ -176,7 +178,6 @@ void MainWindow::setAppearance(mode selected_mode)
     }
     else if(selected_mode == dark_mode)
     {
-        std::cout << "dark mode reached" << std::endl;
         // Define colors
         color = QColor(50,50,50);
         textColor = QColor(Qt::white);
@@ -245,60 +246,95 @@ void MainWindow::setAppearance(mode selected_mode)
         ui->exitFind->setPalette(palette);
 }
 
-bool MainWindow::eventFilter(QObject *watched, QEvent *event)
+//bool MainWindow::eventFilter(QObject *watched, QEvent *event)
+//{
+//    if(watched == getCurrentTextEdit())
+//    {
+//        if(event->type() == QKeyEvent::KeyPress)
+//        {
+//            QKeyEvent * ke = static_cast<QKeyEvent*>(event);
+//            if(ke->key() == Qt::Key_Space || ke->key() == Qt::Key_Comma ||
+//               ke->key() == Qt::Key_Period || ke->key() == Qt::Key_Enter ||
+//               ke->key() == Qt::Key_Question || ke->key() == Qt::Key_exclamdown)
+//            {
+//                QString delimiter = "";
+//                if(ke->key() == Qt::Key_Space)
+//                {
+//                    delimiter = " ";
+//                }
+//                else if(ke->key() == Qt::Key_Comma)
+//                {
+//                    delimiter = ",";
+//                }
+//                else if(ke->key() == Qt::Key_Period)
+//                {
+//                    delimiter = ".";
+//                }
+//                else if(ke->key() == Qt::Key_Enter)
+//                {
+//                    delimiter = "\n";
+//                }
+//                else if(ke->key() == Qt::Key_Question)
+//                {
+//                    delimiter = "?";
+//                }
+//                else if(ke->key() == Qt::Key_exclamdown)
+//                {
+//                    delimiter == "!";
+//                }
+//                //std::cout << "Space or comma detected" << std::endl;
+//                auto text = getCurrentTextEdit()->toPlainText();
+//                //std::cout << "log1" << std::endl;
+//                QUndoStack* stack = undoGroup->activeStack();
+//                //std::cout << "log2" << std::endl;
+//                //std::cout << text.toStdString() << std::endl;
+//                stack->beginMacro(text);
+//                stack->push(new InsertText(getCurrentTextEdit() , text, delimiter));
+//                stack->endMacro();
+//                return true; // do not process this event further
+//            }
+//        }
+//        return false; // process this event further
+//    }
+//    else
+//    {
+//        // pass the event on to the parent class
+//        return QMainWindow::eventFilter(watched, event);
+//    }
+//}
+
+void MainWindow::addToUndoStack()
 {
-    if(watched == getCurrentTextEdit())
+    ui->findTextBox->setText(QString::number(canInsertToStack));
+    // memorize the position of the cursor
+    QTextCursor cursor = getCurrentTextEdit()->textCursor();
+    int new_position = cursor.position();
+    // get the active stack
+    QUndoStack* stack = undoGroup->activeStack();
+    if(canInsertToStack == true)
     {
-        if(event->type() == QKeyEvent::KeyPress)
+        //block stack insertion for the next operations
+        canInsertToStack = false;
+        if(stack->index() != 0)
         {
-            QKeyEvent * ke = static_cast<QKeyEvent*>(event);
-            if(ke->key() == Qt::Key_Space || ke->key() == Qt::Key_Comma ||
-               ke->key() == Qt::Key_Period || ke->key() == Qt::Key_Enter ||
-               ke->key() == Qt::Key_Question || ke->key() == Qt::Key_exclamdown)
-            {
-                QString delimiter = "";
-                if(ke->key() == Qt::Key_Space)
-                {
-                    delimiter = " ";
-                }
-                else if(ke->key() == Qt::Key_Comma)
-                {
-                    delimiter = ",";
-                }
-                else if(ke->key() == Qt::Key_Period)
-                {
-                    delimiter = ".";
-                }
-                else if(ke->key() == Qt::Key_Enter)
-                {
-                    delimiter = "\n";
-                }
-                else if(ke->key() == Qt::Key_Question)
-                {
-                    delimiter = "?";
-                }
-                else if(ke->key() == Qt::Key_exclamdown)
-                {
-                    delimiter == "!";
-                }
-                //std::cout << "Space or comma detected" << std::endl;
-                auto text = getCurrentTextEdit()->toPlainText();
-                //std::cout << "log1" << std::endl;
-                QUndoStack* stack = undoGroup->activeStack();
-                //std::cout << "log2" << std::endl;
-                //std::cout << text.toStdString() << std::endl;
-                stack->beginMacro(text);
-                stack->push(new InsertText(getCurrentTextEdit() , text, delimiter));
-                stack->endMacro();
-                return true; // do not process this event further
-            }
+            // get the new text state
+            QString newText = getCurrentTextEdit()->toPlainText();
+            // get the text from previous state
+            //stack->undo();
+            stack->redo();
+            QString oldText = getCurrentTextEdit()->toPlainText();
+            int old_position = getCurrentTextEdit()->textCursor().position();
+            getCurrentTextEdit()->setPlainText(newText);
+            // insert comand to undo stack
+            stack->push(new ModifyText(getCurrentTextEdit(), oldText,old_position, newText, new_position));
         }
-        return false; // process this event further
-    }
-    else
-    {
-        // pass the event on to the parent class
-        return QMainWindow::eventFilter(watched, event);
+        else
+        {
+            stack->push(new ModifyText(getCurrentTextEdit(), "",0,
+                                       getCurrentTextEdit()->toPlainText(),new_position));
+        }
+        // make stack insertion available
+        canInsertToStack = true;
     }
 }
 
@@ -318,10 +354,8 @@ QPlainTextEdit* MainWindow::getTextEditByName(const QString &name)
     {
         if(ui->tabWidget->tabText(i) == name)
         {
-            std::cout << "Index : " << i << std::endl;
             QWidget* pWidget = ui->tabWidget->widget(i);
             pTextEdit = (QPlainTextEdit*)pWidget;
-            std::cout << pTextEdit << std::endl;
         }
         break;
     }
@@ -339,8 +373,10 @@ void MainWindow::on_actionNew_triggered()
     QUndoStack* stack = new QUndoStack(); //(homework) fa asta si la openAction
     stack->setObjectName(name);
     undoGroup->addStack(stack);
-    editor->installEventFilter(this);
-    std::cout << "KeyEvent installed" << std::endl;
+    //editor->installEventFilter(this);
+    connect(editor, &QPlainTextEdit::textChanged, this, &MainWindow::addToUndoStack);
+    QUndoView* view = new QUndoView(stack, this);
+    view->setGeometry(600,0, 100, 150);
 }
 
 
@@ -400,36 +436,50 @@ void MainWindow::on_actionCopy_triggered()
 
 void MainWindow::on_actionPaste_triggered()
 {   // we must save the old and new versions of text for undo/redo commands
-    QString oldText, newText;
-    oldText = getCurrentTextEdit()->toPlainText();
+//    QString oldText, newText;
+//    oldText = getCurrentTextEdit()->toPlainText();
     getCurrentTextEdit()->paste();  // the actual function
-    newText = getCurrentTextEdit()->toPlainText();
-    // add command to stack
-    QUndoStack* stack = undoGroup->activeStack(); // get the active stack
-    stack->push(new ModifyText(getCurrentTextEdit(), oldText, newText));
+//    newText = getCurrentTextEdit()->toPlainText();
+//    // add command to stack
+//    QUndoStack* stack = undoGroup->activeStack(); // get the active stack
+//    stack->push(new ModifyText(getCurrentTextEdit(), oldText, newText));
 
 }
 
 void MainWindow::on_actionCut_triggered()
 {
     // we must save the old and new versions of text for undo/redo commands
-    QString oldText, newText;
-    oldText = getCurrentTextEdit()->toPlainText();
+//    QString oldText, newText;
+//    oldText = getCurrentTextEdit()->toPlainText();
     getCurrentTextEdit()->cut();  // the actual function
-    newText = getCurrentTextEdit()->toPlainText();
-    // add command to stack
-    QUndoStack* stack = undoGroup->activeStack(); // get the active stack
-    stack->push(new ModifyText(getCurrentTextEdit(), oldText, newText));
+    // newText = getCurrentTextEdit()->toPlainText();
+//    // add command to stack
+//    QUndoStack* stack = undoGroup->activeStack(); // get the active stack
+//    stack->push(new ModifyText(getCurrentTextEdit(), oldText, newText));
 }
 
 void MainWindow::on_actionUndo_triggered()
 {
-    undoGroup->activeStack()->undo();
+    if(canInsertToStack == true)
+    {
+        // block stack insertion
+        canInsertToStack = false;
+        undoGroup->activeStack()->undo();
+        // make stack insertion available
+        canInsertToStack = true;
+    }
 }
 
 void MainWindow::on_actionRedo_triggered()
 {
-    undoGroup->activeStack()->redo();
+    if(canInsertToStack == true)
+    {
+        // block stack insertion
+        canInsertToStack = false;
+        undoGroup->activeStack()->redo();
+        // make stack insertion available
+        canInsertToStack = true;
+    }
 }
 
 void MainWindow::on_actionBold_triggered()
@@ -485,35 +535,35 @@ void MainWindow::on_actionUnderline_triggered()
 void MainWindow::on_actionTrim_triggered()
 {
     // we must save the old and new versions of text for undo/redo commands
-    QString oldText, newText;
-    oldText = getCurrentTextEdit()->toPlainText();
+//    QString oldText, newText;
+//    oldText = getCurrentTextEdit()->toPlainText();
     modifyText(StringManipulator::trim);  // the actual function
-    newText = getCurrentTextEdit()->toPlainText();
-    // add command to stack
-    QUndoStack* stack = undoGroup->activeStack(); // get the active stack
-    stack->push(new ModifyText(getCurrentTextEdit(), oldText, newText));
+//    newText = getCurrentTextEdit()->toPlainText();
+//    // add command to stack
+//    QUndoStack* stack = undoGroup->activeStack(); // get the active stack
+//    stack->push(new ModifyText(getCurrentTextEdit(), oldText, newText));
 }
 
 void MainWindow::on_actionPadding_triggered()
 {
-    QString oldText, newText;
-    oldText = getCurrentTextEdit()->toPlainText();
+//    QString oldText, newText;
+//    oldText = getCurrentTextEdit()->toPlainText();
     modifyText(StringManipulator::padding);  // the actual function
-    newText = getCurrentTextEdit()->toPlainText();
-    // add command to stack
-    QUndoStack* stack = undoGroup->activeStack(); // get the active stack
-    stack->push(new ModifyText(getCurrentTextEdit(), oldText, newText));
+//    newText = getCurrentTextEdit()->toPlainText();
+//    // add command to stack
+//    QUndoStack* stack = undoGroup->activeStack(); // get the active stack
+//    stack->push(new ModifyText(getCurrentTextEdit(), oldText, newText));
 }
 
 void MainWindow::on_actionCapitalize_triggered()
 {
-    QString oldText, newText;
-    oldText = getCurrentTextEdit()->toPlainText();
+//    QString oldText, newText;
+//    oldText = getCurrentTextEdit()->toPlainText();
     modifyText(StringManipulator::capitalizeAll);  // the actual function
-    newText = getCurrentTextEdit()->toPlainText();
-    // add command to stack
-    QUndoStack* stack = undoGroup->activeStack(); // get the active stack
-    stack->push(new ModifyText(getCurrentTextEdit(), oldText, newText));
+//    newText = getCurrentTextEdit()->toPlainText();
+//    // add command to stack
+//    QUndoStack* stack = undoGroup->activeStack(); // get the active stack
+//    stack->push(new ModifyText(getCurrentTextEdit(), oldText, newText));
 }
 
 void MainWindow::on_FindButton_clicked()
