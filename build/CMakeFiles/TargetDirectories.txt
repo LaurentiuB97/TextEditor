@@ -1,0 +1,4 @@
+/home/laur/Desktop/TextEditor/build/CMakeFiles/rebuild_cache.dir
+/home/laur/Desktop/TextEditor/build/CMakeFiles/TextEditor.dir
+/home/laur/Desktop/TextEditor/build/CMakeFiles/edit_cache.dir
+/home/laur/Desktop/TextEditor/build/CMakeFiles/TextEditor_autogen.dir

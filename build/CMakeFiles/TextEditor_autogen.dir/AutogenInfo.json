@@ -1,0 +1,158 @@
+{
+	"BUILD_DIR" : "/home/laur/Desktop/TextEditor/build/TextEditor_autogen",
+	"CMAKE_BINARY_DIR" : "/home/laur/Desktop/TextEditor/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/laur/Desktop/TextEditor/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/laur/Desktop/TextEditor/build",
+	"CMAKE_EXECUTABLE" : "/snap/cmake/805/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/laur/Desktop/TextEditor/build/CMakeLists.txt",
+		"/home/laur/Desktop/TextEditor/build/CMakeFiles/3.19.6/CMakeSystem.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/CMakeSystemSpecificInitialize.cmake",
+		"/home/laur/Desktop/TextEditor/build/CMakeFiles/3.19.6/CMakeCCompiler.cmake",
+		"/home/laur/Desktop/TextEditor/build/CMakeFiles/3.19.6/CMakeCXXCompiler.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/CMakeSystemSpecificInformation.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/CMakeGenericSystem.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/CMakeInitializeConfigs.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/Platform/Linux.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/Platform/UnixPaths.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/CMakeCInformation.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/CMakeLanguageInformation.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/Compiler/GNU-C.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/Compiler/GNU.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/Platform/Linux-GNU-C.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/Platform/Linux-GNU.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/CMakeCommonLanguageInclude.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/CMakeCXXInformation.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/CMakeLanguageInformation.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/Compiler/GNU-CXX.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/Compiler/GNU.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/Platform/Linux-GNU-CXX.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/Platform/Linux-GNU.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/CMakeCommonLanguageInclude.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/CMakeParseArguments.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
+		"/snap/cmake/805/share/cmake-3.19/Modules/CMakeParseArguments.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/laur/Desktop/TextEditor/build",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"/home/laur/Desktop/TextEditor/src/InsertText.h",
+			"MU",
+			"HRV34MRUJ3/moc_InsertText.cpp"
+		],
+		[
+			"/home/laur/Desktop/TextEditor/src/ModifyText.h",
+			"MU",
+			"HRV34MRUJ3/moc_ModifyText.cpp"
+		],
+		[
+			"/home/laur/Desktop/TextEditor/src/PunctuationMark.h",
+			"MU",
+			"HRV34MRUJ3/moc_PunctuationMark.cpp"
+		],
+		[
+			"/home/laur/Desktop/TextEditor/src/StringManipulator.h",
+			"MU",
+			"HRV34MRUJ3/moc_StringManipulator.cpp"
+		],
+		[
+			"/home/laur/Desktop/TextEditor/src/TextHighLight.h",
+			"MU",
+			"HRV34MRUJ3/moc_TextHighLight.cpp"
+		],
+		[
+			"/home/laur/Desktop/TextEditor/src/Utils.h",
+			"MU",
+			"HRV34MRUJ3/moc_Utils.cpp"
+		],
+		[
+			"/home/laur/Desktop/TextEditor/src/mainwindow.h",
+			"MU",
+			"HRV34MRUJ3/moc_mainwindow.cpp"
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/laur/Desktop/TextEditor/build/TextEditor_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/laur/Desktop/TextEditor/build/TextEditor_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_NO_DEBUG", "QT_WIDGETS_LIB" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/usr/include/x86_64-linux-gnu/qt5",
+		"/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
+		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
+		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
+		"/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
+		"/usr/include",
+		"/usr/include/c++/7",
+		"/usr/include/x86_64-linux-gnu/c++/7",
+		"/usr/include/c++/7/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/7/include",
+		"/usr/local/include",
+		"/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed",
+		"/usr/include/x86_64-linux-gnu"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/snap/cmake/805/share/cmake-3.19/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/laur/Desktop/TextEditor/build/TextEditor_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 4,
+	"PARSE_CACHE_FILE" : "/home/laur/Desktop/TextEditor/build/CMakeFiles/TextEditor_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 9,
+	"SETTINGS_FILE" : "/home/laur/Desktop/TextEditor/build/CMakeFiles/TextEditor_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "/home/laur/Desktop/TextEditor/src/InsertText.cpp", "MU" ],
+		[ "/home/laur/Desktop/TextEditor/src/ModifyText.cpp", "MU" ],
+		[ "/home/laur/Desktop/TextEditor/src/PunctuationMark.cpp", "MU" ],
+		[ "/home/laur/Desktop/TextEditor/src/StringManipulator.cpp", "MU" ],
+		[ "/home/laur/Desktop/TextEditor/src/TextHighLight.cpp", "MU" ],
+		[ "/home/laur/Desktop/TextEditor/src/Utils.cpp", "MU" ],
+		[ "/home/laur/Desktop/TextEditor/src/main.cpp", "MU" ],
+		[ "/home/laur/Desktop/TextEditor/src/mainwindow.cpp", "MU" ]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

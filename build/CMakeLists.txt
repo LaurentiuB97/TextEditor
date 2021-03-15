@@ -10,15 +10,16 @@ endif()
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 qt5_add_resources(RESOURCE_FILES ./resources.qrc)
-set(SOURCE_FILES mainwindow.ui
-		mainwindow.cpp
-		main.cpp
-                StringManipulator.cpp
-                TextHighLight.cpp
-                PunctuationMark.cpp
-                Utils.cpp
-                InsertText.cpp
-                ModifyText.cpp
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "../")
+set(SOURCE_FILES ../src/mainwindow.cpp
+		../src/mainwindow.ui
+		../src/main.cpp
+                ../src/StringManipulator.cpp
+                ../src/TextHighLight.cpp
+                ../src/PunctuationMark.cpp
+                ../src/Utils.cpp
+                ../src/InsertText.cpp
+                ../src/ModifyText.cpp
 )
 add_executable(TextEditor ${SOURCE_FILES})
 target_link_libraries(TextEditor Qt5::Widgets)

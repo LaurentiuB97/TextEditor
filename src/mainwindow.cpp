@@ -375,8 +375,6 @@ void MainWindow::on_actionNew_triggered()
     undoGroup->addStack(stack);
     //editor->installEventFilter(this);
     connect(editor, &QPlainTextEdit::textChanged, this, &MainWindow::addToUndoStack);
-    QUndoView* view = new QUndoView(stack, this);
-    view->setGeometry(600,0, 100, 150);
 }
 
 
