@@ -1,8 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "Utils.h"
-#include "InsertText.h"
 #include "ModifyText.h"
+#include "HighLighter.h"
 #include <string>
 #include <cstring>
 #include <vector>
@@ -38,7 +38,8 @@ MainWindow::MainWindow(QWidget *parent) :
     //ui->tabWidget->installEventFilter(this);
 //    connect(ui->plainText, QTextCursor::cursorPositionChanged,this, writeOnLine);
 //    connect(ui->plainText, QTextCursor::cursorPositionChanged,this, writeOnColumn);
-
+        //HighLighter h;
+        //h.loadKeyWords();
 
 }
 
@@ -303,9 +304,14 @@ void MainWindow::setAppearance(mode selected_mode)
 //    }
 //}
 
+// Make adding commands to undo stack available
+void MainWindow::StackOn(){ canInsertToStack = true; }
+
+// Make adding commands to undo stack unavailable
+void MainWindow::StackOff(){ canInsertToStack = false;}
+
 void MainWindow::addToUndoStack()
 {
-    ui->findTextBox->setText(QString::number(canInsertToStack));
     // memorize the position of the cursor
     QTextCursor cursor = getCurrentTextEdit()->textCursor();
     int new_position = cursor.position();
@@ -314,7 +320,7 @@ void MainWindow::addToUndoStack()
     if(canInsertToStack == true)
     {
         //block stack insertion for the next operations
-        canInsertToStack = false;
+        StackOff();
         if(stack->index() != 0)
         {
             // get the new text state
@@ -334,7 +340,7 @@ void MainWindow::addToUndoStack()
                                        getCurrentTextEdit()->toPlainText(),new_position));
         }
         // make stack insertion available
-        canInsertToStack = true;
+        StackOn();
     }
 }
 
@@ -461,10 +467,10 @@ void MainWindow::on_actionUndo_triggered()
     if(canInsertToStack == true)
     {
         // block stack insertion
-        canInsertToStack = false;
+        StackOff();
         undoGroup->activeStack()->undo();
         // make stack insertion available
-        canInsertToStack = true;
+        StackOn();
     }
 }
 
@@ -473,10 +479,10 @@ void MainWindow::on_actionRedo_triggered()
     if(canInsertToStack == true)
     {
         // block stack insertion
-        canInsertToStack = false;
+        StackOff();
         undoGroup->activeStack()->redo();
         // make stack insertion available
-        canInsertToStack = true;
+        StackOn();
     }
 }
 

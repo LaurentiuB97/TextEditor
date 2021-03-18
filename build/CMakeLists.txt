@@ -4,10 +4,6 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-if(CMAKE_VERSION VERSION_LESS "3.7.0")
-	set(CMAKE_INCLUDE_CURRENT_DIR ON)
-endif()
-
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 qt5_add_resources(RESOURCE_FILES ./resources.qrc)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "../")
@@ -18,7 +14,7 @@ set(SOURCE_FILES ../src/mainwindow.cpp
                 ../src/TextHighLight.cpp
                 ../src/PunctuationMark.cpp
                 ../src/Utils.cpp
-                ../src/InsertText.cpp
+		../src/HighLighter.cpp
                 ../src/ModifyText.cpp
 )
 add_executable(TextEditor ${SOURCE_FILES})

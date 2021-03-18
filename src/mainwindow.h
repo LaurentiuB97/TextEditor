@@ -43,9 +43,14 @@ public:
 
     void addToUndoStack();
 
+    void StackOn();
+
+    void StackOff();
+
     QPlainTextEdit* getCurrentTextEdit();
 
     QPlainTextEdit* getTextEditByName(const QString &name);
+
 
 //    void writeOnLine();
 

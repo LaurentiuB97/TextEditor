@@ -53,19 +53,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/cmake/805/bin/cmake
+CMAKE_COMMAND = /snap/cmake/834/bin/cmake
 
 # The command to remove a file.
-RM = /snap/cmake/805/bin/cmake -E rm -f
+RM = /snap/cmake/834/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/laur/Desktop/TextEditor/build
+CMAKE_SOURCE_DIR = /home/laur/Desktop/TextEditor/TextEditor/build
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/laur/Desktop/TextEditor/build
+CMAKE_BINARY_DIR = /home/laur/Desktop/TextEditor/TextEditor/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/TextEditor.dir/depend.make
@@ -78,155 +78,155 @@ include CMakeFiles/TextEditor.dir/flags.make
 
 CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: CMakeFiles/TextEditor.dir/flags.make
 CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: TextEditor_autogen/mocs_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laur/Desktop/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o -c /home/laur/Desktop/TextEditor/build/TextEditor_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o -c /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/mocs_compilation.cpp
 
 CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laur/Desktop/TextEditor/build/TextEditor_autogen/mocs_compilation.cpp > CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/mocs_compilation.cpp > CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laur/Desktop/TextEditor/build/TextEditor_autogen/mocs_compilation.cpp -o CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/mocs_compilation.cpp -o CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.s
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/mainwindow.cpp.o: CMakeFiles/TextEditor.dir/flags.make
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/mainwindow.cpp.o: /home/laur/Desktop/TextEditor/src/mainwindow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laur/Desktop/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/mainwindow.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/mainwindow.cpp.o -c /home/laur/Desktop/TextEditor/src/mainwindow.cpp
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp.o: CMakeFiles/TextEditor.dir/flags.make
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp.o: /home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp.o -c /home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/mainwindow.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/mainwindow.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laur/Desktop/TextEditor/src/mainwindow.cpp > CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/mainwindow.cpp.i
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp > CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp.i
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/mainwindow.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/mainwindow.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laur/Desktop/TextEditor/src/mainwindow.cpp -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/mainwindow.cpp.s
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp.s
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/main.cpp.o: CMakeFiles/TextEditor.dir/flags.make
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/main.cpp.o: /home/laur/Desktop/TextEditor/src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laur/Desktop/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/main.cpp.o -c /home/laur/Desktop/TextEditor/src/main.cpp
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o: CMakeFiles/TextEditor.dir/flags.make
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o: /home/laur/Desktop/TextEditor/TextEditor/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o -c /home/laur/Desktop/TextEditor/TextEditor/src/main.cpp
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laur/Desktop/TextEditor/src/main.cpp > CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/main.cpp.i
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laur/Desktop/TextEditor/TextEditor/src/main.cpp > CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.i
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laur/Desktop/TextEditor/src/main.cpp -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/main.cpp.s
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laur/Desktop/TextEditor/TextEditor/src/main.cpp -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.s
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/StringManipulator.cpp.o: CMakeFiles/TextEditor.dir/flags.make
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/StringManipulator.cpp.o: /home/laur/Desktop/TextEditor/src/StringManipulator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laur/Desktop/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/StringManipulator.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/StringManipulator.cpp.o -c /home/laur/Desktop/TextEditor/src/StringManipulator.cpp
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp.o: CMakeFiles/TextEditor.dir/flags.make
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp.o: /home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp.o -c /home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/StringManipulator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/StringManipulator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laur/Desktop/TextEditor/src/StringManipulator.cpp > CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/StringManipulator.cpp.i
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp > CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp.i
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/StringManipulator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/StringManipulator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laur/Desktop/TextEditor/src/StringManipulator.cpp -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/StringManipulator.cpp.s
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp.s
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/TextHighLight.cpp.o: CMakeFiles/TextEditor.dir/flags.make
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/TextHighLight.cpp.o: /home/laur/Desktop/TextEditor/src/TextHighLight.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laur/Desktop/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/TextHighLight.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/TextHighLight.cpp.o -c /home/laur/Desktop/TextEditor/src/TextHighLight.cpp
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp.o: CMakeFiles/TextEditor.dir/flags.make
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp.o: /home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp.o -c /home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/TextHighLight.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/TextHighLight.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laur/Desktop/TextEditor/src/TextHighLight.cpp > CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/TextHighLight.cpp.i
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp > CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp.i
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/TextHighLight.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/TextHighLight.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laur/Desktop/TextEditor/src/TextHighLight.cpp -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/TextHighLight.cpp.s
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp.s
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/PunctuationMark.cpp.o: CMakeFiles/TextEditor.dir/flags.make
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/PunctuationMark.cpp.o: /home/laur/Desktop/TextEditor/src/PunctuationMark.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laur/Desktop/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/PunctuationMark.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/PunctuationMark.cpp.o -c /home/laur/Desktop/TextEditor/src/PunctuationMark.cpp
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp.o: CMakeFiles/TextEditor.dir/flags.make
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp.o: /home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp.o -c /home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/PunctuationMark.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/PunctuationMark.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laur/Desktop/TextEditor/src/PunctuationMark.cpp > CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/PunctuationMark.cpp.i
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp > CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp.i
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/PunctuationMark.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/PunctuationMark.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laur/Desktop/TextEditor/src/PunctuationMark.cpp -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/PunctuationMark.cpp.s
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp.s
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/Utils.cpp.o: CMakeFiles/TextEditor.dir/flags.make
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/Utils.cpp.o: /home/laur/Desktop/TextEditor/src/Utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laur/Desktop/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/Utils.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/Utils.cpp.o -c /home/laur/Desktop/TextEditor/src/Utils.cpp
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp.o: CMakeFiles/TextEditor.dir/flags.make
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp.o: /home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp.o -c /home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/Utils.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/Utils.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laur/Desktop/TextEditor/src/Utils.cpp > CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/Utils.cpp.i
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp > CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp.i
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/Utils.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/Utils.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laur/Desktop/TextEditor/src/Utils.cpp -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/Utils.cpp.s
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp.s
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/InsertText.cpp.o: CMakeFiles/TextEditor.dir/flags.make
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/InsertText.cpp.o: /home/laur/Desktop/TextEditor/src/InsertText.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laur/Desktop/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/InsertText.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/InsertText.cpp.o -c /home/laur/Desktop/TextEditor/src/InsertText.cpp
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.o: CMakeFiles/TextEditor.dir/flags.make
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.o: /home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.o -c /home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/InsertText.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/InsertText.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laur/Desktop/TextEditor/src/InsertText.cpp > CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/InsertText.cpp.i
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp > CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.i
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/InsertText.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/InsertText.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laur/Desktop/TextEditor/src/InsertText.cpp -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/InsertText.cpp.s
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.s
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/ModifyText.cpp.o: CMakeFiles/TextEditor.dir/flags.make
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/ModifyText.cpp.o: /home/laur/Desktop/TextEditor/src/ModifyText.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laur/Desktop/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/ModifyText.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/ModifyText.cpp.o -c /home/laur/Desktop/TextEditor/src/ModifyText.cpp
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp.o: CMakeFiles/TextEditor.dir/flags.make
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp.o: /home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp.o -c /home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/ModifyText.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/ModifyText.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laur/Desktop/TextEditor/src/ModifyText.cpp > CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/ModifyText.cpp.i
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp > CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp.i
 
-CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/ModifyText.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/ModifyText.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laur/Desktop/TextEditor/src/ModifyText.cpp -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/ModifyText.cpp.s
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp -o CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp.s
 
 # Object files for target TextEditor
 TextEditor_OBJECTS = \
 "CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o" \
-"CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/mainwindow.cpp.o" \
-"CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/main.cpp.o" \
-"CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/StringManipulator.cpp.o" \
-"CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/TextHighLight.cpp.o" \
-"CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/PunctuationMark.cpp.o" \
-"CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/Utils.cpp.o" \
-"CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/InsertText.cpp.o" \
-"CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/ModifyText.cpp.o"
+"CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp.o" \
+"CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o" \
+"CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp.o" \
+"CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp.o" \
+"CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp.o" \
+"CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp.o" \
+"CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.o" \
+"CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp.o"
 
 # External object files for target TextEditor
 TextEditor_EXTERNAL_OBJECTS =
 
-/home/laur/Desktop/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o
-/home/laur/Desktop/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/mainwindow.cpp.o
-/home/laur/Desktop/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/main.cpp.o
-/home/laur/Desktop/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/StringManipulator.cpp.o
-/home/laur/Desktop/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/TextHighLight.cpp.o
-/home/laur/Desktop/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/PunctuationMark.cpp.o
-/home/laur/Desktop/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/Utils.cpp.o
-/home/laur/Desktop/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/InsertText.cpp.o
-/home/laur/Desktop/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/ModifyText.cpp.o
-/home/laur/Desktop/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/build.make
-/home/laur/Desktop/TextEditor/TextEditor: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.9.5
-/home/laur/Desktop/TextEditor/TextEditor: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.9.5
-/home/laur/Desktop/TextEditor/TextEditor: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.9.5
-/home/laur/Desktop/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/laur/Desktop/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable /home/laur/Desktop/TextEditor/TextEditor"
+/home/laur/Desktop/TextEditor/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o
+/home/laur/Desktop/TextEditor/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp.o
+/home/laur/Desktop/TextEditor/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o
+/home/laur/Desktop/TextEditor/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp.o
+/home/laur/Desktop/TextEditor/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp.o
+/home/laur/Desktop/TextEditor/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp.o
+/home/laur/Desktop/TextEditor/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp.o
+/home/laur/Desktop/TextEditor/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.o
+/home/laur/Desktop/TextEditor/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp.o
+/home/laur/Desktop/TextEditor/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/build.make
+/home/laur/Desktop/TextEditor/TextEditor/TextEditor: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.9.5
+/home/laur/Desktop/TextEditor/TextEditor/TextEditor: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.9.5
+/home/laur/Desktop/TextEditor/TextEditor/TextEditor: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.9.5
+/home/laur/Desktop/TextEditor/TextEditor/TextEditor: CMakeFiles/TextEditor.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable /home/laur/Desktop/TextEditor/TextEditor/TextEditor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TextEditor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/TextEditor.dir/build: /home/laur/Desktop/TextEditor/TextEditor
+CMakeFiles/TextEditor.dir/build: /home/laur/Desktop/TextEditor/TextEditor/TextEditor
 
 .PHONY : CMakeFiles/TextEditor.dir/build
 
@@ -235,6 +235,6 @@ CMakeFiles/TextEditor.dir/clean:
 .PHONY : CMakeFiles/TextEditor.dir/clean
 
 CMakeFiles/TextEditor.dir/depend:
-	cd /home/laur/Desktop/TextEditor/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/laur/Desktop/TextEditor/build /home/laur/Desktop/TextEditor/build /home/laur/Desktop/TextEditor/build /home/laur/Desktop/TextEditor/build /home/laur/Desktop/TextEditor/build/CMakeFiles/TextEditor.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/laur/Desktop/TextEditor/TextEditor/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/laur/Desktop/TextEditor/TextEditor/build /home/laur/Desktop/TextEditor/TextEditor/build /home/laur/Desktop/TextEditor/TextEditor/build /home/laur/Desktop/TextEditor/TextEditor/build /home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles/TextEditor.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/TextEditor.dir/depend
 

@@ -6,7 +6,9 @@
 #include <iostream>
 #include <vector>
 #include <regex>
-
+#include <QRegExp>
+#include <QStringList>
+#include <QDebug>
 /// It returns a vector with the highlights of all search results in a text
 ///
 /// @param[in] pattern - it can be a normal sequance of text or a regular expresion
@@ -25,43 +27,23 @@ std::vector<TextHighLight> StringManipulator::find(const std::string &pattern, c
     }
     std::vector<TextHighLight> highlights;
     if(isRegex) {
-        std::vector<std::string> tokens = Utils::split(pattern, "/");
-        bool global_active = false;
-        //bool icase_active = false;
-        std::regex expression(tokens[0]); // expression with default flags
-        // see if we have some flags
-        if(tokens.size() == 2){
-            if(tokens[1].find("i") != std::string::npos) {
-            std::regex temp(tokens[0], std::regex_constants::icase);
-            expression  = temp; // modify the expression's flags
-            //icase_active = true;
-            }
-            if(tokens[1].find("g") != std::string::npos) {
-                global_active = true;
+        QRegExp rx(pattern.c_str());
+        int pos = 0;
+        while ((pos = rx.indexIn(text.c_str(), pos)) != -1) {
+            TextHighLight th(pos, rx.cap(1).count());
+            //std::cout << rx.cap(1).toStdString();
+            highlights.push_back(th);
+            //std::cout <<  th.print() << std::endl;
+            pos += rx.matchedLength();
+        }
+        for(auto& th : highlights){
+            if(th.getLength() == 0)
+            {
+                throw std::invalid_argument("This pattern will produce some non-highlighted results");
+                break;
             }
         }
-        // aply searching algorithm
-        std::string::const_iterator start, end;
-        start = text.begin();
-        end = text.end();
-        std::match_results<std::string::const_iterator> what;
-        int absolute_position = 0;
-        int length = 0;
-        while(regex_search(start, end, what, expression)) {
-            if(highlights.size() > 0) {
-                highlights.push_back(TextHighLight(what.position() +
-                                                highlights.back().getPosition() +
-                                                highlights.back().getLength(),
-                                                std::string(what[0]).length()));
-            } else {
-                highlights.push_back(TextHighLight(what.position(), std::string(what[0]).length()));
-            }
-            if(global_active) {
-                start = what[0].second;  // we have the global flag, so we search all results
-            } else {
-                break; // we don't have global flag, so we search just for the first
-            }
-        }
+
 
     } else {
         int iterator = 0;

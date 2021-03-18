@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/laur/Desktop/TextEditor/build/TextEditor_autogen/mocs_compilation.cpp" "/home/laur/Desktop/TextEditor/build/CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o"
-  "/home/laur/Desktop/TextEditor/src/InsertText.cpp" "/home/laur/Desktop/TextEditor/build/CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/InsertText.cpp.o"
-  "/home/laur/Desktop/TextEditor/src/ModifyText.cpp" "/home/laur/Desktop/TextEditor/build/CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/ModifyText.cpp.o"
-  "/home/laur/Desktop/TextEditor/src/PunctuationMark.cpp" "/home/laur/Desktop/TextEditor/build/CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/PunctuationMark.cpp.o"
-  "/home/laur/Desktop/TextEditor/src/StringManipulator.cpp" "/home/laur/Desktop/TextEditor/build/CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/StringManipulator.cpp.o"
-  "/home/laur/Desktop/TextEditor/src/TextHighLight.cpp" "/home/laur/Desktop/TextEditor/build/CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/TextHighLight.cpp.o"
-  "/home/laur/Desktop/TextEditor/src/Utils.cpp" "/home/laur/Desktop/TextEditor/build/CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/Utils.cpp.o"
-  "/home/laur/Desktop/TextEditor/src/main.cpp" "/home/laur/Desktop/TextEditor/build/CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/main.cpp.o"
-  "/home/laur/Desktop/TextEditor/src/mainwindow.cpp" "/home/laur/Desktop/TextEditor/build/CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/src/mainwindow.cpp.o"
+  "/home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/mocs_compilation.cpp" "/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o"
+  "/home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp" "/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.o"
+  "/home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp" "/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp.o"
+  "/home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp" "/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp.o"
+  "/home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp" "/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp.o"
+  "/home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp" "/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp.o"
+  "/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp" "/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp.o"
+  "/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp" "/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o"
+  "/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp" "/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

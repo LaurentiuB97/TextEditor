@@ -53,19 +53,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/cmake/805/bin/cmake
+CMAKE_COMMAND = /snap/cmake/834/bin/cmake
 
 # The command to remove a file.
-RM = /snap/cmake/805/bin/cmake -E rm -f
+RM = /snap/cmake/834/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/laur/Desktop/TextEditor/build
+CMAKE_SOURCE_DIR = /home/laur/Desktop/TextEditor/TextEditor/build
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/laur/Desktop/TextEditor/build
+CMAKE_BINARY_DIR = /home/laur/Desktop/TextEditor/TextEditor/build
 
 # Utility rule file for TextEditor_autogen.
 
@@ -73,8 +73,8 @@ CMAKE_BINARY_DIR = /home/laur/Desktop/TextEditor/build
 include CMakeFiles/TextEditor_autogen.dir/progress.make
 
 CMakeFiles/TextEditor_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/laur/Desktop/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target TextEditor"
-	/snap/cmake/805/bin/cmake -E cmake_autogen /home/laur/Desktop/TextEditor/build/CMakeFiles/TextEditor_autogen.dir/AutogenInfo.json ""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target TextEditor"
+	/snap/cmake/834/bin/cmake -E cmake_autogen /home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles/TextEditor_autogen.dir/AutogenInfo.json ""
 
 TextEditor_autogen: CMakeFiles/TextEditor_autogen
 TextEditor_autogen: CMakeFiles/TextEditor_autogen.dir/build.make
@@ -91,6 +91,6 @@ CMakeFiles/TextEditor_autogen.dir/clean:
 .PHONY : CMakeFiles/TextEditor_autogen.dir/clean
 
 CMakeFiles/TextEditor_autogen.dir/depend:
-	cd /home/laur/Desktop/TextEditor/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/laur/Desktop/TextEditor/build /home/laur/Desktop/TextEditor/build /home/laur/Desktop/TextEditor/build /home/laur/Desktop/TextEditor/build /home/laur/Desktop/TextEditor/build/CMakeFiles/TextEditor_autogen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/laur/Desktop/TextEditor/TextEditor/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/laur/Desktop/TextEditor/TextEditor/build /home/laur/Desktop/TextEditor/TextEditor/build /home/laur/Desktop/TextEditor/TextEditor/build /home/laur/Desktop/TextEditor/TextEditor/build /home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles/TextEditor_autogen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/TextEditor_autogen.dir/depend
 
