@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include "TextHighLight.h"
+#include "HighLighter.h"
 #include "StringManipulator.h"
 #include <vector>
 //#include <bits/stdc++.h>  // for function as a parameter
@@ -13,6 +14,7 @@
 #include <QMessageBox>
 #include <QString>
 #include <QPlainTextEdit>
+
 const int default_format = 0;
 const int colored_format = 1;
 const int do_not_delete_find_box_text = 0;
@@ -142,6 +144,8 @@ private slots:
     void on_actionDark_Mode_toggled(bool arg1);
 
     void on_tabWidget_currentChanged(int index);
+
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;

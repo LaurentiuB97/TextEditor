@@ -77,6 +77,7 @@ public:
     QPushButton *exitFind;
     QPushButton *FindRegexButton;
     QLabel *findResultsLabel;
+    QPushButton *pushButton;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuEdit;
@@ -351,6 +352,9 @@ public:
         findResultsLabel = new QLabel(centralWidget);
         findResultsLabel->setObjectName(QStringLiteral("findResultsLabel"));
         findResultsLabel->setGeometry(QRect(360, 404, 121, 17));
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(410, 400, 89, 25));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -527,6 +531,7 @@ public:
 #endif // QT_NO_TOOLTIP
         FindRegexButton->setText(QString());
         findResultsLabel->setText(QString());
+        pushButton->setText(QApplication::translate("MainWindow", "Highlight", Q_NULLPTR));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", Q_NULLPTR));
         menuEdit->setTitle(QApplication::translate("MainWindow", "Edit", Q_NULLPTR));
         menuChange_date_format->setTitle(QApplication::translate("MainWindow", "Change date format", Q_NULLPTR));

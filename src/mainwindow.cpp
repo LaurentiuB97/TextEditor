@@ -2,7 +2,6 @@
 #include "ui_mainwindow.h"
 #include "Utils.h"
 #include "ModifyText.h"
-#include "HighLighter.h"
 #include <string>
 #include <cstring>
 #include <vector>
@@ -38,8 +37,8 @@ MainWindow::MainWindow(QWidget *parent) :
     //ui->tabWidget->installEventFilter(this);
 //    connect(ui->plainText, QTextCursor::cursorPositionChanged,this, writeOnLine);
 //    connect(ui->plainText, QTextCursor::cursorPositionChanged,this, writeOnColumn);
-        //HighLighter h;
-        //h.loadKeyWords();
+        HighLighter h;
+        h.loadKeyWords();
 
 }
 
@@ -868,4 +867,13 @@ void MainWindow::on_tabWidget_currentChanged(int index)
             }
         }
     }
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    auto edit = getCurrentTextEdit();
+    QColor color = Qt::yellow;
+    HighLighter hl;
+    hl.colorTargets(hl.findKeyWords(edit), edit, color);
+
 }

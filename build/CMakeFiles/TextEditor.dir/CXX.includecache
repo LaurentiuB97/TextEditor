@@ -63,8 +63,6 @@ Utils.h
 /home/laur/Desktop/TextEditor/TextEditor/src/Utils.h
 ModifyText.h
 /home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.h
-HighLighter.h
-/home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.h
 string
 -
 cstring
@@ -87,6 +85,8 @@ QUndoView
 /home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.h
 TextHighLight.h
 /home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.h
+HighLighter.h
+/home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.h
 StringManipulator.h
 /home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.h
 vector

@@ -16,7 +16,8 @@ private:
 public:
     HighLighter();
     ~HighLighter();
+    void colorTargets(const QList<TextHighLight> &list, QPlainTextEdit* edit, const QColor &color);
     QList<TextHighLight> findKeyWords(QPlainTextEdit* edit);
-    QList<TextHighLight> findRegex(const QString &pattern, const QString &text){
+    QList<TextHighLight> findRegex(const QString &pattern, const QString &text);
     void loadKeyWords();
 };

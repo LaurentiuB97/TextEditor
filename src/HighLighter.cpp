@@ -1,16 +1,29 @@
 #include "HighLighter.h"
 
 HighLighter::HighLighter(){}
-//HighLighter::~HighLighter(){}
+HighLighter::~HighLighter(){}
+
+void HighLighter::colorTargets(const QList<TextHighLight> &list,QPlainTextEdit* edit, const QColor &color){
+    QTextCursor cursor = edit->textCursor();
+    for(auto& th : list){
+        cursor.setPosition(th.getPosition());
+        cursor.setPosition(th.getPosition() + th.getLength(), QTextCursor::KeepAnchor);
+        QTextCharFormat format = cursor.charFormat();
+        format.setForeground(color);
+        cursor.setCharFormat(format);
+        edit->setTextCursor(cursor);
+    }
+}
 
 // return a list with highlights for every keyword
 QList<TextHighLight> HighLighter::findKeyWords(QPlainTextEdit* edit) {
     QList<TextHighLight> highlights;
-    auto text = edit->toPlainText();
-    for(auto& word : keywords){
-        QString pattern  = "(\b" + word + "\b)";
-        highlights.append(findRegex(pattern,text));
-    }
+        auto text = edit->toPlainText();
+        for(auto& word : keywords){
+            QString pattern  = "(\b" + word + "\b)";
+            highlights.append(findRegex(pattern,text));
+        }
+    return highlights;
 }
 // load the keywords for the specific language
 void HighLighter::loadKeyWords(){
@@ -29,7 +42,7 @@ void HighLighter::loadKeyWords(){
 QList<TextHighLight> HighLighter::findRegex(const QString &pattern,
                                             const QString &text){
     QList<TextHighLight> highlights;
-    QRegxExp rx(pattern);
+    QRegExp rx(pattern);
     int pos = 0;
     while ((pos = rx.indexIn(text, pos)) != -1) {
         TextHighLight th(pos, rx.cap(1).count());
@@ -47,4 +60,3 @@ QList<TextHighLight> HighLighter::findRegex(const QString &pattern,
     }
     return highlights;
 }
-

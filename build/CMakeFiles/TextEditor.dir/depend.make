@@ -3,11 +3,14 @@
 
 CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: TextEditor_autogen/OTJHMKELA5/moc_mainwindow.cpp
 CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: TextEditor_autogen/mocs_compilation.cpp
+CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: /home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.h
 CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: /home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.h
 CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: /home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.h
 CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: /home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.h
 CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QFile
 CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QString
+CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QStringList
+CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QTextStream
 CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h
 CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h
 CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h
@@ -459,12 +462,15 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TextHighLi
 CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp.o: /home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp
 CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp.o: /home/laur/Desktop/TextEditor/TextEditor/src/Utils.h
 
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o: /home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.h
 CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o: /home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.h
 CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o: /home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.h
 CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o: /home/laur/Desktop/TextEditor/TextEditor/src/main.cpp
 CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o: /home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.h
 CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QFile
 CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QString
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QStringList
+CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QTextStream
 CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h
 CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h
 CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h
