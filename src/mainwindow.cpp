@@ -37,9 +37,8 @@ MainWindow::MainWindow(QWidget *parent) :
     //ui->tabWidget->installEventFilter(this);
 //    connect(ui->plainText, QTextCursor::cursorPositionChanged,this, writeOnLine);
 //    connect(ui->plainText, QTextCursor::cursorPositionChanged,this, writeOnColumn);
-        HighLighter h;
-        h.loadKeyWords();
-
+    highlighter.loadKeyWords();
+    highlighter.loadTypes();
 }
 
 MainWindow::~MainWindow()
@@ -51,18 +50,6 @@ MainWindow::~MainWindow()
     delete undoGroup;
     delete ui;
 }
-
-//void MainWindow::writeOnLine()
-//{
-//    QTextCursor cursor = ui->plainTextEdit->textCursor();
-//    ui->lineLabel->setText("line  " + QString::number(cursor->blockNumber()));
-//}
-
-//void MainWindow::writeOnColumn()
-//{
-//    QTextCursor cursor = ui->plainTextEdit->textCursor();
-//    ui->columnLabel->setText("line  " + QString::number(cursor->columnNumber()));
-//}
 
 void MainWindow::modifyText(int (*function)(std::string &text))
 {
@@ -149,22 +136,24 @@ void MainWindow::setAppearance(mode selected_mode)
 {
     QString name_mode = (selected_mode == default_mode)? "DefaultMode" : "DarkMode";
     // setting icons for buttons
-    ui->actionNew->setIcon(QIcon("icons/" + name_mode + "/new.png"));
-    ui->actionOpen->setIcon(QIcon("icons/" + name_mode + "/open.png"));
-    ui->actionSave->setIcon(QIcon("icons/" + name_mode + "/save.png"));
-    ui->actionCut->setIcon(QIcon("icons/" + name_mode + "/cut.png"));
-    ui->actionCopy->setIcon(QIcon("icons/" + name_mode + "/copy.png"));
-    ui->actionPaste->setIcon(QIcon("icons/" + name_mode + "/paste.png"));
-    ui->actionUndo->setIcon(QIcon("icons/" + name_mode + "/undo.png"));
-    ui->actionRedo->setIcon(QIcon("icons/" + name_mode + "/redo.png"));
-    ui->actionBold->setIcon(QIcon("icons/" + name_mode + "/bold.png"));
-    ui->actionItalic->setIcon(QIcon("icons/" + name_mode + "/italic.png"));
-    ui->actionUnderline->setIcon(QIcon("icons/" + name_mode + "/underline.png"));
-    ui->actionTrim->setIcon(QIcon("icons/" + name_mode + "/trim.png"));
-    ui->actionPadding->setIcon(QIcon("icons/" + name_mode + "/padding.png"));
-    ui->actionCapitalize->setIcon(QIcon("icons/" + name_mode + "/capitalize.jpeg"));
-    ui->FindButton->setIcon(QIcon(QPixmap("icons/" + name_mode + "/find.png")));
-    ui->FindRegexButton->setIcon(QIcon(QPixmap("icons/" + name_mode + "/find_regex.png")));
+    QString folder_name = "Themes";
+    QString subfolder_name = "icons";//
+    ui->actionNew->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "//new.png")));
+    ui->actionOpen->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/open.png")));
+    ui->actionSave->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/save.png")));
+    ui->actionCut->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/cut.png")));
+    ui->actionCopy->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/copy.png")));
+    ui->actionPaste->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/paste.png")));
+    ui->actionUndo->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/undo.png")));
+    ui->actionRedo->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/redo.png")));
+    ui->actionBold->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/bold.png")));
+    ui->actionItalic->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/italic.png")));
+    ui->actionUnderline->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/underline.png")));
+    ui->actionTrim->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/trim.png")));
+    ui->actionPadding->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/padding.png")));
+    ui->actionCapitalize->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/capitalize.jpeg")));
+    ui->FindButton->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/find.png")));
+    ui->FindRegexButton->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/find_regex.png")));
     // setting colors
 
     if(selected_mode == default_mode)
@@ -246,63 +235,6 @@ void MainWindow::setAppearance(mode selected_mode)
         ui->exitFind->setPalette(palette);
 }
 
-//bool MainWindow::eventFilter(QObject *watched, QEvent *event)
-//{
-//    if(watched == getCurrentTextEdit())
-//    {
-//        if(event->type() == QKeyEvent::KeyPress)
-//        {
-//            QKeyEvent * ke = static_cast<QKeyEvent*>(event);
-//            if(ke->key() == Qt::Key_Space || ke->key() == Qt::Key_Comma ||
-//               ke->key() == Qt::Key_Period || ke->key() == Qt::Key_Enter ||
-//               ke->key() == Qt::Key_Question || ke->key() == Qt::Key_exclamdown)
-//            {
-//                QString delimiter = "";
-//                if(ke->key() == Qt::Key_Space)
-//                {
-//                    delimiter = " ";
-//                }
-//                else if(ke->key() == Qt::Key_Comma)
-//                {
-//                    delimiter = ",";
-//                }
-//                else if(ke->key() == Qt::Key_Period)
-//                {
-//                    delimiter = ".";
-//                }
-//                else if(ke->key() == Qt::Key_Enter)
-//                {
-//                    delimiter = "\n";
-//                }
-//                else if(ke->key() == Qt::Key_Question)
-//                {
-//                    delimiter = "?";
-//                }
-//                else if(ke->key() == Qt::Key_exclamdown)
-//                {
-//                    delimiter == "!";
-//                }
-//                //std::cout << "Space or comma detected" << std::endl;
-//                auto text = getCurrentTextEdit()->toPlainText();
-//                //std::cout << "log1" << std::endl;
-//                QUndoStack* stack = undoGroup->activeStack();
-//                //std::cout << "log2" << std::endl;
-//                //std::cout << text.toStdString() << std::endl;
-//                stack->beginMacro(text);
-//                stack->push(new InsertText(getCurrentTextEdit() , text, delimiter));
-//                stack->endMacro();
-//                return true; // do not process this event further
-//            }
-//        }
-//        return false; // process this event further
-//    }
-//    else
-//    {
-//        // pass the event on to the parent class
-//        return QMainWindow::eventFilter(watched, event);
-//    }
-//}
-
 // Make adding commands to undo stack available
 void MainWindow::StackOn(){ canInsertToStack = true; }
 
@@ -343,17 +275,33 @@ void MainWindow::addToUndoStack()
     }
 }
 
+void MainWindow::manageChangedText(){
+    addToUndoStack();
+    highlightText();
+}
 
-QPlainTextEdit* MainWindow::getCurrentTextEdit()
-{
+void MainWindow::highlightText(){
+    auto edit = getCurrentTextEdit();
+    QMap<QString, QList<TextHighLight>> map;
+    QColor keywords_color(204,204,0);
+    QColor types_color(51,51,255);
+    QColor string_color(139,69,19);
+    map.insert(keywords_color.name(), highlighter.findKeyWords(edit));
+    map.insert(types_color.name(), highlighter.findTypes(edit));
+    map.insert(string_color.name(), highlighter.findString(edit));
+    highlighter.colorTargets(map, edit);
+    // deletig pointers
+    //delete keywords_color, types_color;
+}
+
+QPlainTextEdit* MainWindow::getCurrentTextEdit(){
     QPlainTextEdit* pTextEdit = NULL;
     QWidget* pWidget= ui->tabWidget->currentWidget();
     pTextEdit = (QPlainTextEdit*)pWidget;
     return pTextEdit;
 }
 
-QPlainTextEdit* MainWindow::getTextEditByName(const QString &name)
-{
+QPlainTextEdit* MainWindow::getTextEditByName(const QString &name){
     QPlainTextEdit* pTextEdit = nullptr;
     for(int i = 0; i < ui->tabWidget->count(); i++ )
     {
@@ -379,7 +327,7 @@ void MainWindow::on_actionNew_triggered()
     stack->setObjectName(name);
     undoGroup->addStack(stack);
     //editor->installEventFilter(this);
-    connect(editor, &QPlainTextEdit::textChanged, this, &MainWindow::addToUndoStack);
+    connect(editor, &QPlainTextEdit::textChanged, this, &MainWindow::manageChangedText);
 }
 
 
@@ -439,26 +387,13 @@ void MainWindow::on_actionCopy_triggered()
 
 void MainWindow::on_actionPaste_triggered()
 {   // we must save the old and new versions of text for undo/redo commands
-//    QString oldText, newText;
-//    oldText = getCurrentTextEdit()->toPlainText();
     getCurrentTextEdit()->paste();  // the actual function
-//    newText = getCurrentTextEdit()->toPlainText();
-//    // add command to stack
-//    QUndoStack* stack = undoGroup->activeStack(); // get the active stack
-//    stack->push(new ModifyText(getCurrentTextEdit(), oldText, newText));
-
 }
 
 void MainWindow::on_actionCut_triggered()
 {
     // we must save the old and new versions of text for undo/redo commands
-//    QString oldText, newText;
-//    oldText = getCurrentTextEdit()->toPlainText();
     getCurrentTextEdit()->cut();  // the actual function
-    // newText = getCurrentTextEdit()->toPlainText();
-//    // add command to stack
-//    QUndoStack* stack = undoGroup->activeStack(); // get the active stack
-//    stack->push(new ModifyText(getCurrentTextEdit(), oldText, newText));
 }
 
 void MainWindow::on_actionUndo_triggered()
@@ -762,6 +697,11 @@ void MainWindow::on_actionFind_regex_triggered()
 
 void MainWindow::on_tabWidget_tabCloseRequested(int index)
 {
+    if(ui->tabWidget->count()==1)
+    {
+        on_actionNew_triggered();
+    }
+
     // find the stack associated with the tab
     QString name = ui->tabWidget->tabText(index);
     QUndoStack* stack;
@@ -869,11 +809,3 @@ void MainWindow::on_tabWidget_currentChanged(int index)
     }
 }
 
-void MainWindow::on_pushButton_clicked()
-{
-    auto edit = getCurrentTextEdit();
-    QColor color = Qt::yellow;
-    HighLighter hl;
-    hl.colorTargets(hl.findKeyWords(edit), edit, color);
-
-}

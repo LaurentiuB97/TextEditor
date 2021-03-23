@@ -74,7 +74,7 @@ include CMakeFiles/TextEditor_autogen.dir/progress.make
 
 CMakeFiles/TextEditor_autogen:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target TextEditor"
-	/snap/cmake/834/bin/cmake -E cmake_autogen /home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles/TextEditor_autogen.dir/AutogenInfo.json ""
+	/snap/cmake/834/bin/cmake -E cmake_autogen /home/laur/Desktop/TextEditor/TextEditor/build/CMakeFiles/TextEditor_autogen.dir/AutogenInfo.json Debug
 
 TextEditor_autogen: CMakeFiles/TextEditor_autogen
 TextEditor_autogen: CMakeFiles/TextEditor_autogen.dir/build.make

@@ -14,7 +14,8 @@
 #include <QMessageBox>
 #include <QString>
 #include <QPlainTextEdit>
-
+#include <QMap>
+#include <QColor>
 const int default_format = 0;
 const int colored_format = 1;
 const int do_not_delete_find_box_text = 0;
@@ -44,6 +45,10 @@ public:
     void setAppearance(mode selected_mode);
 
     void addToUndoStack();
+
+    void manageChangedText();
+
+    void highlightText();
 
     void StackOn();
 
@@ -145,7 +150,6 @@ private slots:
 
     void on_tabWidget_currentChanged(int index);
 
-    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -153,6 +157,7 @@ private:
     QString currentFile = "";
     std::vector<TextHighLight> findResults;
     int indexFindResults;
+    HighLighter highlighter;
     //bool eventFilter(QObject *watched, QEvent *event);
 };
 

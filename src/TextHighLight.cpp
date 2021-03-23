@@ -10,7 +10,7 @@ bool TextHighLight::equals( const TextHighLight &highlight) const {
             (this->length == highlight.getLength()));
 }
 
-std::string TextHighLight::print() {
+const std::string TextHighLight::print() {
     return "pos: " + std::to_string(position) + ", length: " + std::to_string(length);
 }
 

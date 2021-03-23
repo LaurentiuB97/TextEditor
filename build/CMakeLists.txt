@@ -3,9 +3,10 @@ project(TextEditor)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
+set(CMAKE_BUILD_TYPE Debug)
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
-qt5_add_resources(RESOURCE_FILES ./resources.qrc)
+
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "../")
 set(SOURCE_FILES ../src/mainwindow.cpp
 		../src/mainwindow.ui

@@ -9,6 +9,7 @@ CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o
  /home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.h
  /home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QFile
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QString
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QStringList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QTextStream
@@ -83,6 +84,7 @@ CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QColor
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QTextCursor
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qabstracttextdocumentlayout.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -145,6 +147,7 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/HighLighte
  /home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.h
  /home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QFile
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QString
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QStringList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QTextStream
@@ -469,6 +472,7 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o
  /home/laur/Desktop/TextEditor/TextEditor/src/main.cpp
  /home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QFile
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QString
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QStringList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QTextStream
@@ -545,6 +549,7 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QColor
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QTextCursor
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qabstracttextdocumentlayout.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -616,6 +621,7 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow
  /home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp
  /home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QFile
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QString
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QStringList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QTextStream
@@ -696,6 +702,7 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QColor
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QTextCharFormat
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QTextCursor
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qabstracttextdocumentlayout.h
