@@ -1,0 +1,2 @@
+/usr/bin/ar qc libNaturalLanguagePlugin.a CMakeFiles/NaturalLanguagePlugin.dir/__/src/moc_EditorInterface.cpp.o CMakeFiles/NaturalLanguagePlugin.dir/home/laur/Desktop/TextEditor/TextEditor/plugins/NaturalLanguagePlugin/NaturalLanguagePlugin.cpp.o
+/usr/bin/ranlib libNaturalLanguagePlugin.a

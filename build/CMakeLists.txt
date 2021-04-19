@@ -17,6 +17,9 @@ set(SOURCE_FILES ../src/mainwindow.cpp
                 ../src/Utils.cpp
 		../src/HighLighter.cpp
                 ../src/ModifyText.cpp
+                ../src/Theme.cpp
+                ../src/SettingsManager.cpp
+                ../src/EditorInterface.h
 )
 add_executable(TextEditor ${SOURCE_FILES})
 target_link_libraries(TextEditor Qt5::Widgets)

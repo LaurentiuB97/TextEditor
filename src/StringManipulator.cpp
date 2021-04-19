@@ -16,7 +16,8 @@
 /// @param[in] isRegex - it specifies if the pattern is a peace of text or a regular expresion
 ///
 /// @return a vector of TextHighLight objects which correspond to the positions of the matches
-std::vector<TextHighLight> StringManipulator::find(const std::string &pattern, const std::string &text, const bool isRegex) {
+std::vector<TextHighLight> StringManipulator::find(const std::string &pattern, const std::string &text,
+                                                   const bool isRegex, const std::string flag) {
     // treating special cases
     treatingExceptionsForText(text);
     treatingExceptionsForText(pattern);
@@ -33,6 +34,9 @@ std::vector<TextHighLight> StringManipulator::find(const std::string &pattern, c
             TextHighLight th(pos, rx.cap(1).count());
             //std::cout << rx.cap(1).toStdString();
             highlights.push_back(th);
+            if(flag == "FIRST"){ // se ia doar primul highlight si iese din functie
+                return highlights;
+            }
             //std::cout <<  th.print() << std::endl;
             pos += rx.matchedLength();
         }
@@ -92,6 +96,23 @@ TextHighLight StringManipulator::replace(const std::string &replacement, const T
     text.replace(highlight.getPosition(), highlight.getLength(), replacement);
     TextHighLight highlight_result(highlight.getPosition(), replacement.length());
     return highlight_result; // (homework) - i don't know what the result must be :)))
+}
+
+/// Replaces all portions of text which are occupied by 'toReplace' with replacement
+///
+/// @param[in] toReplace - the string meant to be replaced from all text
+/// @param[in] replacement - the string which goes in
+/// @param[in] text - the string which the function will make the change in
+///
+/// @return the number of changes in text
+int StringManipulator::replaceAll(const std::string &toReplace, const std::string &replacement, std::string &text){
+    int counter = 0;
+    auto highlights = find(toReplace, text, false);
+    for(TextHighLight highlight : highlights){
+        replace(replacement, highlight, text);
+        counter++;
+    }
+    return counter;
 }
 
 /// Removes the unnecesary spaces (if there are two or more consecutive spaces, it will remove the aditional once and let just one to that positon

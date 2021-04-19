@@ -1,7 +1,8 @@
 #include "ModifyText.h"
 #include <iostream>
 ModifyText::ModifyText(QPlainTextEdit* editor,const QString &oldText, int old_cursor_position,
-                       const QString &newText,int new_cursor_position, QUndoCommand* parent)
+                       const QString &newText,int new_cursor_position, const QUndoCommand* previous,
+                       QUndoCommand* parent)
     : m_editor(editor), m_oldText(oldText),old_cursor_position(old_cursor_position),
       m_newText(newText), new_cursor_position(new_cursor_position), QUndoCommand(parent)
 

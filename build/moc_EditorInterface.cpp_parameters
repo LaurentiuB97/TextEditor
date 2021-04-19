@@ -1,0 +1,4 @@
+-I/home/laur/Desktop/TextEditor/TextEditor/build/../plugins/NaturalLanguagePlugin
+-o
+/home/laur/Desktop/TextEditor/TextEditor/build/moc_EditorInterface.cpp
+/home/laur/Desktop/TextEditor/TextEditor/build/EditorInterface.h

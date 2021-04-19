@@ -1,1 +1,1 @@
-auto,signed,usnigned,short,long,char,int,float,double,wchar_t,class,struct,enum,null,NULL,nullptr
+auto,void,signed,usnigned,short,long,char,int,float,double,wchar_t,class,struct,enum,null,NULL,nullptr,EOF

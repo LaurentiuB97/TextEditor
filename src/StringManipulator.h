@@ -17,7 +17,8 @@ class StringManipulator {
     /// @param[in] isRegex - it specifies if the pattern is a peace of text or a regular expresion
     ///
     /// @return a vector of TextHighLight objects which correspond to the positions of the matches
-    static std::vector<TextHighLight> find(const std::string &pattern, const std::string &text, const bool isRegex);
+    static std::vector<TextHighLight> find(const std::string &pattern, const std::string &text,
+                                           const bool isRegex = false, const std::string flag = "ALL");
     /// Replaces the portion of the string that is specified in the TextHighLight object
     ///
     /// @param[in] replacement - the string meant to be put on the highlighted text's place
@@ -26,6 +27,15 @@ class StringManipulator {
     ///
     /// @return the highlight of the new sequance of text
     static TextHighLight replace(const std::string &replacement, const TextHighLight &highlight, std::string &text);
+
+    /// Replaces all portions of text which are occupied by 'toReplace' with replacement
+    ///
+    /// @param[in] toReplace - the string meant to be replaced from all text
+    /// @param[in] replacement - the string which goes in
+    /// @param[in] text - the string which the function will make the change in
+    ///
+    /// @return the number of changes in text
+    static int replaceAll(const std::string &toReplace, const std::string &replacement, std::string &text);
     /// Removes the unnecesary spaces (if there are two or more consecutive spaces, it will remove the aditional once and let just one to that positon
     ///
     /// @param[in][out] text - the string which is meant to be trimmed
