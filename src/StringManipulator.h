@@ -4,7 +4,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include <QList>
+#include <QString>
+#include <QChar>
 
 
 class StringManipulator {
@@ -17,8 +19,8 @@ class StringManipulator {
     /// @param[in] isRegex - it specifies if the pattern is a peace of text or a regular expresion
     ///
     /// @return a vector of TextHighLight objects which correspond to the positions of the matches
-    static std::vector<TextHighLight> find(const std::string &pattern, const std::string &text,
-                                           const bool isRegex = false, const std::string flag = "ALL");
+    static std::vector<TextHighLight> find(const QString &pattern, const QString &text,
+                                           const bool isRegex = false, const QString flag = "ALL");
     /// Replaces the portion of the string that is specified in the TextHighLight object
     ///
     /// @param[in] replacement - the string meant to be put on the highlighted text's place
@@ -135,6 +137,14 @@ class StringManipulator {
     ///
     /// @return true if it is a digit and false if it is not
     static bool isNumber(const char character);
+
+    /// verifica daca caracterul primut ca intrare este un construct regex
+    ///
+    /// @param[in] character - caracterul care trebuie verificat
+    ///
+    /// @returns - true daca caracterul este un construct regex si false in caz contrar
+    static bool isRegexOperator(const QChar &character);
+
     /// treats exception like "empty text" or  "forbiden character"
     ///
     /// @param[in] text - the text meant to be analyzed
@@ -144,8 +154,22 @@ class StringManipulator {
     /// @param[in] text - the text meant to be analyzed
     /// @param[in] highlight - the TextHighLight object meant to be analyzed
     static void treatingExceptionsForHighlight(const std::string &text, const TextHighLight &highlight);
+
+    /// @returns o lista cu caractere ce reprezinta operatori regex
+    static QList<QChar> regexSpecialCharacters();
+
+    /// in cazul in care expresia ce trebuie gasita contine operatori de tip regex, se introduce caracterul "\" pentru a le anula efectul
+    ///
+    ///@param[in][out]  text - textul care trebuie modificat
+    ///
+    /// @returns - numarul de modificari inserate in text
+    static int repealOperators(QString &text);
+
+
+
  private:
-    StringManipulator();//incomplete
+    StringManipulator();
+    //static QList<QChar> regexSpecialCharacters;
 };
 
 

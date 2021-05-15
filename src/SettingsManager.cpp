@@ -7,10 +7,13 @@
 #include <QString>
 #include <QDebug>
 
-SettingsManager::SettingsManager(){ theme = new Theme();}
-SettingsManager::~SettingsManager(){ delete theme;}
+SettingsManager::SettingsManager(QObject* parent){
+    theme = new Theme(this);
+    this->setParent(parent);
+}
 
 void SettingsManager::LoadSettings(){
+
     // Load settings
     QFile loadFile(file);
     if (!loadFile.open(QIODevice::ReadOnly)) {
@@ -28,7 +31,7 @@ void SettingsManager::LoadSettings(){
     }
     loadFile.close();
     // set the loaded settings
-    theme->loadColors(rootObj["Theme"].toString());
+    theme->setTheme(rootObj["Theme"].toString());
 }
 
 void SettingsManager::setActions(QMenu* visibleMenu){

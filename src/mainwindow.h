@@ -2,13 +2,18 @@
 #define MAINWINDOW_H
 
 #include "TextHighLight.h"
-#include "HighLighter.h"
 #include "StringManipulator.h"
 #include "SettingsManager.h"
+#include "PluginManager.h"
+#include "TabWidget.h"
 #include "EditorInterface.h"
+#include "FileStatus.h"
+#include "CursorGroup.h"
 #include <vector>
-//#include <bits/stdc++.h>  // for function as a parameter
+#include <map>
+#include <memory>
 #include <QMainWindow>
+#include <QSharedPointer>
 #include <QFile>
 #include <QUndoGroup>
 #include <QTextCursor>
@@ -36,7 +41,6 @@ public:
     enum mode {default_mode, dark_mode};
 
     explicit MainWindow(QWidget *parent = 0);
-
     ~MainWindow();
 
     void setHighLight(const TextHighLight &highlight, const int requiredFormat = colored_format);
@@ -44,6 +48,8 @@ public:
     void modifyText(int (*function)(std::string &text));
 
     void setAppearance(QString name_mode);
+
+    void markChangedFile();
 
     void addToUndoStack();
 
@@ -55,14 +61,15 @@ public:
 
     void StackOff();
 
+    void save(const int index);
+
+    void saveAs(const int index);
+
     QPlainTextEdit* getCurrentTextEdit();
 
     QPlainTextEdit* getTextEditByName(const QString &name);
 
-
-//    void writeOnLine();
-
-//    void writeOnColumn();
+    void setCursorPosition();
 
 private slots:
     void on_actionNew_triggered();
@@ -85,12 +92,6 @@ private slots:
 
     void on_actionRedo_triggered();
 
-    void on_actionBold_triggered();
-
-    void on_actionItalic_triggered();
-
-    void on_actionUnderline_triggered();
-
     void on_FindButton_clicked();
 
     void on_actionFind_triggered();
@@ -105,7 +106,7 @@ private slots:
 
     void on_actionFind_regex_triggered();
 
-    void on_tabWidget_tabCloseRequested(int index);
+    void tabWidget_tabCloseRequested(int index);
 
     void on_actionNew_2_toggled(bool arg1);
 
@@ -137,20 +138,20 @@ private slots:
 
     void on_actionIndent_backward_triggered();
 
-    bool loadPlugin();
-
-
 
 private:
+
     Ui::MainWindow *ui;
-    QMap<QString, QFile*> filesList;
+    QMap<QString, QSharedPointer<FileStatus>> filesList;
+    QMap<QString, QString> firstText;
     QUndoGroup* undoGroup;
+    TabWidget* tabWidget;
     QString currentFile = "";
     std::vector<TextHighLight> findResults;
     int indexFindResults;
-    HighLighter highlighter;
     SettingsManager st;
-    EditorInterface* editorInterface;
+    CursorGroup* cursorGroup;
+    PluginManager pluginManager;
     //bool eventFilter(QObject *watched, QEvent *event);
 };
 

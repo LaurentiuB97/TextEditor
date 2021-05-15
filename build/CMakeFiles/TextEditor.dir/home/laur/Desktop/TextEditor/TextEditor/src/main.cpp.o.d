@@ -136,11 +136,14 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o
  /usr/include/c++/7/bits/basic_ios.tcc \
  /usr/include/c++/7/bits/ostream.tcc /usr/include/c++/7/istream \
  /usr/include/c++/7/bits/istream.tcc \
- /home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPlainTextEdit \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qplaintextedit.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h \
+ /home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.h \
+ /usr/include/c++/7/vector /usr/include/c++/7/bits/stl_construct.h \
+ /usr/include/c++/7/bits/stl_uninitialized.h \
+ /usr/include/c++/7/bits/stl_vector.h \
+ /usr/include/c++/7/bits/stl_bvector.h /usr/include/c++/7/bits/vector.tcc \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
  /usr/include/c++/7/cstddef /usr/include/c++/7/utility \
  /usr/include/c++/7/bits/stl_relops.h \
@@ -152,7 +155,6 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o
  /usr/include/c++/7/algorithm /usr/include/c++/7/bits/stl_algo.h \
  /usr/include/c++/7/bits/algorithmfwd.h \
  /usr/include/c++/7/bits/stl_heap.h /usr/include/c++/7/bits/stl_tempbuf.h \
- /usr/include/c++/7/bits/stl_construct.h \
  /usr/include/c++/7/bits/uniform_int_dist.h /usr/include/c++/7/limits \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h \
@@ -167,33 +169,19 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtextedit.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractscrollarea.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
- /usr/include/string.h /usr/include/strings.h /usr/include/c++/7/stdlib.h \
- /usr/include/c++/7/iterator /usr/include/c++/7/bits/stream_iterator.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h \
+ /usr/include/string.h /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qpair.h \
  /usr/include/c++/7/numeric /usr/include/c++/7/bits/stl_numeric.h \
+ /usr/include/c++/7/iterator /usr/include/c++/7/bits/stream_iterator.h \
  /usr/include/c++/7/list /usr/include/c++/7/bits/stl_list.h \
  /usr/include/c++/7/bits/allocated_ptr.h \
  /usr/include/c++/7/ext/aligned_buffer.h /usr/include/c++/7/bits/list.tcc \
+ /usr/include/c++/7/stdlib.h \
  /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
@@ -203,16 +191,33 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearraylist.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringmatcher.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QChar \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h \
+ /home/laur/Desktop/TextEditor/TextEditor/src/SettingsManager.h \
+ /home/laur/Desktop/TextEditor/TextEditor/src/Theme.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QColor \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgb.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgba64.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedpointer.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qmetatype.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainerfwd.h \
- /usr/include/c++/7/vector /usr/include/c++/7/bits/stl_uninitialized.h \
- /usr/include/c++/7/bits/stl_vector.h \
- /usr/include/c++/7/bits/stl_bvector.h /usr/include/c++/7/bits/vector.tcc \
  /usr/include/c++/7/map /usr/include/c++/7/bits/stl_tree.h \
  /usr/include/c++/7/bits/stl_map.h /usr/include/c++/7/tuple \
  /usr/include/c++/7/array /usr/include/c++/7/bits/uses_allocator.h \
@@ -220,6 +225,17 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject_impl.h \
  /usr/include/c++/7/chrono /usr/include/c++/7/ratio \
  /usr/include/c++/7/ctime /usr/include/c++/7/bits/parse_numbers.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
+ /usr/include/c++/7/functional /usr/include/c++/7/bits/std_function.h \
+ /usr/include/c++/7/bits/refwrap.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMenu \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmenu.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qmargins.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevice.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h \
@@ -227,8 +243,6 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qpoint.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpalette.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgb.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgba64.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qmatrix.h \
@@ -252,11 +266,27 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextdocument.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qicon.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qaction.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
- /usr/include/c++/7/functional /usr/include/c++/7/bits/std_function.h \
- /usr/include/c++/7/bits/refwrap.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qactiongroup.h \
+ /home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.h \
+ /home/laur/Desktop/TextEditor/TextEditor/src/EditorInterface.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMenuBar \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmenubar.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmenu.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QToolBar \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtoolbar.h \
+ /home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QTabWidget \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabwidget.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPlainTextEdit \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qplaintextedit.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtextedit.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractscrollarea.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextdocument.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextoption.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextcursor.h \
@@ -274,47 +304,6 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qglyphrun.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qrawfont.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontdatabase.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QStringList \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QFile \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QTextStream \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qlocale.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMessageBox \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmessagebox.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
- /home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.h \
- /home/laur/Desktop/TextEditor/TextEditor/src/SettingsManager.h \
- /home/laur/Desktop/TextEditor/TextEditor/src/Theme.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QColor \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMenu \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmenu.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qicon.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qaction.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qactiongroup.h \
- /home/laur/Desktop/TextEditor/TextEditor/src/EditorInterface.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMenuBar \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmenubar.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmenu.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QTabWidget \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabwidget.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabwidget.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QUndoGroup \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qundogroup.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QTextCursor \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextcursor.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFileDialog \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qfiledialog.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qdir.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qfileinfo.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QPluginLoader \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qpluginloader.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qlibrary.h \
@@ -322,9 +311,270 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qpointer.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonobject.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonvalue.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QDir \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdir.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfileinfo.h \
+ /home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QFile \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h \
+ /home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h \
+ /usr/include/c++/7/memory /usr/include/c++/7/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/7/ext/concurrence.h \
+ /usr/include/c++/7/bits/unique_ptr.h \
+ /usr/include/c++/7/bits/shared_ptr.h \
+ /usr/include/c++/7/bits/shared_ptr_base.h \
+ /usr/include/c++/7/bits/shared_ptr_atomic.h \
+ /usr/include/c++/7/backward/auto_ptr.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabwidget.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QSharedPointer \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QUndoGroup \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qundogroup.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QTextCursor \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextcursor.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFileDialog \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qfiledialog.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdir.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMessageBox \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmessagebox.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qguiapplication.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qinputmethod.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qinputmethod.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlocale.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QtCore \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QtCoreDepends \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractanimation.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstracteventdispatcher.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractnativeeventfilter.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractproxymodel.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractstate.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstracttransition.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qanimationgroup.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractanimation.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydataops.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydatapointer.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydataops.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasictimer.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qbitarray.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qbuffer.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearraylist.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearraymatcher.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcache.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcollator.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcommandlineoption.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcommandlineparser.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcommandlineoption.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcompilerdetection.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainerfwd.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcryptographichash.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatetime.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdeadlinetimer.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qelapsedtimer.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdiriterator.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qeasingcurve.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qelapsedtimer.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qendian.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qeventtransition.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstracttransition.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qexception.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfactoryinterface.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfileinfo.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfileselector.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QStringList \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfilesystemwatcher.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfinalstate.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractstate.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfuture.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfutureinterface.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qrunnable.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmutex.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qexception.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qresultstore.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfutureinterface.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfuturesynchronizer.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfuture.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfuturewatcher.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qhistorystate.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qidentityproxymodel.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractproxymodel.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qiodevice.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qisenum.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qitemselectionmodel.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonarray.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsondocument.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonobject.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonvalue.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlibrary.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlibraryinfo.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatetime.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qversionnumber.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qline.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlinkedlist.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlocale.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlockfile.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qloggingcategory.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmargins.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmath.h \
+ /usr/include/c++/7/cmath /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+ /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+ /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmessageauthenticationcode.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcryptographichash.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmetaobject.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmetatype.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmimedata.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmimedatabase.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmimetype.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmimetype.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmutex.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectcleanuphandler.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qoperatingsystemversion.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qpair.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qparallelanimationgroup.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qanimationgroup.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qpauseanimation.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qplugin.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qpoint.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qpointer.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qprocess.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qprocessordetection.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qpropertyanimation.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariantanimation.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qeasingcurve.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qqueue.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qreadwritelock.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qregularexpression.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qresource.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qresultstore.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qrunnable.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsavefile.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedpointer.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedvaluerollback.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsemaphore.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsequentialanimationgroup.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsettings.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedmemory.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsignalmapper.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsignaltransition.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmetaobject.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsize.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsocketnotifier.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsortfilterproxymodel.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstack.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstandardpaths.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstate.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstatemachine.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstate.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstorageinfo.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringbuilder.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlistmodel.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringmatcher.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemsemaphore.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtemporarydir.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QScopedPointer \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtemporaryfile.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextboundaryfinder.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextcodec.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qthread.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qthreadpool.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qthread.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qthreadstorage.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtimeline.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtimer.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasictimer.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtimezone.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtranslator.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypetraits.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qurlquery.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/quuid.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariantanimation.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qversionnumber.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qwaitcondition.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qwineventnotifier.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qxmlstream.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcoreversion.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QNetworkAccessManager \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qnetworkaccessmanager.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtnetworkglobal.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtnetwork-config.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qnetworkrequest.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QSharedDataPointer \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QUrl \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QVariant \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QVector \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QSslConfiguration \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qsslconfiguration.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qsslsocket.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtcpsocket.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qabstractsocket.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qsslerror.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qsslcertificate.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qssl.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QFlags \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QSslPreSharedKeyAuthenticator \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qsslpresharedkeyauthenticator.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QNetworkRequest \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qnetworkrequest.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QNetworkReply \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qnetworkreply.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QIODevice \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QNetworkRequest \
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QNetworkAccessManager

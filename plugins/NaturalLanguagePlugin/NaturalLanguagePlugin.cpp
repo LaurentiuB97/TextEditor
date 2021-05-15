@@ -3,15 +3,17 @@
 #include <QDebug>
 #include <QMessageBox>
 #include <QDialog>
+#include <QDir>
 #include <QMainWindow>
 #include <string>
 
 // Expresia regulata care detecteaza formatul de tip data din text
 QString regex = "((((0[1-9])|((1|2)\\d)|(3[0,1]))[\\/, \\-,\\.]((0[1-9])|(1[0-2]))[\\/, \\-,\\.]\\d\\d\\d\\d)|(\\d\\d\\d\\d[\\/, \\-,\\.]((0[1-9])|(1[0-2]))[\\/, \\-,\\.]((0[1-9])|((1|2)\\d)|(3[0,1]))))";
-void NaturalLanguagePlugin::setProperties(QMenuBar* menuBar, QTabWidget* tabWidget, Theme* theme) {
+void NaturalLanguagePlugin::setProperties(QMenuBar* menuBar, QToolBar* toolBar, TabWidget* tabWidget, Theme* theme) {
     this->menuBar = menuBar;
     this->tabWidget = tabWidget;
     this->theme = theme;
+    this->toolBar = toolBar;
     //crearea actiunilor
     //Capitalize
     actionCapitalize = new QAction("Capitalize");
@@ -74,6 +76,11 @@ void NaturalLanguagePlugin::setActions(){
 
         }
     }
+    // adaugare in toolBar
+    toolBar->addAction(actionCapitalize);
+    toolBar->addAction(actionPadding);
+    toolBar->addAction(actionTrim);
+
     // inseram functionanilatile pentru fiecare actiune
     connect(actionCapitalize, &QAction::triggered, this, &NaturalLanguagePlugin::on_actionCapitalize_triggered);
     connect(actionPadding, &QAction::triggered, this, &NaturalLanguagePlugin::on_actionPadding_triggered);
@@ -92,16 +99,24 @@ void NaturalLanguagePlugin::setActions(){
     connect(actionline_big_endian, &QAction::triggered,
             this, &NaturalLanguagePlugin::on_actionline_big_endian_triggered);
 
+    //conectam si semnalul de schimbare a temei cu schimabarea imaginilor
+    connect(theme, &Theme::themeChanged, this, &NaturalLanguagePlugin::setIcons);
+
 
 }
 
 void NaturalLanguagePlugin::setIcons(){
     // setam imaginile specifice fiecarei actiuni in functie de tema curenta
-    QString currentTheme = theme->getCurrentTheme();
-    QString folder_name = "plugins/NaturalLanguageEdit/ThemeIcons";
-    actionTrim->setIcon(QIcon(QPixmap(folder_name + "/" + currentTheme + "/"  + "/trim.png")));
-    actionPadding->setIcon(QIcon(QPixmap(folder_name + "/" + currentTheme + "/" + "/padding.png")));
-    actionCapitalize->setIcon(QIcon(QPixmap(folder_name + "/" + currentTheme + "/" + "/capitalize.jpeg")));
+    QString currentTheme = this->theme->getCurrentTheme();
+    QString folder_name = "plugins/NaturalLanguagePlugin/ThemeIcons";
+    QString path1 = folder_name + "/" + currentTheme +  "/trim.png";
+    actionTrim->setIcon(QIcon(path1));
+    actionPadding->setIcon(QIcon(QPixmap(folder_name + "/" + currentTheme + "/padding.png")));
+    actionCapitalize->setIcon(QIcon(QPixmap(folder_name + "/" + currentTheme + "/capitalize.jpeg")));
+    // setam visibilitate
+    actionTrim->setIconVisibleInMenu(true);
+    actionPadding->setIconVisibleInMenu(true);
+    actionCapitalize->setIconVisibleInMenu(true);
 }
 
 void NaturalLanguagePlugin::on_actionTrim_triggered(){
@@ -170,21 +185,23 @@ void NaturalLanguagePlugin::changeDatesInText(const StringManipulator::dateForma
             }
         }
         // extragem textul din editor
-        std::string text = cursor.selectedText().toStdString();
+        QString text = cursor.selectedText();
         // initializam obiectul care va gasii meciurile pentru expresia regulata
-        auto highlights = StringManipulator::find(regex.toStdString(), text, true);
+        auto highlights = StringManipulator::find(regex, text, true);
         for(auto h : highlights){
             // se extrage data din text
-            std::string date = text.substr(h.getPosition(), h.getPosition() + h.getLength());
+            QString date = text.mid(h.getPosition(), h.getPosition() + h.getLength());
             std::cout << h.print() << std::endl;
             // se modifica formatul datei
-            StringManipulator::changeDateFormat(date, format);
+            auto temp = date.toStdString(); // artificiu temportar!!!!!
+            StringManipulator::changeDateFormat(temp, format);
+            date = QString(temp.c_str());
             // se inlocuieste in text
             text.replace(h.getPosition(), h.getPosition() + h.getLength(), date);
         }
         cursor.beginEditBlock(); // put remove and insert operations in the same block to not affect the QUndoStack
         cursor.removeSelectedText();  // remove the previous text
-        cursor.insertText(QString(text.c_str()));  // insert the modified text
+        cursor.insertText(text);  // insert the modified text
         cursor.endEditBlock();  // end the block
     } catch(std::invalid_argument& e)
     {

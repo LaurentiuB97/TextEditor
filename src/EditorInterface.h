@@ -1,13 +1,15 @@
 #ifndef EDITORINTERFACE_H
 #define EDITORINTERFACE_H
 #include <QMenuBar>
-#include <QTabWidget>
+#include <QToolBar>
+#include "TabWidget.h"
 #include "Theme.h"
 
 class EditorInterface{
 public:
     virtual ~EditorInterface()= default;
-    virtual void setProperties(QMenuBar* menuBar, QTabWidget* tabWidget, Theme* theme) = 0;
+    virtual void setProperties(QMenuBar* menuBar = nullptr,QToolBar* toolBar = nullptr,
+                               TabWidget* tabWidget = nullptr, Theme* theme = nullptr) = 0;
     virtual void setActions() = 0;
 };
 

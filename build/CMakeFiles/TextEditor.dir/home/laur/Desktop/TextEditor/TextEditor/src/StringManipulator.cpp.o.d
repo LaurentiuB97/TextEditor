@@ -140,17 +140,72 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/StringMani
  /usr/include/c++/7/bits/stl_uninitialized.h \
  /usr/include/c++/7/bits/stl_vector.h \
  /usr/include/c++/7/bits/stl_bvector.h /usr/include/c++/7/bits/vector.tcc \
- /home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.h \
- /home/laur/Desktop/TextEditor/TextEditor/src/Utils.h \
- /usr/include/c++/7/regex /usr/include/c++/7/algorithm \
- /usr/include/c++/7/utility /usr/include/c++/7/bits/stl_relops.h \
- /usr/include/c++/7/bits/stl_algo.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
+ /usr/include/c++/7/cstddef /usr/include/c++/7/utility \
+ /usr/include/c++/7/bits/stl_relops.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qprocessordetection.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcompilerdetection.h \
+ /usr/include/c++/7/algorithm /usr/include/c++/7/bits/stl_algo.h \
  /usr/include/c++/7/bits/algorithmfwd.h \
  /usr/include/c++/7/bits/stl_heap.h /usr/include/c++/7/bits/stl_tempbuf.h \
  /usr/include/c++/7/bits/uniform_int_dist.h /usr/include/c++/7/limits \
- /usr/include/c++/7/bitset /usr/include/c++/7/iterator \
- /usr/include/c++/7/bits/stream_iterator.h /usr/include/c++/7/locale \
- /usr/include/c++/7/bits/locale_facets_nonio.h /usr/include/c++/7/ctime \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlogging.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasicatomic.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_cxx11.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h \
+ /usr/include/c++/7/atomic /usr/include/c++/7/bits/atomic_base.h \
+ /usr/include/c++/7/bits/atomic_lockfree_defines.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
+ /usr/include/string.h /usr/include/strings.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qpair.h \
+ /usr/include/c++/7/numeric /usr/include/c++/7/bits/stl_numeric.h \
+ /usr/include/c++/7/iterator /usr/include/c++/7/bits/stream_iterator.h \
+ /usr/include/c++/7/list /usr/include/c++/7/bits/stl_list.h \
+ /usr/include/c++/7/bits/allocated_ptr.h \
+ /usr/include/c++/7/ext/aligned_buffer.h /usr/include/c++/7/bits/list.tcc \
+ /usr/include/c++/7/stdlib.h \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearraylist.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringmatcher.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QChar \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h \
+ /home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.h \
+ /home/laur/Desktop/TextEditor/TextEditor/src/Utils.h \
+ /usr/include/c++/7/regex /usr/include/c++/7/bitset \
+ /usr/include/c++/7/locale /usr/include/c++/7/bits/locale_facets_nonio.h \
+ /usr/include/c++/7/ctime \
  /usr/include/x86_64-linux-gnu/c++/7/bits/time_members.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/messages_members.h \
  /usr/include/libintl.h /usr/include/c++/7/bits/codecvt.h \
@@ -166,20 +221,15 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/StringMani
  /usr/include/c++/7/bits/unique_ptr.h \
  /usr/include/c++/7/bits/shared_ptr.h \
  /usr/include/c++/7/bits/shared_ptr_base.h \
- /usr/include/c++/7/bits/allocated_ptr.h \
  /usr/include/c++/7/bits/refwrap.h \
- /usr/include/c++/7/ext/aligned_buffer.h \
  /usr/include/c++/7/bits/shared_ptr_atomic.h \
- /usr/include/c++/7/bits/atomic_base.h \
- /usr/include/c++/7/bits/atomic_lockfree_defines.h \
  /usr/include/c++/7/backward/auto_ptr.h /usr/include/c++/7/sstream \
  /usr/include/c++/7/bits/sstream.tcc /usr/include/c++/7/stack \
  /usr/include/c++/7/deque /usr/include/c++/7/bits/stl_deque.h \
  /usr/include/c++/7/bits/deque.tcc /usr/include/c++/7/bits/stl_stack.h \
  /usr/include/c++/7/map /usr/include/c++/7/bits/stl_tree.h \
  /usr/include/c++/7/bits/stl_map.h /usr/include/c++/7/bits/stl_multimap.h \
- /usr/include/c++/7/cstring /usr/include/string.h /usr/include/strings.h \
- /usr/include/c++/7/bits/std_function.h \
+ /usr/include/c++/7/cstring /usr/include/c++/7/bits/std_function.h \
  /usr/include/c++/7/bits/regex_constants.h \
  /usr/include/c++/7/bits/regex_error.h \
  /usr/include/c++/7/bits/regex_automaton.h \
@@ -193,54 +243,8 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/StringMani
  /usr/include/c++/7/bits/regex_executor.tcc \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QRegExp \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
- /usr/include/c++/7/cstddef \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qprocessordetection.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qcompilerdetection.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qlogging.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasicatomic.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_cxx11.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h \
- /usr/include/c++/7/atomic \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
- /usr/include/c++/7/stdlib.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QStringList \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qpair.h \
- /usr/include/c++/7/numeric /usr/include/c++/7/bits/stl_numeric.h \
- /usr/include/c++/7/list /usr/include/c++/7/bits/stl_list.h \
- /usr/include/c++/7/bits/list.tcc \
- /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/limits.h \
- /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/syslimits.h \
- /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
- /usr/include/x86_64-linux-gnu/bits/local_lim.h \
- /usr/include/linux/limits.h \
- /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
- /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
- /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearraylist.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringmatcher.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h \

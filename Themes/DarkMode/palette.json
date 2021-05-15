@@ -3,5 +3,7 @@
     "textColor": "#ffffff",
     "buttonColor": "#282828",
     "editorColor": "#505050",
-    "regexButtonColor": "#ffffff"
+    "regexButtonColor": "#ffffff",
+    "tabBarColor" : "#646464",
+    "currentTabColor" : "#323232"
 }

@@ -6,8 +6,9 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 
-Theme::Theme(){}
-Theme::~Theme(){}
+Theme::Theme(QObject* parent){
+    this->setParent(parent);
+}
 
 QString Theme::getCurrentTheme(){return currentTheme;}
 QColor Theme::getBaseColor() {return baseColor;}
@@ -15,8 +16,10 @@ QColor Theme::getTextColor(){return textColor;}
 QColor Theme::getButtonColor(){return buttonColor;}
 QColor Theme::getEditorColor(){return buttonColor;}
 QColor Theme::getRegexButtonColor(){return regexButtonColor;}
+QColor Theme::getTabBarColor(){return tabBarColor;}
+QColor Theme::getCurrentTabColor(){return currentTabColor;}
 
-void Theme::loadColors(const QString mode){
+void Theme::setTheme(const QString mode){
     // verificam daca directorul cu tema aleasa exista
     QDir director("Themes//" + mode);
     if(!director.exists()){ // in caz afirmativ, inchidem functia
@@ -24,6 +27,7 @@ void Theme::loadColors(const QString mode){
         return;
     }
     this->currentTheme = mode;
+    emit themeChanged();
     QString file = "Themes//" + mode + "//palette.json";
     QFile loadFile(file);
     if (!loadFile.open(QIODevice::ReadOnly)) {
@@ -40,4 +44,6 @@ void Theme::loadColors(const QString mode){
     buttonColor = QColor(rootObj["buttonColor"].toString());
     editorColor = QColor(rootObj["editorColor"].toString());
     regexButtonColor = QColor(rootObj["regexButtonColor"].toString());
+    tabBarColor = QColor(rootObj["tabBarColor"].toString());
+    currentTabColor = QColor(rootObj["currentTabColor"].toString());
 }

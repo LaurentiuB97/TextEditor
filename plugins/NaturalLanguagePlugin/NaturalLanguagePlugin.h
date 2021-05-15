@@ -8,7 +8,7 @@
 #include "EditorInterface.h"
 #include "StringManipulator.h"
 #include "Theme.h"
-#include "Utils.h"
+#include "TabWidget.h"
 
 class NaturalLanguagePlugin : public QObject, EditorInterface{
     Q_OBJECT
@@ -18,7 +18,8 @@ class NaturalLanguagePlugin : public QObject, EditorInterface{
 public:
     void setActions() override;
 
-    void setProperties(QMenuBar* menuBar, QTabWidget* tabWidget, Theme* theme) override;
+    void setProperties(QMenuBar* menuBar = nullptr,QToolBar* toolBar = nullptr,
+                       TabWidget* tabWidget = nullptr, Theme* theme = nullptr) override;
 
     void setIcons();
 
@@ -57,6 +58,7 @@ public:
     QAction *actionline_big_endian;
 private:
     QMenuBar* menuBar;
+    QToolBar* toolBar;
     QTabWidget* tabWidget;
     Theme* theme;
     QList<QAction*> actions;

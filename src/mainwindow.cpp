@@ -31,25 +31,24 @@ QColor editorColor, color,textColor, buttonColor, regexButtonColor;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
-{
+{   ui->setupUi(this);
+    // setare taburi
+    tabWidget = new TabWidget(this);
+    // stergem tabWidget-ul formal care pastreaza geometria pentru tabWidget-ul din clasa derivata
+    ui->verticalLayout->replaceWidget(ui->tabWidget, tabWidget);
+    ui->tabWidget->deleteLater();
+    // semnalul de inchidere al unui dab
+    connect(tabWidget, &TabWidget::tabCloseRequested, this, &MainWindow::tabWidget_tabCloseRequested);
+    connect(tabWidget, &TabWidget::currentChanged, this, &MainWindow::on_tabWidget_currentChanged);
     this->setWindowTitle("TextEditor");
     //set the stacks group
     undoGroup = new QUndoGroup(this);
-    ui->setupUi(this);
-    ui->tabWidget->removeTab(0); // we have a default garbage tab, so it must be removed
-    on_actionNew_triggered(); // add a fresh new tab
-    undoGroup->setActiveStack(undoGroup->stacks()[0]); // set active the first stack in the group
-    // Incarcam plug-inurile
-    if(loadPlugin())
-    {
-        editorInterface->setProperties(ui->menuBar, ui->tabWidget, st.getTheme());
-        editorInterface->setActions();
-    }
+    // setare grup cursoare pentru determinarea liniei si coloanei
+    cursorGroup = new CursorGroup(this, tabWidget, ui->line, ui->collumn);
 
 
-    //load highlights
-    highlighter.loadKeyWords();
-    highlighter.loadTypes();
+
+
     // ASPECT
     st.LoadSettings();
     //Se seteaza tema din fisierul de configurare
@@ -62,8 +61,11 @@ MainWindow::MainWindow(QWidget *parent) :
     }
     // Se seteaza actiunile vizibile
     st.setActions(ui->menuVisible_actions);
-
-
+    // Incarcam plug-inurile
+    pluginManager.setMembers(ui->menuBar,ui->mainToolBar, tabWidget, st.getTheme());
+    pluginManager.loadPlugins();
+    on_actionNew_triggered(); // add a fresh new tab
+    undoGroup->setActiveStack(undoGroup->stacks()[0]); // set active the first stack in the group
 
 }
 
@@ -116,7 +118,7 @@ void MainWindow::modifyText(int (*function)(std::string &text))
 
 void MainWindow::setAppearance(QString name_mode)
 {
-    st.getTheme()->loadColors(name_mode);
+    st.getTheme()->setTheme(name_mode);
     // setting icons for buttons
     QString folder_name = "Themes";
     QString subfolder_name = "icons";
@@ -128,10 +130,6 @@ void MainWindow::setAppearance(QString name_mode)
     ui->actionPaste->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/paste.png")));
     ui->actionUndo->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/undo.png")));
     ui->actionRedo->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/redo.png")));
-    ui->actionBold->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/bold.png")));
-    ui->actionItalic->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/italic.png")));
-    ui->actionUnderline->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/underline.png")));
-
 
     ui->FindButton->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/find.png")));
     ui->FindRegexButton->setIcon(QIcon(QPixmap(folder_name + "/" + name_mode + "/" + subfolder_name + "/find_regex.png")));
@@ -142,22 +140,34 @@ void MainWindow::setAppearance(QString name_mode)
         QColor editorColor = st.getTheme()->getEditorColor();
         QColor buttonColor = st.getTheme()->getButtonColor();
         QColor regexButtonColor = st.getTheme()->getRegexButtonColor();
+        QColor tabBarColor = st.getTheme()->getTabBarColor();
+        QColor currentTabColor = st.getTheme()->getCurrentTabColor();
 
+        // CULOAREA DE FUNDAL
         this->setStyleSheet("background : " + color.name() + "; color : " + textColor.name());
+        //CULORILE TABURILOR
+        tabWidget->setStyleSheet("QTabBar::tab{background : " + tabBarColor.name() + "; border: 1px solid gray;" +
+                                                                                         "border-top-left-radius: 4px;" +
+                                                                                         "border-top-right-radius: 4px;" +
+                                                                                         "padding-left: 3px}" +
+                                     "QTabBar::tab:selected{background :" + currentTabColor.name() + ";border: 1px solid gray}");
+        tabWidget->setTabShape( QTabWidget::Triangular);
         // SEARCH BAR
         palette = ui->findTextBox->palette();
         palette.setColor(QPalette::Base, editorColor);
         palette.setColor(QPalette::Text, textColor);
         ui->findTextBox->setPalette(palette);
         // FIND BUTTON
-        palette = ui->FindButton->palette();
-        palette.setColor(QPalette::Button, buttonColor);
-        palette.setColor(QPalette::ButtonText, textColor);
-        ui->FindButton->setPalette(palette);
+//        palette = ui->FindButton->palette();
+//        palette.setColor(QPalette::Button, buttonColor);
+//        palette.setColor(QPalette::ButtonText, textColor);
+//        ui->FindButton->setPalette(palette);
+        ui->FindButton->setStyleSheet("background : " + buttonColor.name());
         // FIND REGEX BUTTON
-        palette = ui->FindRegexButton->palette();
-        palette.setColor(QPalette::Button, regexButtonColor);
-        ui->FindRegexButton->setPalette(palette);
+//        palette = ui->FindRegexButton->palette();
+//        palette.setColor(QPalette::Button, regexButtonColor);
+//        ui->FindRegexButton->setPalette(palette);
+        ui->FindRegexButton->setStyleSheet("background : " + regexButtonColor.name());
         // "PREVIOUS" BUTTON
         palette = ui->previous->palette();
         palette.setColor(QPalette::Button, buttonColor);
@@ -175,11 +185,80 @@ void MainWindow::setAppearance(QString name_mode)
         ui->exitFind->setPalette(palette);
 }
 
+// if a file suffer some changes, it will be marked
+void MainWindow::markChangedFile(){
+    auto name = tabWidget->tabText(tabWidget->currentIndex());
+    // if tab name has not the format tabName* then:
+    if(name.right(1) != "*"){
+        QTextStream in(filesList[name]->getFile());
+        QString text = in.readAll();
+        if(getCurrentTextEdit()->toPlainText() != text){
+            // marcam schimbarea
+            filesList[name]->setChangeStatus(true);
+            // adaugam * in numele tabului
+            name.push_back("*");
+            tabWidget->setTabText(tabWidget->currentIndex(), name);
+
+        }
+    }
+}
+
 // Make adding commands to undo stack available
 void MainWindow::StackOn(){ canInsertToStack = true; }
 
 // Make adding commands to undo stack unavailable
 void MainWindow::StackOff(){ canInsertToStack = false;}
+
+
+void MainWindow::save(const int index){
+    QString name = tabWidget->tabText(index);
+    auto editor = getTextEditByName(name);
+    if(name.right(1) == "*"){
+        name.remove("*");
+    }
+    if(filesList.contains(name)){
+        if(filesList[name]->hasChanges()){
+            auto file = filesList[name]->getFile();
+            // scriem in fisier
+            file->seek(0);
+            file->write(editor->toPlainText().toUtf8());
+
+            tabWidget->setTabText(index, name);
+            filesList[name]->setChangeStatus(false);
+        }
+    } else{ // fisierul nu a fost gasit, deci se creaza unul cu ajutorul metodei "Save as"
+        saveAs(index);
+    }
+
+}
+
+void MainWindow::saveAs(const int index){
+    QString name = tabWidget->tabText(index);
+    auto editor = getTextEditByName(name);
+    // se deschide un dialog de unde putem lua numele noului fisier
+    QString filename = QFileDialog::getSaveFileName(this, "Save as");
+    // se deschide fisierul
+    QFile *file = new QFile(filename, editor);
+    if(!file->open(QFile::ReadWrite | QFile::Text)) { // if something went wrong, show a message
+        //QMessageBox::warning(this, "Warning", "Cannot save file: " + file.errorString());
+        return;
+    }
+    // adaugam textul in fisier
+    currentFile = filename;
+    setWindowTitle(filename);
+    QTextStream out(file);
+    QString text = editor->toPlainText();
+    out << text;
+    // adaugam fisierul in lista de fisiere deschise
+    QString tabName = filename.split("/").last();
+    QSharedPointer<FileStatus>  fileStatus= QSharedPointer<FileStatus>(new FileStatus, &QObject::deleteLater);
+    fileStatus->setFile(file);
+    filesList.insert(tabName, fileStatus);
+    // schimbam numele tabului din "New ..." in numele fisierului
+   tabWidget->setTabText(index, tabName);
+
+}
+
 
 void MainWindow::addToUndoStack()
 {
@@ -209,7 +288,7 @@ void MainWindow::addToUndoStack()
         }
         else
         {
-            stack->push(new ModifyText(getCurrentTextEdit(), "",0,
+            stack->push(new ModifyText(getCurrentTextEdit(), firstText[stack->objectName()],0,
                                        getCurrentTextEdit()->toPlainText(),new_position));
         }
         // make stack insertion available
@@ -218,120 +297,115 @@ void MainWindow::addToUndoStack()
 }
 
 void MainWindow::manageChangedText(){
+    // adaugam schimbarea in stiva
     addToUndoStack();
-    highlightText();
+    if(filesList.contains(tabWidget->tabText(tabWidget->currentIndex()))){
+        markChangedFile();
+    }
 }
 
-void MainWindow::highlightText(){
-    auto edit = getCurrentTextEdit();
-    QMap<QString, QList<TextHighLight>> map;
-    QColor keywords_color(204,204,0);
-    QColor types_color(51,51,255);
-    QColor string_color(139,69,19);
-    map.insert(keywords_color.name(), highlighter.findKeyWords(edit));
-    map.insert(types_color.name(), highlighter.findTypes(edit));
-    map.insert(string_color.name(), highlighter.findString(edit));
-    highlighter.colorTargets(map, edit);
-    // deletig pointers
-    //delete keywords_color, types_color;
-}
+
 
 QPlainTextEdit* MainWindow::getCurrentTextEdit(){
     QPlainTextEdit* pTextEdit = NULL;
-    QWidget* pWidget= ui->tabWidget->currentWidget();
+    QWidget* pWidget= tabWidget->currentWidget();
     pTextEdit = (QPlainTextEdit*)pWidget;
     return pTextEdit;
 }
 
 QPlainTextEdit* MainWindow::getTextEditByName(const QString &name){
     QPlainTextEdit* pTextEdit = nullptr;
-    for(int i = 0; i < ui->tabWidget->count(); i++ )
+    for(int i = 0; i < tabWidget->count(); i++ )
     {
-        if(ui->tabWidget->tabText(i) == name)
+        if(tabWidget->tabText(i) == name)
         {
-            QWidget* pWidget = ui->tabWidget->widget(i);
+            QWidget* pWidget = tabWidget->widget(i);
             pTextEdit = (QPlainTextEdit*)pWidget;
+            break;
         }
-        break;
+
     }
 
     return pTextEdit;
 }
+
+
 void MainWindow::on_actionNew_triggered()
 {
     // clearing the current file name
     currentFile.clear();
     // create plainTextEdit and add it to a new tb
     QString name = "New " + QString::number(++new_tab_index);
-    QPlainTextEdit *editor = new QPlainTextEdit(ui->tabWidget);
-    editor->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Expanding);
-    ui->tabWidget->addTab(editor, name);
+    QPlainTextEdit *editor = new QPlainTextEdit(tabWidget);
+    //editor->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    tabWidget->addTab(editor, name);
     QUndoStack* stack = new QUndoStack(); //(homework) fa asta si la openAction
     stack->setObjectName(name);
     undoGroup->addStack(stack);
     //editor->installEventFilter(this);
+    firstText.insert(stack->objectName(), editor->toPlainText());
     connect(editor, &QPlainTextEdit::textChanged, this, &MainWindow::manageChangedText);
 //    QUndoView* view = new QUndoView(stack, editor);
 //    view->setGeometry(300,0, 300, 600);
+    tabWidget->setCurrentWidget(editor);
+    // adaugare setari cursor
+    cursorGroup->connectCursor(editor);
 }
 
 
 void MainWindow::on_actionOpen_triggered()
 {
+    // se creaza dialogul prin care se alege fisierul ce trebuie deschis
     QString filename = QFileDialog::getOpenFileName(this, tr("Open the file"));
-    QFile* file = new QFile(filename);
-    currentFile = filename;
+
+    // CREAREA NOULUI TAB
+    // extragem numele fisierului din calea absoluta (pentru a construi numele tabului)
+    auto tokens = filename.split("/");
+
+    // ultimul token este numele fisierului iar restul tokenilor sunt numele directoarelor din calea absoluta
+    QString tabName = tokens[tokens.count()-1];
+
+    // creare editor
+    QPlainTextEdit* editor = new QPlainTextEdit();
+    editor->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+
+
+
+    // deschidere fisier
+    QFile* file = new QFile(filename, editor);
     if(!file->open(QIODevice::ReadWrite | QFile::Text)) { // if something went wrong, show a message
         QMessageBox::warning(this, "Warning", "Cannot open file: " + file->errorString());
         return;
     }
-    // put the content in a QString
+    //adaugare editor ca tab
+    tabWidget->addTab(editor, tabName);
+    tabWidget->setCurrentWidget(editor);
+    // se extrage testul din fisier
     QTextStream in(file);
     QString text = in.readAll();
-    // CREAREA NOULUI TAB
-    // extragem numele fisierului din calea absoluta
-    qDebug() << "Path : " << filename << endl;
-    auto tokens = filename.split("/");
-    // ultimul token este numele fisierului iar restul tokenilor sunt numele directoarelor din calea absoluta
-    QString tabName = tokens[tokens.count()-1];
-    QPlainTextEdit* editor = new QPlainTextEdit();
-    editor->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Expanding);
+    //inserare text
     editor->setPlainText(text);
-    ui->tabWidget->addTab(editor, tabName);
     // crearea unei stive pentru noul tab
     QUndoStack* stack = new QUndoStack();
     stack->setObjectName(tabName);
     undoGroup->addStack(stack);
     // adaugam fisierul in dictionar impreuna cu numele tabului
-    filesList.insert(tabName, file);
-}
-
-void MainWindow::on_actionSave_triggered()
-{   // se verifica daca text-ul curent este asociat unui tab nou creat sau unui fisier deschis
-    if(filesList.contains(ui->tabWidget->tabText(ui->tabWidget->currentIndex()))){
-        qDebug() << "Contine fisierul" << endl;
-    } else{ // fisierul nu a fost gasit, deci se creaza unul cu ajutorul metodei "Save as"
-        qDebug() << "Nu contine fisierul" << endl;
-        on_actionSave_as_2_triggered();
-    }
+    QSharedPointer<FileStatus>  fileStatus= QSharedPointer<FileStatus>(new FileStatus, &QObject::deleteLater);
+    fileStatus->setFile(file);
+    filesList.insert(tabName, fileStatus);
+    firstText.insert(stack->objectName(), editor->toPlainText());
+    connect(editor, &QPlainTextEdit::textChanged, this, &MainWindow::manageChangedText);
+    // adaugare setari cursor
+    cursorGroup->connectCursor(editor);
+//    QUndoView* view = new QUndoView(stack, editor);
+//    view->setGeometry(0,0, 300, 600);
 
 }
+
+void MainWindow::on_actionSave_triggered(){ save(tabWidget->currentIndex());}
 
 void MainWindow::on_actionSave_as_2_triggered(){
-    // se deschide un dialog de unde putem lua numele noului fisier
-    QString filename = QFileDialog::getSaveFileName(this, "Save as");
-    // se deschide fisierul
-    QFile file(filename);
-    if(!file.open(QFile::ReadWrite | QFile::Text)) { // if something went wrong, show a message
-        //QMessageBox::warning(this, "Warning", "Cannot save file: " + file.errorString());
-        return;
-    }
-    currentFile = filename;
-    setWindowTitle(filename);
-    QTextStream out(&file);
-    QString text = getCurrentTextEdit()->toPlainText();
-    out << text;
-    file.close();
+    saveAs(tabWidget->currentIndex());
 }
 
 void MainWindow::on_actionExit_triggered()
@@ -379,55 +453,55 @@ void MainWindow::on_actionRedo_triggered()
     }
 }
 
-void MainWindow::on_actionBold_triggered()
-{
-    QTextCursor cursor = getCurrentTextEdit()->textCursor();
-    if(!cursor.hasSelection())  // if there is no selected text, select the word under QTextCursor
-    {
-        cursor.select(QTextCursor::WordUnderCursor);
-    }
-    QTextCharFormat format;
-    format.setFontWeight(cursor.charFormat().font().bold()? QFont::Normal : QFont::Bold);  // set the fomat to bold, if it is not already
-    cursor.mergeCharFormat(format); // apply the format to the selected text
-}
+//void MainWindow::on_actionBold_triggered()
+//{
+//    QTextCursor cursor = getCurrentTextEdit()->textCursor();
+//    if(!cursor.hasSelection())  // if there is no selected text, select the word under QTextCursor
+//    {
+//        cursor.select(QTextCursor::WordUnderCursor);
+//    }
+//    QTextCharFormat format;
+//    format.setFontWeight(cursor.charFormat().font().bold()? QFont::Normal : QFont::Bold);  // set the fomat to bold, if it is not already
+//    cursor.mergeCharFormat(format); // apply the format to the selected text
+//}
 
-void MainWindow::on_actionItalic_triggered()
-{
-    QTextCursor cursor = getCurrentTextEdit()->textCursor();
-    if(!cursor.hasSelection())
-    {
-        cursor.select(QTextCursor::WordUnderCursor);
-    }
-    QTextCharFormat format;
-    if(!cursor.charFormat().font().italic())
-    {
-        format.setFontItalic(true);
-    }
-    else
-    {
-        format.setFontItalic(false);
-    }
-    cursor.mergeCharFormat(format);
-}
+//void MainWindow::on_actionItalic_triggered()
+//{
+//    QTextCursor cursor = getCurrentTextEdit()->textCursor();
+//    if(!cursor.hasSelection())
+//    {
+//        cursor.select(QTextCursor::WordUnderCursor);
+//    }
+//    QTextCharFormat format;
+//    if(!cursor.charFormat().font().italic())
+//    {
+//        format.setFontItalic(true);
+//    }
+//    else
+//    {
+//        format.setFontItalic(false);
+//    }
+//    cursor.mergeCharFormat(format);
+//}
 
-void MainWindow::on_actionUnderline_triggered()
-{
-    QTextCursor cursor = getCurrentTextEdit()->textCursor();
-    if(!cursor.hasSelection())
-    {
-        cursor.select(QTextCursor::WordUnderCursor);
-    }
-    QTextCharFormat format;
-    if(!cursor.charFormat().font().underline())
-    {
-        format.setFontUnderline(true);
-    }
-    else
-    {
-        format.setFontUnderline(false);
-    }
-    cursor.mergeCharFormat(format);
-}
+//void MainWindow::on_actionUnderline_triggered()
+//{
+//    QTextCursor cursor = getCurrentTextEdit()->textCursor();
+//    if(!cursor.hasSelection())
+//    {
+//        cursor.select(QTextCursor::WordUnderCursor);
+//    }
+//    QTextCharFormat format;
+//    if(!cursor.charFormat().font().underline())
+//    {
+//        format.setFontUnderline(true);
+//    }
+//    else
+//    {
+//        format.setFontUnderline(false);
+//    }
+//    cursor.mergeCharFormat(format);
+//}
 
 
 void MainWindow::on_FindButton_clicked()
@@ -444,12 +518,12 @@ void MainWindow::on_actionFind_triggered()
         delete_text_command = delete_find_box_text;  // put the global variable to its original status;
     }
     // take text from findTextBox
-    std::string pattern = ui->findTextBox->text().toStdString();
-    std::string text = getCurrentTextEdit()->toPlainText().toStdString();
+    //std::string pattern = .toStdString();
+    //std::string text = getCurrentTextEdit()->toPlainText().toStdString();
     // make a list with resulted highlights
     try
     {
-        findResults = StringManipulator::find(pattern, text, false);
+        findResults = StringManipulator::find(ui->findTextBox->text(), getCurrentTextEdit()->toPlainText(), false);
     }
     catch(std::invalid_argument& e)
     {
@@ -561,12 +635,12 @@ void MainWindow::on_actionFind_regex_triggered()
         delete_text_command = delete_find_box_text;
     }
     // take text from findTextBox
-    std::string pattern = ui->findTextBox->text().toStdString();
-    std::string text = getCurrentTextEdit()->toPlainText().toStdString();
+//    std::string pattern = ui->findTextBox->text().toStdString();
+//    std::string text = getCurrentTextEdit()->toPlainText().toStdString();
     // make a list with resulted highlights
     try
     {
-        findResults = StringManipulator::find(pattern, text, true);
+        findResults = StringManipulator::find(ui->findTextBox->text(), getCurrentTextEdit()->toPlainText(), true);
     }
     catch(std::invalid_argument& e)
     {
@@ -590,15 +664,35 @@ void MainWindow::on_actionFind_regex_triggered()
                                   " results");
 }
 
-void MainWindow::on_tabWidget_tabCloseRequested(int index)
+void MainWindow::tabWidget_tabCloseRequested(int index)
 {
-    if(ui->tabWidget->count()==1)
+    QString name = tabWidget->tabText(index);
+    auto editor = getTextEditByName(name);
+    if(name.right(1) == "*"){
+        name.remove("*");
+    }
+
+    if((filesList.contains(name) && filesList[name]->hasChanges()) ||
+       (!filesList.contains(name)) && editor->toPlainText().count() != 0){
+        QMessageBox::StandardButton resBtn =
+        QMessageBox::question( this,"TextEditor",tr("Do you want to save the changes?\n"),
+        QMessageBox::No | QMessageBox::Yes | QMessageBox::Cancel);
+        if(resBtn == QMessageBox::Yes){
+            save(index);
+        } else if(resBtn ==QMessageBox::No){
+           //do nothing and continue
+        } else if(resBtn ==QMessageBox::Cancel){
+            return;
+        }
+    }
+
+    if(tabWidget->count()==1)
     {
         on_actionNew_triggered();
     }
 
     // se cauta stiva asociata tabului
-    QString name = ui->tabWidget->tabText(index);
+
     QUndoStack* stack;
     for(auto st : undoGroup->stacks()) // verify every stack from undoGroup
     {
@@ -610,12 +704,10 @@ void MainWindow::on_tabWidget_tabCloseRequested(int index)
     // se sterge stiva
     undoGroup->removeStack(stack);
     delete stack;
-    // se sterge pointerul catre fisierul asociat
-    delete filesList[name];
     // se elimina perechea nume - fisier din dictionarul filesList
     filesList.remove(name);
     // se sterge tabul
-    ui->tabWidget->removeTab(index);
+    tabWidget->removeTab(index);
 
 }
 
@@ -686,12 +778,19 @@ void MainWindow::on_tabWidget_currentChanged(int index)
     {
         for(auto stack : undoGroup->stacks())
         {
-            if(stack->objectName() == ui->tabWidget->tabText(index))
+            auto text = tabWidget->tabText(index);
+            text.remove("*");
+            if(stack->objectName() == text)
             {
                 undoGroup->setActiveStack(stack);
             }
         }
     }
+    if(tabWidget->count() != 0){
+       QPlainTextEdit* editor = getTextEditByName(tabWidget->tabText(index));
+       cursorGroup->setLineAndCollumnForEditor(editor);
+    }
+
 }
 
 void MainWindow::closeEvent(QCloseEvent *event){
@@ -723,8 +822,8 @@ void MainWindow::on_actionReplace_triggered(){
     QObject::connect(&buttonBox, SIGNAL(accepted()), &dialog, SLOT(accept()));
     QObject::connect(&buttonBox, SIGNAL(rejected()), &dialog, SLOT(reject()));
     if (dialog.exec() == QDialog::Accepted){ // in cazul in care se doreste executia functiei:
-        std::string toReplace = findInput->text().toStdString();
-        std::string text = getCurrentTextEdit()->toPlainText().toStdString();
+        QString toReplace = findInput->text();
+        QString text = getCurrentTextEdit()->toPlainText();
         try{// luam in considerare faptul ca la fiecare schimbare, pozitiile tuturor cuvintelor se poate schimba
             // se afla numarul de cuvinte ce trebuie modificate
             std::vector<TextHighLight> highlights = StringManipulator::find(toReplace, text);
@@ -732,8 +831,8 @@ void MainWindow::on_actionReplace_triggered(){
             QTextCursor cursor = getCurrentTextEdit()->textCursor();
             // se face detectarea si modifcarea fiecarui cuvant
             for(int i = 0; i < nr_of_changes;++i){
-                text = getCurrentTextEdit()->toPlainText().toStdString();
-                highlights = StringManipulator::find(toReplace, text, false, "FIRST");
+                //text = .toStdString();
+                highlights = StringManipulator::find(toReplace, getCurrentTextEdit()->toPlainText(), false, "FIRST");
                 auto h = highlights[0];
                 cursor.setPosition(h.getPosition());
                 cursor.setPosition(h.getPosition() + h.getLength(), QTextCursor::KeepAnchor);
@@ -816,23 +915,6 @@ void MainWindow::on_actionIndent_backward_triggered(){
     }
 }
 
-bool MainWindow::loadPlugin(){
-    QDir pluginsDir(QCoreApplication::applicationDirPath());
-    pluginsDir.cd("plugins");
-    const QStringList entries = pluginsDir.entryList(QDir::Files);
-        for (const QString &fileName : entries) {
-            QPluginLoader pluginLoader(pluginsDir.absoluteFilePath(fileName));
-            QObject *plugin = pluginLoader.instance();
-            if (plugin) {
-                editorInterface = qobject_cast<EditorInterface *>(plugin);
-                if (editorInterface)
-                    return true;
-                pluginLoader.unload();
-            }
-        }
-
-        return false;
-}
 
 
 

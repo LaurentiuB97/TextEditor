@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/cmake/858/bin/cmake
+CMAKE_COMMAND = /snap/cmake/870/bin/cmake
 
 # The command to remove a file.
-RM = /snap/cmake/858/bin/cmake -E rm -f
+RM = /snap/cmake/870/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/laur/Desktop/TextEditor/TextEditor/build
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/cmake/858/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/cmake/870/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -166,29 +166,53 @@ TextEditor_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.s
 .PHONY : TextEditor_autogen/mocs_compilation.cpp.s
 
-home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.o: home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.o
-.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.o
+home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.o: home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.cpp.o
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.o
 
 # target to build an object file
-home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.o
-.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.o
+home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.cpp.o
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.cpp.o
 
-home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.i: home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.i
-.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.i
+home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.i: home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.cpp.i
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.i
 
 # target to preprocess a source file
-home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.i
-.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.i
+home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.cpp.i
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.cpp.i
 
-home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.s: home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.s
-.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.s
+home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.s: home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.cpp.s
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.s
 
 # target to generate assembly for a file
-home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.s
-.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.cpp.s
+home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.cpp.s
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.cpp.s
+
+home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.o: home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.cpp.o
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.o
+
+# target to build an object file
+home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.cpp.o
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.cpp.o
+
+home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.i: home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.cpp.i
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.i
+
+# target to preprocess a source file
+home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.cpp.i
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.cpp.i
+
+home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.s: home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.cpp.s
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.s
+
+# target to generate assembly for a file
+home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.cpp.s
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.cpp.s
 
 home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.o: home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp.o
 .PHONY : home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.o
@@ -213,6 +237,30 @@ home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.s: home/laur/Desktop/Text
 home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp.s
 .PHONY : home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp.s
+
+home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.o: home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.cpp.o
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.o
+
+# target to build an object file
+home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.cpp.o
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.cpp.o
+
+home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.i: home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.cpp.i
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.i
+
+# target to preprocess a source file
+home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.cpp.i
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.cpp.i
+
+home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.s: home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.cpp.s
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.s
+
+# target to generate assembly for a file
+home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.cpp.s
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.cpp.s
 
 home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.o: home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp.o
 .PHONY : home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.o
@@ -285,6 +333,30 @@ home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.s: home/laur/Deskt
 home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp.s
 .PHONY : home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.cpp.s
+
+home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.o: home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.cpp.o
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.o
+
+# target to build an object file
+home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.cpp.o
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.cpp.o
+
+home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.i: home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.cpp.i
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.i
+
+# target to preprocess a source file
+home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.cpp.i
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.cpp.i
+
+home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.s: home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.cpp.s
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.s
+
+# target to generate assembly for a file
+home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.cpp.s
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.cpp.s
 
 home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.o: home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp.o
 .PHONY : home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.o
@@ -419,12 +491,18 @@ help:
 	@echo "... TextEditor_autogen/mocs_compilation.o"
 	@echo "... TextEditor_autogen/mocs_compilation.i"
 	@echo "... TextEditor_autogen/mocs_compilation.s"
-	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.o"
-	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.i"
-	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/HighLighter.s"
+	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.o"
+	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.i"
+	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.s"
+	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.o"
+	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.i"
+	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.s"
 	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.o"
 	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.i"
 	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.s"
+	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.o"
+	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.i"
+	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/PluginManager.s"
 	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.o"
 	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.i"
 	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.s"
@@ -434,6 +512,9 @@ help:
 	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.o"
 	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.i"
 	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/StringManipulator.s"
+	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.o"
+	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.i"
+	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.s"
 	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.o"
 	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.i"
 	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.s"

@@ -42,9 +42,6 @@ public:
     QAction *actionUndo;
     QAction *actionFind;
     QAction *actionFind_regex;
-    QAction *actionBold;
-    QAction *actionItalic;
-    QAction *actionUnderline;
     QAction *actionSave_as;
     QAction *actionExit;
     QAction *actionNew_2;
@@ -60,14 +57,9 @@ public:
     QAction *actionReplace;
     QAction *actionIndent_forward;
     QAction *actionIndent_backward;
-    QAction *actionCapitalize;
-    QAction *actionPadding;
-    QAction *actionTrim;
+    QAction *actionSave_as_2;
     QWidget *centralWidget;
-    QHBoxLayout *horizontalLayout_2;
-    QVBoxLayout *verticalLayout_2;
-    QTabWidget *tabWidget;
-    QWidget *tab;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QPushButton *FindButton;
     QPushButton *FindRegexButton;
@@ -76,6 +68,15 @@ public:
     QPushButton *next;
     QPushButton *exitFind;
     QLabel *findResultsLabel;
+    QWidget *horizontalLayoutWidget;
+    QHBoxLayout *horizontalLayout_3;
+    QLabel *line;
+    QLabel *collumn;
+    QWidget *verticalLayoutWidget;
+    QVBoxLayout *verticalLayout;
+    QTabWidget *tabWidget;
+    QWidget *tab;
+    QWidget *tab_2;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuEdit;
@@ -92,8 +93,9 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1178, 659);
+        MainWindow->resize(1001, 634);
         MainWindow->setMinimumSize(QSize(1001, 512));
+        MainWindow->setMaximumSize(QSize(1001, 16777215));
         QPalette palette;
         QBrush brush(QColor(239, 41, 41, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -153,28 +155,13 @@ public:
         QIcon icon9;
         icon9.addFile(QStringLiteral(":/icons/icons/find_regex.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionFind_regex->setIcon(icon9);
-        actionBold = new QAction(MainWindow);
-        actionBold->setObjectName(QStringLiteral("actionBold"));
-        QIcon icon10;
-        icon10.addFile(QStringLiteral(":/icons/icons/bold.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionBold->setIcon(icon10);
-        actionItalic = new QAction(MainWindow);
-        actionItalic->setObjectName(QStringLiteral("actionItalic"));
-        QIcon icon11;
-        icon11.addFile(QStringLiteral(":/icons/icons/italic.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionItalic->setIcon(icon11);
-        actionUnderline = new QAction(MainWindow);
-        actionUnderline->setObjectName(QStringLiteral("actionUnderline"));
-        QIcon icon12;
-        icon12.addFile(QStringLiteral(":/icons/icons/underline.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionUnderline->setIcon(icon12);
         actionSave_as = new QAction(MainWindow);
         actionSave_as->setObjectName(QStringLiteral("actionSave_as"));
         actionExit = new QAction(MainWindow);
         actionExit->setObjectName(QStringLiteral("actionExit"));
-        QIcon icon13;
-        icon13.addFile(QStringLiteral(":/icons/icons/exit.jpg"), QSize(), QIcon::Normal, QIcon::Off);
-        actionExit->setIcon(icon13);
+        QIcon icon10;
+        icon10.addFile(QStringLiteral(":/icons/icons/exit.jpg"), QSize(), QIcon::Normal, QIcon::Off);
+        actionExit->setIcon(icon10);
         actionNew_2 = new QAction(MainWindow);
         actionNew_2->setObjectName(QStringLiteral("actionNew_2"));
         actionNew_2->setCheckable(true);
@@ -219,65 +206,44 @@ public:
         actionIndent_forward->setObjectName(QStringLiteral("actionIndent_forward"));
         actionIndent_backward = new QAction(MainWindow);
         actionIndent_backward->setObjectName(QStringLiteral("actionIndent_backward"));
-        actionCapitalize = new QAction(MainWindow);
-        actionCapitalize->setObjectName(QStringLiteral("actionCapitalize"));
-        QIcon icon14;
-        icon14.addFile(QStringLiteral(":/icons/icons/capitalizeAll.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionCapitalize->setIcon(icon14);
-        actionPadding = new QAction(MainWindow);
-        actionPadding->setObjectName(QStringLiteral("actionPadding"));
-        QIcon icon15;
-        icon15.addFile(QStringLiteral(":/icons/icons/padding.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionPadding->setIcon(icon15);
-        actionTrim = new QAction(MainWindow);
-        actionTrim->setObjectName(QStringLiteral("actionTrim"));
-        QIcon icon16;
-        icon16.addFile(QStringLiteral(":/icons/icons/trim.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionTrim->setIcon(icon16);
+        actionSave_as_2 = new QAction(MainWindow);
+        actionSave_as_2->setObjectName(QStringLiteral("actionSave_as_2"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        horizontalLayout_2 = new QHBoxLayout(centralWidget);
-        horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setSpacing(6);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        tabWidget = new QTabWidget(centralWidget);
-        tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        QSizePolicy sizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(tabWidget->sizePolicy().hasHeightForWidth());
-        tabWidget->setSizePolicy(sizePolicy);
-        tabWidget->setTabShape(QTabWidget::Triangular);
-        tabWidget->setIconSize(QSize(32, 16));
-        tabWidget->setTabsClosable(true);
-        tabWidget->setMovable(true);
-        tab = new QWidget();
-        tab->setObjectName(QStringLiteral("tab"));
-        tabWidget->addTab(tab, QString());
-
-        verticalLayout_2->addWidget(tabWidget);
-
-        horizontalLayout = new QHBoxLayout();
+        sizePolicy.setHeightForWidth(centralWidget->sizePolicy().hasHeightForWidth());
+        centralWidget->setSizePolicy(sizePolicy);
+        centralWidget->setLayoutDirection(Qt::LeftToRight);
+        layoutWidget = new QWidget(centralWidget);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(0, 510, 591, 27));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        FindButton = new QPushButton(centralWidget);
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        FindButton = new QPushButton(layoutWidget);
         FindButton->setObjectName(QStringLiteral("FindButton"));
-        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        FindButton->setEnabled(true);
+        QSizePolicy sizePolicy1(QSizePolicy::Maximum, QSizePolicy::Maximum);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(FindButton->sizePolicy().hasHeightForWidth());
         FindButton->setSizePolicy(sizePolicy1);
+        FindButton->setMinimumSize(QSize(24, 24));
+        FindButton->setMaximumSize(QSize(24, 24));
         FindButton->setIcon(icon8);
 
         horizontalLayout->addWidget(FindButton);
 
-        FindRegexButton = new QPushButton(centralWidget);
+        FindRegexButton = new QPushButton(layoutWidget);
         FindRegexButton->setObjectName(QStringLiteral("FindRegexButton"));
         sizePolicy1.setHeightForWidth(FindRegexButton->sizePolicy().hasHeightForWidth());
         FindRegexButton->setSizePolicy(sizePolicy1);
+        FindRegexButton->setMinimumSize(QSize(25, 24));
+        FindRegexButton->setMaximumSize(QSize(24, 24));
         QPalette palette1;
         QBrush brush2(QColor(255, 255, 255, 255));
         brush2.setStyle(Qt::SolidPattern);
@@ -335,34 +301,42 @@ public:
 
         horizontalLayout->addWidget(FindRegexButton);
 
-        findTextBox = new QLineEdit(centralWidget);
+        findTextBox = new QLineEdit(layoutWidget);
         findTextBox->setObjectName(QStringLiteral("findTextBox"));
         findTextBox->setEnabled(true);
         sizePolicy1.setHeightForWidth(findTextBox->sizePolicy().hasHeightForWidth());
         findTextBox->setSizePolicy(sizePolicy1);
+        findTextBox->setMaximumSize(QSize(142, 25));
         findTextBox->setInputMask(QStringLiteral(""));
         findTextBox->setFrame(true);
 
         horizontalLayout->addWidget(findTextBox);
 
-        previous = new QPushButton(centralWidget);
+        previous = new QPushButton(layoutWidget);
         previous->setObjectName(QStringLiteral("previous"));
-        sizePolicy1.setHeightForWidth(previous->sizePolicy().hasHeightForWidth());
-        previous->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy2(QSizePolicy::Maximum, QSizePolicy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(previous->sizePolicy().hasHeightForWidth());
+        previous->setSizePolicy(sizePolicy2);
+        previous->setMaximumSize(QSize(80, 25));
 
         horizontalLayout->addWidget(previous);
 
-        next = new QPushButton(centralWidget);
+        next = new QPushButton(layoutWidget);
         next->setObjectName(QStringLiteral("next"));
-        sizePolicy1.setHeightForWidth(next->sizePolicy().hasHeightForWidth());
-        next->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy3(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(next->sizePolicy().hasHeightForWidth());
+        next->setSizePolicy(sizePolicy3);
 
         horizontalLayout->addWidget(next);
 
-        exitFind = new QPushButton(centralWidget);
+        exitFind = new QPushButton(layoutWidget);
         exitFind->setObjectName(QStringLiteral("exitFind"));
-        sizePolicy1.setHeightForWidth(exitFind->sizePolicy().hasHeightForWidth());
-        exitFind->setSizePolicy(sizePolicy1);
+        sizePolicy3.setHeightForWidth(exitFind->sizePolicy().hasHeightForWidth());
+        exitFind->setSizePolicy(sizePolicy3);
         QPalette palette2;
         palette2.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette2.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
@@ -371,26 +345,67 @@ public:
 
         horizontalLayout->addWidget(exitFind);
 
-        findResultsLabel = new QLabel(centralWidget);
+        findResultsLabel = new QLabel(layoutWidget);
         findResultsLabel->setObjectName(QStringLiteral("findResultsLabel"));
-        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Fixed);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(findResultsLabel->sizePolicy().hasHeightForWidth());
-        findResultsLabel->setSizePolicy(sizePolicy2);
+        QSizePolicy sizePolicy4(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy4.setHorizontalStretch(0);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(findResultsLabel->sizePolicy().hasHeightForWidth());
+        findResultsLabel->setSizePolicy(sizePolicy4);
+        findResultsLabel->setMaximumSize(QSize(120, 16777215));
 
         horizontalLayout->addWidget(findResultsLabel);
 
+        horizontalLayoutWidget = new QWidget(centralWidget);
+        horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
+        horizontalLayoutWidget->setGeometry(QRect(909, 510, 91, 31));
+        horizontalLayout_3 = new QHBoxLayout(horizontalLayoutWidget);
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
+        line = new QLabel(horizontalLayoutWidget);
+        line->setObjectName(QStringLiteral("line"));
+        line->setMaximumSize(QSize(40, 25));
+        line->setLayoutDirection(Qt::LeftToRight);
 
-        verticalLayout_2->addLayout(horizontalLayout);
+        horizontalLayout_3->addWidget(line);
 
+        collumn = new QLabel(horizontalLayoutWidget);
+        collumn->setObjectName(QStringLiteral("collumn"));
+        collumn->setMaximumSize(QSize(50, 25));
+        collumn->setLayoutDirection(Qt::LeftToRight);
 
-        horizontalLayout_2->addLayout(verticalLayout_2);
+        horizontalLayout_3->addWidget(collumn);
+
+        verticalLayoutWidget = new QWidget(centralWidget);
+        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
+        verticalLayoutWidget->setGeometry(QRect(0, 0, 1001, 511));
+        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
+        verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        tabWidget = new QTabWidget(verticalLayoutWidget);
+        tabWidget->setObjectName(QStringLiteral("tabWidget"));
+        tabWidget->setDocumentMode(false);
+        tabWidget->setTabsClosable(true);
+        tabWidget->setMovable(true);
+        tab = new QWidget();
+        tab->setObjectName(QStringLiteral("tab"));
+        tabWidget->addTab(tab, QString());
+        tab_2 = new QWidget();
+        tab_2->setObjectName(QStringLiteral("tab_2"));
+        tabWidget->addTab(tab_2, QString());
+
+        verticalLayout->addWidget(tabWidget);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1178, 22));
+        menuBar->setGeometry(QRect(0, 0, 1001, 22));
+        sizePolicy.setHeightForWidth(menuBar->sizePolicy().hasHeightForWidth());
+        menuBar->setSizePolicy(sizePolicy);
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         menuEdit = new QMenu(menuBar);
@@ -411,6 +426,8 @@ public:
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         mainToolBar->setEnabled(true);
+        sizePolicy.setHeightForWidth(mainToolBar->sizePolicy().hasHeightForWidth());
+        mainToolBar->setSizePolicy(sizePolicy);
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
@@ -425,15 +442,13 @@ public:
         menuFile->addAction(actionNew);
         menuFile->addAction(actionOpen);
         menuFile->addAction(actionSave);
+        menuFile->addAction(actionSave_as_2);
         menuFile->addAction(actionExit);
         menuEdit->addAction(actionCut);
         menuEdit->addAction(actionCopy);
         menuEdit->addAction(actionPaste);
         menuEdit->addAction(actionRedo);
         menuEdit->addAction(actionUndo);
-        menuEdit->addAction(actionTrim);
-        menuEdit->addAction(actionPadding);
-        menuEdit->addAction(actionCapitalize);
         menuEdit->addAction(actionIndent_forward);
         menuEdit->addAction(actionIndent_backward);
         menuFind->addAction(actionFind);
@@ -465,13 +480,10 @@ public:
         mainToolBar->addAction(actionUndo);
         mainToolBar->addAction(actionRedo);
         mainToolBar->addSeparator();
-        mainToolBar->addAction(actionTrim);
-        mainToolBar->addAction(actionPadding);
-        mainToolBar->addAction(actionCapitalize);
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -517,9 +529,6 @@ public:
         actionFind->setShortcut(QApplication::translate("MainWindow", "Ctrl+F", Q_NULLPTR));
 #endif // QT_NO_SHORTCUT
         actionFind_regex->setText(QApplication::translate("MainWindow", "Find regex", Q_NULLPTR));
-        actionBold->setText(QApplication::translate("MainWindow", "Bold", Q_NULLPTR));
-        actionItalic->setText(QApplication::translate("MainWindow", "Italic", Q_NULLPTR));
-        actionUnderline->setText(QApplication::translate("MainWindow", "Underline", Q_NULLPTR));
         actionSave_as->setText(QApplication::translate("MainWindow", "Save as...", Q_NULLPTR));
         actionExit->setText(QApplication::translate("MainWindow", "Exit", Q_NULLPTR));
         actionNew_2->setText(QApplication::translate("MainWindow", "New", Q_NULLPTR));
@@ -544,10 +553,7 @@ public:
 #ifndef QT_NO_SHORTCUT
         actionIndent_backward->setShortcut(QApplication::translate("MainWindow", "Ctrl+]", Q_NULLPTR));
 #endif // QT_NO_SHORTCUT
-        actionCapitalize->setText(QApplication::translate("MainWindow", "Capitalize", Q_NULLPTR));
-        actionPadding->setText(QApplication::translate("MainWindow", "Padding", Q_NULLPTR));
-        actionTrim->setText(QApplication::translate("MainWindow", "Trim", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QString());
+        actionSave_as_2->setText(QApplication::translate("MainWindow", "Save as...", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         FindButton->setToolTip(QApplication::translate("MainWindow", "Find", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
@@ -560,6 +566,10 @@ public:
         next->setText(QApplication::translate("MainWindow", ">", Q_NULLPTR));
         exitFind->setText(QApplication::translate("MainWindow", "X", Q_NULLPTR));
         findResultsLabel->setText(QString());
+        line->setText(QApplication::translate("MainWindow", "Ln:", Q_NULLPTR));
+        collumn->setText(QApplication::translate("MainWindow", "Cl:", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Tab 1", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Tab 2", Q_NULLPTR));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", Q_NULLPTR));
         menuEdit->setTitle(QApplication::translate("MainWindow", "Edit", Q_NULLPTR));
         menuFind->setTitle(QApplication::translate("MainWindow", "Find", Q_NULLPTR));

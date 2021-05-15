@@ -16,63 +16,78 @@
 /// @param[in] isRegex - it specifies if the pattern is a peace of text or a regular expresion
 ///
 /// @return a vector of TextHighLight objects which correspond to the positions of the matches
-std::vector<TextHighLight> StringManipulator::find(const std::string &pattern, const std::string &text,
-                                                   const bool isRegex, const std::string flag) {
+std::vector<TextHighLight> StringManipulator::find(const QString &pattern, const QString &text,
+                                                   const bool isRegex, const QString flag) {
     // treating special cases
-    treatingExceptionsForText(text);
-    treatingExceptionsForText(pattern);
+    //treatingExceptionsForText(text);
+    //treatingExceptionsForText(pattern);
+    QString modified_pattern = pattern.left(pattern.count()); //o copie exacta a lui pattern, neconstanta
+    qDebug() << "Pattern : " << pattern << endl;
+
     if(!isRegex) {
-        if(pattern.length() > text.length()) {
+        if(pattern.count() > text.count()) {
             throw std::invalid_argument("Pattern larger than text");
         }
+        // anulam efectul operatorilor daca exista, deoarece acest pattern nu este un regex
+        repealOperators(modified_pattern);
     }
     std::vector<TextHighLight> highlights;
-    if(isRegex) {
-        QRegExp rx(pattern.c_str());
-        int pos = 0;
-        while ((pos = rx.indexIn(text.c_str(), pos)) != -1) {
-            TextHighLight th(pos, rx.cap(1).count());
-            //std::cout << rx.cap(1).toStdString();
-            highlights.push_back(th);
-            if(flag == "FIRST"){ // se ia doar primul highlight si iese din functie
-                return highlights;
-            }
-            //std::cout <<  th.print() << std::endl;
-            pos += rx.matchedLength();
-        }
-        for(auto& th : highlights){
-            if(th.getLength() == 0)
-            {
-                throw std::invalid_argument("This pattern will produce some non-highlighted results");
-                break;
-            }
-        }
-
-
-    } else {
-        int iterator = 0;
-        while(iterator < text.length())
+    // incardam expresia intre paranteze pentru a evita highlight-urile de lungime 0
+    modified_pattern = "(" + modified_pattern + ")";
+    qDebug() << "Modifiable pattern" << modified_pattern << endl;
+    QRegExp rx(modified_pattern);
+    int counter = 0;
+    int pos = 0;
+    // cat timp exista potriviri executa:
+    while ((pos = rx.indexIn(text, pos)) != -1) { //indexIn ia prima potrivire din text incepand de la pozitia pos
+        TextHighLight th(pos, rx.cap(1).count());
+         highlights.push_back(th);
+         if(flag == "FIRST"){ // se ia doar primul highlight si iese din functie
+            return highlights;
+         }
+         //std::cout <<  th.print() << std::endl;
+         pos += rx.matchedLength();
+         qDebug() << "Counter" << counter++ << endl;
+     }
+     qDebug() << "while finished" << endl;
+     for(auto& th : highlights){
+        if(th.getLength() == 0)
         {
-            if(text[iterator] == pattern[0])
-            {   // there is a first character match
-                if(text.substr(iterator, pattern.length()) == pattern)
-                {  // there is a complete match -> store the highlight
-                    highlights.push_back(TextHighLight(iterator, pattern.length()));
-                    iterator += pattern.length();
-                }
-                else
-                {   // even if the first characters are the same, it is not a match -> move to the next character
-                    iterator++;
-                }
-
-            }
-            else
-            {   // there is no character match for this iteration -> move to the next character
-                iterator++;
-            }
-
+            throw std::invalid_argument("This pattern will produce some non-highlighted results");
+            break;
         }
-    }
+}
+
+
+//    } else {
+//        int iterator = 0;
+//        while(iterator < text.length())
+//        {
+//            if(text[iterator] == pattern[0])
+//            {   // there is a first character match
+//                if(text.substr(iterator, pattern.length()) == pattern)
+//                {  // there is a complete match -> store the highlight
+//                    highlights.push_back(TextHighLight(iterator, pattern.length()));
+//                    iterator += pattern.length();
+//                }
+//                else
+//                {   // even if the first characters are the same, it is not a match -> move to the next character
+//                    iterator++;
+//                }
+
+//            }
+//            else
+//            {   // there is no character match for this iteration -> move to the next character
+//                iterator++;
+//            }
+
+//        }
+//    }
+
+    QString regex = "(abcd)+";
+    repealOperators(regex);
+    qDebug() << "Modified text : " << regex << endl;
+
     return highlights;
 }
 
@@ -107,7 +122,7 @@ TextHighLight StringManipulator::replace(const std::string &replacement, const T
 /// @return the number of changes in text
 int StringManipulator::replaceAll(const std::string &toReplace, const std::string &replacement, std::string &text){
     int counter = 0;
-    auto highlights = find(toReplace, text, false);
+    auto highlights = find(QString(toReplace.c_str()), QString(text.c_str()), false);
     for(TextHighLight highlight : highlights){
         replace(replacement, highlight, text);
         counter++;
@@ -443,11 +458,11 @@ bool StringManipulator::isADate(const std::string &text) {
     bool result;
     treatingExceptionsForText(text);
     // find the delimiter (it could be '.', '/' or '-')
-    if(find(".", text,false).size() == 2) {
+    if(find(".", QString(text.c_str()),false).size() == 2) {
         delimiter = ".";
-    } else if(find("/", text,false).size() == 2) {
+    } else if(find("/", QString(text.c_str()),false).size() == 2) {
         delimiter = "/";
-    } else if(find("-", text,false).size() == 2) {
+    } else if(find("-", QString(text.c_str()),false).size() == 2) {
         delimiter = "-";
     }
     // split the date to verify the component parts
@@ -558,6 +573,20 @@ bool StringManipulator::isNumber(const char character) {
     return character >= 48 && character <= 57; // is in 0-9 in ASCII code or not
 }
 
+/// verifica daca caracterul primut ca intrare este un construct regex
+///
+/// @param[in] character - caracterul care trebuie verificat
+///
+/// @returns - true daca caracterul este un construct regex si false in caz contrar
+bool StringManipulator::isRegexOperator(const QChar &character){
+    for(QChar &c : StringManipulator::regexSpecialCharacters()){
+        if(c == character){
+            return true;
+        }
+    }
+    return false;
+}
+
 /// treats exception like "empty text" or  "forbiden character"
 ///
 /// @param[in] text - the text meant to be analyzed
@@ -593,3 +622,27 @@ void StringManipulator::treatingExceptionsForHighlight(const std::string &text, 
                                     std::to_string(highlight.getPosition() + highlight.getLength()));
     }
 }
+
+QList<QChar> StringManipulator::regexSpecialCharacters(){
+    QList<QChar> list = {'+','-','/','\\','*','(',')','$','^','*','(',')','[',']','{','}','?','.','|'};
+    return list;
+}
+
+/// in cazul in care expresia ce trebuie gasita contine operatori de tip regex, se introduce caracterul "\" pentru a le anula efectul
+///
+///@param[in][out]  text - textul care trebuie modificat
+///
+/// @returns - numarul de modificari inserate in text
+int StringManipulator::repealOperators(QString &text){
+        int counter = 0;
+        int changes = 0;
+        while(counter < text.count()){
+            if(isRegexOperator(text[counter])){ // s-a gasit un operator
+                text.insert(counter, QChar('\\')); //se insereaza "\" pentru a-i anula efectul
+                counter += 2; // se trece acum peste
+                changes++;
+            } else {
+                counter++;
+            }
+        }
+    }

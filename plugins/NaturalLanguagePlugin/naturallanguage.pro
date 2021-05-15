@@ -6,10 +6,12 @@ HEADERS         += \
                    NaturalLanguagePlugin.h \
                    ../../src/Theme.h \
                    ../../src/StringManipulator.h
+                   ../../src/TabWidget.h
 SOURCES         += \
                    NaturalLanguagePlugin.cpp\
                    ../../src/Theme.cpp \
                    ../../src/StringManipulator.cpp
+                   ../../src/TabWidget.cpp
 TARGET          = $$qtLibraryTarget(NaturalLanguagePlugin)
 DESTDIR         = ../
 EXAMPLE_FILES = naturallanguageplugin.json

@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[43];
-    char stringdata0[943];
+    QByteArrayData data[39];
+    char stringdata0[850];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -43,37 +43,33 @@ QT_MOC_LITERAL(8, 160, 24), // "on_actionPaste_triggered"
 QT_MOC_LITERAL(9, 185, 22), // "on_actionCut_triggered"
 QT_MOC_LITERAL(10, 208, 23), // "on_actionUndo_triggered"
 QT_MOC_LITERAL(11, 232, 23), // "on_actionRedo_triggered"
-QT_MOC_LITERAL(12, 256, 23), // "on_actionBold_triggered"
-QT_MOC_LITERAL(13, 280, 25), // "on_actionItalic_triggered"
-QT_MOC_LITERAL(14, 306, 28), // "on_actionUnderline_triggered"
-QT_MOC_LITERAL(15, 335, 21), // "on_FindButton_clicked"
-QT_MOC_LITERAL(16, 357, 23), // "on_actionFind_triggered"
-QT_MOC_LITERAL(17, 381, 19), // "on_previous_clicked"
-QT_MOC_LITERAL(18, 401, 15), // "on_next_clicked"
-QT_MOC_LITERAL(19, 417, 19), // "on_exitFind_clicked"
-QT_MOC_LITERAL(20, 437, 26), // "on_FindRegexButton_clicked"
-QT_MOC_LITERAL(21, 464, 29), // "on_actionFind_regex_triggered"
-QT_MOC_LITERAL(22, 494, 30), // "on_tabWidget_tabCloseRequested"
-QT_MOC_LITERAL(23, 525, 5), // "index"
-QT_MOC_LITERAL(24, 531, 22), // "on_actionNew_2_toggled"
-QT_MOC_LITERAL(25, 554, 4), // "arg1"
-QT_MOC_LITERAL(26, 559, 23), // "on_actionOpen_2_toggled"
-QT_MOC_LITERAL(27, 583, 23), // "on_actionSave_2_toggled"
-QT_MOC_LITERAL(28, 607, 22), // "on_actionCut_2_toggled"
-QT_MOC_LITERAL(29, 630, 23), // "on_actionCopy_2_toggled"
-QT_MOC_LITERAL(30, 654, 24), // "on_actionPaste_2_toggled"
-QT_MOC_LITERAL(31, 679, 23), // "on_actionUndo_2_toggled"
-QT_MOC_LITERAL(32, 703, 23), // "on_actionRedo_2_toggled"
-QT_MOC_LITERAL(33, 727, 24), // "on_actionDefault_toggled"
-QT_MOC_LITERAL(34, 752, 25), // "on_actionDarkMode_toggled"
-QT_MOC_LITERAL(35, 778, 27), // "on_tabWidget_currentChanged"
-QT_MOC_LITERAL(36, 806, 10), // "closeEvent"
-QT_MOC_LITERAL(37, 817, 12), // "QCloseEvent*"
-QT_MOC_LITERAL(38, 830, 5), // "event"
-QT_MOC_LITERAL(39, 836, 26), // "on_actionReplace_triggered"
-QT_MOC_LITERAL(40, 863, 33), // "on_actionIndent_forward_trigg..."
-QT_MOC_LITERAL(41, 897, 34), // "on_actionIndent_backward_trig..."
-QT_MOC_LITERAL(42, 932, 10) // "loadPlugin"
+QT_MOC_LITERAL(12, 256, 21), // "on_FindButton_clicked"
+QT_MOC_LITERAL(13, 278, 23), // "on_actionFind_triggered"
+QT_MOC_LITERAL(14, 302, 19), // "on_previous_clicked"
+QT_MOC_LITERAL(15, 322, 15), // "on_next_clicked"
+QT_MOC_LITERAL(16, 338, 19), // "on_exitFind_clicked"
+QT_MOC_LITERAL(17, 358, 26), // "on_FindRegexButton_clicked"
+QT_MOC_LITERAL(18, 385, 29), // "on_actionFind_regex_triggered"
+QT_MOC_LITERAL(19, 415, 27), // "tabWidget_tabCloseRequested"
+QT_MOC_LITERAL(20, 443, 5), // "index"
+QT_MOC_LITERAL(21, 449, 22), // "on_actionNew_2_toggled"
+QT_MOC_LITERAL(22, 472, 4), // "arg1"
+QT_MOC_LITERAL(23, 477, 23), // "on_actionOpen_2_toggled"
+QT_MOC_LITERAL(24, 501, 23), // "on_actionSave_2_toggled"
+QT_MOC_LITERAL(25, 525, 22), // "on_actionCut_2_toggled"
+QT_MOC_LITERAL(26, 548, 23), // "on_actionCopy_2_toggled"
+QT_MOC_LITERAL(27, 572, 24), // "on_actionPaste_2_toggled"
+QT_MOC_LITERAL(28, 597, 23), // "on_actionUndo_2_toggled"
+QT_MOC_LITERAL(29, 621, 23), // "on_actionRedo_2_toggled"
+QT_MOC_LITERAL(30, 645, 24), // "on_actionDefault_toggled"
+QT_MOC_LITERAL(31, 670, 25), // "on_actionDarkMode_toggled"
+QT_MOC_LITERAL(32, 696, 27), // "on_tabWidget_currentChanged"
+QT_MOC_LITERAL(33, 724, 10), // "closeEvent"
+QT_MOC_LITERAL(34, 735, 12), // "QCloseEvent*"
+QT_MOC_LITERAL(35, 748, 5), // "event"
+QT_MOC_LITERAL(36, 754, 26), // "on_actionReplace_triggered"
+QT_MOC_LITERAL(37, 781, 33), // "on_actionIndent_forward_trigg..."
+QT_MOC_LITERAL(38, 815, 34) // "on_actionIndent_backward_trig..."
 
     },
     "MainWindow\0on_actionNew_triggered\0\0"
@@ -82,14 +78,12 @@ QT_MOC_LITERAL(42, 932, 10) // "loadPlugin"
     "on_actionExit_triggered\0on_actionCopy_triggered\0"
     "on_actionPaste_triggered\0"
     "on_actionCut_triggered\0on_actionUndo_triggered\0"
-    "on_actionRedo_triggered\0on_actionBold_triggered\0"
-    "on_actionItalic_triggered\0"
-    "on_actionUnderline_triggered\0"
-    "on_FindButton_clicked\0on_actionFind_triggered\0"
-    "on_previous_clicked\0on_next_clicked\0"
-    "on_exitFind_clicked\0on_FindRegexButton_clicked\0"
+    "on_actionRedo_triggered\0on_FindButton_clicked\0"
+    "on_actionFind_triggered\0on_previous_clicked\0"
+    "on_next_clicked\0on_exitFind_clicked\0"
+    "on_FindRegexButton_clicked\0"
     "on_actionFind_regex_triggered\0"
-    "on_tabWidget_tabCloseRequested\0index\0"
+    "tabWidget_tabCloseRequested\0index\0"
     "on_actionNew_2_toggled\0arg1\0"
     "on_actionOpen_2_toggled\0on_actionSave_2_toggled\0"
     "on_actionCut_2_toggled\0on_actionCopy_2_toggled\0"
@@ -100,8 +94,7 @@ QT_MOC_LITERAL(42, 932, 10) // "loadPlugin"
     "on_tabWidget_currentChanged\0closeEvent\0"
     "QCloseEvent*\0event\0on_actionReplace_triggered\0"
     "on_actionIndent_forward_triggered\0"
-    "on_actionIndent_backward_triggered\0"
-    "loadPlugin"
+    "on_actionIndent_backward_triggered"
 };
 #undef QT_MOC_LITERAL
 
@@ -111,7 +104,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      37,   14, // methods
+      33,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -119,43 +112,39 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  199,    2, 0x08 /* Private */,
-       3,    0,  200,    2, 0x08 /* Private */,
-       4,    0,  201,    2, 0x08 /* Private */,
-       5,    0,  202,    2, 0x08 /* Private */,
-       6,    0,  203,    2, 0x08 /* Private */,
-       7,    0,  204,    2, 0x08 /* Private */,
-       8,    0,  205,    2, 0x08 /* Private */,
-       9,    0,  206,    2, 0x08 /* Private */,
-      10,    0,  207,    2, 0x08 /* Private */,
-      11,    0,  208,    2, 0x08 /* Private */,
-      12,    0,  209,    2, 0x08 /* Private */,
-      13,    0,  210,    2, 0x08 /* Private */,
-      14,    0,  211,    2, 0x08 /* Private */,
-      15,    0,  212,    2, 0x08 /* Private */,
-      16,    0,  213,    2, 0x08 /* Private */,
-      17,    0,  214,    2, 0x08 /* Private */,
-      18,    0,  215,    2, 0x08 /* Private */,
-      19,    0,  216,    2, 0x08 /* Private */,
-      20,    0,  217,    2, 0x08 /* Private */,
-      21,    0,  218,    2, 0x08 /* Private */,
-      22,    1,  219,    2, 0x08 /* Private */,
-      24,    1,  222,    2, 0x08 /* Private */,
-      26,    1,  225,    2, 0x08 /* Private */,
-      27,    1,  228,    2, 0x08 /* Private */,
-      28,    1,  231,    2, 0x08 /* Private */,
-      29,    1,  234,    2, 0x08 /* Private */,
-      30,    1,  237,    2, 0x08 /* Private */,
-      31,    1,  240,    2, 0x08 /* Private */,
-      32,    1,  243,    2, 0x08 /* Private */,
-      33,    1,  246,    2, 0x08 /* Private */,
-      34,    1,  249,    2, 0x08 /* Private */,
-      35,    1,  252,    2, 0x08 /* Private */,
-      36,    1,  255,    2, 0x08 /* Private */,
-      39,    0,  258,    2, 0x08 /* Private */,
-      40,    0,  259,    2, 0x08 /* Private */,
-      41,    0,  260,    2, 0x08 /* Private */,
-      42,    0,  261,    2, 0x08 /* Private */,
+       1,    0,  179,    2, 0x08 /* Private */,
+       3,    0,  180,    2, 0x08 /* Private */,
+       4,    0,  181,    2, 0x08 /* Private */,
+       5,    0,  182,    2, 0x08 /* Private */,
+       6,    0,  183,    2, 0x08 /* Private */,
+       7,    0,  184,    2, 0x08 /* Private */,
+       8,    0,  185,    2, 0x08 /* Private */,
+       9,    0,  186,    2, 0x08 /* Private */,
+      10,    0,  187,    2, 0x08 /* Private */,
+      11,    0,  188,    2, 0x08 /* Private */,
+      12,    0,  189,    2, 0x08 /* Private */,
+      13,    0,  190,    2, 0x08 /* Private */,
+      14,    0,  191,    2, 0x08 /* Private */,
+      15,    0,  192,    2, 0x08 /* Private */,
+      16,    0,  193,    2, 0x08 /* Private */,
+      17,    0,  194,    2, 0x08 /* Private */,
+      18,    0,  195,    2, 0x08 /* Private */,
+      19,    1,  196,    2, 0x08 /* Private */,
+      21,    1,  199,    2, 0x08 /* Private */,
+      23,    1,  202,    2, 0x08 /* Private */,
+      24,    1,  205,    2, 0x08 /* Private */,
+      25,    1,  208,    2, 0x08 /* Private */,
+      26,    1,  211,    2, 0x08 /* Private */,
+      27,    1,  214,    2, 0x08 /* Private */,
+      28,    1,  217,    2, 0x08 /* Private */,
+      29,    1,  220,    2, 0x08 /* Private */,
+      30,    1,  223,    2, 0x08 /* Private */,
+      31,    1,  226,    2, 0x08 /* Private */,
+      32,    1,  229,    2, 0x08 /* Private */,
+      33,    1,  232,    2, 0x08 /* Private */,
+      36,    0,  235,    2, 0x08 /* Private */,
+      37,    0,  236,    2, 0x08 /* Private */,
+      38,    0,  237,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -175,26 +164,22 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   20,
+    QMetaType::Void, QMetaType::Bool,   22,
+    QMetaType::Void, QMetaType::Bool,   22,
+    QMetaType::Void, QMetaType::Bool,   22,
+    QMetaType::Void, QMetaType::Bool,   22,
+    QMetaType::Void, QMetaType::Bool,   22,
+    QMetaType::Void, QMetaType::Bool,   22,
+    QMetaType::Void, QMetaType::Bool,   22,
+    QMetaType::Void, QMetaType::Bool,   22,
+    QMetaType::Void, QMetaType::Bool,   22,
+    QMetaType::Void, QMetaType::Bool,   22,
+    QMetaType::Void, QMetaType::Int,   20,
+    QMetaType::Void, 0x80000000 | 34,   35,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   23,
-    QMetaType::Void, QMetaType::Bool,   25,
-    QMetaType::Void, QMetaType::Bool,   25,
-    QMetaType::Void, QMetaType::Bool,   25,
-    QMetaType::Void, QMetaType::Bool,   25,
-    QMetaType::Void, QMetaType::Bool,   25,
-    QMetaType::Void, QMetaType::Bool,   25,
-    QMetaType::Void, QMetaType::Bool,   25,
-    QMetaType::Void, QMetaType::Bool,   25,
-    QMetaType::Void, QMetaType::Bool,   25,
-    QMetaType::Void, QMetaType::Bool,   25,
-    QMetaType::Void, QMetaType::Int,   23,
-    QMetaType::Void, 0x80000000 | 37,   38,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Bool,
 
        0        // eod
 };
@@ -215,34 +200,29 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 7: _t->on_actionCut_triggered(); break;
         case 8: _t->on_actionUndo_triggered(); break;
         case 9: _t->on_actionRedo_triggered(); break;
-        case 10: _t->on_actionBold_triggered(); break;
-        case 11: _t->on_actionItalic_triggered(); break;
-        case 12: _t->on_actionUnderline_triggered(); break;
-        case 13: _t->on_FindButton_clicked(); break;
-        case 14: _t->on_actionFind_triggered(); break;
-        case 15: _t->on_previous_clicked(); break;
-        case 16: _t->on_next_clicked(); break;
-        case 17: _t->on_exitFind_clicked(); break;
-        case 18: _t->on_FindRegexButton_clicked(); break;
-        case 19: _t->on_actionFind_regex_triggered(); break;
-        case 20: _t->on_tabWidget_tabCloseRequested((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 21: _t->on_actionNew_2_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 22: _t->on_actionOpen_2_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 23: _t->on_actionSave_2_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 24: _t->on_actionCut_2_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 25: _t->on_actionCopy_2_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 26: _t->on_actionPaste_2_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 27: _t->on_actionUndo_2_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 28: _t->on_actionRedo_2_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 29: _t->on_actionDefault_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 30: _t->on_actionDarkMode_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 31: _t->on_tabWidget_currentChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 32: _t->closeEvent((*reinterpret_cast< QCloseEvent*(*)>(_a[1]))); break;
-        case 33: _t->on_actionReplace_triggered(); break;
-        case 34: _t->on_actionIndent_forward_triggered(); break;
-        case 35: _t->on_actionIndent_backward_triggered(); break;
-        case 36: { bool _r = _t->loadPlugin();
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
+        case 10: _t->on_FindButton_clicked(); break;
+        case 11: _t->on_actionFind_triggered(); break;
+        case 12: _t->on_previous_clicked(); break;
+        case 13: _t->on_next_clicked(); break;
+        case 14: _t->on_exitFind_clicked(); break;
+        case 15: _t->on_FindRegexButton_clicked(); break;
+        case 16: _t->on_actionFind_regex_triggered(); break;
+        case 17: _t->tabWidget_tabCloseRequested((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 18: _t->on_actionNew_2_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 19: _t->on_actionOpen_2_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 20: _t->on_actionSave_2_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 21: _t->on_actionCut_2_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 22: _t->on_actionCopy_2_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 23: _t->on_actionPaste_2_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 24: _t->on_actionUndo_2_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 25: _t->on_actionRedo_2_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 26: _t->on_actionDefault_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 27: _t->on_actionDarkMode_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 28: _t->on_tabWidget_currentChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 29: _t->closeEvent((*reinterpret_cast< QCloseEvent*(*)>(_a[1]))); break;
+        case 30: _t->on_actionReplace_triggered(); break;
+        case 31: _t->on_actionIndent_forward_triggered(); break;
+        case 32: _t->on_actionIndent_backward_triggered(); break;
         default: ;
         }
     }
@@ -273,13 +253,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 37)
+        if (_id < 33)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 37;
+        _id -= 33;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 37)
+        if (_id < 33)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 37;
+        _id -= 33;
     }
     return _id;
 }
