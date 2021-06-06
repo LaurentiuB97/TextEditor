@@ -304,6 +304,7 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qglyphrun.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qrawfont.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontdatabase.h \
+ /home/laur/Desktop/TextEditor/TextEditor/src/Availability.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QPluginLoader \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qpluginloader.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qlibrary.h \

@@ -3,11 +3,13 @@
 #include <QWidget>
 #include <QDebug>
 void CppPlugin::setProperties(QMenuBar* menuBar,QToolBar* toolBar,
-                       TabWidget* tabWidget, Theme* theme){
+                       TabWidget* tabWidget, Theme* theme,
+                       Availability* availability){
     this->menuBar = menuBar;
     this->tabWidget = tabWidget;
     this->theme = theme;
     this->toolBar = toolBar;
+    this->availability = availability;
 }
 
 void CppPlugin::setActions(){
@@ -25,13 +27,15 @@ void CppPlugin::setNewConnection(int index){
 }
 
 void CppPlugin::highlightText(){
-    auto edit = tabWidget->getCurrentTextEdit();
-    QMap<QString, QList<TextHighLight>> map;
-    QColor keywords_color(204,204,0);
-    QColor types_color(51,51,255);
-    QColor string_color(139,69,19);
-    map.insert(keywords_color.name(), highlighter.findKeyWords(edit));
-    map.insert(types_color.name(), highlighter.findTypes(edit));
-    map.insert(string_color.name(), highlighter.findString(edit));
-    highlighter.colorTargets(map, edit);
+    if(availability->getAvailabilityStatus()){
+        auto edit = tabWidget->getCurrentTextEdit();
+        QMap<QString, QList<TextHighLight>> map;
+        QColor keywords_color(204,204,0);
+        QColor types_color(51,51,255);
+        QColor string_color(139,69,19);
+        map.insert(keywords_color.name(), highlighter.findKeyWords(edit));
+        map.insert(types_color.name(), highlighter.findTypes(edit));
+        map.insert(string_color.name(), highlighter.findString(edit));
+        highlighter.colorTargets(map, edit);
+    }
 }

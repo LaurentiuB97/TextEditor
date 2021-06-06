@@ -6,13 +6,15 @@ HEADERS         += \
                    CppPlugin.h \
 		           HighLighter.h\
                    ../../src/Theme.h \
-                   ../../src/TabWidget.h
+                   ../../src/TabWidget.h\
+                   ../../src/Availability.h
                    
 SOURCES         += \
                    CppPlugin.cpp\
                    HighLighter.cpp\
                    ../../src/Theme.cpp \
-                   ../../src/TabWidget.cpp
+                   ../../src/TabWidget.cpp\
+                   ../../src/Availability.cpp
 TARGET          = $$qtLibraryTarget(CppPlugin)
 DESTDIR         = ../
 EXAMPLE_FILES = cppplugin.json

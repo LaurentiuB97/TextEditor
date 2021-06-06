@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/mocs_compilation.cpp" "CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o.d"
+  "/home/laur/Desktop/TextEditor/TextEditor/src/Availability.cpp" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Availability.cpp.o" "gcc" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Availability.cpp.o.d"
   "/home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.cpp" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.cpp.o" "gcc" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.cpp.o.d"
   "/home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.cpp" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.cpp.o" "gcc" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.cpp.o.d"
   "/home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp.o" "gcc" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/ModifyText.cpp.o.d"

@@ -166,6 +166,30 @@ TextEditor_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.s
 .PHONY : TextEditor_autogen/mocs_compilation.cpp.s
 
+home/laur/Desktop/TextEditor/TextEditor/src/Availability.o: home/laur/Desktop/TextEditor/TextEditor/src/Availability.cpp.o
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/Availability.o
+
+# target to build an object file
+home/laur/Desktop/TextEditor/TextEditor/src/Availability.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Availability.cpp.o
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/Availability.cpp.o
+
+home/laur/Desktop/TextEditor/TextEditor/src/Availability.i: home/laur/Desktop/TextEditor/TextEditor/src/Availability.cpp.i
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/Availability.i
+
+# target to preprocess a source file
+home/laur/Desktop/TextEditor/TextEditor/src/Availability.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Availability.cpp.i
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/Availability.cpp.i
+
+home/laur/Desktop/TextEditor/TextEditor/src/Availability.s: home/laur/Desktop/TextEditor/TextEditor/src/Availability.cpp.s
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/Availability.s
+
+# target to generate assembly for a file
+home/laur/Desktop/TextEditor/TextEditor/src/Availability.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TextEditor.dir/build.make CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Availability.cpp.s
+.PHONY : home/laur/Desktop/TextEditor/TextEditor/src/Availability.cpp.s
+
 home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.o: home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.cpp.o
 .PHONY : home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.o
 
@@ -491,6 +515,9 @@ help:
 	@echo "... TextEditor_autogen/mocs_compilation.o"
 	@echo "... TextEditor_autogen/mocs_compilation.i"
 	@echo "... TextEditor_autogen/mocs_compilation.s"
+	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/Availability.o"
+	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/Availability.i"
+	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/Availability.s"
 	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.o"
 	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.i"
 	@echo "... home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.s"

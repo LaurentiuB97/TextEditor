@@ -9,6 +9,7 @@
 #include "StringManipulator.h"
 #include "Theme.h"
 #include "TabWidget.h"
+#include "Availability.h"
 
 class NaturalLanguagePlugin : public QObject, EditorInterface{
     Q_OBJECT
@@ -19,7 +20,8 @@ public:
     void setActions() override;
 
     void setProperties(QMenuBar* menuBar = nullptr,QToolBar* toolBar = nullptr,
-                       TabWidget* tabWidget = nullptr, Theme* theme = nullptr) override;
+                       TabWidget* tabWidget = nullptr, Theme* theme = nullptr,
+                       Availability* availability = nullptr) override;
 
     void setIcons();
 
@@ -61,6 +63,7 @@ private:
     QToolBar* toolBar;
     QTabWidget* tabWidget;
     Theme* theme;
+    Availability* availability;
     QList<QAction*> actions;
 };
 

@@ -5,13 +5,15 @@ INCLUDEPATH    += ../../src
 HEADERS         += \
                    NaturalLanguagePlugin.h \
                    ../../src/Theme.h \
-                   ../../src/StringManipulator.h
-                   ../../src/TabWidget.h
+                   ../../src/StringManipulator.h\
+                   ../../src/TabWidget.h\
+                   ../../src/Availability.h
 SOURCES         += \
                    NaturalLanguagePlugin.cpp\
                    ../../src/Theme.cpp \
-                   ../../src/StringManipulator.cpp
-                   ../../src/TabWidget.cpp
+                   ../../src/StringManipulator.cpp\
+                   ../../src/TabWidget.cpp\
+                   ../../src/Availability.cpp
 TARGET          = $$qtLibraryTarget(NaturalLanguagePlugin)
 DESTDIR         = ../
 EXAMPLE_FILES = naturallanguageplugin.json

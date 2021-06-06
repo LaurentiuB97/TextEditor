@@ -1,8 +1,8 @@
 CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: \
  /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/mocs_compilation.cpp \
  /usr/include/stdc-predef.h \
- /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/OTJHMKELA5/moc_CursorGroup.cpp \
- /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/OTJHMKELA5/../../../src/CursorGroup.h \
+ /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/OTJHMKELA5/moc_Availability.cpp \
+ /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/OTJHMKELA5/../../../src/Availability.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs.h \
@@ -208,6 +208,8 @@ CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject_impl.h \
  /usr/include/c++/7/chrono /usr/include/c++/7/ratio \
  /usr/include/c++/7/ctime /usr/include/c++/7/bits/parse_numbers.h \
+ /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/OTJHMKELA5/moc_CursorGroup.cpp \
+ /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/OTJHMKELA5/../../../src/CursorGroup.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QTabWidget \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabwidget.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h \
@@ -301,6 +303,7 @@ CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
+ /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/OTJHMKELA5/../../../src/Availability.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QPluginLoader \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qpluginloader.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qlibrary.h \

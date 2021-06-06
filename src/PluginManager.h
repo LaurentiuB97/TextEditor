@@ -1,6 +1,7 @@
 #ifndef PLUGINMANAGER_H
 #define PLUGINMANAGER_H
 #include "EditorInterface.h"
+#include "Availability.h"
 #include "Theme.h"
 #include "TabWidget.h"
 #include <QPluginLoader>
@@ -28,6 +29,7 @@ private:
     QToolBar* toolBar;
     TabWidget* tabWidget;
     Theme* theme;
+    Availability* availability;
 };
 
 #endif //PLUGINMANAGER_H

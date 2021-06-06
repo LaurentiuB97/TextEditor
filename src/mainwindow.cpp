@@ -45,9 +45,7 @@ MainWindow::MainWindow(QWidget *parent) :
     undoGroup = new QUndoGroup(this);
     // setare grup cursoare pentru determinarea liniei si coloanei
     cursorGroup = new CursorGroup(this, tabWidget, ui->line, ui->collumn);
-
-
-
+    ui->horizontalLayout->setSpacing(1);
 
     // ASPECT
     st.LoadSettings();

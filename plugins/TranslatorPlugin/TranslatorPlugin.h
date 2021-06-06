@@ -3,11 +3,13 @@
 #include "EditorInterface.h"
 #include "Theme.h"
 #include "TabWidget.h"
+#include "Availability.h"
 #include <QObject>
 #include <QProcess>
 #include <QtPlugin>
 #include <QWidget>
 #include <QAction>
+
 class TranslatorPlugin : public QObject, EditorInterface {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.qt-project.Qt.Examples.EditorInterface" FILE "translatorplugin.json")
@@ -15,7 +17,8 @@ class TranslatorPlugin : public QObject, EditorInterface {
 public:
    void setActions() override;
    void setProperties(QMenuBar* menuBar = nullptr,QToolBar* toolBar = nullptr,
-                      TabWidget* tabWidget = nullptr, Theme* theme = nullptr) override;
+                      TabWidget* tabWidget = nullptr, Theme* theme = nullptr,
+                      Availability* availability = nullptr) override;
    void translateSelection(const QString &from,const QString &to);
    QString translate(const QString &text,const QString &from,const QString &to);
 private slots:
@@ -32,6 +35,7 @@ private:
     QToolBar* toolBar;
     TabWidget* tabWidget;
     Theme* theme;
+    Availability* availability;
 };
 
 #endif //TRANSLATORPLUGIN_H

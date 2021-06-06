@@ -5,6 +5,7 @@
 #include "HighLighter.h"
 #include "Theme.h"
 #include "TabWidget.h"
+#include "Availability.h"
 
 class CppPlugin : public QObject, EditorInterface{
     Q_OBJECT
@@ -14,7 +15,8 @@ class CppPlugin : public QObject, EditorInterface{
  public:
     void setActions() override;
     void setProperties(QMenuBar* menuBar = nullptr,QToolBar* toolBar = nullptr,
-                       TabWidget* tabWidget = nullptr, Theme* theme = nullptr) override;
+                       TabWidget* tabWidget = nullptr, Theme* theme = nullptr,
+                       Availability* availability = nullptr) override;
     void highlightText();
  protected slots:
     void setNewConnection(int index);
@@ -23,5 +25,6 @@ class CppPlugin : public QObject, EditorInterface{
     QToolBar* toolBar;
     TabWidget* tabWidget;
     Theme* theme;
+    Availability* availability;
     HighLighter highlighter;
 };

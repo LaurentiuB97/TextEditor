@@ -23,6 +23,7 @@ set(SOURCE_FILES ../src/mainwindow.cpp
                 ../src/CursorGroup.cpp
                 ../src/PluginManager.cpp
                 ../src/TabWidget.cpp
+                ../src/Availability.cpp
 )
 add_executable(TextEditor ${SOURCE_FILES})
 target_link_libraries(TextEditor Qt5::Core Qt5::Widgets Qt5::Network)

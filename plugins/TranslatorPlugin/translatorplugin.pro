@@ -5,12 +5,14 @@ INCLUDEPATH    += ../../src
 HEADERS         += \
                    TranslatorPlugin.h \
                    ../../src/Theme.h \
-                   ../../src/TabWidget.h
+                   ../../src/TabWidget.h\
+                   ../../src/Availability.h
                    
 SOURCES         += \
                    TranslatorPlugin.cpp\
                    ../../src/Theme.cpp \
-                   ../../src/TabWidget.cpp
+                   ../../src/TabWidget.cpp\
+                   ../../src/Availability.cpp
 TARGET          = $$qtLibraryTarget(TranslatorPlugin)
 DESTDIR         = ../
 EXAMPLE_FILES = translatorplugin.json

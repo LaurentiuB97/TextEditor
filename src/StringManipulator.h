@@ -107,6 +107,7 @@ class StringManipulator {
     ///
     /// @return the first occurance of a non-ASCII character
     static int findNonASCII(const std::string &text);
+    static int findNonASCII(const QString &text);
     /// it specifies if a given string respects the norms to be considered a time date
     ///
     /// @param[in] text - the text meant to be analyzed
@@ -149,11 +150,13 @@ class StringManipulator {
     ///
     /// @param[in] text - the text meant to be analyzed
     static void treatingExceptionsForText(const std::string &text);
+    static void treatingExceptionsForText(const QString &text);
     /// treats exception like "empty text" or  "forbiden character" or incorrect highlight
     ///
     /// @param[in] text - the text meant to be analyzed
     /// @param[in] highlight - the TextHighLight object meant to be analyzed
     static void treatingExceptionsForHighlight(const std::string &text, const TextHighLight &highlight);
+    static void treatingExceptionsForHighlight(const QString &text, const TextHighLight &highlight);
 
     /// @returns o lista cu caractere ce reprezinta operatori regex
     static QList<QChar> regexSpecialCharacters();

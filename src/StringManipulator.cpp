@@ -19,9 +19,9 @@
 std::vector<TextHighLight> StringManipulator::find(const QString &pattern, const QString &text,
                                                    const bool isRegex, const QString flag) {
     // treating special cases
-    //treatingExceptionsForText(text);
-    //treatingExceptionsForText(pattern);
-    QString modified_pattern = pattern.left(pattern.count()); //o copie exacta a lui pattern, neconstanta
+    treatingExceptionsForText(text);
+    treatingExceptionsForText(pattern);
+    QString modified_pattern = pattern.left(pattern.count()); //o copie exacta a lui "pattern", neconstanta
     qDebug() << "Pattern : " << pattern << endl;
 
     if(!isRegex) {
@@ -59,30 +59,6 @@ std::vector<TextHighLight> StringManipulator::find(const QString &pattern, const
 }
 
 
-//    } else {
-//        int iterator = 0;
-//        while(iterator < text.length())
-//        {
-//            if(text[iterator] == pattern[0])
-//            {   // there is a first character match
-//                if(text.substr(iterator, pattern.length()) == pattern)
-//                {  // there is a complete match -> store the highlight
-//                    highlights.push_back(TextHighLight(iterator, pattern.length()));
-//                    iterator += pattern.length();
-//                }
-//                else
-//                {   // even if the first characters are the same, it is not a match -> move to the next character
-//                    iterator++;
-//                }
-
-//            }
-//            else
-//            {   // there is no character match for this iteration -> move to the next character
-//                iterator++;
-//            }
-
-//        }
-//    }
 
     QString regex = "(abcd)+";
     repealOperators(regex);
@@ -448,6 +424,19 @@ int StringManipulator::findNonASCII(const std::string &text) {
     return -1;
 }
 
+int StringManipulator::findNonASCII(const QString &text){
+    if(text.isEmpty() || text.isNull()){
+        throw std::invalid_argument("Empty text");
+    }
+    for(int i = 0; i < text.count(); ++i) {
+        int code = text[i].unicode();
+        if((code < 8) || (code > 127)){
+            return i;
+        }
+    }
+    return -1;
+}
+
 /// it specifies if a given string respects the norms to be considered a time date
 ///
 /// @param[in] text - the text meant to be analyzed
@@ -598,6 +587,16 @@ void StringManipulator::treatingExceptionsForText(const std::string &text) {
         throw std::invalid_argument("Text contains forbidden character - position: " +  std::to_string(i));
     }
 }
+void StringManipulator::treatingExceptionsForText(const QString &text){
+    if(text.isEmpty() || text.isNull()) {
+        throw std::invalid_argument("Empty/Null text");
+    }
+    if(int i = findNonASCII(text) != -1) {
+        throw std::invalid_argument("Text contains forbidden character - position: " +  std::to_string(i));
+    }
+}
+
+
 
 /// treats exception like "empty text" or  "forbiden character" or incorrect highlight
 ///
@@ -619,6 +618,26 @@ void StringManipulator::treatingExceptionsForHighlight(const std::string &text, 
     if((highlight.getPosition() + highlight.getLength()) > text.length()) {
         throw std::invalid_argument("Length to large! text.length() =  " +
                                     std::to_string(text.length()) + ", position + length = " +
+                                    std::to_string(highlight.getPosition() + highlight.getLength()));
+    }
+}
+
+void StringManipulator::treatingExceptionsForHighlight(const QString &text, const TextHighLight &highlight){
+    if(highlight.getPosition() < 0) {
+        throw std::invalid_argument("Negative position");
+    }
+    if(highlight.getLength() < 0) {
+        throw std::invalid_argument("Negative length");
+    }
+    if(highlight.getPosition() >= text.count()) {
+        throw std::invalid_argument("Position larger than the text's length - text.length() = " +
+                                    std::to_string(text.count()) +
+                                    ", position = " +
+                                    std::to_string(highlight.getPosition()));
+    }
+    if((highlight.getPosition() + highlight.getLength()) > text.count()) {
+        throw std::invalid_argument("Length to large! text.count() =  " +
+                                    std::to_string(text.count()) + ", position + length = " +
                                     std::to_string(highlight.getPosition() + highlight.getLength()));
     }
 }

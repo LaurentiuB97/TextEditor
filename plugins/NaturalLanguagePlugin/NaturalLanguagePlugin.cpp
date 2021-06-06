@@ -9,11 +9,13 @@
 
 // Expresia regulata care detecteaza formatul de tip data din text
 QString regex = "((((0[1-9])|((1|2)\\d)|(3[0,1]))[\\/, \\-,\\.]((0[1-9])|(1[0-2]))[\\/, \\-,\\.]\\d\\d\\d\\d)|(\\d\\d\\d\\d[\\/, \\-,\\.]((0[1-9])|(1[0-2]))[\\/, \\-,\\.]((0[1-9])|((1|2)\\d)|(3[0,1]))))";
-void NaturalLanguagePlugin::setProperties(QMenuBar* menuBar, QToolBar* toolBar, TabWidget* tabWidget, Theme* theme) {
+void NaturalLanguagePlugin::setProperties(QMenuBar* menuBar, QToolBar* toolBar, TabWidget* tabWidget,
+                                          Theme* theme, Availability* availability) {
     this->menuBar = menuBar;
     this->tabWidget = tabWidget;
     this->theme = theme;
     this->toolBar = toolBar;
+    this->availability = availability;
     //crearea actiunilor
     //Capitalize
     actionCapitalize = new QAction("Capitalize");

@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "TextEditor_autogen"
   "CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Availability.cpp.o"
+  "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Availability.cpp.o.d"
   "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.cpp.o"
   "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/CursorGroup.cpp.o.d"
   "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/FileStatus.cpp.o"

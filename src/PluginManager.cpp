@@ -12,6 +12,8 @@ void PluginManager::setMembers(QMenuBar* menuBar,QToolBar* toolBar,
     this->toolBar = toolBar;
     this->tabWidget = tabWidget;
     this->theme = theme;
+    this->availability = new Availability(this);
+    availability->setAvailabilityStatus(true);
 }
 bool PluginManager::loadPlugin(const QString &fileName){
     QDir pluginsDir(QCoreApplication::applicationDirPath());
@@ -25,7 +27,7 @@ bool PluginManager::loadPlugin(const QString &fileName){
         editorInterface = qobject_cast<EditorInterface *>(plugin);
         if (editorInterface){
             // facem "instalarea pluginului"
-            editorInterface->setProperties(menuBar,toolBar, tabWidget, theme);
+            editorInterface->setProperties(menuBar,toolBar, tabWidget, theme, availability);
             editorInterface->setActions();
             // adaugam obiectul in
             plugins.insert(filterName(fileName), editorInterface);

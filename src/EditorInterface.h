@@ -4,12 +4,14 @@
 #include <QToolBar>
 #include "TabWidget.h"
 #include "Theme.h"
+#include "Availability.h"
 
 class EditorInterface{
 public:
     virtual ~EditorInterface()= default;
     virtual void setProperties(QMenuBar* menuBar = nullptr,QToolBar* toolBar = nullptr,
-                               TabWidget* tabWidget = nullptr, Theme* theme = nullptr) = 0;
+                               TabWidget* tabWidget = nullptr, Theme* theme = nullptr,
+                               Availability* availability = nullptr) = 0;
     virtual void setActions() = 0;
 };
 
