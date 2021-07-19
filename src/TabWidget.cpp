@@ -1,3 +1,4 @@
+// Copyright 2021 Bobocea Laurentiu
 #include "TabWidget.h"
 #include <QtGui>
 #include <QtWidgets>
@@ -5,7 +6,6 @@
 TabWidget::TabWidget(QWidget* parent){
     this->setParent(parent);
     this->setTabsClosable(true);
-    //this->setTabsMovable(true);
 }
 
 TabWidget::~TabWidget(){}

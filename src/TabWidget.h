@@ -1,3 +1,4 @@
+// Copyright 2021 Bobocea Laurentiu
 #ifndef TABWIDGET_H
 #define TABWIDGET_H
 #include <QTabWidget>

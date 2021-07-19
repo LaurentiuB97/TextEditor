@@ -202,7 +202,6 @@ CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/StringMani
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QChar \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h \
  /home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.h \
- /home/laur/Desktop/TextEditor/TextEditor/src/Utils.h \
  /usr/include/c++/7/regex /usr/include/c++/7/bitset \
  /usr/include/c++/7/locale /usr/include/c++/7/bits/locale_facets_nonio.h \
  /usr/include/c++/7/ctime \

@@ -426,8 +426,7 @@ Theme.o: ../../src/Theme.cpp ../../src/Theme.h
 
 StringManipulator.o: ../../src/StringManipulator.cpp ../../src/StringManipulator.h \
 		../../src/TextHighLight.h \
-		../../src/PunctuationMark.h \
-		../../src/Utils.h
+		../../src/PunctuationMark.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o StringManipulator.o ../../src/StringManipulator.cpp
 
 TabWidget.o: ../../src/TabWidget.cpp ../../src/TabWidget.h

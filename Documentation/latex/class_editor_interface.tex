@@ -1,0 +1,35 @@
+\hypertarget{class_editor_interface}{}\section{Editor\+Interface Class Reference}
+\label{class_editor_interface}\index{Editor\+Interface@{Editor\+Interface}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_editor_interface_a6ddb816bdfe63849bbe4abf49e72058a}\label{class_editor_interface_a6ddb816bdfe63849bbe4abf49e72058a}} 
+virtual \hyperlink{class_editor_interface_a6ddb816bdfe63849bbe4abf49e72058a}{$\sim$\+Editor\+Interface} ()=default
+\begin{DoxyCompactList}\small\item\em Constructorul standard al interfetei. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_editor_interface_ae05ad16a2fec202fbc24c2111b163287}{set\+Properties} (Q\+Menu\+Bar $\ast$menu\+Bar=nullptr, Q\+Tool\+Bar $\ast$tool\+Bar=nullptr, \hyperlink{class_tab_widget}{Tab\+Widget} $\ast$tab\+Widget=nullptr, \hyperlink{class_theme}{Theme} $\ast$theme=nullptr, \hyperlink{class_availability}{Availability} $\ast$availability=nullptr)=0
+\item 
+virtual void \hyperlink{class_editor_interface_ac52475577ba3c2cabe59803a1da8ca89}{set\+Actions} ()=0
+\item 
+\mbox{\Hypertarget{class_editor_interface_afe0c0037f318308d4b350bd4a6f58c7e}\label{class_editor_interface_afe0c0037f318308d4b350bd4a6f58c7e}} 
+virtual void \hyperlink{class_editor_interface_afe0c0037f318308d4b350bd4a6f58c7e}{disconnect} ()=0
+\begin{DoxyCompactList}\small\item\em elimina efectele functiei set\+Actions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_editor_interface_ac52475577ba3c2cabe59803a1da8ca89}\label{class_editor_interface_ac52475577ba3c2cabe59803a1da8ca89}} 
+\index{Editor\+Interface@{Editor\+Interface}!set\+Actions@{set\+Actions}}
+\index{set\+Actions@{set\+Actions}!Editor\+Interface@{Editor\+Interface}}
+\subsubsection{\texorpdfstring{set\+Actions()}{setActions()}}
+{\footnotesize\ttfamily virtual void Editor\+Interface\+::set\+Actions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+seteaza functionalitatile plugin-\/ului in aplicatia gazda pe baza proprietatilor asignate in Set\+Properties. Acestea pot fi actiuni adaugate in tool\+Bar sau meniu\+Bar sau conexiuni semnal-\/slot in tab\+Widget \mbox{\Hypertarget{class_editor_interface_ae05ad16a2fec202fbc24c2111b163287}\label{class_editor_interface_ae05ad16a2fec202fbc24c2111b163287}} 
+\index{Editor\+Interface@{Editor\+Interface}!set\+Properties@{set\+Properties}}
+\index{set\+Properties@{set\+Properties}!Editor\+Interface@{Editor\+Interface}}
+\subsubsection{\texorpdfstring{set\+Properties()}{setProperties()}}
+{\footnotesize\ttfamily virtual void Editor\+Interface\+::set\+Properties (\begin{DoxyParamCaption}\item[{Q\+Menu\+Bar $\ast$}]{menu\+Bar = {\ttfamily nullptr},  }\item[{Q\+Tool\+Bar $\ast$}]{tool\+Bar = {\ttfamily nullptr},  }\item[{\hyperlink{class_tab_widget}{Tab\+Widget} $\ast$}]{tab\+Widget = {\ttfamily nullptr},  }\item[{\hyperlink{class_theme}{Theme} $\ast$}]{theme = {\ttfamily nullptr},  }\item[{\hyperlink{class_availability}{Availability} $\ast$}]{availability = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+adauga in clasa plugin-\/ului pointeri catre diferite obiecte din fereastra principala ce urmeaza sa fie folosite de plugin in functionalitatile sale 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/laur/\+Desktop/\+Text\+Editor/\+Text\+Editor/src/Editor\+Interface.\+h\end{DoxyCompactItemize}

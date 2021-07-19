@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['transformtoascii',['transformToASCII',['../class_string_manipulator.html#ada98fef8f4eaac2525bb583c654e3c9d',1,'StringManipulator']]],
-  ['treatingexceptionsforhighlight',['treatingExceptionsForHighlight',['../class_string_manipulator.html#a2fcadd35bf6e7343aceca8982ca3efc6',1,'StringManipulator']]],
-  ['treatingexceptionsfortext',['treatingExceptionsForText',['../class_string_manipulator.html#a89012eafe7e806cc95f5400cc46c3dd8',1,'StringManipulator']]],
-  ['trim',['trim',['../class_string_manipulator.html#a37e0bceb7f3f726912f3750e2910c30d',1,'StringManipulator']]]
+  ['regexspecialcharacters',['regexSpecialCharacters',['../class_string_manipulator.html#a5ac671799b00b71f236dcfb68077cdce',1,'StringManipulator']]],
+  ['repealoperators',['repealOperators',['../class_string_manipulator.html#af2041957b6df343d55d1cd99719e0d16',1,'StringManipulator']]],
+  ['replace',['replace',['../class_string_manipulator.html#a20fdffe83624dbaf91d2f26e79417bed',1,'StringManipulator']]],
+  ['replaceall',['replaceAll',['../class_string_manipulator.html#a7a77d58ba2445a871cc716a8870f7244',1,'StringManipulator']]]
 ];

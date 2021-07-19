@@ -1,7 +1,7 @@
+// Copyright 2021 Bobocea Laurentiu
 #include "StringManipulator.h"
 #include "PunctuationMark.h"
 #include "TextHighLight.h"
-#include "Utils.h"
 #include <string>
 #include <iostream>
 #include <vector>
@@ -9,117 +9,130 @@
 #include <QRegExp>
 #include <QStringList>
 #include <QDebug>
-/// It returns a vector with the highlights of all search results in a text
+
+
+int ENTER_CODE = 8233;
+
+/// Cauta in textul dat secvente de text corespunzatoare sablonului pattern
+/// @param[in] pattern - sablonul cautarii - poate fi o secventa simpla de text
+/// sau o expresie regulata
+/// @param[in] text - textul in care se cauta sablonul
+/// @param[in] isRegex -flag ce indica daca sablonul este
+///  o expresie regulata sau nu
 ///
-/// @param[in] pattern - it can be a normal sequance of text or a regular expresion
-/// @param[in] text - the text the function must search in
-/// @param[in] isRegex - it specifies if the pattern is a peace of text or a regular expresion
-///
-/// @return a vector of TextHighLight objects which correspond to the positions of the matches
-std::vector<TextHighLight> StringManipulator::find(const QString &pattern, const QString &text,
-                                                   const bool isRegex, const QString flag) {
-    // treating special cases
+/// @returns un vector cu pozitiile si lungimile rezultatelor cautarii
+std::vector<TextHighLight> StringManipulator::find(const QString &pattern,
+                                                   const QString &text,
+                                                   const bool isRegex,
+                                                   const QString flag) {
+    // tratare cazuri speciale
     treatingExceptionsForText(text);
     treatingExceptionsForText(pattern);
-    QString modified_pattern = pattern.left(pattern.count()); //o copie exacta a lui "pattern", neconstanta
-    qDebug() << "Pattern : " << pattern << endl;
-
-    if(!isRegex) {
-        if(pattern.count() > text.count()) {
+    //o copie exacta a lui "pattern", neconstanta
+    QString modified_pattern = pattern.left(pattern.count());
+    if (!isRegex) {
+        if (pattern.count() > text.count()) {
             throw std::invalid_argument("Pattern larger than text");
         }
-        // anulam efectul operatorilor daca exista, deoarece acest pattern nu este un regex
+        // anulam efectul operatorilor daca exista,
+        //deoarece acest pattern nu este un regex
         repealOperators(modified_pattern);
     }
     std::vector<TextHighLight> highlights;
-    // incardam expresia intre paranteze pentru a evita highlight-urile de lungime 0
+    // incardam expresia intre paranteze pentru
+    //a evita highlight-urile de lungime 0
     modified_pattern = "(" + modified_pattern + ")";
-    qDebug() << "Modifiable pattern" << modified_pattern << endl;
     QRegExp rx(modified_pattern);
     int counter = 0;
     int pos = 0;
     // cat timp exista potriviri executa:
-    while ((pos = rx.indexIn(text, pos)) != -1) { //indexIn ia prima potrivire din text incepand de la pozitia pos
+    //indexIn ia prima potrivire din text incepand de la pozitia pos
+    while ((pos = rx.indexIn(text, pos)) != -1) {
         TextHighLight th(pos, rx.cap(1).count());
          highlights.push_back(th);
-         if(flag == "FIRST"){ // se ia doar primul highlight si iese din functie
+         // se ia doar primul highlight si iese din functie
+         if (flag == "FIRST") {
             return highlights;
          }
          //std::cout <<  th.print() << std::endl;
          pos += rx.matchedLength();
-         qDebug() << "Counter" << counter++ << endl;
+         //qDebug() << "Counter" << counter++ << endl;
      }
-     qDebug() << "while finished" << endl;
-     for(auto& th : highlights){
-        if(th.getLength() == 0)
-        {
-            throw std::invalid_argument("This pattern will produce some non-highlighted results");
+     //qDebug() << "while finished" << endl;
+     for (auto& th : highlights) {
+        if (th.getLength() == 0) {
+            throw std::invalid_argument("This pattern will produce"
+                                        " some non-highlighted results");
             break;
         }
-}
-
-
-
+    }
     QString regex = "(abcd)+";
     repealOperators(regex);
-    qDebug() << "Modified text : " << regex << endl;
 
     return highlights;
 }
 
-/// Replaces the portion of the string that is specified in the TextHighLight object
+/// Inlocuieste secventa specificata de highlight cu textul replacement
 ///
-/// @param[in] replacement - the string meant to be put on the highlighted text's place
-/// @param[in] highlight - specifies the position and the length of the sequance which is meant to be replaced
-/// @param[in] text - the string which the function will make the change in
+/// @param[in] replacement - textul inlocuitor
+/// @param[in] highlight -un obiect ce contine pozitia si
+///  lungimea secventei de inlocuit
+/// @param[in] text - textul in care se face inlocuirea
 ///
-/// @return the highlight of the new sequance of text
-TextHighLight StringManipulator::replace(const std::string &replacement, const TextHighLight &highlight, std::string &text) { // incomplete
-
-    // treating exceptions
+/// @returns highlight-ul noi secvente adaugate
+TextHighLight StringManipulator::replace(const QString &replacement,
+                                         const TextHighLight &highlight,
+                                         QString &text) {
+    //Tratarea exceptiilor
     treatingExceptionsForText(text);
     treatingExceptionsForHighlight(text, highlight);
     if(int i = findNonASCII(replacement) != -1) {
-        throw std::invalid_argument("Replacement contains forbidden character - position: " + std::to_string(i));
+        throw std::invalid_argument("Replacement contains forbidden"
+                                    " character - position: " +
+                                    std::to_string(i));
         return TextHighLight(0,0);
     }
-    // replacing the string
-    text.replace(highlight.getPosition(), highlight.getLength(), replacement);
-    TextHighLight highlight_result(highlight.getPosition(), replacement.length());
-    return highlight_result; // (homework) - i don't know what the result must be :)))
+    // inlocuirea stringului
+    text.replace(highlight.getPosition(),
+                 highlight.getLength(),
+                 replacement);
+    TextHighLight highlight_result(highlight.getPosition(),
+                                   replacement.length());
+    return highlight_result;
 }
 
-/// Replaces all portions of text which are occupied by 'toReplace' with replacement
+/// Inlocuieste aparitiile secventei toReplace cu secventa replacement in text
 ///
-/// @param[in] toReplace - the string meant to be replaced from all text
-/// @param[in] replacement - the string which goes in
-/// @param[in] text - the string which the function will make the change in
+/// @param[in] toReplace - textul de inlocuit
+/// @param[in] replacement - textul inlocuitor
+/// @param[in] text - textul in care se face inlocuirea
 ///
-/// @return the number of changes in text
-int StringManipulator::replaceAll(const std::string &toReplace, const std::string &replacement, std::string &text){
+/// @returns numarul de inlocuiri din text
+int StringManipulator::replaceAll(const QString &toReplace,
+                                  const QString &replacement,
+                                  QString &text){
     int counter = 0;
-    auto highlights = find(QString(toReplace.c_str()), QString(text.c_str()), false);
-    for(TextHighLight highlight : highlights){
-        replace(replacement, highlight, text);
-        counter++;
-    }
+    text.replace(toReplace, replacement);
     return counter;
 }
 
-/// Removes the unnecesary spaces (if there are two or more consecutive spaces, it will remove the aditional once and let just one to that positon
+/// Elimina spatiile suplimentare dintr-un text.
+///  In locurile unde sunt doua sau mai multe
+/// spatii consecutive va ramane doar un spatiu
 ///
-/// @param[in][out] text - the string which is meant to be trimmed
+/// @param[in][out] text - textul ce trebuie truncheat
 ///
-/// @return the number of changes in text
-int StringManipulator::trim(std::string &text) {
+/// @returns numarul de schimbari din text dupa aplicarea functiei
+int StringManipulator::trim(QString &text) {
     treatingExceptionsForText(text);
     int changes = 0;
-    while(text.find("  ") != std::string::npos){ // while there are two consecutive spaces in the text
-        for(int position = 0; position < text.length(); position++) {
-            if(text[position] == ' ') {
-                if(text[position + 1] == ' ') {
+    // cat timp exista doua spatii consecutive in text:
+    while(text.contains("  ")) {
+        for (int position = 0; position < text.count(); position++) {
+            if (text[position] == ' ') {
+                if (text[position + 1] == ' ') {
                     changes++;
-                    text.erase(position + 1, 1);
+                    text.remove(position + 1, 1);
                 }
             }
         }
@@ -127,30 +140,33 @@ int StringManipulator::trim(std::string &text) {
     return changes;
 }
 
-/// Puts spaces where there are missing (after punctuation signs must likely)
+/// Completeaza cu spatii in zonele unde ar trebui sa existe.
+/// Zone tinta: Intre propozitii, dupa semnul de punctuatie sau
+/// dupa fiecare virgula
 ///
-/// @param[in][out] text - the string which is meant to be modified
+/// @param[in][out] text - textul ce trebuie modificat
 ///
-/// @return the number of changes in text
-int StringManipulator::padding(std::string &text) {
-    // treating exceptions
+/// @returns numarul de schimbari din text dupa aplicarea functiei
+int StringManipulator::padding(QString &text) {
+    //Tratarea exceptiilor
     treatingExceptionsForText(text);
     int changes = 0;
     std::vector<int> positions = PunctuationMark::findAllMarks(text);
-
-    for(int i = 0; i < positions.size(); ++i) {
-        if(isACapitalLetter(text[positions[i] + 1])) { // if the next character after the punctuation mark is a capital letter then:
+    for (int i = 0; i < positions.size(); ++i) {
+        if (text[positions[i] + 1].isUpper()) {
+        // daca urmatorul caracter de dupa semul de punctuatie
+        //este o litera mare:
             text.insert(positions[i] + 1, " ");
             changes++;
-            for(int j = i; j < positions.size(); ++j) {
+            for (int j = i; j < positions.size(); ++j) {
                 positions[j]++;
             }
         }
-        if(text[positions[i]] == ',' && text[positions[i]+1] != ' ') // if there is a comma and the next character is not a space do"
-        {
+        if (text[positions[i]] == ',' && text[positions[i]+1] != ' ') {
+            // daca nu exista un spatiu dupa virgula:"
             text.insert(positions[i] + 1, " ");
             changes++;
-            for(int j = i; j < positions.size(); ++j) {
+            for (int j = i; j < positions.size(); ++j) {
                 positions[j]++;
             }
         }
@@ -159,180 +175,208 @@ int StringManipulator::padding(std::string &text) {
     return changes;
  }
 
-/// Capitalize all the letters from the given text
+/// Transforma toate literele mici din text in majuscule
 ///
-/// @param[in][out] text - the string which is meant to be modified
+/// @param[in][out] text - textul ce trebuie modificat
 ///
-/// @return the number of changes in text
-int StringManipulator::capitalizeAll(std::string &text) {
-    // treating exceptions
+/// @returns numarul de schimbari din text dupa aplicarea functiei
+int StringManipulator::capitalizeAll(QString &text) {
+    // tratarea exceptiilor
     treatingExceptionsForText(text);
     int changes = 0;
-    for(int position = 0; position < text.length(); position++) {
-        if(text[position] >= 97 && text[position] <= 122) { // if letter is in a-z
-            text[position] -= 32; // Uppercase = lowercase -32
+    for (int position = 0; position < text.count(); position++) {
+        if (text[position].isLower()) { // daca litera apartine a-z
+            text.replace(position, 1, text[position].toUpper());
             changes++;
         }
     }
     return changes;
 }
-/// Capitalize the first letter of every sentence when is the case
+/// Transforma la i nmajuscula fiecare litera mica la inceputul unei propozitii
 ///
-/// @param[in][out] text - the string which is meant to be modified
+/// @param[in][out] text - textul ce trebuie modificat
 ///
-/// @return the number of changes in text
-int StringManipulator::capitalizeFirstLetter(std::string &text) { // incomplete
-    // treating exceptions
+/// @returns numarul de schimbari din text dupa aplicarea functiei
+int StringManipulator::capitalizeFirstLetter(QString &text) {
+    //Tratarea exceptiilor
     treatingExceptionsForText(text);
 
     int changes = 0;
-    std::vector<int> dot_marks_positions = PunctuationMark::searchFor('.', text);
-    std::vector<int> question_marks_positions = PunctuationMark::searchFor('?', text);
-    std::vector<int> exclamation_marks_positions = PunctuationMark::searchFor('!', text);
+    std::vector<int> dot_marks_positions =
+            PunctuationMark::searchFor('.', text);
+    std::vector<int> question_marks_positions =
+            PunctuationMark::searchFor('?', text);
+    std::vector<int> exclamation_marks_positions =
+            PunctuationMark::searchFor('!', text);
     // doing for the first letter from the text
-    if(isALowercaseLetter(text[0]))
-    {
-        text[0] -= 32;
+    if (text[0].isLower()) {
+        text.replace(0,1,text[0].toUpper());
         changes++;
     }
     // doing for dot case
-    for(auto p : dot_marks_positions) {  // go through all the positions
-        if(text[p+1] == ' ' &&   // if the dot have a space after it and also a lowercase letter
-           isALowercaseLetter(text[p+2])) {
-            text[p+2] -= 32; // make the letter uppercase
+    for (auto p : dot_marks_positions) {  // go through all the positions
+        // if the dot have a space after it and also a lowercase letter
+        if (text[p+1] == ' ' &&
+           text[p+2].isLower()) {
+            // make the letter uppercase
+            text.replace(p+2,1,text[p+2].toUpper());
             changes++;
         }
     }
     // doing for question mark case
-    for(auto p : question_marks_positions) {
-        if(text[p+1] == ' ' &&  // if the question mark have a space after it and also a lowercase letter
-           isALowercaseLetter(text[p+2])) {
-               text[p+2] -= 32;  // make the letter uppercase
+    for (auto p : question_marks_positions) {
+      // if the question mark have a space after it and also a lowercase letter
+        if (text[p+1] == ' ' &&
+           text[p+2].isLower()) {
+              // make the letter uppercase
+               text.replace(p+2,1,text[p+2].toUpper());
                changes++;
            }
     }
     // doing for exclamation mark case
-    for(auto p : exclamation_marks_positions) {
-        if(text[p+1] == ' ' &&  // if the exclamation mark have a space after it and also a lowercase letter
+    for (auto p : exclamation_marks_positions) {
+        // if the exclamation mark have a space
+        //after it and also a lowercase letter
+        if (text[p+1] == ' ' &&
            isALowercaseLetter(text[p+2])) {
-               text[p+2] -= 32;  // make the letter uppercase
+            // make the letter uppercase
+               text.replace(p+2,1,text[p+2].toUpper());
                changes++;
            }
     }
-
     return changes;
 }
 
-///Capitalize a certain potion of text specified by a highlight
+///Transforma in majuscule literele mici din secventa specificata de highlight
 ///
-/// @param[in][out] text - the string which is meant to be modified
-/// @param[in] highlight - specifies the position and length of the sequance
+/// @param[in][out] text -  textul ce trebuie modificat
+/// @param[in] highlight - highlight-ul secventei ce trebuie modificate
 ///
-/// @return the number of changes in text
-int StringManipulator::capitalizeOffset(std::string &text, const TextHighLight highlight) {
-    // treating exceptions
+/// @returns numarul de schimbari din text dupa aplicarea functiei
+int StringManipulator::capitalizeOffset(QString &text,
+                                        const TextHighLight highlight) {
+    //Tratarea exceptiilor
     treatingExceptionsForText(text);
     treatingExceptionsForHighlight(text, highlight);
     int changes = 0;
-    for(int position = highlight.getPosition(); position < highlight.getPosition() + highlight.getLength(); position++) {
-        if(text[position] >= 97 && text[position] <= 122) { // if letter is in a-z
-            text[position] -= 32; // Uppercase = lowercase -32
+    for (int position = highlight.getPosition();
+        position < highlight.getPosition() + highlight.getLength();
+        position++) {
+        if (text[position].isLower()) {  // if letter is in a-z
+            text.replace(position, 1, text[position].toUpper());
             changes++;
         }
     }
     return changes;
 }
-/// Lowercase all of the letters from the text
+
+/// Transforma in litere mici toate majusculele din text
 ///
-/// @param[in][out] text - the string which is meant to be modified
+/// @param[in][out] text - textul ce trebuie modificat
 ///
-/// @return the number of changes in text
-int StringManipulator::lowercaseAll(std::string &text) {
-    // treating exceptions
+/// @returns numarul de schimbari din text dupa aplicarea functiei
+int StringManipulator::lowercaseAll(QString &text) {
+    //Tratarea exceptiilor
     treatingExceptionsForText(text);
-
     int changes = 0;
-    for(int position = 0; position < text.length(); position++) {
-        if(text[position] >= 65 && text[position] <= 90) { // if letter is in A-Z
-            text[position] += 32; // lowercase = Uppercase + 32
+    for (int position = 0; position < text.count(); position++) {
+        if (text[position].isUpper()) { // if letter is in A-Z
+            // lowercase = Uppercase + 32
+            text.replace(position,1,text[position].toLower());
             changes++;
         }
     }
     return changes;
 }
 
-/// Lowercase the first letter of every sentence, where is the case
+/// Functia opusa functiei capitalizeFirstLetter
 /// ///
-/// @param[in][out] text - the string which is meant to be modified
+/// @param[in][out] text - textul ce trebuie modificat
 ///
-/// @return the number of changes in text
-int StringManipulator::lowercaseFirstLetter(std::string &text) {
-    // treating exceptions
+/// @returns numarul de schimbari din text dupa aplicarea functiei
+int StringManipulator::lowercaseFirstLetter(QString &text) {
+    //Tratarea exceptiilor
     treatingExceptionsForText(text);
-
     int changes = 0;
-    std::vector<int> dot_marks_positions = PunctuationMark::searchFor('.', text);
-    std::vector<int> question_marks_positions = PunctuationMark::searchFor('?', text);
-    std::vector<int> exclamation_marks_positions = PunctuationMark::searchFor('!', text);
-    //doing it for the first letter from the text
-    if(isACapitalLetter(text[0]))
-    {
-        text[0] += 32;
+    std::vector<int> dot_marks_positions =
+            PunctuationMark::searchFor('.', text);
+    std::vector<int> question_marks_positions =
+            PunctuationMark::searchFor('?', text);
+    std::vector<int> exclamation_marks_positions =
+            PunctuationMark::searchFor('!', text);
+    // pentru prima litera din text
+    if (text[0].isUpper()) {
+        text.replace(0,1,text[0].toLower());
         changes++;
     }
-    // doing for dot case
-    for(auto p : dot_marks_positions) {  // go through all the positions
-        if(text[p+1] == ' ' &&   // if the dot have a space after it and also a lowercase letter
-           isACapitalLetter(text[p+2])) {
-            text[p+2] += 32; // make the letter uppercase
+    // pentru cazul cu punct
+    for (auto p : dot_marks_positions) {  // go through all the positions
+        // if the dot have a space after it and also a lowercase letter
+        if (text[p+1] == ' ' &&
+           text[p+2].isUpper()) {
+            // make the letter uppercase
+            text.replace(p+2, 1, text[p+2].toLower());
             changes++;
         }
     }
-    // doing for question mark case
-    for(auto p : question_marks_positions) {
-        if(text[p+1] == ' ' &&  // if the question mark have a space after it and also a lowercase letter
-           isACapitalLetter(text[p+2])) {
-               text[p+2] += 32;  // make the letter uppercase
+    // pentru cazul cu semnul intrebarii
+    for (auto p : question_marks_positions) {
+        // if the question mark have a
+        // space after it and also a lowercase letter
+        if (text[p+1] == ' ' &&
+           text[p+2].isUpper()) {
+               // make the letter uppercase
+               text.replace(p+2, 1, text[p+2].toLower());
                changes++;
            }
     }
-    // doing for exclamation mark case
-    for(auto p : exclamation_marks_positions) {
-        if(text[p+1] == ' ' &&  // if the exclamation mark have a space after it and also a lowercase letter
-           isACapitalLetter(text[p+2])) {
-               text[p+2] += 32;  // make the letter uppercase
+    // pentru cazul cu semnul exclamarii
+    for (auto p : exclamation_marks_positions) {
+        // if the exclamation mark have a space
+        // after it and also a lowercase letter
+        if(text[p+1] == ' ' &&
+           text[p+2].isUpper()) {
+               // make the letter uppercase
+               text.replace(p+2, 1, text[p+2].toLower());
                changes++;
            }
     }
 
     return changes;
 }
-/// Lowercase a certain sequance of text, specified by the highlight
+
+/// Transforma in litere mici toate majusculele din
+///  text specificate de highlight
 ///
-/// @param[in][out] text - the string which is meant to be modified
-/// @param[in] - it specifies the position and the length of the given sequance
+/// @param[in][out] text - textul ce trebuie modificat
 ///
-/// @return the number of changes in text
-int StringManipulator::lowercaseOffset(std::string &text, const TextHighLight highlight) {
-    // treating exceptions
+/// @param[in] highlight - highlight-ul secventei ce trebuie modificate
+///
+/// @returns numarul de schimbari din text dupa aplicarea functiei
+int StringManipulator::lowercaseOffset(QString &text,
+                                       const TextHighLight &highlight) {
+    // Tratarea exceptiilor
     treatingExceptionsForText(text);
     treatingExceptionsForHighlight(text, highlight);
     int changes = 0;
-    for(int position = highlight.getPosition(); position < highlight.getPosition() + highlight.getLength(); position++) {
-        if(text[position] >= 65 && text[position] <= 90) { // if letter is in A-Z
-            text[position] += 32; // lowercase = Uppercase + 32
+    for (int position = highlight.getPosition();
+        position < highlight.getPosition() + highlight.getLength();
+        position++) {
+        if (text[position].isUpper()) { // if letter is in A-Z
+            text.replace(position, 1, text[position].toLower());
             changes++;
         }
     }
     return changes;
 }
-/// Find all the non-ASCII characters and replace them with spaces
+
+/// Inlocuieste cu spatii goale toate caracterele ce nu sunt din codul ASCII
 ///
-/// @param[in][out] text - the string which is meant to be modified
+/// @param[in][out] text - textul ce trebuie modificat
 ///
-/// @return the number of changes in text
-int StringManipulator::transformToASCII(std::string &text) {
-    if(text.empty()) {
+/// @returns numarul de schimbari din text dupa aplicarea functiei
+int StringManipulator::transformToASCII(QString &text) {
+    if (text.isEmpty() || text.isNull()) {
         throw std::invalid_argument("Empty text!");
     }
     int poz;
@@ -340,41 +384,45 @@ int StringManipulator::transformToASCII(std::string &text) {
     do {
         poz = findNonASCII(text);
         if(poz != -1) {
-            text.replace(poz, 2, " ");
+            text.replace(poz, 1, " ");
             changes++;
         }
-    } while(poz != -1);
-    //trim(text);
+    } while (poz != -1);
+    // trim(text);
     return changes;
 }
-/// Convert the given date (which is actualy a string text) in a new format
+
+/// Transforma formatul de data din textul dat in formatul dorit
 ///
-/// @param[in][out] text - the string which is meant to be modified ( the time date - it must respect the format)
-/// @param the desired format
+/// @param[in][out] text - textul ce trebuie modificat
+/// ( trebuie sa respecte formatul de data)
 ///
-/// @return the number of changes in text
-int StringManipulator::changeDateFormat(std::string &text, dateFormat format) {
+/// @param[in] format - numele formatui dorit
+///
+/// @returns numarul de schimbari din text dupa aplicarea functiei
+int StringManipulator::changeDateFormat(QString &text, dateFormat format) {
     treatingExceptionsForText(text);
-    if(isADate(text)) {
-        std::string day, month, year;
-        std::string delimiter;
-        for(auto p : text) { // find the delimiter
-            if(!isNumber(p)) { // find the non-letter character (which is the delimiter)
+    if (isADate(text)) {
+        QString day, month, year;
+        QString delimiter;
+        for (auto p : text) {  // find the delimiter
+            // find the non-letter character (which is the delimiter)
+            if (!p.isNumber()) {
                 delimiter += p;
                 break;
             }
         }
-        if(delimiter != "." && delimiter != "/" && delimiter != "-") // the delimiter must pe one of ".", "/" or "-", else quit function
-        {
+        // the delimiter must pe one of ".", "/" or "-", else quit function
+        if (delimiter != "." && delimiter != "/" && delimiter != "-") {
             return -1;
         }
-        std::vector<std::string> tokens = Utils::split(text, delimiter);
-        if(tokens[0].size() != 4) { // the year is not first
-            if(tokens[2].size() == 4) { // the year is the last
+        auto tokens = text.split(delimiter);
+        if (tokens[0].count() != 4) {  // the year is not first
+            if (tokens[2].count() == 4) {  // the year is the last
                 day = tokens[0];
                 month = tokens[1];
                 year = tokens[2];
-            } else { // imposible conversion
+            } else {  // imposible conversion
                 return -1;
             }
         } else { // the year is first
@@ -406,160 +454,150 @@ int StringManipulator::changeDateFormat(std::string &text, dateFormat format) {
         return 0;
 }
 
-/// returns the first occurance of a non-ASCII character
+/// gaseste prima pozitie a unui caracter non-ASCII
 ///
-/// @param[in] the text meant to be analyzed
+/// @param[in] text - textul ce trebuie verificat
 ///
-/// @return the first occurance of a non-ASCII character
-int StringManipulator::findNonASCII(const std::string &text) {
-    if(text.empty()){
+/// @returns prima pozitie a unui caracter non-ASCII
+int StringManipulator::findNonASCII(const QString &text) {
+    if (text.isEmpty() || text.isNull()){
         throw std::invalid_argument("Empty text");
     }
-    const char *buf = text.c_str();
-    for(int i = 0; i < text.length(); ++i) {
-        if((buf[i] < 8) || (buf[i] > 126)) {
-            return i;
-        }
-    }
-    return -1;
-}
-
-int StringManipulator::findNonASCII(const QString &text){
-    if(text.isEmpty() || text.isNull()){
-        throw std::invalid_argument("Empty text");
-    }
-    for(int i = 0; i < text.count(); ++i) {
+    for (int i = 0; i < text.count(); i++) {
         int code = text[i].unicode();
-        if((code < 8) || (code > 127)){
+        if (((code < 8) || (code > 127)) && (code != ENTER_CODE) ) {
             return i;
         }
     }
     return -1;
 }
 
-/// it specifies if a given string respects the norms to be considered a time date
+/// specifica daca textul dat este un format de data cunoscut
 ///
-/// @param[in] text - the text meant to be analyzed
+/// @param[in] text - textul ce trebuie verificat
 ///
-/// true if the text has date format and false if it doesn't
-bool StringManipulator::isADate(const std::string &text) {
-    std::string delimiter, day, month, year;
+/// @returns true daca este un format si false daca nu respecta nici un format
+bool StringManipulator::isADate(const QString &text) {
+    QString delimiter, day, month, year;
     bool result;
     treatingExceptionsForText(text);
     // find the delimiter (it could be '.', '/' or '-')
-    if(find(".", QString(text.c_str()),false).size() == 2) {
+    if (find(".", text,false).size() == 2) {
         delimiter = ".";
-    } else if(find("/", QString(text.c_str()),false).size() == 2) {
+    } else if(find("/", text,false).size() == 2) {
         delimiter = "/";
-    } else if(find("-", QString(text.c_str()),false).size() == 2) {
+    } else if(find("-", text,false).size() == 2) {
         delimiter = "-";
     }
     // split the date to verify the component parts
-    auto tokens = Utils::split(text, delimiter);
+    auto tokens = text.split(delimiter);
     // verify if the components are just numbers
-    for(auto& token : tokens) {
-        for(auto character : token) {
-            if(!isNumber(character)) {
-                return false; // the component contains a non-number character, so the text is not a date
+    for (auto& token : tokens) {
+        for (auto character : token) {
+            if (!character.isNumber()) {
+                // the component contains a non-number
+                // character, so the text is not a date
+                return false;
             }
         }
     }
-    // verify the lenght of the components (to see where is the day, month and year
-    if(tokens[0].size() != 4) { // the year is not first
+    // verify the lenght of the components
+    // (to see where is the day, month and year
+    if (tokens[0].count() != 4) { // the year is not first
         // verify the day
-        if(tokens[0].size() == 2) {
+        if (tokens[0].count() == 2) {
             day = tokens[0];
         } else {
             return false;
         }
         // verify the month
-        if(tokens[1].size() == 2) {
+        if (tokens[1].count() == 2) {
             month = tokens[1];
         } else {
             return false;
         }
         // verify the year
-        if(tokens[2].size() == 4) {
+        if (tokens[2].count() == 4) {
             year = tokens[2];
         } else {
             return false;
         }
     } else { // the year is first
         // verify the year
-        if(tokens[0].size() == 4) {
+        if (tokens[0].count() == 4) {
             year = tokens[0];
         } else {
             return false;
         }
         // verify the month
-        if(tokens[1].size() == 2) {
+        if (tokens[1].count() == 2) {
             month = tokens[1];
         } else {
             return false;
         }
         // verify the day
-        if(tokens[2].size() == 2) {
+        if (tokens[2].count() == 2) {
             day = tokens[2];
         } else {
             return false;
         }
     }
     // verify the components ranges:
-    if(day[0] == '0') {  // treating cases where we have days < 10
-        if(day[1] == '0') { // the day can't be 0
+    if (day[0] == '0') {  // treating cases where we have days < 10
+        if(day[1] == '0') {  // the day can't be 0
             return false;
         }
-    } else if(std::stoi(day) > 31) {
+    } else if (day.toInt() > 31) {
         return false;
     }
-    if(month[0] == '0') { // treating cases where we have months < 10
+    if (month[0] == '0') { // treating cases where we have months < 10
         if(month[1] == '0') { // the month can't be 0
             return false;
         }
-    } else if(std::stoi(month) > 12) {
+    } else if (month.toInt() > 12) {
         return false;
     }
-    if(std::stoi(year) < 1000){
+    if (year.toInt() < 1000){
         return false;
     }
     return true;
 
 }
 
-/// it specifies if the given character is a capital letter or not
+/// specifica daca caracterul dat este majuscula sau nu
 ///
-/// @param[in] the character
+/// @param[in] character - caracterul de verificat
 ///
-/// @return true if it is a capital letter and false if it is not
-bool StringManipulator::isACapitalLetter(const char character) {
-    return character >= 65 && character <= 90;
+/// @returns true daca e majuscula, false in caz contrar
+bool StringManipulator::isACapitalLetter(const QChar &character) {
+    return character.isUpper();
 }
 
-/// it specifies if the given character is a lowercase letter or not
+/// specifica daca caracterul dat este litera mica sau nu
 ///
 /// @param[in] the character
 ///
-/// @return true if it is a lowercase letter and false if it is not
-bool StringManipulator::isALowercaseLetter(const char character) {
-    return character >= 97 && character <= 122;
+/// @returns true daca caracterul este litera mica, false in caz contrar
+bool StringManipulator::isALowercaseLetter(const QChar &character) {
+    return character.isLower();
 }
 
-/// it specifies if the given character is a letter or not
+/// specifica daca caracterul dat este o litera sau nu
 ///
-/// @param[in] the character
+/// @param[in] character - caracterul ce trebuie verificat
 ///
-/// @return true if it is a letter and false if it is not
-bool StringManipulator::isLetter(const char character) {
-    return (character >= 65 && character <= 90) || (character >= 97 && character <= 122);
+/// @return true daca caracterul este litera, false in caz contrar
+bool StringManipulator::isLetter(const QChar &character) {
+    return character.isLetter();
 }
 
-/// it specifies if the given character is a digit or not
+/// specifica daca caracterul dat este o cifra sau nu
 ///
-/// @param[in] the character
+/// @param[in] character - caracterul ce trebuie verificat
 ///
-/// @return true if it is a digit and false if it is not
-bool StringManipulator::isNumber(const char character) {
-    return character >= 48 && character <= 57; // is in 0-9 in ASCII code or not
+/// @returns true daca este cifra, false in caz contrar
+bool StringManipulator::isNumber(const QChar &character) {
+    return character.isNumber();  // is in 0-9 in ASCII code or not
 }
 
 /// verifica daca caracterul primut ca intrare este un construct regex
@@ -567,87 +605,67 @@ bool StringManipulator::isNumber(const char character) {
 /// @param[in] character - caracterul care trebuie verificat
 ///
 /// @returns - true daca caracterul este un construct regex si false in caz contrar
-bool StringManipulator::isRegexOperator(const QChar &character){
-    for(QChar &c : StringManipulator::regexSpecialCharacters()){
-        if(c == character){
+bool StringManipulator::isRegexOperator(const QChar &character) {
+    for (QChar &c : StringManipulator::regexSpecialCharacters()) {
+        if (c == character) {
             return true;
         }
     }
     return false;
 }
 
-/// treats exception like "empty text" or  "forbiden character"
+/// trateaza exceptiile de tip text gol si  caracter interzis
+/// Arunca o exceptie in cazul in care apare o astfel de exceptie
 ///
-/// @param[in] text - the text meant to be analyzed
-void StringManipulator::treatingExceptionsForText(const std::string &text) {
-    if(text.empty()) {
-        throw std::invalid_argument("Empty text");
+/// @param[in] text - textul de analizat
+void StringManipulator::treatingExceptionsForText(const QString &text) {
+    if (text.isEmpty() || text.isNull()) {
+        throw std::invalid_argument("Text gol");
     }
-    if(int i = findNonASCII(text) != -1) {
-        throw std::invalid_argument("Text contains forbidden character - position: " +  std::to_string(i));
-    }
-}
-void StringManipulator::treatingExceptionsForText(const QString &text){
-    if(text.isEmpty() || text.isNull()) {
-        throw std::invalid_argument("Empty/Null text");
-    }
-    if(int i = findNonASCII(text) != -1) {
-        throw std::invalid_argument("Text contains forbidden character - position: " +  std::to_string(i));
+    if (int i = findNonASCII(text) != -1) {
+        throw std::invalid_argument("Textul conține caractere interzise!");
     }
 }
 
-
-
-/// treats exception like "empty text" or  "forbiden character" or incorrect highlight
+/// trateaza exceptiile de tip text gol,
+///   caracter interzis sau highlight incorect
+/// Arunca o exceptie in cazul in care apare o astfel de exceptie
 ///
-/// @param[in] text - the text meant to be analyzed
-/// @param[in] highlight - the TextHighLight object meant to be analyzed
-void StringManipulator::treatingExceptionsForHighlight(const std::string &text, const TextHighLight &highlight) {
-    if(highlight.getPosition() < 0) {
+/// @param[in] text - textul de analizat
+/// @param[in] highlight - highlight-ul de analizat
+void StringManipulator::treatingExceptionsForHighlight(const QString &text,
+                                                       const TextHighLight &highlight){
+    if (highlight.getPosition() < 0) {
         throw std::invalid_argument("Negative position");
     }
-    if(highlight.getLength() < 0) {
+    if (highlight.getLength() < 0) {
         throw std::invalid_argument("Negative length");
     }
-    if(highlight.getPosition() >= text.length()) {
-        throw std::invalid_argument("Position larger than the text's length - text.length() = " +
-                                    std::to_string(text.length()) +
-                                    ", position = " +
-                                    std::to_string(highlight.getPosition()));
-    }
-    if((highlight.getPosition() + highlight.getLength()) > text.length()) {
-        throw std::invalid_argument("Length to large! text.length() =  " +
-                                    std::to_string(text.length()) + ", position + length = " +
-                                    std::to_string(highlight.getPosition() + highlight.getLength()));
-    }
-}
-
-void StringManipulator::treatingExceptionsForHighlight(const QString &text, const TextHighLight &highlight){
-    if(highlight.getPosition() < 0) {
-        throw std::invalid_argument("Negative position");
-    }
-    if(highlight.getLength() < 0) {
-        throw std::invalid_argument("Negative length");
-    }
-    if(highlight.getPosition() >= text.count()) {
-        throw std::invalid_argument("Position larger than the text's length - text.length() = " +
+    if (highlight.getPosition() >= text.count()) {
+        throw std::invalid_argument("Position larger than"
+                                    " the text's length - text.length() = " +
                                     std::to_string(text.count()) +
                                     ", position = " +
                                     std::to_string(highlight.getPosition()));
     }
     if((highlight.getPosition() + highlight.getLength()) > text.count()) {
         throw std::invalid_argument("Length to large! text.count() =  " +
-                                    std::to_string(text.count()) + ", position + length = " +
-                                    std::to_string(highlight.getPosition() + highlight.getLength()));
+                                    std::to_string(text.count()) +
+                                    ", position + length = " +
+                                    std::to_string(highlight.getPosition() +
+                                                   highlight.getLength()));
     }
 }
 
+/// @returns o lista cu caractere ce reprezinta operatori regex
 QList<QChar> StringManipulator::regexSpecialCharacters(){
-    QList<QChar> list = {'+','-','/','\\','*','(',')','$','^','*','(',')','[',']','{','}','?','.','|'};
+    QList<QChar> list = {'+', '-', '/', '\\', '*', '(', ')', '$', '^',
+                         '*', '(', ')', '[', ']', '{', '}', '?', '.', '|'};
     return list;
 }
 
-/// in cazul in care expresia ce trebuie gasita contine operatori de tip regex, se introduce caracterul "\" pentru a le anula efectul
+/// in cazul in care expresia ce trebuie gasita contine operatori de tip regex,
+///  se introduce caracterul "\" pentru a le anula efectul
 ///
 ///@param[in][out]  text - textul care trebuie modificat
 ///
@@ -655,9 +673,10 @@ QList<QChar> StringManipulator::regexSpecialCharacters(){
 int StringManipulator::repealOperators(QString &text){
         int counter = 0;
         int changes = 0;
-        while(counter < text.count()){
-            if(isRegexOperator(text[counter])){ // s-a gasit un operator
-                text.insert(counter, QChar('\\')); //se insereaza "\" pentru a-i anula efectul
+        while (counter < text.count()){
+            if (isRegexOperator(text[counter])) { // s-a gasit un operator
+                //se insereaza "\" pentru a-i anula efectul
+                text.insert(counter, QChar('\\'));
                 counter += 2; // se trece acum peste
                 changes++;
             } else {

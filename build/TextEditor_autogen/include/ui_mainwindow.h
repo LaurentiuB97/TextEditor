@@ -58,6 +58,7 @@ public:
     QAction *actionIndent_forward;
     QAction *actionIndent_backward;
     QAction *actionSave_as_2;
+    QAction *actionPlugin_uri_active;
     QWidget *centralWidget;
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
@@ -85,7 +86,6 @@ public:
     QMenu *menuFile;
     QMenu *menuEdit;
     QMenu *menuFind;
-    QMenu *menuHelp;
     QMenu *menuPreferences;
     QMenu *menuVisible_actions;
     QMenu *menuTheme;
@@ -210,6 +210,8 @@ public:
         actionIndent_backward->setObjectName(QStringLiteral("actionIndent_backward"));
         actionSave_as_2 = new QAction(MainWindow);
         actionSave_as_2->setObjectName(QStringLiteral("actionSave_as_2"));
+        actionPlugin_uri_active = new QAction(MainWindow);
+        actionPlugin_uri_active->setObjectName(QStringLiteral("actionPlugin_uri_active"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
@@ -408,7 +410,7 @@ public:
         line = new QLabel(centralWidget);
         line->setObjectName(QStringLiteral("line"));
         line->setMinimumSize(QSize(60, 0));
-        line->setMaximumSize(QSize(40, 25));
+        line->setMaximumSize(QSize(80, 25));
         line->setLayoutDirection(Qt::RightToLeft);
 
         horizontalLayout_3->addWidget(line);
@@ -451,8 +453,6 @@ public:
         menuEdit->setObjectName(QStringLiteral("menuEdit"));
         menuFind = new QMenu(menuBar);
         menuFind->setObjectName(QStringLiteral("menuFind"));
-        menuHelp = new QMenu(menuBar);
-        menuHelp->setObjectName(QStringLiteral("menuHelp"));
         menuPreferences = new QMenu(menuBar);
         menuPreferences->setObjectName(QStringLiteral("menuPreferences"));
         menuVisible_actions = new QMenu(menuPreferences);
@@ -478,7 +478,6 @@ public:
         menuBar->addAction(menuEdit->menuAction());
         menuBar->addAction(menuFind->menuAction());
         menuBar->addAction(menuPreferences->menuAction());
-        menuBar->addAction(menuHelp->menuAction());
         menuBar->addAction(menuPlugins->menuAction());
         menuFile->addAction(actionNew);
         menuFile->addAction(actionOpen);
@@ -497,6 +496,7 @@ public:
         menuFind->addAction(actionReplace);
         menuPreferences->addAction(menuVisible_actions->menuAction());
         menuPreferences->addAction(menuTheme->menuAction());
+        menuPreferences->addAction(actionPlugin_uri_active);
         menuVisible_actions->addAction(actionNew_2);
         menuVisible_actions->addAction(actionOpen_2);
         menuVisible_actions->addAction(actionSave_2);
@@ -522,45 +522,49 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
-        actionNew->setText(QApplication::translate("MainWindow", "New", Q_NULLPTR));
+        actionNew->setText(QApplication::translate("MainWindow", "Nou", Q_NULLPTR));
 #ifndef QT_NO_SHORTCUT
         actionNew->setShortcut(QApplication::translate("MainWindow", "Ctrl+N", Q_NULLPTR));
 #endif // QT_NO_SHORTCUT
-        actionOpen->setText(QApplication::translate("MainWindow", "Open", Q_NULLPTR));
+        actionOpen->setText(QApplication::translate("MainWindow", "Deschide...", Q_NULLPTR));
 #ifndef QT_NO_SHORTCUT
         actionOpen->setShortcut(QApplication::translate("MainWindow", "Ctrl+O", Q_NULLPTR));
 #endif // QT_NO_SHORTCUT
-        actionSave->setText(QApplication::translate("MainWindow", "Save", Q_NULLPTR));
+        actionSave->setText(QApplication::translate("MainWindow", "Salvare", Q_NULLPTR));
 #ifndef QT_NO_SHORTCUT
         actionSave->setShortcut(QApplication::translate("MainWindow", "Ctrl+S", Q_NULLPTR));
 #endif // QT_NO_SHORTCUT
-        actionCut->setText(QApplication::translate("MainWindow", "Cut", Q_NULLPTR));
+        actionCut->setText(QApplication::translate("MainWindow", "Decupare", Q_NULLPTR));
 #ifndef QT_NO_SHORTCUT
         actionCut->setShortcut(QApplication::translate("MainWindow", "Ctrl+X", Q_NULLPTR));
 #endif // QT_NO_SHORTCUT
-        actionCopy->setText(QApplication::translate("MainWindow", "Copy", Q_NULLPTR));
+        actionCopy->setText(QApplication::translate("MainWindow", "Copiere", Q_NULLPTR));
 #ifndef QT_NO_SHORTCUT
         actionCopy->setShortcut(QApplication::translate("MainWindow", "Ctrl+C", Q_NULLPTR));
 #endif // QT_NO_SHORTCUT
-        actionPaste->setText(QApplication::translate("MainWindow", "Paste", Q_NULLPTR));
+        actionPaste->setText(QApplication::translate("MainWindow", "Lipire", Q_NULLPTR));
 #ifndef QT_NO_SHORTCUT
         actionPaste->setShortcut(QApplication::translate("MainWindow", "Ctrl+V", Q_NULLPTR));
 #endif // QT_NO_SHORTCUT
-        actionRedo->setText(QApplication::translate("MainWindow", "Redo", Q_NULLPTR));
+        actionRedo->setText(QApplication::translate("MainWindow", "Refacere", Q_NULLPTR));
 #ifndef QT_NO_SHORTCUT
         actionRedo->setShortcut(QApplication::translate("MainWindow", "Ctrl+Y", Q_NULLPTR));
 #endif // QT_NO_SHORTCUT
-        actionUndo->setText(QApplication::translate("MainWindow", "Undo", Q_NULLPTR));
+        actionUndo->setText(QApplication::translate("MainWindow", "Anulare", Q_NULLPTR));
 #ifndef QT_NO_SHORTCUT
         actionUndo->setShortcut(QApplication::translate("MainWindow", "Ctrl+Z", Q_NULLPTR));
 #endif // QT_NO_SHORTCUT
-        actionFind->setText(QApplication::translate("MainWindow", "Find...", Q_NULLPTR));
+        actionFind->setText(QApplication::translate("MainWindow", "C\304\203utare...", Q_NULLPTR));
 #ifndef QT_NO_SHORTCUT
         actionFind->setShortcut(QApplication::translate("MainWindow", "Ctrl+F", Q_NULLPTR));
 #endif // QT_NO_SHORTCUT
-        actionFind_regex->setText(QApplication::translate("MainWindow", "Find regex", Q_NULLPTR));
+        actionFind_regex->setText(QApplication::translate("MainWindow", "C\304\203utare regex", Q_NULLPTR));
         actionSave_as->setText(QApplication::translate("MainWindow", "Save as...", Q_NULLPTR));
-        actionExit->setText(QApplication::translate("MainWindow", "Exit", Q_NULLPTR));
+        actionExit->setText(QApplication::translate("MainWindow", "Ie\310\231ire", Q_NULLPTR));
+        actionExit->setIconText(QApplication::translate("MainWindow", "Ie\310\231ire", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        actionExit->setToolTip(QApplication::translate("MainWindow", "Ie\310\231ire", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
         actionNew_2->setText(QApplication::translate("MainWindow", "New", Q_NULLPTR));
         actionOpen_2->setText(QApplication::translate("MainWindow", "Open", Q_NULLPTR));
         actionSave_2->setText(QApplication::translate("MainWindow", "Save", Q_NULLPTR));
@@ -571,19 +575,23 @@ public:
         actionRedo_2->setText(QApplication::translate("MainWindow", "Redo", Q_NULLPTR));
         actionDefault->setText(QApplication::translate("MainWindow", "Default", Q_NULLPTR));
         actionDarkMode->setText(QApplication::translate("MainWindow", "DarkMode", Q_NULLPTR));
-        actionReplace->setText(QApplication::translate("MainWindow", "Replace...", Q_NULLPTR));
+        actionReplace->setText(QApplication::translate("MainWindow", "\303\216nlocuire...", Q_NULLPTR));
 #ifndef QT_NO_SHORTCUT
         actionReplace->setShortcut(QApplication::translate("MainWindow", "Ctrl+H", Q_NULLPTR));
 #endif // QT_NO_SHORTCUT
-        actionIndent_forward->setText(QApplication::translate("MainWindow", "Indent forward", Q_NULLPTR));
+        actionIndent_forward->setText(QApplication::translate("MainWindow", "Indentare dreapta", Q_NULLPTR));
 #ifndef QT_NO_SHORTCUT
         actionIndent_forward->setShortcut(QApplication::translate("MainWindow", "Ctrl+[", Q_NULLPTR));
 #endif // QT_NO_SHORTCUT
-        actionIndent_backward->setText(QApplication::translate("MainWindow", "Indent backward", Q_NULLPTR));
+        actionIndent_backward->setText(QApplication::translate("MainWindow", "Indentare st\303\242nga", Q_NULLPTR));
 #ifndef QT_NO_SHORTCUT
         actionIndent_backward->setShortcut(QApplication::translate("MainWindow", "Ctrl+]", Q_NULLPTR));
 #endif // QT_NO_SHORTCUT
-        actionSave_as_2->setText(QApplication::translate("MainWindow", "Save as...", Q_NULLPTR));
+        actionSave_as_2->setText(QApplication::translate("MainWindow", "Salvare ca...", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        actionSave_as_2->setToolTip(QApplication::translate("MainWindow", "Salvare ca...", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        actionPlugin_uri_active->setText(QApplication::translate("MainWindow", "Plugin-uri active", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Tab 1", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Tab 2", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
@@ -602,14 +610,13 @@ public:
         label_2->setText(QString());
         line->setText(QApplication::translate("MainWindow", "Ln:", Q_NULLPTR));
         collumn->setText(QApplication::translate("MainWindow", "Cl:", Q_NULLPTR));
-        menuFile->setTitle(QApplication::translate("MainWindow", "File", Q_NULLPTR));
-        menuEdit->setTitle(QApplication::translate("MainWindow", "Edit", Q_NULLPTR));
-        menuFind->setTitle(QApplication::translate("MainWindow", "Find", Q_NULLPTR));
-        menuHelp->setTitle(QApplication::translate("MainWindow", "Help", Q_NULLPTR));
-        menuPreferences->setTitle(QApplication::translate("MainWindow", "Preferences", Q_NULLPTR));
-        menuVisible_actions->setTitle(QApplication::translate("MainWindow", "Visible actions", Q_NULLPTR));
-        menuTheme->setTitle(QApplication::translate("MainWindow", "Theme", Q_NULLPTR));
-        menuPlugins->setTitle(QApplication::translate("MainWindow", "Plugins", Q_NULLPTR));
+        menuFile->setTitle(QApplication::translate("MainWindow", "Fi\310\231ier", Q_NULLPTR));
+        menuEdit->setTitle(QApplication::translate("MainWindow", "Editare", Q_NULLPTR));
+        menuFind->setTitle(QApplication::translate("MainWindow", "C\304\203utare", Q_NULLPTR));
+        menuPreferences->setTitle(QApplication::translate("MainWindow", "Preferin\310\233e", Q_NULLPTR));
+        menuVisible_actions->setTitle(QApplication::translate("MainWindow", "Ac\310\233iuni vizibile", Q_NULLPTR));
+        menuTheme->setTitle(QApplication::translate("MainWindow", "Teme", Q_NULLPTR));
+        menuPlugins->setTitle(QApplication::translate("MainWindow", "Plugin-uri", Q_NULLPTR));
     } // retranslateUi
 
 };

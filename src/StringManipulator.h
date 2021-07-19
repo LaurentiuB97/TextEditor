@@ -1,3 +1,4 @@
+// Copyright 2021 Bobocea Laurentiu
 #ifndef STRINGMANIPULATOR_H
 #define STRINGMANIPULATOR_H
 #include "TextHighLight.h"
@@ -11,133 +12,155 @@
 
 class StringManipulator {
  public:
-    enum dateFormat {slash_big_endian, slash_little_endian, dot_big_endian, dot_little_endian, line_big_endian, line_little_endian};
-    /// It returns a vector with the highlights of all search results in a text
+    enum dateFormat {slash_big_endian, slash_little_endian, dot_big_endian, dot_little_endian,
+                     line_big_endian, line_little_endian};
+    /// Cauta in textul dat secvente de text corespunzatoare sablonului pattern
+    /// @param[in] pattern - sablonul cautarii - poate fi o secventa simpla de text
+    /// sau o expresie regulata
+    /// @param[in] text - textul in care se cauta sablonul
+    /// @param[in] isRegex -flag ce indica daca sablonul este o expresie regulata sau nu
     ///
-    /// @param[in] pattern - it can be a normal sequance of text or a regular expresion
-    /// @param[in] text - the text the function must search in
-    /// @param[in] isRegex - it specifies if the pattern is a peace of text or a regular expresion
-    ///
-    /// @return a vector of TextHighLight objects which correspond to the positions of the matches
+    /// @returns un vector cu pozitiile si lungimile rezultatelor cautarii
     static std::vector<TextHighLight> find(const QString &pattern, const QString &text,
                                            const bool isRegex = false, const QString flag = "ALL");
-    /// Replaces the portion of the string that is specified in the TextHighLight object
-    ///
-    /// @param[in] replacement - the string meant to be put on the highlighted text's place
-    /// @param[in] highlight - specifies the position and the length of the sequance which is meant to be replaced
-    /// @param[in] text - the string which the function will make the change in
-    ///
-    /// @return the highlight of the new sequance of text
-    static TextHighLight replace(const std::string &replacement, const TextHighLight &highlight, std::string &text);
 
-    /// Replaces all portions of text which are occupied by 'toReplace' with replacement
+    /// Inlocuieste secventa specificata de highlight cu textul replacement
     ///
-    /// @param[in] toReplace - the string meant to be replaced from all text
-    /// @param[in] replacement - the string which goes in
-    /// @param[in] text - the string which the function will make the change in
+    /// @param[in] replacement - textul inlocuitor
+    /// @param[in] highlight -un obiect ce contine pozitia si lungimea secventei de inlocuit
+    /// @param[in] text - textul in care se face inlocuirea
     ///
-    /// @return the number of changes in text
-    static int replaceAll(const std::string &toReplace, const std::string &replacement, std::string &text);
-    /// Removes the unnecesary spaces (if there are two or more consecutive spaces, it will remove the aditional once and let just one to that positon
+    /// @returns highlight-ul noi secvente adaugate
+    static TextHighLight replace(const QString &replacement, const TextHighLight &highlight, QString &text);
+
+    /// Inlocuieste aparitiile secventei toReplace cu secventa replacement in text
     ///
-    /// @param[in][out] text - the string which is meant to be trimmed
+    /// @param[in] toReplace - textul de inlocuit
+    /// @param[in] replacement - textul inlocuitor
+    /// @param[in] text - textul in care se face inlocuirea
     ///
-    /// @return the number of changes in text
-    static int trim(std::string &text);
-    /// Puts spaces where there are missing (after punctuation signs must likely)
+    /// @returns numarul de inlocuiri din text
+    static int replaceAll(const QString &toReplace, const QString &replacement, QString &text);
+
+    /// Elimina spatiile suplimentare dintr-un text. In locurile unde sunt doua sau mai multe
+    /// spatii consecutive va ramane doar un spatiu
     ///
-    /// @param[in][out] text - the string which is meant to be modified
+    /// @param[in][out] text - textul ce trebuie truncheat
     ///
-    /// @return the number of changes in text
-    static int padding(std::string &text);
-    /// Capitalize all the letters from the given text
+    /// @returns numarul de schimbari din text dupa aplicarea functiei
+    static int trim(QString &text);
+
+    /// Completeaza cu spatii in zonele unde ar trebui sa existe.
+    /// Zone tinta: Intre propozitii, dupa semnul de punctuatie sau
+    /// dupa fiecare virgula
     ///
-    /// @param[in][out] text - the string which is meant to be modified
+    /// @param[in][out] text - textul ce trebuie modificat
     ///
-    /// @return the number of changes in text
-    static int capitalizeAll(std::string &text);
-    /// Capitalize the first letter of every sentence when is the case
+    /// @returns numarul de schimbari din text dupa aplicarea functiei
+    static int padding(QString &text);
+
+    /// Transforma toate literele mici din text in majuscule
     ///
-    /// @param[in][out] text - the string which is meant to be modified
+    /// @param[in][out] text - textul ce trebuie modificat
     ///
-    /// @return the number of changes in text
-    static int capitalizeFirstLetter(std::string &text);
-    ///Capitalize a certain potion of text specified by a highlight
+    /// @returns numarul de schimbari din text dupa aplicarea functiei
+    static int capitalizeAll(QString &text);
+
+    /// Transforma la i nmajuscula fiecare litera mica la inceputul unei propozitii
     ///
-    /// @param[in][out] text - the string which is meant to be modified
-    /// @param[in] highlight - specifies the position and length of the sequance
+    /// @param[in][out] text - textul ce trebuie modificat
     ///
-    /// @return the number of changes in text
-    static int capitalizeOffset(std::string &text, const TextHighLight highlight);
-    /// Lowercase all of the letters from the text
+    /// @returns numarul de schimbari din text dupa aplicarea functiei
+    static int capitalizeFirstLetter(QString &text);
+
+    ///Transforma in majuscule literele mici din secventa specificata de highlight
     ///
-    /// @param[in][out] text - the string which is meant to be modified
+    /// @param[in][out] text -  textul ce trebuie modificat
+    /// @param[in] highlight - highlight-ul secventei ce trebuie modificate
     ///
-    /// @return the number of changes in text
-    static int lowercaseAll(std::string &text);
-    /// Lowercase the first letter of every sentence, where is the case
+    /// @returns numarul de schimbari din text dupa aplicarea functiei
+    static int capitalizeOffset(QString &text, const TextHighLight highlight);
+
+    /// Transforma in litere mici toate majusculele din text
+    ///
+    /// @param[in][out] text - textul ce trebuie modificat
+    ///
+    /// @returns numarul de schimbari din text dupa aplicarea functiei
+    static int lowercaseAll(QString &text);
+
+    /// Functia opusa functiei capitalizeFirstLetter
     /// ///
-    /// @param[in][out] text - the string which is meant to be modified
+    /// @param[in][out] text - textul ce trebuie modificat
     ///
-    /// @return the number of changes in text
-    static int lowercaseFirstLetter(std::string &text);
-    /// Lowercase a certain sequance of text, specified by the highlight
+    /// @returns numarul de schimbari din text dupa aplicarea functiei
+    static int lowercaseFirstLetter(QString &text);
+
+    /// Transforma in litere mici toate majusculele din text specificate de highlight
     ///
-    /// @param[in][out] text - the string which is meant to be modified
-    /// @param[in] - it specifies the position and the length of the given sequance
+    /// @param[in][out] text - textul ce trebuie modificat
     ///
-    /// @return the number of changes in text
-    static int lowercaseOffset(std::string &text, const TextHighLight highlight);
-    /// Find all the non-ASCII characters and replace them with spaces
+    /// @param[in] highlight - highlight-ul secventei ce trebuie modificate
     ///
-    /// @param[in][out] text - the string which is meant to be modified
+    /// @returns numarul de schimbari din text dupa aplicarea functiei
+    static int lowercaseOffset(QString &text, const TextHighLight &highlight);
+
+    /// Inlocuieste cu spatii goale toate caracterele ce nu sunt din codul ASCII
     ///
-    /// @return the number of changes in text
-    static int transformToASCII(std::string &text);
-    /// Convert the given date (which is actualy a string text) in a new format
+    /// @param[in][out] text - textul ce trebuie modificat
     ///
-    /// @param[in][out] text - the string which is meant to be modified ( the time date - it must respect the format)
-    /// @param the desired format
+    /// @returns numarul de schimbari din text dupa aplicarea functiei
+    static int transformToASCII(QString &text);
+
+    /// Transforma formatul de data din textul dat in formatul dorit
     ///
-    /// @return the number of changes in text
-    static int changeDateFormat(std::string &text, dateFormat format);
-    /// returns the first occurance of a non-ASCII character
+    /// @param[in][out] text - textul ce trebuie modificat ( trebuie sa respecte formatul de data)
     ///
-    /// @param[in] the text meant to be analyzed
+    /// @param[in] format - numele formatui dorit
     ///
-    /// @return the first occurance of a non-ASCII character
-    static int findNonASCII(const std::string &text);
+    /// @returns numarul de schimbari din text dupa aplicarea functiei
+    static int changeDateFormat(QString &text, dateFormat format);
+
+    /// gaseste prima pozitie a unui caracter non-ASCII
+    ///
+    /// @param[in] text - textul ce trebuie verificat
+    ///
+    /// @returns prima pozitie a unui caracter non-ASCII
     static int findNonASCII(const QString &text);
-    /// it specifies if a given string respects the norms to be considered a time date
+
+    /// specifica daca textul dat este un format de data cunoscut
     ///
-    /// @param[in] text - the text meant to be analyzed
+    /// @param[in] text - textul ce trebuie verificat
     ///
-    /// true if the text has date format and false if it doesn't
-    static bool isADate(const std::string &text);
-    /// it specifies if the given character is a capital letter or not
+    /// @returns true daca este un format si false daca nu respecta nici un format
+    static bool isADate(const QString &text);
+
+    /// specifica daca caracterul dat este majuscula sau nu
     ///
-    /// @param[in] the character
+    /// @param[in] character - caracterul de verificat
     ///
-    /// @return true if it is a capital letter and false if it is not
-    static bool isACapitalLetter(const char character);
-    /// it specifies if the given character is a lowercase letter or not
-    ///
-    /// @param[in] the character
-    ///
-    /// @return true if it is a lowercase letter and false if it is not
-    static bool isALowercaseLetter(const char character);
-    /// it specifies if the given character is a letter or not
+    /// @returns true daca e majuscula, false in caz contrar
+    static bool isACapitalLetter(const QChar &character);
+
+    /// specifica daca caracterul dat este litera mica sau nu
     ///
     /// @param[in] the character
     ///
-    /// @return true if it is a letter and false if it is not
-    static bool isLetter(const char character);
-    /// it specifies if the given character is a digit or not
+    /// @returns true daca caracterul este litera mica, false in caz contrar
+    static bool isALowercaseLetter(const QChar &character);
+
+    /// specifica daca caracterul dat este o litera sau nu
     ///
-    /// @param[in] the character
+    /// @param[in] character - caracterul ce trebuie verificat
     ///
-    /// @return true if it is a digit and false if it is not
-    static bool isNumber(const char character);
+    /// @return true daca caracterul este litera, false in caz contrar
+    static bool isLetter(const QChar &character);
+
+    /// specifica daca caracterul dat este o cifra sau nu
+    ///
+    /// @param[in] character - caracterul ce trebuie verificat
+    ///
+    /// @returns true daca este cifra, false in caz contrar
+    static bool isNumber(const QChar &character);
 
     /// verifica daca caracterul primut ca intrare este un construct regex
     ///
@@ -146,16 +169,17 @@ class StringManipulator {
     /// @returns - true daca caracterul este un construct regex si false in caz contrar
     static bool isRegexOperator(const QChar &character);
 
-    /// treats exception like "empty text" or  "forbiden character"
+    /// trateaza exceptiile de tip text gol si  caracter interzis
+    /// Arunca o exceptie in cazul in care apare o astfel de exceptie
     ///
-    /// @param[in] text - the text meant to be analyzed
-    static void treatingExceptionsForText(const std::string &text);
+    /// @param[in] text - textul de analizat
     static void treatingExceptionsForText(const QString &text);
-    /// treats exception like "empty text" or  "forbiden character" or incorrect highlight
+
+    /// trateaza exceptiile de tip text gol,  caracter interzis sau highlight incorect
+    /// Arunca o exceptie in cazul in care apare o astfel de exceptie
     ///
-    /// @param[in] text - the text meant to be analyzed
-    /// @param[in] highlight - the TextHighLight object meant to be analyzed
-    static void treatingExceptionsForHighlight(const std::string &text, const TextHighLight &highlight);
+    /// @param[in] text - textul de analizat
+    /// @param[in] highlight - highlight-ul de analizat
     static void treatingExceptionsForHighlight(const QString &text, const TextHighLight &highlight);
 
     /// @returns o lista cu caractere ce reprezinta operatori regex

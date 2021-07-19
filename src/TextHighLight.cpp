@@ -1,3 +1,4 @@
+// Copyright 2021 Bobocea Laurentiu
 #include "TextHighLight.h"
 TextHighLight::TextHighLight() {}
 TextHighLight::TextHighLight(const int start, const int length) {
@@ -11,7 +12,7 @@ bool TextHighLight::equals( const TextHighLight &highlight) const {
 }
 
 const std::string TextHighLight::print() {
-    return "pos: " + std::to_string(position) + ", length: " + std::to_string(length);
+    return "poz: " + std::to_string(position) + ", lungime: " + std::to_string(length);
 }
 
 int TextHighLight::getPosition() const {

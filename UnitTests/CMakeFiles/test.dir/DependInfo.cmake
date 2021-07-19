@@ -1,20 +1,20 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/laur/Desktop/TextEditor/UnitTests/PunctuationMark.cpp" "/home/laur/Desktop/TextEditor/UnitTests/CMakeFiles/test.dir/PunctuationMark.cpp.o"
-  "/home/laur/Desktop/TextEditor/UnitTests/StringManipulator.cpp" "/home/laur/Desktop/TextEditor/UnitTests/CMakeFiles/test.dir/StringManipulator.cpp.o"
-  "/home/laur/Desktop/TextEditor/UnitTests/TestTextEditor.cpp" "/home/laur/Desktop/TextEditor/UnitTests/CMakeFiles/test.dir/TestTextEditor.cpp.o"
-  "/home/laur/Desktop/TextEditor/UnitTests/TextHighLight.cpp" "/home/laur/Desktop/TextEditor/UnitTests/CMakeFiles/test.dir/TextHighLight.cpp.o"
-  "/home/laur/Desktop/TextEditor/UnitTests/Utils.cpp" "/home/laur/Desktop/TextEditor/UnitTests/CMakeFiles/test.dir/Utils.cpp.o"
-  "/home/laur/Desktop/TextEditor/UnitTests/main_test.cpp" "/home/laur/Desktop/TextEditor/UnitTests/CMakeFiles/test.dir/main_test.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/laur/Desktop/TextEditor/TextEditor/UnitTests/PunctuationMark.cpp" "CMakeFiles/test.dir/PunctuationMark.cpp.o" "gcc" "CMakeFiles/test.dir/PunctuationMark.cpp.o.d"
+  "/home/laur/Desktop/TextEditor/TextEditor/UnitTests/StringManipulator.cpp" "CMakeFiles/test.dir/StringManipulator.cpp.o" "gcc" "CMakeFiles/test.dir/StringManipulator.cpp.o.d"
+  "/home/laur/Desktop/TextEditor/TextEditor/UnitTests/TestTextEditor.cpp" "CMakeFiles/test.dir/TestTextEditor.cpp.o" "gcc" "CMakeFiles/test.dir/TestTextEditor.cpp.o.d"
+  "/home/laur/Desktop/TextEditor/TextEditor/UnitTests/TextHighLight.cpp" "CMakeFiles/test.dir/TextHighLight.cpp.o" "gcc" "CMakeFiles/test.dir/TextHighLight.cpp.o.d"
+  "/home/laur/Desktop/TextEditor/TextEditor/UnitTests/Utils.cpp" "CMakeFiles/test.dir/Utils.cpp.o" "gcc" "CMakeFiles/test.dir/Utils.cpp.o.d"
+  "/home/laur/Desktop/TextEditor/TextEditor/UnitTests/main_test.cpp" "CMakeFiles/test.dir/main_test.cpp.o" "gcc" "CMakeFiles/test.dir/main_test.cpp.o.d"
+  "/home/laur/Desktop/TextEditor/TextEditor/UnitTests/test_autogen/mocs_compilation.cpp" "CMakeFiles/test.dir/test_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/test.dir/test_autogen/mocs_compilation.cpp.o.d"
   )
 
 # Targets to which this target links.

@@ -1,15 +1,16 @@
-#ifndef AVAILABILITY_H
-#define AVAILABILITY_H
+// Copyright 2021 Bobocea Laurentiu
+#ifndef SRC_AVAILABILITY_H_
+#define SRC_AVAILABILITY_H_
 #include <QObject>
 class Availability: public QObject {
     Q_OBJECT
-public:
-    Availability(QObject * parent = nullptr);
+ public:
+    explicit Availability(QObject * parent = nullptr);
     void setAvailabilityStatus(bool status);
     bool getAvailabilityStatus();
 
-private:
+ private:
     ~Availability();
     bool availabilityStatus;
 };
-#endif //AVAILABILITY_H
+#endif  // SRC_AVAILABILITY_H_

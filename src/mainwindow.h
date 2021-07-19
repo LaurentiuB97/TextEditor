@@ -1,5 +1,6 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+// Copyright 2021 Bobocea Laurentiu
+#ifndef SRC_MAINWINDOW_H_
+#define SRC_MAINWINDOW_H_
 
 #include "TextHighLight.h"
 #include "StringManipulator.h"
@@ -33,17 +34,17 @@ namespace Ui {
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
     Q_OBJECT
 
-public:
+ public:
     enum mode {default_mode, dark_mode};
 
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    void setHighLight(const TextHighLight &highlight, const int requiredFormat = colored_format);
+    void setHighLight(const TextHighLight &highlight,
+                      const int requiredFormat = colored_format);
 
     void modifyText(int (*function)(std::string &text));
 
@@ -71,7 +72,7 @@ public:
 
     void setCursorPosition();
 
-private slots:
+ private slots:
     void on_actionNew_triggered();
 
     void on_actionOpen_triggered();
@@ -138,9 +139,9 @@ private slots:
 
     void on_actionIndent_backward_triggered();
 
+    void on_actionPlugin_uri_active_triggered();
 
-private:
-
+ private:
     Ui::MainWindow *ui;
     QMap<QString, QSharedPointer<FileStatus>> filesList;
     QMap<QString, QString> firstText;
@@ -149,10 +150,9 @@ private:
     QString currentFile = "";
     std::vector<TextHighLight> findResults;
     int indexFindResults;
-    SettingsManager st;
+    SettingsManager* st;
     CursorGroup* cursorGroup;
     PluginManager pluginManager;
-    //bool eventFilter(QObject *watched, QEvent *event);
 };
 
-#endif // MAINWINDOW_H
+#endif  // SRC_MAINWINDOW_H_

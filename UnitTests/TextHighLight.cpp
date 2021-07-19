@@ -1,5 +1,4 @@
 #include "TextHighLight.h"
-
 TextHighLight::TextHighLight() {}
 TextHighLight::TextHighLight(const int start, const int length) {
     this->position = start;
@@ -10,6 +9,11 @@ bool TextHighLight::equals( const TextHighLight &highlight) const {
     return (this->position == highlight.getPosition() &&
             (this->length == highlight.getLength()));
 }
+
+const std::string TextHighLight::print() {
+    return "pos: " + std::to_string(position) + ", length: " + std::to_string(length);
+}
+
 int TextHighLight::getPosition() const {
     return position;
 }

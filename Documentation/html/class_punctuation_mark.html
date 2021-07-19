@@ -69,25 +69,47 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ab46bc081295e69d79097344be31fa4bc"><td class="memItemLeft" align="right" valign="top"><a id="ab46bc081295e69d79097344be31fa4bc"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>isMark</b> (const char character)</td></tr>
-<tr class="separator:ab46bc081295e69d79097344be31fa4bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1f9081cafe0c3290a32da66bddff6b9"><td class="memItemLeft" align="right" valign="top"><a id="ac1f9081cafe0c3290a32da66bddff6b9"></a>
-static std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>searchFor</b> (const char character, const std::string &amp;text)</td></tr>
-<tr class="separator:ac1f9081cafe0c3290a32da66bddff6b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef43138e26ce10d11728047f46c78fde"><td class="memItemLeft" align="right" valign="top"><a id="aef43138e26ce10d11728047f46c78fde"></a>
-static std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>findAllMarks</b> (const std::string &amp;text)</td></tr>
-<tr class="separator:aef43138e26ce10d11728047f46c78fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9187b76bb5dace6dd599fa4dc15768f2"><td class="memItemLeft" align="right" valign="top"><a id="a9187b76bb5dace6dd599fa4dc15768f2"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>isMark</b> (const QChar &amp;character)</td></tr>
+<tr class="separator:a9187b76bb5dace6dd599fa4dc15768f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b3ae49bce26a7ed4db8130a8a99d7ee"><td class="memItemLeft" align="right" valign="top"><a id="a2b3ae49bce26a7ed4db8130a8a99d7ee"></a>
+static std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>searchFor</b> (const QChar &amp;character, const QString &amp;text)</td></tr>
+<tr class="separator:a2b3ae49bce26a7ed4db8130a8a99d7ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a489c982ca68807c6df4e2d14f1f1a2b1"><td class="memItemLeft" align="right" valign="top"><a id="a489c982ca68807c6df4e2d14f1f1a2b1"></a>
+static std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>findAllMarks</b> (const QString &amp;text)</td></tr>
+<tr class="separator:a489c982ca68807c6df4e2d14f1f1a2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a4c6e2bf50dfbfdb36e6c3051b740c468"><td class="memItemLeft" align="right" valign="top"><a id="a4c6e2bf50dfbfdb36e6c3051b740c468"></a>
-static std::vector&lt; char &gt; const&#160;</td><td class="memItemRight" valign="bottom"><b>marks</b> {'.',',','!','?','(',')','[',']','{','}',':'}</td></tr>
-<tr class="separator:a4c6e2bf50dfbfdb36e6c3051b740c468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a891e84ecbb07f83219650a5ea415dd06"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; QChar &gt; const&#160;</td><td class="memItemRight" valign="bottom"><b>marks</b></td></tr>
+<tr class="separator:a891e84ecbb07f83219650a5ea415dd06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a891e84ecbb07f83219650a5ea415dd06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a891e84ecbb07f83219650a5ea415dd06">&#9670;&nbsp;</a></span>marks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; QChar &gt; const PunctuationMark::marks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{<span class="charliteral">&#39;.&#39;</span>, <span class="charliteral">&#39;,&#39;</span>, <span class="charliteral">&#39;!&#39;</span>, <span class="charliteral">&#39;?&#39;</span>, <span class="charliteral">&#39;(&#39;</span>, <span class="charliteral">&#39;)&#39;</span>,</div><div class="line">                                                <span class="charliteral">&#39;[&#39;</span>, <span class="charliteral">&#39;]&#39;</span>, <span class="charliteral">&#39;{&#39;</span>, <span class="charliteral">&#39;}&#39;</span>, <span class="charliteral">&#39;:&#39;</span>}</div></div><!-- fragment -->
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/laur/Desktop/TextEditor/<a class="el" href="_punctuation_mark_8h_source.html">PunctuationMark.h</a></li>
-<li>/home/laur/Desktop/TextEditor/PunctuationMark.cpp</li>
+<li>/home/laur/Desktop/TextEditor/TextEditor/src/<a class="el" href="_punctuation_mark_8h_source.html">PunctuationMark.h</a></li>
+<li>/home/laur/Desktop/TextEditor/TextEditor/src/PunctuationMark.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

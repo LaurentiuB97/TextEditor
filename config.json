@@ -1,11 +1,18 @@
 {
+    "Active_Plugins": [
+        "NaturalLanguagePlugin"
+    ],
+    "Capitalize": true,
     "Copy": true,
     "Cut": true,
+    "Lowercase": true,
     "New": true,
     "Open": true,
+    "Padding": true,
     "Paste": true,
     "Redo": true,
     "Save": true,
-    "Theme": "Default",
+    "Theme": "DarkMode",
+    "Trim": true,
     "Undo": true
 }

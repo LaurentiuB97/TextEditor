@@ -28,8 +28,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp.o.d"
   "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Theme.cpp.o"
   "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Theme.cpp.o.d"
-  "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp.o"
-  "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp.o.d"
   "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o"
   "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o.d"
   "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp.o"

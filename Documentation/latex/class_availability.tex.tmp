@@ -1,0 +1,28 @@
+\hypertarget{class_availability}{}\section{Availability Class Reference}
+\label{class_availability}\index{Availability@{Availability}}
+
+
+Inheritance diagram for Availability\+:
+% FIG 0
+
+
+Collaboration diagram for Availability\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_availability_a85016f9c2ed3b36e9e9ae47fa97269c0}\label{class_availability_a85016f9c2ed3b36e9e9ae47fa97269c0}} 
+\hyperlink{class_availability_a85016f9c2ed3b36e9e9ae47fa97269c0}{Availability} (Q\+Object $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em constructorul clasei \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_availability_a1034efeb7fe572256f1126fbcbeff499}\label{class_availability_a1034efeb7fe572256f1126fbcbeff499}} 
+void \hyperlink{class_availability_a1034efeb7fe572256f1126fbcbeff499}{set\+Availability\+Status} (bool status)
+\begin{DoxyCompactList}\small\item\em seteaza statusul de disponibil/indisponibil pentru celelalte plugin-\/uri \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_availability_a430c8f38c1c79d7d5e67b4f164708820}\label{class_availability_a430c8f38c1c79d7d5e67b4f164708820}} 
+bool \hyperlink{class_availability_a430c8f38c1c79d7d5e67b4f164708820}{get\+Availability\+Status} ()
+\begin{DoxyCompactList}\small\item\em returneaza valoarea statusului de disponibil/indisponibil \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/laur/\+Desktop/\+Text\+Editor/\+Text\+Editor/src/Availability.\+h\item 
+/home/laur/\+Desktop/\+Text\+Editor/\+Text\+Editor/src/Availability.\+cpp\end{DoxyCompactItemize}

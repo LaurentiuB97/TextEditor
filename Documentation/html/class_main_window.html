@@ -69,11 +69,15 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for MainWindow:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_main_window.png" usemap="#MainWindow_map" alt=""/>
-  <map id="MainWindow_map" name="MainWindow_map">
-</map>
- </div></div>
+<div class="center"><img src="class_main_window__inherit__graph.png" border="0" usemap="#_main_window_inherit__map" alt="Inheritance graph"/></div>
+<!-- MAP 0 -->
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for MainWindow:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_window__coll__graph.png" border="0" usemap="#_main_window_coll__map" alt="Collaboration graph"/></div>
+<!-- MAP 1 -->
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -93,22 +97,46 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setHighLight</b> (con
 <tr class="memitem:a35ffd96169163c809eb8c11f2dedda28"><td class="memItemLeft" align="right" valign="top"><a id="a35ffd96169163c809eb8c11f2dedda28"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>modifyText</b> (int(*function)(std::string &amp;text))</td></tr>
 <tr class="separator:a35ffd96169163c809eb8c11f2dedda28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28f0773e43cc100fa5dc6019b09780bb"><td class="memItemLeft" align="right" valign="top"><a id="a28f0773e43cc100fa5dc6019b09780bb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>changeDatesInText</b> (const StringManipulator::dateFormat format)</td></tr>
-<tr class="separator:a28f0773e43cc100fa5dc6019b09780bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a059e8c7deed9f985c6396182779590f2"><td class="memItemLeft" align="right" valign="top"><a id="a059e8c7deed9f985c6396182779590f2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setAppearance</b> (mode selected_mode)</td></tr>
-<tr class="separator:a059e8c7deed9f985c6396182779590f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11d121b1058e0266ab2b4b664b3c83a9"><td class="memItemLeft" align="right" valign="top"><a id="a11d121b1058e0266ab2b4b664b3c83a9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setAppearance</b> (QString name_mode)</td></tr>
+<tr class="separator:a11d121b1058e0266ab2b4b664b3c83a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a506036a835ce0711bb0c10bec4624d3f"><td class="memItemLeft" align="right" valign="top"><a id="a506036a835ce0711bb0c10bec4624d3f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>markChangedFile</b> ()</td></tr>
+<tr class="separator:a506036a835ce0711bb0c10bec4624d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2f81786dd8c7559684623a31fc3a3ff"><td class="memItemLeft" align="right" valign="top"><a id="af2f81786dd8c7559684623a31fc3a3ff"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>addToUndoStack</b> ()</td></tr>
+<tr class="separator:af2f81786dd8c7559684623a31fc3a3ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7739077fb423f096a2326f51c9db30e9"><td class="memItemLeft" align="right" valign="top"><a id="a7739077fb423f096a2326f51c9db30e9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>manageChangedText</b> ()</td></tr>
+<tr class="separator:a7739077fb423f096a2326f51c9db30e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cf45333618ad93dd6e0adc944e9aa01"><td class="memItemLeft" align="right" valign="top"><a id="a1cf45333618ad93dd6e0adc944e9aa01"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>highlightText</b> ()</td></tr>
+<tr class="separator:a1cf45333618ad93dd6e0adc944e9aa01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5e29151b8338ecabdb9a3d82a48a22f"><td class="memItemLeft" align="right" valign="top"><a id="ab5e29151b8338ecabdb9a3d82a48a22f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>StackOn</b> ()</td></tr>
+<tr class="separator:ab5e29151b8338ecabdb9a3d82a48a22f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7776f143d364926bfc7343b4868af4d1"><td class="memItemLeft" align="right" valign="top"><a id="a7776f143d364926bfc7343b4868af4d1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>StackOff</b> ()</td></tr>
+<tr class="separator:a7776f143d364926bfc7343b4868af4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe8f9c1ca4f50e1fef4fd0ef43eeadf5"><td class="memItemLeft" align="right" valign="top"><a id="abe8f9c1ca4f50e1fef4fd0ef43eeadf5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>save</b> (const int index)</td></tr>
+<tr class="separator:abe8f9c1ca4f50e1fef4fd0ef43eeadf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebcae2d47fa7668d9053c85d2bc55eea"><td class="memItemLeft" align="right" valign="top"><a id="aebcae2d47fa7668d9053c85d2bc55eea"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>saveAs</b> (const int index)</td></tr>
+<tr class="separator:aebcae2d47fa7668d9053c85d2bc55eea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cdeb56a312f6b1935436e6203912c09"><td class="memItemLeft" align="right" valign="top"><a id="a6cdeb56a312f6b1935436e6203912c09"></a>
 QPlainTextEdit *&#160;</td><td class="memItemRight" valign="bottom"><b>getCurrentTextEdit</b> ()</td></tr>
 <tr class="separator:a6cdeb56a312f6b1935436e6203912c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61d74ea396ffe9c23581f19a3e8368af"><td class="memItemLeft" align="right" valign="top"><a id="a61d74ea396ffe9c23581f19a3e8368af"></a>
 QPlainTextEdit *&#160;</td><td class="memItemRight" valign="bottom"><b>getTextEditByName</b> (const QString &amp;name)</td></tr>
 <tr class="separator:a61d74ea396ffe9c23581f19a3e8368af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a033947568ce56079791859506f2b2a58"><td class="memItemLeft" align="right" valign="top"><a id="a033947568ce56079791859506f2b2a58"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setCursorPosition</b> ()</td></tr>
+<tr class="separator:a033947568ce56079791859506f2b2a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/laur/Desktop/TextEditor/<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a></li>
-<li>/home/laur/Desktop/TextEditor/mainwindow.cpp</li>
+<li>/home/laur/Desktop/TextEditor/TextEditor/src/<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a></li>
+<li>/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

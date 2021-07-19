@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['inserttext',['InsertText',['../class_insert_text.html',1,'']]]
+  ['availability',['Availability',['../class_availability.html',1,'']]]
 ];

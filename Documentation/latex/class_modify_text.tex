@@ -1,26 +1,34 @@
 \hypertarget{class_modify_text}{}\section{Modify\+Text Class Reference}
 \label{class_modify_text}\index{Modify\+Text@{Modify\+Text}}
-Inheritance diagram for Modify\+Text\+:\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=2.000000cm]{class_modify_text}
-\end{center}
-\end{figure}
+
+
+Inheritance diagram for Modify\+Text\+:
+% FIG 0
+
+
+Collaboration diagram for Modify\+Text\+:
+% FIG 1
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_modify_text_a1b4735d4eeb33f9ef88cf3f33b5e8723}\label{class_modify_text_a1b4735d4eeb33f9ef88cf3f33b5e8723}} 
-{\bfseries Modify\+Text} (Q\+Plain\+Text\+Edit $\ast$editor, const Q\+String \&old\+Text, const Q\+String \&new\+Text, Q\+Undo\+Command $\ast$parent=nullptr)
+\mbox{\Hypertarget{class_modify_text_af58856dcdb13efd7994e8d1044f3f8f1}\label{class_modify_text_af58856dcdb13efd7994e8d1044f3f8f1}} 
+{\bfseries Modify\+Text} (Q\+Plain\+Text\+Edit $\ast$editor, const Q\+String \&old\+Text, int old\+\_\+cursor\+\_\+position, const Q\+String \&new\+Text, int new\+\_\+cursor\+\_\+position, const Q\+Undo\+Command $\ast$previous=nullptr, Q\+Undo\+Command $\ast$parent=nullptr)
 \item 
 \mbox{\Hypertarget{class_modify_text_ac6f267ca4f2d3e6dd862975268291dab}\label{class_modify_text_ac6f267ca4f2d3e6dd862975268291dab}} 
 void {\bfseries undo} () override
 \item 
 \mbox{\Hypertarget{class_modify_text_acf0fe8ee7ad397b66c012afe2aa1999d}\label{class_modify_text_acf0fe8ee7ad397b66c012afe2aa1999d}} 
 void {\bfseries redo} () override
+\item 
+\mbox{\Hypertarget{class_modify_text_a35c4eb1c730d20b64a82b6d9b82445e9}\label{class_modify_text_a35c4eb1c730d20b64a82b6d9b82445e9}} 
+int {\bfseries get\+Old\+Cursor\+Position} ()
+\item 
+\mbox{\Hypertarget{class_modify_text_acce2898bc8d96e9eeb69fcd10be47cdf}\label{class_modify_text_acce2898bc8d96e9eeb69fcd10be47cdf}} 
+int {\bfseries get\+New\+Cursor\+Position} ()
 \end{DoxyCompactItemize}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/laur/\+Desktop/\+Text\+Editor/Modify\+Text.\+h\item 
-/home/laur/\+Desktop/\+Text\+Editor/Modify\+Text.\+cpp\end{DoxyCompactItemize}
+/home/laur/\+Desktop/\+Text\+Editor/\+Text\+Editor/src/Modify\+Text.\+h\item 
+/home/laur/\+Desktop/\+Text\+Editor/\+Text\+Editor/src/Modify\+Text.\+cpp\end{DoxyCompactItemize}

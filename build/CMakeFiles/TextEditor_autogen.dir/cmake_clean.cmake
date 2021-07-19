@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TextEditor_autogen"
   "TextEditor_autogen/mocs_compilation.cpp"
+  "TextEditor_autogen/src/ui_mainwindow.h"
 )
 
 # Per-language clean rules from dependency scanning.

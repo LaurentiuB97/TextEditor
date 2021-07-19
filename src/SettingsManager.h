@@ -1,22 +1,27 @@
-#ifndef SETTINGS_MANAGER_H
-#define SETTINGS_MANAGER_H
+// Copyright 2021 Bobocea Laurentiu
+#ifndef SRC_SETTINGSMANAGER_H_
+#define SRC_SETTINGSMANAGER_H_
 #include "Theme.h"
 #include <QObject>
 #include <QMap>
 #include <QString>
 #include <QMenu>
-class SettingsManager : public QObject{
+class SettingsManager : public QObject {
     Q_OBJECT
 
-public:
-    SettingsManager(QObject* parent = nullptr);
+ public:
+    explicit SettingsManager(QObject* parent = nullptr);
     void LoadSettings();
     void setActions(QMenu* visibleMenu);
     void saveSettings(QMenu* visibleMenu);
+    void setActivePlugins(const QList<QString> &list);
+    bool isActive(const QString &plugin);
+    QList<QString> getActivePlugins();
     Theme* getTheme();
-private:
+ private:
     QString file = "config.json";
     Theme* theme;
     QMap<QString, bool> actions;
+    QList<QString> active_plugins;
 };
-#endif //SETTINGS_MANAGER_H
+#endif  // SRC_SETTINGSMANAGER_H_

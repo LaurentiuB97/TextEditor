@@ -1,3 +1,4 @@
+// Copyright 2021 Bobocea Laurentiu
 #include "Theme.h"
 #include <iostream>
 #include <QDebug>
@@ -31,7 +32,7 @@ void Theme::setTheme(const QString mode){
     QString file = "Themes//" + mode + "//palette.json";
     QFile loadFile(file);
     if (!loadFile.open(QIODevice::ReadOnly)) {
-            qWarning("Couldn't open save file.");
+            qWarning("Nu s-a putut deschide fisierul");
             return;
     }
     auto data = QString::fromUtf8(loadFile.readAll());

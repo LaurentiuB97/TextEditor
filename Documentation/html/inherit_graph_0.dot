@@ -3,9 +3,17 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node3 [label="QUndoCommand",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node3 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node0 [label="InsertText",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_insert_text.html"];
-  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="ModifyText",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_modify_text.html"];
+  Node6 [label="QObject",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node6 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="Availability",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_availability.html"];
+  Node6 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="CursorGroup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cursor_group.html"];
+  Node6 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="FileStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_file_status.html"];
+  Node6 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="PluginManager",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_plugin_manager.html"];
+  Node6 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="SettingsManager",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_settings_manager.html"];
+  Node6 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="Theme",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_theme.html"];
 }

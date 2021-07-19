@@ -1,3 +1,4 @@
+// Copyright 2021 Bobocea Laurentiu
 #ifndef TEXTHIGHLIGHT_H
 #define TEXTHIGHLIGHT_H
 #include <string>

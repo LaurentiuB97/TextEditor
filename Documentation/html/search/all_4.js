@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['lowercaseall',['lowercaseAll',['../class_string_manipulator.html#af7e1662a6c1a1210e58f521db6a132cd',1,'StringManipulator']]],
-  ['lowercasefirstletter',['lowercaseFirstLetter',['../class_string_manipulator.html#ad94710fa3a5e1a3c3ff7284ecb9c6f33',1,'StringManipulator']]],
-  ['lowercaseoffset',['lowercaseOffset',['../class_string_manipulator.html#ae02eefd357a9e6442021f9f49a42d959',1,'StringManipulator']]]
+  ['filestatus',['FileStatus',['../class_file_status.html',1,'']]],
+  ['find',['find',['../class_string_manipulator.html#adab4023d6e1e822008e3832c56e47d56',1,'StringManipulator']]],
+  ['findnonascii',['findNonASCII',['../class_string_manipulator.html#a9a6742faa577c63df0725af492b785f7',1,'StringManipulator']]]
 ];

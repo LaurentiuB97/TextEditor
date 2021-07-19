@@ -1,3 +1,4 @@
+// Copyright 2021 Bobocea Laurentiu
 #ifndef THEME_H
 #define THEME_H
 #include <QColor>

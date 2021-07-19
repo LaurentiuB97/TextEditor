@@ -1,2 +1,0 @@
-/usr/bin/ar qc libEditorInterface.a CMakeFiles/EditorInterface.dir/EditorInterface_autogen/mocs_compilation.cpp.o CMakeFiles/EditorInterface.dir/moc_EditorInterface.cpp.o
-/usr/bin/ranlib libEditorInterface.a

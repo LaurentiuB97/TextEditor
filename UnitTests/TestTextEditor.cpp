@@ -1,40 +1,41 @@
 #include "TestTextEditor.h"
 #include "TextHighLight.h"
 #include "StringManipulator.h"
+#include <QString>
 #include <iostream>
 #include <string>
 
-std::string forbidden_text = "œžŸ¢¥";
-std::string standard_example = "Hello world!";
-std::string standard_token = "world";
+QString forbidden_text = "œžŸ¢¥";
+QString standard_example = "Hello world!";
+QString standard_token = "world";
 
 /// setUp the repetitive values
 void TestTextEditor::setUp() {
-    std::string forbidden_text = "œžŸ¢¥";
-    std::string standard_example = "Hello world!";
-    std::string standard_token = "world";
+    QString forbidden_text = "œžŸ¢¥";
+    QString standard_example = "Hello world!";
+    QString standard_token = "world";
 }
 void TestTextEditor::tearDown(){} 
 
 /// it verifies the find function in a simple case, with no errors
 void TestTextEditor::find_simpleCase() {
-    std::string pattern = "ra";
-    std::string text = "ad astra per aspera";
+    QString pattern = "ra";
+    QString text = "ad astra per aspera";
     std::vector<TextHighLight> highlights = StringManipulator::find(pattern, text, false);
     CPPUNIT_ASSERT(highlights[0].equals(TextHighLight(6,2)));
     CPPUNIT_ASSERT(highlights[1].equals(TextHighLight(17,2)));
 }
 /// it verifies the find function when the pattern is not found in the main text
 void TestTextEditor::find_TextNotFound() {
-    std::string pattern = "temp";
+    QString pattern = "temp";
     std::vector<TextHighLight> highlights = StringManipulator::find(pattern, standard_example, false);
     CPPUNIT_ASSERT(highlights.size() == 0);
 }
 
 /// it verifies the find function giving a simple regex for searching
 void TestTextEditor::find_Regex() {
-    std::string pattern = "/e+/g";
-    std::string text = "meet, street, sleep";
+    QString pattern = "(e+)";
+    QString text = "meet, street, sleep";
     std::vector<TextHighLight> highlights = StringManipulator::find(pattern, text, true);
     CPPUNIT_ASSERT(highlights[0].equals(TextHighLight(1,2)));
     CPPUNIT_ASSERT(highlights[1].equals(TextHighLight(9,2)));
@@ -43,13 +44,13 @@ void TestTextEditor::find_Regex() {
 
 /// it verifies if the find functions throws an exception message when the pattern is empty
 void TestTextEditor::find_EmptyPattern() {
-    std::string pattern = "cidbscksj";  // making the pattern empty
+    QString pattern = "";  // making the pattern empty
     CPPUNIT_ASSERT_THROW(StringManipulator::find(pattern, standard_example, false), std::invalid_argument);
 }
 
 /// it verifies if the find function throws an exception message when the main text is empty
 void TestTextEditor::find_EmptyText() {
-    std::string text = "";  //making the text empty
+    QString text = "";  //making the text empty
     CPPUNIT_ASSERT_THROW(StringManipulator::find(standard_token, text, false), std::invalid_argument);
 }
 
@@ -65,7 +66,7 @@ void TestTextEditor::find_TextWithUnexpectedCharacters() {
 
 /// it verifies if the find function throws an exception message when the pattern to find is larger than the main text (logic error)
 void TestTextEditor::find_PatternLargerThanText() {
-    std::string pattern = "pattern larger than text";
+    QString pattern = "pattern larger than text";
     CPPUNIT_ASSERT_THROW(StringManipulator::find(pattern, standard_example, false), std::invalid_argument);
 }
 
@@ -73,7 +74,7 @@ void TestTextEditor::find_PatternLargerThanText() {
 /// it verifies the replace function in a non-exceptional case.
 /// The main task here is to replace "there" ffrom "Hello there!" with "world". The result will be "Hello world!" (the standard example)
 void TestTextEditor::replace_simpleCase() {
-    std::string text = "Hello there!";
+    QString text = "Hello there!";
     TextHighLight highlight(6, 5);
     CPPUNIT_ASSERT(StringManipulator::replace(standard_token, highlight, text).equals(TextHighLight(6,5)));
     CPPUNIT_ASSERT(text == standard_example);
@@ -93,7 +94,7 @@ void TestTextEditor::replace_TextWithUnexpectedCharacter() {
 
 /// it verifies if the replace function throws an exception message when the main text is empty
 void TestTextEditor::replace_EmptyText() {
-    std::string text = "";
+    QString text = "";
     TextHighLight highlight(0,1);
     CPPUNIT_ASSERT_THROW(StringManipulator::replace(standard_token, highlight, text), std::invalid_argument);
 }
@@ -127,7 +128,7 @@ void TestTextEditor::replace_LengthLargerThanMax() {
 /// it verifies the trim function gives the right results in a non-exceptional case. It must remove the unnecessary spaces between two words
 /// and return the number o changes that have occured
 void TestTextEditor::trim_simpleCase() {
-    std::string text = "Hello    world!";
+    QString text = "Hello    world!";
     CPPUNIT_ASSERT(StringManipulator::trim(text) == 3);
     CPPUNIT_ASSERT(text == standard_example); 
 }
@@ -139,14 +140,14 @@ void TestTextEditor::trim_UnexpectedCharacter() {
 
 /// it verifies if the trim function throws an exception message when the text is empty
 void TestTextEditor::trim_EmptyText() {
-    std::string text = "";
+    QString text = "";
     CPPUNIT_ASSERT_THROW(StringManipulator::trim(text), std::invalid_argument);
 }
 //===========================================================================================================
 
 /// it verifies the padding function to give the right results. It must put a space after the first sentance and return the number of changes (one change)
 void TestTextEditor::padding_simpeCase() {
-    std::string text = "Hi there!How are you?";
+    QString text = "Hi there!How are you?";
     CPPUNIT_ASSERT(StringManipulator::padding(text) == 1);
     CPPUNIT_ASSERT(text  == "Hi there! How are you?");
 }
@@ -158,14 +159,14 @@ void TestTextEditor::padding_UnexpectedCharacter() {
 
 /// it verifies if the padding function throws an exception message when the text is empty
 void TestTextEditor::padding_EmptyText() {
-    std::string text = "";
+    QString text = "";
     CPPUNIT_ASSERT_THROW(StringManipulator::padding(text), std::invalid_argument);
 }
 //===========================================================================================================
 
 /// it verifies the capitalizeAll function to set uppercase for all characters from the given text and also return the number of changes
 void TestTextEditor::capitalizeAll_simpleCase() {
-    std::string text = standard_example;
+    QString text = standard_example;
     CPPUNIT_ASSERT(StringManipulator::capitalizeAll(text) == 9);
     CPPUNIT_ASSERT(text == "HELLO WORLD!");
 }
@@ -177,14 +178,14 @@ void TestTextEditor::capitalizeAll_UnexpectedCharacter() {
 
 /// it verifies if the capitalizeAll function throws an exception message when the text is empty
 void TestTextEditor::capitalizeAll_EmptyText() {
-    std::string text = "";
+    QString text = "";
     CPPUNIT_ASSERT_THROW(StringManipulator::capitalizeAll(text), std::invalid_argument);
 }
 //===========================================================================================================
 
 /// it verifies the capitalizeFirst function to set lowercase for all characters from the given text and also to return the number of changes
 void TestTextEditor::capitalizeFirst_simpleCase() {
-    std::string text = "hi there! how are you?";
+    QString text = "hi there! how are you?";
     CPPUNIT_ASSERT(StringManipulator::capitalizeFirstLetter(text) == 2);
     CPPUNIT_ASSERT(text == "Hi there! How are you?");
 }
@@ -196,7 +197,7 @@ void TestTextEditor::capitalizeFirst_UnexpectedCharacter() {
 
 /// it verifies if the capitalizeFirst function throws an exception message when the text is empty
 void TestTextEditor::capitalizeFirst_EmptyText() {
-    std::string text = "";
+    QString text = "";
     CPPUNIT_ASSERT_THROW(StringManipulator::capitalizeFirstLetter(text), std::invalid_argument);
 }
 
@@ -204,7 +205,7 @@ void TestTextEditor::capitalizeFirst_EmptyText() {
 /// it verifies the capitalizeOffset function to capitalize the demanded characters and to return the number of changes
 void TestTextEditor::capitalizeOffset_simpleCase() {
     TextHighLight highlight(0,7);
-    std::string text = standard_example;
+    QString text = standard_example;
     CPPUNIT_ASSERT(StringManipulator::capitalizeOffset(text, highlight) == 5);
     CPPUNIT_ASSERT(text == "HELLO World!");
 }
@@ -217,7 +218,7 @@ void TestTextEditor::capitalizeOffset_UnexpectedCharacter() {
 
 /// it verifies if the capitalizeOffset function throws an exception message when the text is empty
 void TestTextEditor::capitalizeOffset_EmptyText() {
-    std::string text = "";
+    QString text = "";
     TextHighLight highlight(1,1);
     CPPUNIT_ASSERT_THROW(StringManipulator::capitalizeOffset(text, highlight), std::invalid_argument);
 }
@@ -250,7 +251,7 @@ void TestTextEditor::capitalizeOffset_LengthLargerThanMax() {
 
 /// it verifies if the lowercaseAll function sets lowercase for all characters from the given text and also returns the number of changes
 void TestTextEditor::lowercaseAll_simpleCase() {
-    std::string text  = standard_example;
+    QString text  = standard_example;
     CPPUNIT_ASSERT(StringManipulator::lowercaseAll(text) == 1);
     CPPUNIT_ASSERT(text == "hello world!");
 }
@@ -262,7 +263,7 @@ void TestTextEditor::lowercaseAll_UnexpectedCharacter() {
 
 /// it verifies the lowercaseAll function to throw an exception message when the text is empty
 void TestTextEditor::lowercaseAll_EmptyText() {
-    std::string text = "";
+    QString text = "";
     CPPUNIT_ASSERT_THROW(StringManipulator::lowercaseAll(text), std::invalid_argument);
 }
 
@@ -270,7 +271,7 @@ void TestTextEditor::lowercaseAll_EmptyText() {
 
 /// it verifies the lowercaseFirst function to set lowercase for the first letter from the text and also to return the number of chanes (one change)
 void TestTextEditor::lowercaseFirst_simpleCase() {
-    std::string text = standard_example;
+    QString text = standard_example;
     CPPUNIT_ASSERT(StringManipulator::lowercaseFirstLetter(text) == 1);
     CPPUNIT_ASSERT(text == "hello world!");
 }
@@ -282,7 +283,7 @@ void TestTextEditor::lowercaseFirst_UnexpectedCharacter() {
 
 /// it verifies if the lowercaseFirst function throws an exception message when the text is empty
 void TestTextEditor::lowercaseFirst_EmptyText() {
-    std::string text = "";
+    QString text = "";
     CPPUNIT_ASSERT_THROW(StringManipulator::lowercaseFirstLetter(text), std::invalid_argument);
 }
 
@@ -290,7 +291,7 @@ void TestTextEditor::lowercaseFirst_EmptyText() {
 
 /// it verifies if the lowercaseOffset function lowercase the specified characters and returns the number of changes
 void TestTextEditor::lowercaseOffset_simpleCase() {
-    std::string text = "HELlo World!";
+    QString text = "HELlo World!";
     TextHighLight highlight(1,6);
     CPPUNIT_ASSERT(StringManipulator::lowercaseOffset(text, highlight) == 3);
     CPPUNIT_ASSERT(text == standard_example);
@@ -298,28 +299,28 @@ void TestTextEditor::lowercaseOffset_simpleCase() {
 
 /// it verifies if the lowercaseOffset function throws an exception message when the text is empty
 void TestTextEditor::lowercaseOffset_EmptyText() {
-    std::string text = "";
+    QString text = "";
     TextHighLight highlight(1,1);
     CPPUNIT_ASSERT_THROW(StringManipulator::lowercaseOffset(text, highlight), std::invalid_argument);
 }
 
 /// it verifies if the lowercaseOffset function throws an exception message when the highlight position is negative (a string position must always be positive or zero)
 void TestTextEditor::lowercaseOffset_NegativeHighLightPosition() {
-    std::string text = standard_example;
+    QString text = standard_example;
     TextHighLight highlight(-1, 2);
     CPPUNIT_ASSERT_THROW(StringManipulator::lowercaseOffset(text, highlight), std::invalid_argument);
 }
 
 /// it verifies if the lowercaseOffset function throws an exception message when the highlight length is negative (length must always be positive or zero)
 void TestTextEditor::lowercaseOffset_NegativeHighLightLength() {
-    std::string text = standard_example;
+    QString text = standard_example;
     TextHighLight highlight(0, -1);
     CPPUNIT_ASSERT_THROW(StringManipulator::lowercaseOffset(text, highlight), std::invalid_argument);
 }
 
 /// it verifies if the lowercaseOffset function throws an exception message when the highlight position is larger then the text length (out-of-bound parameter)
 void TestTextEditor::lowercaseOffset_PositionLargerThanMax() {
-    std::string text = standard_example;
+    QString text = standard_example;
     TextHighLight highlight(32, 2);
     CPPUNIT_ASSERT_THROW(StringManipulator::lowercaseOffset(text, highlight), std::invalid_argument);
 }
@@ -327,7 +328,7 @@ void TestTextEditor::lowercaseOffset_PositionLargerThanMax() {
 /// it verifies if the lowercaseOffset function throws an exception message when the length of the highlight length is larger than text.length() - highlight_position.
 /// which means that the highlight goes beyond string terminator (out-of-bound parameter)
 void TestTextEditor::lowercaseOffset_LengthLargerThanMax() {
-    std::string text = standard_example;
+    QString text = standard_example;
     TextHighLight highlight(7, 8);
     CPPUNIT_ASSERT_THROW(StringManipulator::lowercaseOffset(text, highlight), std::invalid_argument);
 }
@@ -335,14 +336,14 @@ void TestTextEditor::lowercaseOffset_LengthLargerThanMax() {
 
 /// it verifies if the transformToASCII function replace the forbidden characters with blank spaces
 void TestTextEditor::transformToASCII_simpleCase() {
-    std::string text = "Hiœžthere!";
+    QString text = "Hiœžthere!";
     CPPUNIT_ASSERT(StringManipulator::transformToASCII(text) == 2);
     CPPUNIT_ASSERT( text == "Hi  there!");
 }
 
 /// it verifies if the transformToASCII function throws an exception message when the text is empty
 void TestTextEditor::transformToASCII_EmptyText() {
-    std::string text = "";
+    QString text = "";
     CPPUNIT_ASSERT_THROW(StringManipulator::transformToASCII(text), std::invalid_argument);
 }
 
@@ -350,14 +351,14 @@ void TestTextEditor::transformToASCII_EmptyText() {
 
 /// it verifies if the changeDateFormat function if the given date is properly changed in the specified format and also returns the number of changes 
 void TestTextEditor::changeDateFormat_simpleCase() {
-    std::string text = "2020/10/22";
+    QString text = "2020/10/22";
     CPPUNIT_ASSERT(StringManipulator::changeDateFormat(text, StringManipulator::slash_little_endian) == 1);
     CPPUNIT_ASSERT(text == "22/10/2020");
 }
 
 /// it verifies if the changeDateFormat function throws an exception message when the text is empty
 void TestTextEditor::changeDateFormat_EmptyText() {
-    std::string text = "";
+    QString text = "";
     CPPUNIT_ASSERT_THROW(StringManipulator::changeDateFormat(text, StringManipulator::line_little_endian), std::invalid_argument);
 }
 

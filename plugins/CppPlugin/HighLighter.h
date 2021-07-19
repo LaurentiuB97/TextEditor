@@ -13,16 +13,22 @@ private:
     QString resourcesFolder = "plugins/CppPlugin/highlight_files";
     QString keywordsPath = resourcesFolder + "/keywords";
     QString typesPath = resourcesFolder + "/types.txt";
-    QStringList keywords,types;
+    QString directivesPath = resourcesFolder + "/directives";
+    QStringList keywords,types, directives;
 
 public:
     HighLighter();
     ~HighLighter();
-    void colorTargets(const QMap<QString, QList<TextHighLight>> &map, QPlainTextEdit* edit);
+    void colorTargets(const QList<QPair<QString, QList<TextHighLight>>> &list, QPlainTextEdit* edit);
     QList<TextHighLight> findKeyWords(QPlainTextEdit* edit);
+    QList<TextHighLight> findDirectives(QPlainTextEdit* edit);
+    QList<TextHighLight> findFunctions(QPlainTextEdit* edit);
     QList<TextHighLight> findTypes(QPlainTextEdit* edit);
     QList<TextHighLight> findString(QPlainTextEdit* edit);
+    QList<TextHighLight> findComments(QPlainTextEdit* edit);
     QList<TextHighLight> findRegex(const QString &pattern, const QString &text);
+
     void loadKeyWords();
+    void loadDirectives();
     void loadTypes();
 };

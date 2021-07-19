@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['split',['split',['../class_utils.html#a04abf2d4f3728fc99c889075e767fd55',1,'Utils']]]
+  ['padding',['padding',['../class_string_manipulator.html#ac669121dd3e5fda9b8723593fc7ca04d',1,'StringManipulator']]]
 ];

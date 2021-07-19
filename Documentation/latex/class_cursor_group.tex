@@ -1,0 +1,50 @@
+\hypertarget{class_cursor_group}{}\section{Cursor\+Group Class Reference}
+\label{class_cursor_group}\index{Cursor\+Group@{Cursor\+Group}}
+
+
+Inheritance diagram for Cursor\+Group\+:
+% FIG 0
+
+
+Collaboration diagram for Cursor\+Group\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_cursor_group_af7296db01d171b287fdbdb5c5cd4ee7b}\label{class_cursor_group_af7296db01d171b287fdbdb5c5cd4ee7b}} 
+{\bfseries Cursor\+Group} (Q\+Object $\ast$parent, Q\+Tab\+Widget $\ast$tabs, Q\+Label $\ast$line, Q\+Label $\ast$collumn)
+\item 
+\mbox{\Hypertarget{class_cursor_group_a0832838add9449014661ef9b3f9a984e}\label{class_cursor_group_a0832838add9449014661ef9b3f9a984e}} 
+Q\+Plain\+Text\+Edit $\ast$ \hyperlink{class_cursor_group_a0832838add9449014661ef9b3f9a984e}{get\+Current\+Text\+Edit} ()
+\begin{DoxyCompactList}\small\item\em return pointerul catre aria de editare din tabul curent \end{DoxyCompactList}\item 
+void \hyperlink{class_cursor_group_af216081a863ff279d67227c355f112e1}{set\+Line\+And\+Collumn} ()
+\item 
+\mbox{\Hypertarget{class_cursor_group_a7adf8b3f19bae07eb6c281be477fbcdf}\label{class_cursor_group_a7adf8b3f19bae07eb6c281be477fbcdf}} 
+void \hyperlink{class_cursor_group_a7adf8b3f19bae07eb6c281be477fbcdf}{set\+Line\+And\+Collumn\+For\+Editor} (Q\+Plain\+Text\+Edit $\ast$editor)
+\begin{DoxyCompactList}\small\item\em pune in etichetele Line si Column coordonatele cursorului din editor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_cursor_group_a27b5f50f419268c2742465ec3de3a30b}\label{class_cursor_group_a27b5f50f419268c2742465ec3de3a30b}} 
+void {\bfseries set\+Active\+Cursor} ()
+\item 
+void \hyperlink{class_cursor_group_a443ff52a9e41c5b3c5cf15e0087db1d6}{connect\+Cursor} (Q\+Plain\+Text\+Edit $\ast$editor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cursor_group_a443ff52a9e41c5b3c5cf15e0087db1d6}\label{class_cursor_group_a443ff52a9e41c5b3c5cf15e0087db1d6}} 
+\index{Cursor\+Group@{Cursor\+Group}!connect\+Cursor@{connect\+Cursor}}
+\index{connect\+Cursor@{connect\+Cursor}!Cursor\+Group@{Cursor\+Group}}
+\subsubsection{\texorpdfstring{connect\+Cursor()}{connectCursor()}}
+{\footnotesize\ttfamily void Cursor\+Group\+::connect\+Cursor (\begin{DoxyParamCaption}\item[{Q\+Plain\+Text\+Edit $\ast$}]{editor }\end{DoxyParamCaption})}
+
+realizeaza conexiunea intre aceasta clasa si obiectul editor La fiecare schimbare a positiei cursorului, se va apela metoda set\+Line\+And\+Collumn \mbox{\Hypertarget{class_cursor_group_af216081a863ff279d67227c355f112e1}\label{class_cursor_group_af216081a863ff279d67227c355f112e1}} 
+\index{Cursor\+Group@{Cursor\+Group}!set\+Line\+And\+Collumn@{set\+Line\+And\+Collumn}}
+\index{set\+Line\+And\+Collumn@{set\+Line\+And\+Collumn}!Cursor\+Group@{Cursor\+Group}}
+\subsubsection{\texorpdfstring{set\+Line\+And\+Collumn()}{setLineAndCollumn()}}
+{\footnotesize\ttfamily void Cursor\+Group\+::set\+Line\+And\+Collumn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+pune in etichetele Line si Column coordonatele cursorului din zona de editare din tabul curent 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/laur/\+Desktop/\+Text\+Editor/\+Text\+Editor/src/Cursor\+Group.\+h\item 
+/home/laur/\+Desktop/\+Text\+Editor/\+Text\+Editor/src/Cursor\+Group.\+cpp\end{DoxyCompactItemize}

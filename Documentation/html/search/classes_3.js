@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stringmanipulator',['StringManipulator',['../class_string_manipulator.html',1,'']]]
+  ['filestatus',['FileStatus',['../class_file_status.html',1,'']]]
 ];

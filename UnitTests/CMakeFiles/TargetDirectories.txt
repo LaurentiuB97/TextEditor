@@ -1,3 +1,4 @@
-/home/laur/Desktop/TextEditor/UnitTests/CMakeFiles/rebuild_cache.dir
-/home/laur/Desktop/TextEditor/UnitTests/CMakeFiles/test.dir
-/home/laur/Desktop/TextEditor/UnitTests/CMakeFiles/edit_cache.dir
+/home/laur/Desktop/TextEditor/TextEditor/UnitTests/CMakeFiles/rebuild_cache.dir
+/home/laur/Desktop/TextEditor/TextEditor/UnitTests/CMakeFiles/test.dir
+/home/laur/Desktop/TextEditor/TextEditor/UnitTests/CMakeFiles/edit_cache.dir
+/home/laur/Desktop/TextEditor/TextEditor/UnitTests/CMakeFiles/test_autogen.dir

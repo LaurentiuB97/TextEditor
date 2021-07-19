@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['lowercaseall',['lowercaseAll',['../class_string_manipulator.html#af7e1662a6c1a1210e58f521db6a132cd',1,'StringManipulator']]],
-  ['lowercasefirstletter',['lowercaseFirstLetter',['../class_string_manipulator.html#ad94710fa3a5e1a3c3ff7284ecb9c6f33',1,'StringManipulator']]],
-  ['lowercaseoffset',['lowercaseOffset',['../class_string_manipulator.html#ae02eefd357a9e6442021f9f49a42d959',1,'StringManipulator']]]
+  ['getavailabilitystatus',['getAvailabilityStatus',['../class_availability.html#a430c8f38c1c79d7d5e67b4f164708820',1,'Availability']]],
+  ['getcurrenttextedit',['getCurrentTextEdit',['../class_cursor_group.html#a0832838add9449014661ef9b3f9a984e',1,'CursorGroup']]]
 ];

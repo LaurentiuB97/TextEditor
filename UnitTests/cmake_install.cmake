@@ -1,4 +1,4 @@
-# Install script for directory: /home/laur/Desktop/TextEditor/UnitTests
+# Install script for directory: /home/laur/Desktop/TextEditor/TextEditor/UnitTests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/laur/Desktop/TextEditor/UnitTests/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/laur/Desktop/TextEditor/TextEditor/UnitTests/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

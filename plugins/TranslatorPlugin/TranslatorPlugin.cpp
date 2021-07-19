@@ -12,7 +12,7 @@ void TranslatorPlugin::setProperties(QMenuBar* menuBar,QToolBar* toolBar,
 }
 
 void TranslatorPlugin::setActions(){
-    QMenu* translateMenu = new QMenu("Translate", menuBar);
+    translateMenu = new QMenu("Traducere", menuBar);
     // creem actiunile
     actionEnToRo = new QAction("EN -> RO");
     actionRoToEn = new QAction("RO -> EN");
@@ -39,6 +39,10 @@ void TranslatorPlugin::setActions(){
 
 }
 
+void TranslatorPlugin::disconnect(){
+    translateMenu->deleteLater();
+}
+
 void TranslatorPlugin::fromEnToRo(){translateSelection("en", "ro");}
 void TranslatorPlugin::fromRoToEn(){translateSelection("ro", "en");}
 void TranslatorPlugin::fromRoToFr(){translateSelection("ro", "fr");}
@@ -50,9 +54,9 @@ void TranslatorPlugin::translateSelection(const QString &from,const QString &to)
     if(!cursor.hasSelection()){ // daca nu exista text selectat, atunci se selecteaza tot textul
 
         QMessageBox::StandardButton resBtn = QMessageBox::question( editor,"TextEditor",
-                                                                    tr("Do you want to apply this function for the entire text?\n"),
+                                                                    tr("Doriți să aplicați această funcție pentru tot textul?\n"),
                                                                     QMessageBox::No | QMessageBox::Yes);
-        if (resBtn == QMessageBox::Yes){  // the user selected "Yes" -> select the whole text
+        if (resBtn == QMessageBox::Yes){  // utilizatorul a selectat "Yes" -> se selecteaz[ tot textul.
             editor->selectAll();
             cursor = editor->textCursor();
         }
@@ -60,15 +64,15 @@ void TranslatorPlugin::translateSelection(const QString &from,const QString &to)
             return;
         }
     }
-    QString text = tabWidget->getCurrentTextEdit()->toPlainText();
+    QString text = cursor.selectedText();
     if(text.count() == 0){
-        QMessageBox::warning(editor, "Warning", tr("Empty text"));
+        QMessageBox::warning(editor, "Warning", tr("Text nul!"));
         return;
     }
-    cursor.beginEditBlock(); // put remove and insert operations in the same block to not affect the QUndoStack
-    cursor.removeSelectedText();  // remove the previous text
-    cursor.insertText(translate(text, from, to));  // insert the modified text
-    cursor.endEditBlock();
+    cursor.beginEditBlock(); // punem tot procesul intr-un singur bloc pentru a creea doar o singura comanda de Refacere
+    cursor.removeSelectedText();  // se sterge vechiul textul existent in zona de editare
+    cursor.insertText(translate(text, from, to));  // se insereaza noul text
+    cursor.endEditBlock(); // sfarsit bloc
     availability->setAvailabilityStatus(true); // permitem din nou celorlalte plugin-uri sa se defasoare fara restrictii
 }
 QString TranslatorPlugin::translate(const QString &text,const QString &from,const QString &to){

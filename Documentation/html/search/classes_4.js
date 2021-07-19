@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['texthighlight',['TextHighLight',['../class_text_high_light.html',1,'']]]
+  ['mainwindow',['MainWindow',['../class_main_window.html',1,'']]],
+  ['modifytext',['ModifyText',['../class_modify_text.html',1,'']]]
 ];

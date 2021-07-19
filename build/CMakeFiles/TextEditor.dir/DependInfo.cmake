@@ -20,7 +20,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.cpp" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.cpp.o" "gcc" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TabWidget.cpp.o.d"
   "/home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp.o" "gcc" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/TextHighLight.cpp.o.d"
   "/home/laur/Desktop/TextEditor/TextEditor/src/Theme.cpp" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Theme.cpp.o" "gcc" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Theme.cpp.o.d"
-  "/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp.o" "gcc" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/Utils.cpp.o.d"
   "/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o" "gcc" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/main.cpp.o.d"
   "/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp.o" "gcc" "CMakeFiles/TextEditor.dir/home/laur/Desktop/TextEditor/TextEditor/src/mainwindow.cpp.o.d"
   )

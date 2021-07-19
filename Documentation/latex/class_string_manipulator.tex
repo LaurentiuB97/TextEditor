@@ -17,173 +17,182 @@ enum {\bfseries date\+Format} \{ \newline
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static std\+::vector$<$ \hyperlink{class_text_high_light}{Text\+High\+Light} $>$ \hyperlink{class_string_manipulator_afc935f4ef36a3683bf4a0b7db2b354db}{find} (const std\+::string \&pattern, const std\+::string \&text, const bool is\+Regex)
+static std\+::vector$<$ \hyperlink{class_text_high_light}{Text\+High\+Light} $>$ \hyperlink{class_string_manipulator_adab4023d6e1e822008e3832c56e47d56}{find} (const Q\+String \&pattern, const Q\+String \&text, const bool is\+Regex=false, const Q\+String flag=\char`\"{}A\+LL\char`\"{})
 \item 
-static \hyperlink{class_text_high_light}{Text\+High\+Light} \hyperlink{class_string_manipulator_ae84413e9862b7e46f381ad43793f1117}{replace} (const std\+::string \&replacement, const \hyperlink{class_text_high_light}{Text\+High\+Light} \&highlight, std\+::string \&text)
+static \hyperlink{class_text_high_light}{Text\+High\+Light} \hyperlink{class_string_manipulator_a20fdffe83624dbaf91d2f26e79417bed}{replace} (const Q\+String \&replacement, const \hyperlink{class_text_high_light}{Text\+High\+Light} \&highlight, Q\+String \&text)
 \item 
-static int \hyperlink{class_string_manipulator_a37e0bceb7f3f726912f3750e2910c30d}{trim} (std\+::string \&text)
+static int \hyperlink{class_string_manipulator_a7a77d58ba2445a871cc716a8870f7244}{replace\+All} (const Q\+String \&to\+Replace, const Q\+String \&replacement, Q\+String \&text)
 \item 
-static int \hyperlink{class_string_manipulator_a03ee428eed1a526be0382c0c7ae297dd}{padding} (std\+::string \&text)
+static int \hyperlink{class_string_manipulator_a254924bbc9bead53372a393aee9f8711}{trim} (Q\+String \&text)
 \item 
-static int \hyperlink{class_string_manipulator_a5c3623c8798af0aa7230f972e8be6032}{capitalize\+All} (std\+::string \&text)
+static int \hyperlink{class_string_manipulator_ac669121dd3e5fda9b8723593fc7ca04d}{padding} (Q\+String \&text)
 \item 
-static int \hyperlink{class_string_manipulator_af0c3de234425bcbdeba6ffb32fb9486b}{capitalize\+First\+Letter} (std\+::string \&text)
+static int \hyperlink{class_string_manipulator_ad5ff80ae462045bc6d8f2be32c0da4bb}{capitalize\+All} (Q\+String \&text)
 \item 
-static int \hyperlink{class_string_manipulator_ab12616f5d40ce39ba3d26f2af39fc8d9}{capitalize\+Offset} (std\+::string \&text, const \hyperlink{class_text_high_light}{Text\+High\+Light} highlight)
+static int \hyperlink{class_string_manipulator_a0dddee858bb0c58c63fd122645114bcb}{capitalize\+First\+Letter} (Q\+String \&text)
 \item 
-static int \hyperlink{class_string_manipulator_af7e1662a6c1a1210e58f521db6a132cd}{lowercase\+All} (std\+::string \&text)
+static int \hyperlink{class_string_manipulator_a236181c606edff1c577a9a88ddb8d7d9}{capitalize\+Offset} (Q\+String \&text, const \hyperlink{class_text_high_light}{Text\+High\+Light} highlight)
 \item 
-static int \hyperlink{class_string_manipulator_ad94710fa3a5e1a3c3ff7284ecb9c6f33}{lowercase\+First\+Letter} (std\+::string \&text)
+static int \hyperlink{class_string_manipulator_a102944c73c7fc265e426bc7749907e8c}{lowercase\+All} (Q\+String \&text)
 \item 
-static int \hyperlink{class_string_manipulator_ae02eefd357a9e6442021f9f49a42d959}{lowercase\+Offset} (std\+::string \&text, const \hyperlink{class_text_high_light}{Text\+High\+Light} highlight)
+static int \hyperlink{class_string_manipulator_a09536b194993d10f361459873c727c3b}{lowercase\+First\+Letter} (Q\+String \&text)
 \item 
-static int \hyperlink{class_string_manipulator_ada98fef8f4eaac2525bb583c654e3c9d}{transform\+To\+A\+S\+C\+II} (std\+::string \&text)
+static int \hyperlink{class_string_manipulator_ad8075d783befd76e2f456ff1ada8b0f6}{lowercase\+Offset} (Q\+String \&text, const \hyperlink{class_text_high_light}{Text\+High\+Light} \&highlight)
 \item 
-static int \hyperlink{class_string_manipulator_a88bd80f0412cc80d18a1acbc9b838489}{change\+Date\+Format} (std\+::string \&text, date\+Format format)
+static int \hyperlink{class_string_manipulator_ae91d0a9b920ae7621a9d49bc2286235a}{transform\+To\+A\+S\+C\+II} (Q\+String \&text)
 \item 
-static int \hyperlink{class_string_manipulator_a796e69a9713a9bda08b205100d060016}{find\+Non\+A\+S\+C\+II} (const std\+::string \&text)
+static int \hyperlink{class_string_manipulator_ac35afff547abbd79b54b514e2d752a71}{change\+Date\+Format} (Q\+String \&text, date\+Format format)
 \item 
-static bool \hyperlink{class_string_manipulator_a65e4f86e702032166fa31019e2562984}{is\+A\+Date} (const std\+::string \&text)
+static int \hyperlink{class_string_manipulator_a9a6742faa577c63df0725af492b785f7}{find\+Non\+A\+S\+C\+II} (const Q\+String \&text)
 \item 
-static bool \hyperlink{class_string_manipulator_a4889fe079d632384918058b0e6dfb53f}{is\+A\+Capital\+Letter} (const char character)
+static bool \hyperlink{class_string_manipulator_af0ba293accd9ddf0b7db3973edaa093f}{is\+A\+Date} (const Q\+String \&text)
 \item 
-static bool \hyperlink{class_string_manipulator_a7cae6c9bcfd1d924f20ebbcf3b61f52a}{is\+A\+Lowercase\+Letter} (const char character)
+static bool \hyperlink{class_string_manipulator_abfc77e41e2b96d37e07fa87cb71bd6da}{is\+A\+Capital\+Letter} (const Q\+Char \&character)
 \item 
-static bool \hyperlink{class_string_manipulator_a73afb49f8c116036fe2aa8d2e6ac81c1}{is\+Letter} (const char character)
+static bool \hyperlink{class_string_manipulator_a7c6339b8e0f43102fd4b8505fca0530d}{is\+A\+Lowercase\+Letter} (const Q\+Char \&character)
 \item 
-static bool \hyperlink{class_string_manipulator_aa59cf4c8d9832ba6cb60e7d1636ea860}{is\+Number} (const char character)
+static bool \hyperlink{class_string_manipulator_a7deb1f37fd0efd4eddfb4cef8ed6eca6}{is\+Letter} (const Q\+Char \&character)
 \item 
-static void \hyperlink{class_string_manipulator_a89012eafe7e806cc95f5400cc46c3dd8}{treating\+Exceptions\+For\+Text} (const std\+::string \&text)
+static bool \hyperlink{class_string_manipulator_af3dc83218b174085453f06453b93d17b}{is\+Number} (const Q\+Char \&character)
 \item 
-static void \hyperlink{class_string_manipulator_a2fcadd35bf6e7343aceca8982ca3efc6}{treating\+Exceptions\+For\+Highlight} (const std\+::string \&text, const \hyperlink{class_text_high_light}{Text\+High\+Light} \&highlight)
+static bool \hyperlink{class_string_manipulator_a51dc44388aac908904aa0408e73ab615}{is\+Regex\+Operator} (const Q\+Char \&character)
+\item 
+static void \hyperlink{class_string_manipulator_a1bb8e6892955d05c68d523b985bad0bc}{treating\+Exceptions\+For\+Text} (const Q\+String \&text)
+\item 
+static void \hyperlink{class_string_manipulator_a3892dd94b5a1f6c61736fb523bd6a3ab}{treating\+Exceptions\+For\+Highlight} (const Q\+String \&text, const \hyperlink{class_text_high_light}{Text\+High\+Light} \&highlight)
+\item 
+static Q\+List$<$ Q\+Char $>$ \hyperlink{class_string_manipulator_a5ac671799b00b71f236dcfb68077cdce}{regex\+Special\+Characters} ()
+\item 
+static int \hyperlink{class_string_manipulator_af2041957b6df343d55d1cd99719e0d16}{repeal\+Operators} (Q\+String \&text)
 \end{DoxyCompactItemize}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_string_manipulator_a5c3623c8798af0aa7230f972e8be6032}\label{class_string_manipulator_a5c3623c8798af0aa7230f972e8be6032}} 
+\mbox{\Hypertarget{class_string_manipulator_ad5ff80ae462045bc6d8f2be32c0da4bb}\label{class_string_manipulator_ad5ff80ae462045bc6d8f2be32c0da4bb}} 
 \index{String\+Manipulator@{String\+Manipulator}!capitalize\+All@{capitalize\+All}}
 \index{capitalize\+All@{capitalize\+All}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{capitalize\+All()}{capitalizeAll()}}
-{\footnotesize\ttfamily int String\+Manipulator\+::capitalize\+All (\begin{DoxyParamCaption}\item[{std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily int String\+Manipulator\+::capitalize\+All (\begin{DoxyParamCaption}\item[{Q\+String \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Capitalize all the letters from the given text
+Transforma toate literele mici din text in majuscule
 
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em } & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_string_manipulator_af0c3de234425bcbdeba6ffb32fb9486b}\label{class_string_manipulator_af0c3de234425bcbdeba6ffb32fb9486b}} 
+\mbox{\Hypertarget{class_string_manipulator_a0dddee858bb0c58c63fd122645114bcb}\label{class_string_manipulator_a0dddee858bb0c58c63fd122645114bcb}} 
 \index{String\+Manipulator@{String\+Manipulator}!capitalize\+First\+Letter@{capitalize\+First\+Letter}}
 \index{capitalize\+First\+Letter@{capitalize\+First\+Letter}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{capitalize\+First\+Letter()}{capitalizeFirstLetter()}}
-{\footnotesize\ttfamily int String\+Manipulator\+::capitalize\+First\+Letter (\begin{DoxyParamCaption}\item[{std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily int String\+Manipulator\+::capitalize\+First\+Letter (\begin{DoxyParamCaption}\item[{Q\+String \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Capitalize the first letter of every sentence when is the case
+Transforma la i nmajuscula fiecare litera mica la inceputul unei propozitii
 
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em } & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_string_manipulator_ab12616f5d40ce39ba3d26f2af39fc8d9}\label{class_string_manipulator_ab12616f5d40ce39ba3d26f2af39fc8d9}} 
+\mbox{\Hypertarget{class_string_manipulator_a236181c606edff1c577a9a88ddb8d7d9}\label{class_string_manipulator_a236181c606edff1c577a9a88ddb8d7d9}} 
 \index{String\+Manipulator@{String\+Manipulator}!capitalize\+Offset@{capitalize\+Offset}}
 \index{capitalize\+Offset@{capitalize\+Offset}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{capitalize\+Offset()}{capitalizeOffset()}}
-{\footnotesize\ttfamily int String\+Manipulator\+::capitalize\+Offset (\begin{DoxyParamCaption}\item[{std\+::string \&}]{text,  }\item[{const \hyperlink{class_text_high_light}{Text\+High\+Light}}]{highlight }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily int String\+Manipulator\+::capitalize\+Offset (\begin{DoxyParamCaption}\item[{Q\+String \&}]{text,  }\item[{const \hyperlink{class_text_high_light}{Text\+High\+Light}}]{highlight }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Capitalize a certain potion of text specified by a highlight
+Transforma in majuscule literele mici din secventa specificata de highlight
 
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em } & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_string_manipulator_a88bd80f0412cc80d18a1acbc9b838489}\label{class_string_manipulator_a88bd80f0412cc80d18a1acbc9b838489}} 
+\mbox{\Hypertarget{class_string_manipulator_ac35afff547abbd79b54b514e2d752a71}\label{class_string_manipulator_ac35afff547abbd79b54b514e2d752a71}} 
 \index{String\+Manipulator@{String\+Manipulator}!change\+Date\+Format@{change\+Date\+Format}}
 \index{change\+Date\+Format@{change\+Date\+Format}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{change\+Date\+Format()}{changeDateFormat()}}
-{\footnotesize\ttfamily int String\+Manipulator\+::change\+Date\+Format (\begin{DoxyParamCaption}\item[{std\+::string \&}]{text,  }\item[{date\+Format}]{format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily int String\+Manipulator\+::change\+Date\+Format (\begin{DoxyParamCaption}\item[{Q\+String \&}]{text,  }\item[{date\+Format}]{format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Convert the given date (which is actualy a string text) in a new format
+Transforma formatul de data din textul dat in formatul dorit
 
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em } & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_string_manipulator_afc935f4ef36a3683bf4a0b7db2b354db}\label{class_string_manipulator_afc935f4ef36a3683bf4a0b7db2b354db}} 
+\mbox{\Hypertarget{class_string_manipulator_adab4023d6e1e822008e3832c56e47d56}\label{class_string_manipulator_adab4023d6e1e822008e3832c56e47d56}} 
 \index{String\+Manipulator@{String\+Manipulator}!find@{find}}
 \index{find@{find}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{find()}{find()}}
-{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{class_text_high_light}{Text\+High\+Light} $>$ String\+Manipulator\+::find (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pattern,  }\item[{const std\+::string \&}]{text,  }\item[{const bool}]{is\+Regex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{class_text_high_light}{Text\+High\+Light} $>$ String\+Manipulator\+::find (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{pattern,  }\item[{const Q\+String \&}]{text,  }\item[{const bool}]{is\+Regex = {\ttfamily false},  }\item[{const Q\+String}]{flag = {\ttfamily \char`\"{}ALL\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-It returns a vector with the highlights of all search results in a text
-
-
+Cauta in textul dat secvente de text corespunzatoare sablonului pattern 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em pattern} & -\/ it can be a normal sequance of text or a regular expresion \\
+\mbox{\tt in}  & {\em pattern} & -\/ sablonul cautarii -\/ poate fi o secventa simpla de text sau o expresie regulata \\
 \hline
-\mbox{\tt in}  & {\em text} & -\/ the text the function must search in \\
+\mbox{\tt in}  & {\em text} & -\/ textul in care se cauta sablonul \\
 \hline
-\mbox{\tt in}  & {\em is\+Regex} & -\/ it specifies if the pattern is a peace of text or a regular expresion\\
+\mbox{\tt in}  & {\em is\+Regex} & -\/flag ce indica daca sablonul este o expresie regulata sau nu\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-a vector of \hyperlink{class_text_high_light}{Text\+High\+Light} objects which correspond to the positions of the matches 
+un vector cu pozitiile si lungimile rezultatelor cautarii 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_string_manipulator_a796e69a9713a9bda08b205100d060016}\label{class_string_manipulator_a796e69a9713a9bda08b205100d060016}} 
+\mbox{\Hypertarget{class_string_manipulator_a9a6742faa577c63df0725af492b785f7}\label{class_string_manipulator_a9a6742faa577c63df0725af492b785f7}} 
 \index{String\+Manipulator@{String\+Manipulator}!find\+Non\+A\+S\+C\+II@{find\+Non\+A\+S\+C\+II}}
 \index{find\+Non\+A\+S\+C\+II@{find\+Non\+A\+S\+C\+II}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{find\+Non\+A\+S\+C\+I\+I()}{findNonASCII()}}
-{\footnotesize\ttfamily int String\+Manipulator\+::find\+Non\+A\+S\+C\+II (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily int String\+Manipulator\+::find\+Non\+A\+S\+C\+II (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-returns the first occurance of a non-\/\+A\+S\+C\+II character
+gaseste prima pozitie a unui caracter non-\/\+A\+S\+C\+II
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em the} & text meant to be analyzed\\
+\mbox{\tt in}  & {\em text} & -\/ textul ce trebuie verificat\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-the first occurance of a non-\/\+A\+S\+C\+II character 
+prima pozitie a unui caracter non-\/\+A\+S\+C\+II 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_string_manipulator_a4889fe079d632384918058b0e6dfb53f}\label{class_string_manipulator_a4889fe079d632384918058b0e6dfb53f}} 
+\mbox{\Hypertarget{class_string_manipulator_abfc77e41e2b96d37e07fa87cb71bd6da}\label{class_string_manipulator_abfc77e41e2b96d37e07fa87cb71bd6da}} 
 \index{String\+Manipulator@{String\+Manipulator}!is\+A\+Capital\+Letter@{is\+A\+Capital\+Letter}}
 \index{is\+A\+Capital\+Letter@{is\+A\+Capital\+Letter}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{is\+A\+Capital\+Letter()}{isACapitalLetter()}}
-{\footnotesize\ttfamily bool String\+Manipulator\+::is\+A\+Capital\+Letter (\begin{DoxyParamCaption}\item[{const char}]{character }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily bool String\+Manipulator\+::is\+A\+Capital\+Letter (\begin{DoxyParamCaption}\item[{const Q\+Char \&}]{character }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-it specifies if the given character is a capital letter or not
+specifica daca caracterul dat este majuscula sau nu
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em the} & character\\
+\mbox{\tt in}  & {\em character} & -\/ caracterul de verificat\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true if it is a capital letter and false if it is not 
+true daca e majuscula, false in caz contrar 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_string_manipulator_a65e4f86e702032166fa31019e2562984}\label{class_string_manipulator_a65e4f86e702032166fa31019e2562984}} 
+\mbox{\Hypertarget{class_string_manipulator_af0ba293accd9ddf0b7db3973edaa093f}\label{class_string_manipulator_af0ba293accd9ddf0b7db3973edaa093f}} 
 \index{String\+Manipulator@{String\+Manipulator}!is\+A\+Date@{is\+A\+Date}}
 \index{is\+A\+Date@{is\+A\+Date}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{is\+A\+Date()}{isADate()}}
-{\footnotesize\ttfamily bool String\+Manipulator\+::is\+A\+Date (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily bool String\+Manipulator\+::is\+A\+Date (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-it specifies if a given string respects the norms to be considered a time date
+specifica daca textul dat este un format de data cunoscut
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em text} & -\/ the text meant to be analyzed\\
+\mbox{\tt in}  & {\em text} & -\/ textul ce trebuie verificat\\
 \hline
 \end{DoxyParams}
-true if the text has date format and false if it doesn\textquotesingle{}t \mbox{\Hypertarget{class_string_manipulator_a7cae6c9bcfd1d924f20ebbcf3b61f52a}\label{class_string_manipulator_a7cae6c9bcfd1d924f20ebbcf3b61f52a}} 
+\begin{DoxyReturn}{Returns}
+true daca este un format si false daca nu respecta nici un format 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_string_manipulator_a7c6339b8e0f43102fd4b8505fca0530d}\label{class_string_manipulator_a7c6339b8e0f43102fd4b8505fca0530d}} 
 \index{String\+Manipulator@{String\+Manipulator}!is\+A\+Lowercase\+Letter@{is\+A\+Lowercase\+Letter}}
 \index{is\+A\+Lowercase\+Letter@{is\+A\+Lowercase\+Letter}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{is\+A\+Lowercase\+Letter()}{isALowercaseLetter()}}
-{\footnotesize\ttfamily bool String\+Manipulator\+::is\+A\+Lowercase\+Letter (\begin{DoxyParamCaption}\item[{const char}]{character }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily bool String\+Manipulator\+::is\+A\+Lowercase\+Letter (\begin{DoxyParamCaption}\item[{const Q\+Char \&}]{character }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-it specifies if the given character is a lowercase letter or not
+specifica daca caracterul dat este litera mica sau nu
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -191,158 +200,216 @@ it specifies if the given character is a lowercase letter or not
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true if it is a lowercase letter and false if it is not 
+true daca caracterul este litera mica, false in caz contrar 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_string_manipulator_a73afb49f8c116036fe2aa8d2e6ac81c1}\label{class_string_manipulator_a73afb49f8c116036fe2aa8d2e6ac81c1}} 
+\mbox{\Hypertarget{class_string_manipulator_a7deb1f37fd0efd4eddfb4cef8ed6eca6}\label{class_string_manipulator_a7deb1f37fd0efd4eddfb4cef8ed6eca6}} 
 \index{String\+Manipulator@{String\+Manipulator}!is\+Letter@{is\+Letter}}
 \index{is\+Letter@{is\+Letter}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{is\+Letter()}{isLetter()}}
-{\footnotesize\ttfamily bool String\+Manipulator\+::is\+Letter (\begin{DoxyParamCaption}\item[{const char}]{character }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily bool String\+Manipulator\+::is\+Letter (\begin{DoxyParamCaption}\item[{const Q\+Char \&}]{character }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-it specifies if the given character is a letter or not
+specifica daca caracterul dat este o litera sau nu
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em the} & character\\
+\mbox{\tt in}  & {\em character} & -\/ caracterul ce trebuie verificat\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true if it is a letter and false if it is not 
+true daca caracterul este litera, false in caz contrar 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_string_manipulator_aa59cf4c8d9832ba6cb60e7d1636ea860}\label{class_string_manipulator_aa59cf4c8d9832ba6cb60e7d1636ea860}} 
+\mbox{\Hypertarget{class_string_manipulator_af3dc83218b174085453f06453b93d17b}\label{class_string_manipulator_af3dc83218b174085453f06453b93d17b}} 
 \index{String\+Manipulator@{String\+Manipulator}!is\+Number@{is\+Number}}
 \index{is\+Number@{is\+Number}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{is\+Number()}{isNumber()}}
-{\footnotesize\ttfamily bool String\+Manipulator\+::is\+Number (\begin{DoxyParamCaption}\item[{const char}]{character }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily bool String\+Manipulator\+::is\+Number (\begin{DoxyParamCaption}\item[{const Q\+Char \&}]{character }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-it specifies if the given character is a digit or not
+specifica daca caracterul dat este o cifra sau nu
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em the} & character\\
+\mbox{\tt in}  & {\em character} & -\/ caracterul ce trebuie verificat\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true if it is a digit and false if it is not 
+true daca este cifra, false in caz contrar 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_string_manipulator_af7e1662a6c1a1210e58f521db6a132cd}\label{class_string_manipulator_af7e1662a6c1a1210e58f521db6a132cd}} 
+\mbox{\Hypertarget{class_string_manipulator_a51dc44388aac908904aa0408e73ab615}\label{class_string_manipulator_a51dc44388aac908904aa0408e73ab615}} 
+\index{String\+Manipulator@{String\+Manipulator}!is\+Regex\+Operator@{is\+Regex\+Operator}}
+\index{is\+Regex\+Operator@{is\+Regex\+Operator}!String\+Manipulator@{String\+Manipulator}}
+\subsubsection{\texorpdfstring{is\+Regex\+Operator()}{isRegexOperator()}}
+{\footnotesize\ttfamily bool String\+Manipulator\+::is\+Regex\+Operator (\begin{DoxyParamCaption}\item[{const Q\+Char \&}]{character }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+verifica daca caracterul primut ca intrare este un construct regex
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em character} & -\/ caracterul care trebuie verificat\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ true daca caracterul este un construct regex si false in caz contrar 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_string_manipulator_a102944c73c7fc265e426bc7749907e8c}\label{class_string_manipulator_a102944c73c7fc265e426bc7749907e8c}} 
 \index{String\+Manipulator@{String\+Manipulator}!lowercase\+All@{lowercase\+All}}
 \index{lowercase\+All@{lowercase\+All}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{lowercase\+All()}{lowercaseAll()}}
-{\footnotesize\ttfamily int String\+Manipulator\+::lowercase\+All (\begin{DoxyParamCaption}\item[{std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily int String\+Manipulator\+::lowercase\+All (\begin{DoxyParamCaption}\item[{Q\+String \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Lowercase all of the letters from the text
+Transforma in litere mici toate majusculele din text
 
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em } & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_string_manipulator_ad94710fa3a5e1a3c3ff7284ecb9c6f33}\label{class_string_manipulator_ad94710fa3a5e1a3c3ff7284ecb9c6f33}} 
+\mbox{\Hypertarget{class_string_manipulator_a09536b194993d10f361459873c727c3b}\label{class_string_manipulator_a09536b194993d10f361459873c727c3b}} 
 \index{String\+Manipulator@{String\+Manipulator}!lowercase\+First\+Letter@{lowercase\+First\+Letter}}
 \index{lowercase\+First\+Letter@{lowercase\+First\+Letter}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{lowercase\+First\+Letter()}{lowercaseFirstLetter()}}
-{\footnotesize\ttfamily int String\+Manipulator\+::lowercase\+First\+Letter (\begin{DoxyParamCaption}\item[{std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily int String\+Manipulator\+::lowercase\+First\+Letter (\begin{DoxyParamCaption}\item[{Q\+String \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Lowercase the first letter of every sentence, where is the case /// 
+Functia opusa functiei capitalize\+First\+Letter /// 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em } & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_string_manipulator_ae02eefd357a9e6442021f9f49a42d959}\label{class_string_manipulator_ae02eefd357a9e6442021f9f49a42d959}} 
+\mbox{\Hypertarget{class_string_manipulator_ad8075d783befd76e2f456ff1ada8b0f6}\label{class_string_manipulator_ad8075d783befd76e2f456ff1ada8b0f6}} 
 \index{String\+Manipulator@{String\+Manipulator}!lowercase\+Offset@{lowercase\+Offset}}
 \index{lowercase\+Offset@{lowercase\+Offset}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{lowercase\+Offset()}{lowercaseOffset()}}
-{\footnotesize\ttfamily int String\+Manipulator\+::lowercase\+Offset (\begin{DoxyParamCaption}\item[{std\+::string \&}]{text,  }\item[{const \hyperlink{class_text_high_light}{Text\+High\+Light}}]{highlight }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily int String\+Manipulator\+::lowercase\+Offset (\begin{DoxyParamCaption}\item[{Q\+String \&}]{text,  }\item[{const \hyperlink{class_text_high_light}{Text\+High\+Light} \&}]{highlight }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Lowercase a certain sequance of text, specified by the highlight
+Transforma in litere mici toate majusculele din text specificate de highlight
 
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em } & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_string_manipulator_a03ee428eed1a526be0382c0c7ae297dd}\label{class_string_manipulator_a03ee428eed1a526be0382c0c7ae297dd}} 
+\mbox{\Hypertarget{class_string_manipulator_ac669121dd3e5fda9b8723593fc7ca04d}\label{class_string_manipulator_ac669121dd3e5fda9b8723593fc7ca04d}} 
 \index{String\+Manipulator@{String\+Manipulator}!padding@{padding}}
 \index{padding@{padding}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{padding()}{padding()}}
-{\footnotesize\ttfamily int String\+Manipulator\+::padding (\begin{DoxyParamCaption}\item[{std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily int String\+Manipulator\+::padding (\begin{DoxyParamCaption}\item[{Q\+String \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Puts spaces where there are missing (after punctuation signs must likely)
+Completeaza cu spatii in zonele unde ar trebui sa existe. Zone tinta\+: Intre propozitii, dupa semnul de punctuatie sau dupa fiecare virgula
 
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em } & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_string_manipulator_ae84413e9862b7e46f381ad43793f1117}\label{class_string_manipulator_ae84413e9862b7e46f381ad43793f1117}} 
+\mbox{\Hypertarget{class_string_manipulator_a5ac671799b00b71f236dcfb68077cdce}\label{class_string_manipulator_a5ac671799b00b71f236dcfb68077cdce}} 
+\index{String\+Manipulator@{String\+Manipulator}!regex\+Special\+Characters@{regex\+Special\+Characters}}
+\index{regex\+Special\+Characters@{regex\+Special\+Characters}!String\+Manipulator@{String\+Manipulator}}
+\subsubsection{\texorpdfstring{regex\+Special\+Characters()}{regexSpecialCharacters()}}
+{\footnotesize\ttfamily Q\+List$<$ Q\+Char $>$ String\+Manipulator\+::regex\+Special\+Characters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+o lista cu caractere ce reprezinta operatori regex 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_string_manipulator_af2041957b6df343d55d1cd99719e0d16}\label{class_string_manipulator_af2041957b6df343d55d1cd99719e0d16}} 
+\index{String\+Manipulator@{String\+Manipulator}!repeal\+Operators@{repeal\+Operators}}
+\index{repeal\+Operators@{repeal\+Operators}!String\+Manipulator@{String\+Manipulator}}
+\subsubsection{\texorpdfstring{repeal\+Operators()}{repealOperators()}}
+{\footnotesize\ttfamily int String\+Manipulator\+::repeal\+Operators (\begin{DoxyParamCaption}\item[{Q\+String \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+in cazul in care expresia ce trebuie gasita contine operatori de tip regex, se introduce caracterul \char`\"{}\textbackslash{}\char`\"{} pentru a le anula efectul
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_string_manipulator_a20fdffe83624dbaf91d2f26e79417bed}\label{class_string_manipulator_a20fdffe83624dbaf91d2f26e79417bed}} 
 \index{String\+Manipulator@{String\+Manipulator}!replace@{replace}}
 \index{replace@{replace}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{replace()}{replace()}}
-{\footnotesize\ttfamily \hyperlink{class_text_high_light}{Text\+High\+Light} String\+Manipulator\+::replace (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{replacement,  }\item[{const \hyperlink{class_text_high_light}{Text\+High\+Light} \&}]{highlight,  }\item[{std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \hyperlink{class_text_high_light}{Text\+High\+Light} String\+Manipulator\+::replace (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{replacement,  }\item[{const \hyperlink{class_text_high_light}{Text\+High\+Light} \&}]{highlight,  }\item[{Q\+String \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Replaces the portion of the string that is specified in the \hyperlink{class_text_high_light}{Text\+High\+Light} object
+Inlocuieste secventa specificata de highlight cu textul replacement
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em replacement} & -\/ the string meant to be put on the highlighted text\textquotesingle{}s place \\
+\mbox{\tt in}  & {\em replacement} & -\/ textul inlocuitor \\
 \hline
-\mbox{\tt in}  & {\em highlight} & -\/ specifies the position and the length of the sequance which is meant to be replaced \\
+\mbox{\tt in}  & {\em highlight} & -\/un obiect ce contine pozitia si lungimea secventei de inlocuit \\
 \hline
-\mbox{\tt in}  & {\em text} & -\/ the string which the function will make the change in\\
+\mbox{\tt in}  & {\em text} & -\/ textul in care se face inlocuirea\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-the highlight of the new sequance of text 
+highlight-\/ul noi secvente adaugate 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_string_manipulator_ada98fef8f4eaac2525bb583c654e3c9d}\label{class_string_manipulator_ada98fef8f4eaac2525bb583c654e3c9d}} 
+\mbox{\Hypertarget{class_string_manipulator_a7a77d58ba2445a871cc716a8870f7244}\label{class_string_manipulator_a7a77d58ba2445a871cc716a8870f7244}} 
+\index{String\+Manipulator@{String\+Manipulator}!replace\+All@{replace\+All}}
+\index{replace\+All@{replace\+All}!String\+Manipulator@{String\+Manipulator}}
+\subsubsection{\texorpdfstring{replace\+All()}{replaceAll()}}
+{\footnotesize\ttfamily int String\+Manipulator\+::replace\+All (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{to\+Replace,  }\item[{const Q\+String \&}]{replacement,  }\item[{Q\+String \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Inlocuieste aparitiile secventei to\+Replace cu secventa replacement in text
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em to\+Replace} & -\/ textul de inlocuit \\
+\hline
+\mbox{\tt in}  & {\em replacement} & -\/ textul inlocuitor \\
+\hline
+\mbox{\tt in}  & {\em text} & -\/ textul in care se face inlocuirea\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+numarul de inlocuiri din text 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_string_manipulator_ae91d0a9b920ae7621a9d49bc2286235a}\label{class_string_manipulator_ae91d0a9b920ae7621a9d49bc2286235a}} 
 \index{String\+Manipulator@{String\+Manipulator}!transform\+To\+A\+S\+C\+II@{transform\+To\+A\+S\+C\+II}}
 \index{transform\+To\+A\+S\+C\+II@{transform\+To\+A\+S\+C\+II}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{transform\+To\+A\+S\+C\+I\+I()}{transformToASCII()}}
-{\footnotesize\ttfamily int String\+Manipulator\+::transform\+To\+A\+S\+C\+II (\begin{DoxyParamCaption}\item[{std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily int String\+Manipulator\+::transform\+To\+A\+S\+C\+II (\begin{DoxyParamCaption}\item[{Q\+String \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Find all the non-\/\+A\+S\+C\+II characters and replace them with spaces
+Inlocuieste cu spatii goale toate caracterele ce nu sunt din codul A\+S\+C\+II
 
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em } & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_string_manipulator_a2fcadd35bf6e7343aceca8982ca3efc6}\label{class_string_manipulator_a2fcadd35bf6e7343aceca8982ca3efc6}} 
+\mbox{\Hypertarget{class_string_manipulator_a3892dd94b5a1f6c61736fb523bd6a3ab}\label{class_string_manipulator_a3892dd94b5a1f6c61736fb523bd6a3ab}} 
 \index{String\+Manipulator@{String\+Manipulator}!treating\+Exceptions\+For\+Highlight@{treating\+Exceptions\+For\+Highlight}}
 \index{treating\+Exceptions\+For\+Highlight@{treating\+Exceptions\+For\+Highlight}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{treating\+Exceptions\+For\+Highlight()}{treatingExceptionsForHighlight()}}
-{\footnotesize\ttfamily void String\+Manipulator\+::treating\+Exceptions\+For\+Highlight (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text,  }\item[{const \hyperlink{class_text_high_light}{Text\+High\+Light} \&}]{highlight }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily void String\+Manipulator\+::treating\+Exceptions\+For\+Highlight (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{text,  }\item[{const \hyperlink{class_text_high_light}{Text\+High\+Light} \&}]{highlight }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-treats exception like \char`\"{}empty text\char`\"{} or \char`\"{}forbiden character\char`\"{} or incorrect highlight
+trateaza exceptiile de tip text gol, caracter interzis sau highlight incorect Arunca o exceptie in cazul in care apare o astfel de exceptie
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em text} & -\/ the text meant to be analyzed \\
+\mbox{\tt in}  & {\em text} & -\/ textul de analizat \\
 \hline
-\mbox{\tt in}  & {\em highlight} & -\/ the \hyperlink{class_text_high_light}{Text\+High\+Light} object meant to be analyzed \\
+\mbox{\tt in}  & {\em highlight} & -\/ highlight-\/ul de analizat \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_string_manipulator_a89012eafe7e806cc95f5400cc46c3dd8}\label{class_string_manipulator_a89012eafe7e806cc95f5400cc46c3dd8}} 
+\mbox{\Hypertarget{class_string_manipulator_a1bb8e6892955d05c68d523b985bad0bc}\label{class_string_manipulator_a1bb8e6892955d05c68d523b985bad0bc}} 
 \index{String\+Manipulator@{String\+Manipulator}!treating\+Exceptions\+For\+Text@{treating\+Exceptions\+For\+Text}}
 \index{treating\+Exceptions\+For\+Text@{treating\+Exceptions\+For\+Text}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{treating\+Exceptions\+For\+Text()}{treatingExceptionsForText()}}
-{\footnotesize\ttfamily void String\+Manipulator\+::treating\+Exceptions\+For\+Text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily void String\+Manipulator\+::treating\+Exceptions\+For\+Text (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-treats exception like \char`\"{}empty text\char`\"{} or \char`\"{}forbiden character\char`\"{}
+trateaza exceptiile de tip text gol si caracter interzis Arunca o exceptie in cazul in care apare o astfel de exceptie
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em text} & -\/ the text meant to be analyzed \\
+\mbox{\tt in}  & {\em text} & -\/ textul de analizat \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_string_manipulator_a37e0bceb7f3f726912f3750e2910c30d}\label{class_string_manipulator_a37e0bceb7f3f726912f3750e2910c30d}} 
+\mbox{\Hypertarget{class_string_manipulator_a254924bbc9bead53372a393aee9f8711}\label{class_string_manipulator_a254924bbc9bead53372a393aee9f8711}} 
 \index{String\+Manipulator@{String\+Manipulator}!trim@{trim}}
 \index{trim@{trim}!String\+Manipulator@{String\+Manipulator}}
 \subsubsection{\texorpdfstring{trim()}{trim()}}
-{\footnotesize\ttfamily int String\+Manipulator\+::trim (\begin{DoxyParamCaption}\item[{std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily int String\+Manipulator\+::trim (\begin{DoxyParamCaption}\item[{Q\+String \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Removes the unnecesary spaces (if there are two or more consecutive spaces, it will remove the aditional once and let just one to that positon
+Elimina spatiile suplimentare dintr-\/un text. In locurile unde sunt doua sau mai multe spatii consecutive va ramane doar un spatiu
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -353,5 +420,5 @@ Removes the unnecesary spaces (if there are two or more consecutive spaces, it w
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/laur/\+Desktop/\+Text\+Editor/String\+Manipulator.\+h\item 
-/home/laur/\+Desktop/\+Text\+Editor/String\+Manipulator.\+cpp\end{DoxyCompactItemize}
+/home/laur/\+Desktop/\+Text\+Editor/\+Text\+Editor/src/String\+Manipulator.\+h\item 
+/home/laur/\+Desktop/\+Text\+Editor/\+Text\+Editor/src/String\+Manipulator.\+cpp\end{DoxyCompactItemize}

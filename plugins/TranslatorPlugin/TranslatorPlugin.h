@@ -19,6 +19,7 @@ public:
    void setProperties(QMenuBar* menuBar = nullptr,QToolBar* toolBar = nullptr,
                       TabWidget* tabWidget = nullptr, Theme* theme = nullptr,
                       Availability* availability = nullptr) override;
+   void disconnect() override;
    void translateSelection(const QString &from,const QString &to);
    QString translate(const QString &text,const QString &from,const QString &to);
 private slots:
@@ -36,6 +37,7 @@ private:
     TabWidget* tabWidget;
     Theme* theme;
     Availability* availability;
+    QMenu* translateMenu;
 };
 
 #endif //TRANSLATORPLUGIN_H

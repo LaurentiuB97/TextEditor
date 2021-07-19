@@ -787,7 +787,7 @@
             </property>
             <property name="maximumSize">
              <size>
-              <width>40</width>
+              <width>80</width>
               <height>25</height>
              </size>
             </property>
@@ -875,7 +875,7 @@
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>File</string>
+     <string>Fișier</string>
     </property>
     <addaction name="actionNew"/>
     <addaction name="actionOpen"/>
@@ -885,7 +885,7 @@
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
-     <string>Edit</string>
+     <string>Editare</string>
     </property>
     <addaction name="actionCut"/>
     <addaction name="actionCopy"/>
@@ -897,24 +897,19 @@
    </widget>
    <widget class="QMenu" name="menuFind">
     <property name="title">
-     <string>Find</string>
+     <string>Căutare</string>
     </property>
     <addaction name="actionFind"/>
     <addaction name="actionFind_regex"/>
     <addaction name="actionReplace"/>
    </widget>
-   <widget class="QMenu" name="menuHelp">
-    <property name="title">
-     <string>Help</string>
-    </property>
-   </widget>
    <widget class="QMenu" name="menuPreferences">
     <property name="title">
-     <string>Preferences</string>
+     <string>Preferințe</string>
     </property>
     <widget class="QMenu" name="menuVisible_actions">
      <property name="title">
-      <string>Visible actions</string>
+      <string>Acțiuni vizibile</string>
      </property>
      <addaction name="actionNew_2"/>
      <addaction name="actionOpen_2"/>
@@ -930,24 +925,24 @@
     </widget>
     <widget class="QMenu" name="menuTheme">
      <property name="title">
-      <string>Theme</string>
+      <string>Teme</string>
      </property>
      <addaction name="actionDefault"/>
      <addaction name="actionDarkMode"/>
     </widget>
     <addaction name="menuVisible_actions"/>
     <addaction name="menuTheme"/>
+    <addaction name="actionPlugin_uri_active"/>
    </widget>
    <widget class="QMenu" name="menuPlugins">
     <property name="title">
-     <string>Plugins</string>
+     <string>Plugin-uri</string>
     </property>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuFind"/>
    <addaction name="menuPreferences"/>
-   <addaction name="menuHelp"/>
    <addaction name="menuPlugins"/>
   </widget>
   <action name="actionNew">
@@ -956,7 +951,7 @@
      <normaloff>:/icons/icons/new.png</normaloff>:/icons/icons/new.png</iconset>
    </property>
    <property name="text">
-    <string>New</string>
+    <string>Nou</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+N</string>
@@ -968,7 +963,7 @@
      <normaloff>:/icons/icons/open.png</normaloff>:/icons/icons/open.png</iconset>
    </property>
    <property name="text">
-    <string>Open</string>
+    <string>Deschide...</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+O</string>
@@ -980,7 +975,7 @@
      <normaloff>:/icons/icons/save.png</normaloff>:/icons/icons/save.png</iconset>
    </property>
    <property name="text">
-    <string>Save</string>
+    <string>Salvare</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
@@ -992,7 +987,7 @@
      <normaloff>:/icons/icons/cut.png</normaloff>:/icons/icons/cut.png</iconset>
    </property>
    <property name="text">
-    <string>Cut</string>
+    <string>Decupare</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+X</string>
@@ -1004,7 +999,7 @@
      <normaloff>:/icons/icons/copy.png</normaloff>:/icons/icons/copy.png</iconset>
    </property>
    <property name="text">
-    <string>Copy</string>
+    <string>Copiere</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+C</string>
@@ -1016,7 +1011,7 @@
      <normaloff>:/icons/icons/paste.png</normaloff>:/icons/icons/paste.png</iconset>
    </property>
    <property name="text">
-    <string>Paste</string>
+    <string>Lipire</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+V</string>
@@ -1028,7 +1023,7 @@
      <normaloff>:/icons/icons/redo.png</normaloff>:/icons/icons/redo.png</iconset>
    </property>
    <property name="text">
-    <string>Redo</string>
+    <string>Refacere</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Y</string>
@@ -1040,7 +1035,7 @@
      <normaloff>:/icons/icons/undo.png</normaloff>:/icons/icons/undo.png</iconset>
    </property>
    <property name="text">
-    <string>Undo</string>
+    <string>Anulare</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Z</string>
@@ -1052,7 +1047,7 @@
      <normaloff>:/icons/icons/find.png</normaloff>:/icons/icons/find.png</iconset>
    </property>
    <property name="text">
-    <string>Find...</string>
+    <string>Căutare...</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+F</string>
@@ -1064,7 +1059,7 @@
      <normaloff>:/icons/icons/find_regex.png</normaloff>:/icons/icons/find_regex.png</iconset>
    </property>
    <property name="text">
-    <string>Find regex</string>
+    <string>Căutare regex</string>
    </property>
   </action>
   <action name="actionSave_as">
@@ -1078,7 +1073,13 @@
      <normaloff>:/icons/icons/exit.jpg</normaloff>:/icons/icons/exit.jpg</iconset>
    </property>
    <property name="text">
-    <string>Exit</string>
+    <string>Ieșire</string>
+   </property>
+   <property name="iconText">
+    <string>Ieșire</string>
+   </property>
+   <property name="toolTip">
+    <string>Ieșire</string>
    </property>
   </action>
   <action name="actionNew_2">
@@ -1187,7 +1188,7 @@
   </action>
   <action name="actionReplace">
    <property name="text">
-    <string>Replace...</string>
+    <string>Înlocuire...</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+H</string>
@@ -1195,7 +1196,7 @@
   </action>
   <action name="actionIndent_forward">
    <property name="text">
-    <string>Indent forward</string>
+    <string>Indentare dreapta</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+[</string>
@@ -1203,7 +1204,7 @@
   </action>
   <action name="actionIndent_backward">
    <property name="text">
-    <string>Indent backward</string>
+    <string>Indentare stânga</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+]</string>
@@ -1211,7 +1212,15 @@
   </action>
   <action name="actionSave_as_2">
    <property name="text">
-    <string>Save as...</string>
+    <string>Salvare ca...</string>
+   </property>
+   <property name="toolTip">
+    <string>Salvare ca...</string>
+   </property>
+  </action>
+  <action name="actionPlugin_uri_active">
+   <property name="text">
+    <string>Plugin-uri active</string>
    </property>
   </action>
  </widget>

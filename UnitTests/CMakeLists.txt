@@ -8,6 +8,8 @@ if(CMAKE_VERSION VERSION_LESS "3.7.0")
 	set(CMAKE_INCLUDE_CURRENT_DIR ON)
 endif()
 
+find_package(Qt5 COMPONENTS Core Widgets REQUIRED)
+
 set(SOURCE_FILES main_test.cpp
                 TestTextEditor.cpp
                 StringManipulator.cpp
@@ -16,4 +18,4 @@ set(SOURCE_FILES main_test.cpp
                 Utils.cpp
 )
 add_executable(test ${SOURCE_FILES})
-target_link_libraries(test -lcppunit)
+target_link_libraries(test -lcppunit Qt5::Core Qt5::Widgets)

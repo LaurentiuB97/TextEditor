@@ -314,10 +314,11 @@ CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QDir \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qdir.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfileinfo.h \
- /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/OTJHMKELA5/moc_SettingsManager.cpp \
  /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/OTJHMKELA5/../../../src/SettingsManager.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMenu \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmenu.h \
+ /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/OTJHMKELA5/moc_SettingsManager.cpp \
+ /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/OTJHMKELA5/../../../src/SettingsManager.h \
  /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/OTJHMKELA5/moc_TabWidget.cpp \
  /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/OTJHMKELA5/../../../src/TabWidget.h \
  /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/OTJHMKELA5/moc_Theme.cpp \
@@ -331,7 +332,6 @@ CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QChar \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h \
- /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/OTJHMKELA5/../../../src/SettingsManager.h \
  /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/OTJHMKELA5/../../../src/PluginManager.h \
  /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/OTJHMKELA5/../../../src/FileStatus.h \
  /home/laur/Desktop/TextEditor/TextEditor/build/TextEditor_autogen/OTJHMKELA5/../../../src/CursorGroup.h \
